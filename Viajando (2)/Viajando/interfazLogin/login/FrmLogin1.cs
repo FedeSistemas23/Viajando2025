@@ -93,18 +93,17 @@ namespace interfazLogin
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            ValidarUsuario usuario = new ValidarUsuario();
+            
             string pass = txtPass.Text;
-            string Usuario = txtUsuario.Text;
-            bool Existe = usuario.validarUsuarioL(pass, Usuario);
+            string usuario = txtUsuario.Text;
+            CN_ValidarUsuario Usuario = new CN_ValidarUsuario(usuario, pass);
+            bool Existe = Usuario.ValidarUsuarioL();
             if (Existe)
             {
                 this.Hide();
                 bienvenida saludo = new bienvenida();
                 saludo.ShowDialog();
                 menu1.Show();
-                CN_ResetearIntentosFallidos reseteador = new CN_ResetearIntentosFallidos();
-                reseteador.ReseteaIntentosFallidosL(Usuario);
             }
         }
         /*CN_BloquearUsuario BloqueadorUsuario = new CN_BloquearUsuario();
