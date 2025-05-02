@@ -28,8 +28,8 @@ namespace CapaNegocio
         {
             bool existe = validarusuario.ValidarUsuarioD(username);
             if (existe)
-            { 
-                
+            {
+                                
                 return true;
             }
             else 

@@ -22,7 +22,7 @@ namespace CapaSesion
         public static string email { get; set; }
         public static bool UsuarioTemporal { get; set; }
         public static int VencimientoUsuarioTemporal { get; set; }
-        public static string Familias { get; set; }
+        public static int Id_Familia { get; set; }
         public static List<int> Permisos { get; set; }
         public static int VencimientosPermisos { get; set; }
         public static bool Bloqueado { get; set; }
