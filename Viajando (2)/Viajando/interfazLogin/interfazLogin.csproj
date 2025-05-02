@@ -84,6 +84,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="bin\Debug\interfazLogin.exe.config" />
+    <None Include="bin\Debug\interfazPpal.exe.config" />
     <None Include="login\FrmLogin1.resx">
       <DependentUpon>FrmLogin1.cs</DependentUpon>
     </None>
@@ -174,12 +176,26 @@
   <ItemGroup>
     <None Include="Resources\signo-de-exclamacion.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\people-2591874_1280.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\people-2591874_640.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\CapaDatos.dll" />
+    <Content Include="bin\Debug\CapaDatos.pdb" />
+    <Content Include="bin\Debug\CapaNegocio.dll" />
+    <Content Include="bin\Debug\CapaNegocio.pdb" />
+    <Content Include="bin\Debug\CapaServicios.dll" />
+    <Content Include="bin\Debug\CapaServicios.pdb" />
+    <Content Include="bin\Debug\CapaSesion.dll" />
+    <Content Include="bin\Debug\CapaSesion.pdb" />
+    <Content Include="bin\Debug\interfazLogin.exe" />
+    <Content Include="bin\Debug\interfazLogin.pdb" />
+    <Content Include="bin\Debug\interfazPpal.exe" />
+    <Content Include="bin\Debug\interfazPpal.pdb" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.CodeCoverage.Shim.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

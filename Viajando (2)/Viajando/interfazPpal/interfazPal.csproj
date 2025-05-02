@@ -272,6 +272,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="bin\Debug\interfazPpal.exe.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -351,6 +352,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\clientes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\CapaDatos.dll" />
+    <Content Include="bin\Debug\CapaDatos.pdb" />
+    <Content Include="bin\Debug\CapaNegocio.dll" />
+    <Content Include="bin\Debug\CapaNegocio.pdb" />
+    <Content Include="bin\Debug\CapaServicios.dll" />
+    <Content Include="bin\Debug\CapaServicios.pdb" />
+    <Content Include="bin\Debug\CapaSesion.dll" />
+    <Content Include="bin\Debug\CapaSesion.pdb" />
+    <Content Include="bin\Debug\interfazPpal.exe" />
+    <Content Include="bin\Debug\interfazPpal.pdb" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.CodeCoverage.Shim.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
