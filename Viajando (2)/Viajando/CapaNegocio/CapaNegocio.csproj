@@ -47,10 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BackUp\CN_BackUp.cs" />
     <Compile Include="CN_Alta usuario\AtributosUsuario.cs" />
     <Compile Include="CN_Alta usuario\CN_Alta_Usuario.cs" />
     <Compile Include="Bitacora\CN_Bitacora.cs" />
+    <Compile Include="Backup\CN_BackUp.cs" />
     <Compile Include="CN_ResetearIntentosFallidos.cs" />
     <Compile Include="CN_Usuario\CN_BloquearUsuario.cs" />
     <Compile Include="CN_Paquetes\CN_BuscarPaquete.cs" />
