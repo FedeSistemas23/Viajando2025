@@ -26,7 +26,7 @@ namespace CapaDatos
                 {
                     while (leer.Read())
                     {
-                        CS_UsuarioEnSesion.Id_Usuario = leer.GetInt32(leer.GetOrdinal("IdUsuario"));
+                        CS_UsuarioEnSesion.Id_Usuario = leer.GetInt32(leer.GetOrdinal("Id_Usuario"));
                         CS_UsuarioEnSesion.Username = leer["Username"].ToString();
                         CS_UsuarioEnSesion.Apellido = leer["Apellidos"].ToString();
                         CS_UsuarioEnSesion.Nombre = leer["Nombre"].ToString();
@@ -40,6 +40,7 @@ namespace CapaDatos
                             CS_UsuarioEnSesion.Id_Familia = 0; // O algún otro manejo adecuado
                         }
                     }
+
                     return true; // Usuario válido
                 }
                 else

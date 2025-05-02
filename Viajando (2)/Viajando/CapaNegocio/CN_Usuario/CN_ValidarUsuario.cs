@@ -1,4 +1,5 @@
 ﻿using CapaDatos;
+using Microsoft.SqlServer.Server;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,8 @@ namespace CapaNegocio
 {
     public class CN_ValidarUsuario
     {
-        private string username;
+        private string nombreusuario;
+        string username;
         private string password;
         CD_ValidarUsuario validarusuario = new CD_ValidarUsuario();
 
@@ -24,12 +26,12 @@ namespace CapaNegocio
             password = Pass;
         }
         
-        public bool ValidarUsuarioL()
+        public bool ValidarUsuarioL(string username)
         {
             bool existe = validarusuario.ValidarUsuarioD(username);
             if (existe)
             {
-                                
+                               
                 return true;
             }
             else 

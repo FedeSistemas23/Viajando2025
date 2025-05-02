@@ -65,7 +65,7 @@ namespace CapaSesion
             email = null;
             UsuarioTemporal = false;
             VencimientoUsuarioTemporal = 0;
-            Familias = null;
+            Id_Familia = 0;
            // Permisos.Clear(); 
             VencimientosPermisos = 0;
             Bloqueado = false;

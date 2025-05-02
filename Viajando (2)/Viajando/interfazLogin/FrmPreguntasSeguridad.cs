@@ -35,7 +35,7 @@ namespace interfazLogin
         private void btnEnviarUsuario_Click(object sender, EventArgs e)
         {
             int idUsuario = CS_UsuarioEnSesion.Id_Usuario;
-            bool existe = validarUsuario.ValidarUsuarioL();
+            bool existe = validarUsuario.ValidarUsuarioL(txtUsuario.Text);
             if (!existe)
             {
                 lblNoexisteUsuario.Text = "El usuario no existe. Ingrese el usuario correcto";
