@@ -12,7 +12,7 @@ namespace CapaDatos
     {
         Conexion conn = new Conexion();
         SqlCommand cmd = new SqlCommand();
-        public bool ValidarUsuarioD(string username)
+        public bool ValidarNombreUsuarioD(string username)
         {
 
             try
