@@ -51,7 +51,7 @@ namespace CapaDatos
             }
             catch (Exception ex)
             {
-                throw new Exception("Error al ejecutar SP o Conexion a la BD. \n \n" + ex.Message);
+                 throw new Exception("Error al ejecutar SP o Conexion a la BD. \n \n" + ex.Message);
             }
             finally
             {
