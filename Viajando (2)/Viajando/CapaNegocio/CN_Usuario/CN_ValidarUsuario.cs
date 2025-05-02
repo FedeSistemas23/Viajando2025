@@ -11,8 +11,8 @@ namespace CapaNegocio
     public class CN_ValidarUsuario
     {
         private string nombreusuario;
-        string username;
-        private string password;
+        string Username;
+        private string Password;
         CD_ValidarUsuario validarusuario = new CD_ValidarUsuario();
 
         public CN_ValidarUsuario(string NombreUsuario)
@@ -20,15 +20,16 @@ namespace CapaNegocio
             nombreusuario = NombreUsuario;
         }
 
-        public CN_ValidarUsuario(string Username, string Pass) 
+        public CN_ValidarUsuario() 
         {
-            username = Username;
-            password = Pass;
+            
         }
         
         
-        public bool ValidarNombreUsuarioL()
+        public bool ValidarNombreUsuarioL(string username)
         {
+            Username = username;
+            //Password = password;
             bool existe = validarusuario.ValidarNombreUsuarioD(username);
             if (existe)
             {

@@ -36,7 +36,7 @@ namespace interfazLogin
         {
             int idUsuario = CS_UsuarioEnSesion.Id_Usuario;
             CN_ValidarUsuario validarUsuario = new CN_ValidarUsuario(txtUsuario.Text);
-            bool existe = validarUsuario.ValidarNombreUsuarioL();
+            bool existe = validarUsuario.ValidarNombreUsuarioL(txtUsuario.Text);
             if (!existe)
             {
                 lblNoexisteUsuario.Text = "El usuario no existe. Ingrese el usuario correcto";
