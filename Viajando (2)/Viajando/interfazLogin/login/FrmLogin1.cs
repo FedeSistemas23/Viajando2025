@@ -97,7 +97,7 @@ namespace interfazLogin
             string pass = txtPass.Text;
             string usuario = txtUsuario.Text;
             CN_ValidarUsuario Usuario = new CN_ValidarUsuario(usuario, pass);
-            bool Existe = Usuario.ValidarUsuarioL(usuario);
+            bool Existe = Usuario.ValidarUsuarioL();
             if (Existe)
             {
                 this.Hide();
@@ -105,10 +105,7 @@ namespace interfazLogin
                 saludo.ShowDialog();
                 menu1.Show();
             }
-            else
-            {
-                MessageBox.Show("El usuario no existe");
-            }
+            
         }
         /*CN_BloquearUsuario BloqueadorUsuario = new CN_BloquearUsuario();
         FrmPreguntasSeguridad FrmPreguntasSeguridad = new FrmPreguntasSeguridad();

@@ -26,7 +26,7 @@ namespace CapaNegocio
             password = Pass;
         }
         
-        public bool ValidarUsuarioL(string username)
+        public bool ValidarUsuarioL()
         {
             bool existe = validarusuario.ValidarUsuarioD(username);
             if (existe)
