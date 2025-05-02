@@ -12,7 +12,7 @@ namespace interfazLogin
     {
         MenuPpal menu1 = new MenuPpal();
         CN_GuardaRespuestas guardaRespuestas = new CN_GuardaRespuestas();
-        CN_ValidarUsuario validarusuario = new CN_ValidarUsuario();
+        //CN_ValidarUsuario validarusuario = new CN_ValidarUsuario();
         CN_UsuarioEnSesion usuario = new CN_UsuarioEnSesion();
 
         string Aleatorio;

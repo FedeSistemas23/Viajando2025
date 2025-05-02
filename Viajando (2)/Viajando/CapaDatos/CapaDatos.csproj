@@ -47,7 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BackUp\CD_BackUp.cs" />
     <Compile Include="Bitacora\CD_Bitacora.cs" />
     <Compile Include="CD_Usuario\CD_BloquearUsuario.cs" />
     <Compile Include="CD_Reservas\CD_Busqueda.cs" />
@@ -110,6 +109,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BackUp\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
