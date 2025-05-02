@@ -15,22 +15,35 @@ namespace CapaNegocio
         private string Password;
         CD_ValidarUsuario validarusuario = new CD_ValidarUsuario();
 
-        public CN_ValidarUsuario(string NombreUsuario)
-        {
-            nombreusuario = NombreUsuario;
+        public CN_ValidarUsuario()
+        {        
         }
 
-        public CN_ValidarUsuario() 
+        public CN_ValidarUsuario(string username, string pass) 
         {
-            
+            Username= username;
+            Password= pass;
         }
         
         
-        public bool ValidarNombreUsuarioL(string username)
-        {
-            Username = username;
+        public bool ValidarNombreUsuarioL()
+        {            
             //Password = password;
-            bool existe = validarusuario.ValidarNombreUsuarioD(username);
+            bool existe = validarusuario.ValidarNombreUsuarioD(Username);
+            if (existe)
+            {
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool ValidarNombreUsuarioL(string usuario)
+        {
+            //Password = password;
+            bool existe = validarusuario.ValidarNombreUsuarioD(usuario);
             if (existe)
             {
 

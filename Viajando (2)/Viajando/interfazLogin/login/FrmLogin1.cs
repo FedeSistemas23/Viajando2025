@@ -96,8 +96,8 @@ namespace interfazLogin
             
             string pass = txtPass.Text;
             string usuario = txtUsuario.Text;
-            CN_ValidarUsuario Usuario = new CN_ValidarUsuario();
-            bool Existe = Usuario.ValidarNombreUsuarioL(usuario);
+            CN_ValidarUsuario Usuario = new CN_ValidarUsuario(usuario, pass);
+            bool Existe = Usuario.ValidarNombreUsuarioL();
             if (Existe) 
             {
                 this.Hide();

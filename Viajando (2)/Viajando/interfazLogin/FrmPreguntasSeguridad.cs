@@ -35,7 +35,7 @@ namespace interfazLogin
         private void btnEnviarUsuario_Click(object sender, EventArgs e)
         {
             int idUsuario = CS_UsuarioEnSesion.Id_Usuario;
-            CN_ValidarUsuario validarUsuario = new CN_ValidarUsuario(txtUsuario.Text);
+            CN_ValidarUsuario validarUsuario = new CN_ValidarUsuario();
             bool existe = validarUsuario.ValidarNombreUsuarioL(txtUsuario.Text);
             if (!existe)
             {
