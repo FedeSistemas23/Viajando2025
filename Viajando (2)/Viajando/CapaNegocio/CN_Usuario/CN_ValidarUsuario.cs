@@ -33,7 +33,7 @@ namespace CapaNegocio
             bool existe = validarusuario.ValidarNombreUsuarioD(Username);
             if (existe)
             {
-                int digito =Seguridad.hasheo2(Username, Password);
+                int digito =Seguridad.hasheo(Username, Password);
                 
                 return true;
             }
@@ -42,9 +42,12 @@ namespace CapaNegocio
                 return false;
             }
         }
+
+        //el sigueinte metodo validar usuario se utiliza para verificar si el usuario existe, cuando ingresa el usuario desde 
+        //el formulario de preguntas de seguridad, cuando olvida su contraseña.
         public bool ValidarNombreUsuarioL(string usuario)
         {
-            //Password = password;
+            
             bool existe = validarusuario.ValidarNombreUsuarioD(usuario);
             if (existe)
             {
