@@ -1,11 +1,6 @@
 ﻿using CapaDatos;
 using CapaSesion;
-using Microsoft.SqlServer.Server;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using CapaServicios;
 
 namespace CapaNegocio
 {
@@ -17,24 +12,22 @@ namespace CapaNegocio
         CD_ValidarUsuario validarusuario = new CD_ValidarUsuario();
 
         public CN_ValidarUsuario()
-        {        
+        {
         }
 
-        public CN_ValidarUsuario(string username, string pass) 
+        public CN_ValidarUsuario(string username, string pass)
         {
-            Username= username;
-            Password= pass;
+            Username = username;
+            Password = pass;
         }
-        
-        
+
+
         public bool ValidarNombreUsuarioL()
-        {            
-            //Password = password;
+        {
+            int digito = Seguridad.hasheo(Username, Password);
             bool existe = validarusuario.ValidarNombreUsuarioD(Username);
-            if (existe)
+            if (existe && ComparaDigitoVerificador.ComparaDigito(digito, Username) == true && )
             {
-                int digito =Seguridad.hasheo(Username, Password);
-                
                 return true;
             }
             else
@@ -47,7 +40,7 @@ namespace CapaNegocio
         //el formulario de preguntas de seguridad, cuando olvida su contraseña.
         public bool ValidarNombreUsuarioL(string usuario)
         {
-            
+
             bool existe = validarusuario.ValidarNombreUsuarioD(usuario);
             if (existe)
             {

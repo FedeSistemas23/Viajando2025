@@ -42,6 +42,7 @@ namespace CapaSesion
             string hasheo = Seguridad.SHA256(userpass);
             int digito = CreaDigitoVerificador.Calcular(hasheo);
             return digito;
+            
         }
 
         
