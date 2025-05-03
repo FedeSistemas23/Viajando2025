@@ -1,4 +1,6 @@
-﻿namespace CapaServicios
+﻿using CapaDatos;
+
+namespace CapaServicios
 {
     public static class ComparaDigitoVerificador
     {

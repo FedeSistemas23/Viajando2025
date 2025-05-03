@@ -90,6 +90,7 @@
     <Compile Include="CN_Usuario\CN_UsuarioEnSesion.cs" />
     <Compile Include="CN_Usuario\CN_ValidarUsuario.cs" />
     <Compile Include="CN_Reservas\MuestraNumReserva.cs" />
+    <Compile Include="ComparaDigitoVerificador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

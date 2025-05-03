@@ -2,7 +2,7 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
-using CapaServicios;
+using System.Runtime.Remoting.Messaging;
 
 namespace CapaDatos
 {
@@ -23,22 +23,20 @@ namespace CapaDatos
                 SqlDataReader leer = cmd.ExecuteReader();
                 if (leer.HasRows)
                 {
-                    while (leer.Read())
+                    leer.Read();
                     {
-                        CS_UsuarioEnSesion.Id_Usuario = leer.GetInt32(leer.GetOrdinal("Id_Usuario"));
-                        CS_UsuarioEnSesion.Username = leer["Username"].ToString();
-                        CS_UsuarioEnSesion.Apellido = leer["Apellidos"].ToString();
-                        CS_UsuarioEnSesion.Nombre = leer["Nombre"].ToString();
-                        if (leer["Id_Familia"] != DBNull.Value && int.TryParse(leer["Id_Familia"].ToString(), out int idFamilia))
-                        {
-                            CS_UsuarioEnSesion.Id_Familia = idFamilia;
-                        }
-                        else
-                        {
-                            // Manejar el caso en que el valor es nulo o no es un entero válido
-                            CS_UsuarioEnSesion.Id_Familia = 0; // O algún otro manejo adecuado
-                        }
+                        // Obtiene el valor de la columna "Resultado" (que será 1 o 0)
+                        int resultado = leer.GetInt32(leer.GetOrdinal("Resultado"));
+
+                        // Devuelve true si el resultado es 1, false si es 0
+                        return resultado == 1;
                     }
+                        else
+                    {
+                        // Si no se encontraron filas (por ejemplo, usuario no existe), devolvemos false
+                        return false;
+                    }
+                }
 
                     return true; // Usuario válido
                 }
