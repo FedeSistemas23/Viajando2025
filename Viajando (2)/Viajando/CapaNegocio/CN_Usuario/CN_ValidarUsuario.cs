@@ -1,4 +1,5 @@
 ﻿using CapaDatos;
+using CapaSesion;
 using Microsoft.SqlServer.Server;
 using System;
 using System.Collections.Generic;
@@ -32,7 +33,8 @@ namespace CapaNegocio
             bool existe = validarusuario.ValidarNombreUsuarioD(Username);
             if (existe)
             {
-
+                int digito =Seguridad.hasheo2(Username, Password);
+                
                 return true;
             }
             else

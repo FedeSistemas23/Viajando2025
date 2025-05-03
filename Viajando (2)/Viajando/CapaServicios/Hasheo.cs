@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using CapaServicios;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
+
 
 namespace CapaSesion
 {
@@ -38,11 +36,16 @@ namespace CapaSesion
 
 
         }
-        public static string hasheo2(string username, string pass) {
-            string userpass =username+pass ;
-            string hasheo2 = Seguridad.SHA256(userpass);
-            return hasheo2;
+        public static int hasheo2(string username, string pass)
+        {
+            string userpass = username + pass;
+            string hasheo = Seguridad.SHA256(userpass);
+            int digito = CreaDigitoVerificador.Calcular(hasheo);
+
+            return digito;
+             
         }
+
     }
 }
 
