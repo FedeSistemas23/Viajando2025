@@ -93,7 +93,11 @@ namespace interfazLogin
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            
+            this.Hide();
+            bienvenida saludo = new bienvenida();
+            saludo.ShowDialog();
+            menu1.Show();
+            /*
             string pass = txtPass.Text;
             string usuario = txtUsuario.Text;
             CN_ValidarUsuario Usuario = new CN_ValidarUsuario(usuario, pass);
@@ -216,6 +220,9 @@ namespace interfazLogin
         }
     }*/
 
+
+
+        }
         private void lnkOlvidar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             FrmPreguntasSeguridad preguntas = new FrmPreguntasSeguridad();

@@ -20,7 +20,7 @@ namespace Loggin
         public CrearReserva(int id , string nombre , DateTime FechaSalida , DateTime fechaRegreso, int Disponibilidad )
         {
             InitializeComponent();
-            txtDestino.Text = nombre;
+            cbxDestino.Text = nombre;
             lbl_IdDestino.Text = Convert.ToString(id);
             dtpFechaSalida.Value = FechaSalida ;
             dtpFechaRegreso.Value = fechaRegreso;
@@ -29,10 +29,10 @@ namespace Loggin
         private bool ValidarControles()
         {
             // Verificar si los TextBox están vacíos
-            if (string.IsNullOrWhiteSpace(txtDestino.Text))
+            if (string.IsNullOrWhiteSpace(cbxDestino.Text))
             {
                 MessageBox.Show("El campo 'Destino' no puede estar vacío.");
-                txtDestino.Focus();
+                cbxDestino.Focus();
                 return false;
             }
             if (string.IsNullOrWhiteSpace(txtNumeroReserva.Text))
@@ -83,7 +83,7 @@ namespace Loggin
             {
                 DataGridViewRow filaSeleccionada = dgvReservas.Rows[e.RowIndex];
                 txtNumeroReserva.Text = filaSeleccionada.Cells["NroReserva"].Value.ToString();
-                txtDestino.Text = filaSeleccionada.Cells["Destino"].Value.ToString();
+                cbxDestino.Text = filaSeleccionada.Cells["Destino"].Value.ToString();
                 dtpFechaSalida.Text = filaSeleccionada.Cells["FechaSalida"].Value.ToString();
                 dtpFechaRegreso.Text = filaSeleccionada.Cells["FechaRegreso"].Value.ToString();
                 npdCantidadPax.Text = filaSeleccionada.Cells["CantidadPax"].Value.ToString();
@@ -93,7 +93,7 @@ namespace Loggin
                 npdAsientosCama.Text = filaSeleccionada.Cells["AsientosCama"].Value.ToString();
                 npdCantHabitaciones.Text = filaSeleccionada.Cells["CantidadHabitaciones"].Value.ToString();
                 npdSingle.Text = filaSeleccionada.Cells["Single"].Value.ToString();
-                npdDoble.Text = filaSeleccionada.Cells["Doble"].Value.ToString(); txtDestino.Text = filaSeleccionada.Cells["Destino"].Value.ToString();
+                npdDoble.Text = filaSeleccionada.Cells["Doble"].Value.ToString(); cbxDestino.Text = filaSeleccionada.Cells["Destino"].Value.ToString();
                 npdTriple.Text = filaSeleccionada.Cells["Triple"].Value.ToString();
                 npdCuadruple.Text = filaSeleccionada.Cells["Cuadruple"].Value.ToString();
                 txtAscenso.Text = filaSeleccionada.Cells["AscensoMicro"].Value.ToString();
@@ -118,13 +118,6 @@ namespace Loggin
             frm.ShowDialog();
         }
 
-        private void btnBuscarDestino_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-            FrmBuscarPaquete frm = new FrmBuscarPaquete();
-            frm.ShowDialog();
-
-        }
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
             CN_MostrarReserva mostrar = new CN_MostrarReserva();
@@ -162,7 +155,7 @@ namespace Loggin
                             AdicionalCama = Convert.ToBoolean(ckbAdicionalCama.Checked),
                             Habitaciones = Convert.ToInt32(npdCantHabitaciones.Value),
                             NombreVendedor = txtVendedor.Text,
-                            Destino = txtDestino.Text,
+                            Destino = cbxDestino.Text,
                         };
 
                         bool guardada = reservaNueva.GuardarReservaCN(reserva);
@@ -230,7 +223,7 @@ namespace Loggin
                     AdicionalCama = Convert.ToBoolean(ckbAdicionalCama.Checked),
                     Habitaciones = Convert.ToInt32(npdCantHabitaciones.Value),
                     NombreVendedor = txtVendedor.Text,
-                    Destino = txtDestino.Text,
+                    Destino = cbxDestino.Text,
                 };
 
                 if (reservaEditar.EditarReservaCN(reserva))
@@ -249,10 +242,8 @@ namespace Loggin
         }
         private void button1_Click_2(object sender, EventArgs e)
         {
-            FrmCargaPasajeros frm = new FrmCargaPasajeros();
-            frm.ShowDialog();
+          
 
-            //   int NumeroReserva = Convert.ToInt32(lblNroReserva.Text);
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -265,7 +256,7 @@ namespace Loggin
                 // DataGridViewRow filaSeleccionada = dgvReservas.Rows[e.RowIndex];
                 lbl_IdDestino.Text = dgvReservas.CurrentRow.Cells["Id_Paquete"].Value.ToString();
                 txtNumeroReserva.Text = dgvReservas.CurrentRow.Cells["NroReserva"].Value.ToString();
-                txtDestino.Text = dgvReservas.CurrentRow.Cells["Destino"].Value.ToString();
+                cbxDestino.Text = dgvReservas.CurrentRow.Cells["Destino"].Value.ToString();
                 dtpFechaSalida.Text = dgvReservas.CurrentRow.Cells["FechaSalida"].Value.ToString();
                 dtpFechaRegreso.Text = dgvReservas.CurrentRow.Cells["FechaRegreso"].Value.ToString();
                 npdCantidadPax.Text = dgvReservas.CurrentRow.Cells["CantidadPasajeros"].Value.ToString();
@@ -368,7 +359,7 @@ namespace Loggin
                 ckbAdicionalCama.Text = dgvReservas.CurrentRow.Cells["AdicionalCama"].Value.ToString();
                 txtVendedor.Text = dgvReservas.CurrentRow.Cells["NombreVendedor"].Value.ToString();
                 //txtAscenso.Text = dgvReservas.CurrentRow.Cells["AscensoM"].Value.ToString();
-                dtpFechaReserva.Text = dgvReservas.CurrentRow.Cells["fecha"].Value.ToString();
+               // dtpFechaReserva.Text = dgvReservas.CurrentRow.Cells["fecha"].Value.ToString();
             }
         }
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -406,6 +397,49 @@ namespace Loggin
         {
             FrmBuscarReserva frm = new FrmBuscarReserva();
             frm.Show();
+        }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void npdCantHabitaciones_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void npdCantidadPax_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void ckbDestino_CheckedChanged(object sender, EventArgs e)
+        {
+            this.Close();
+            FrmBuscarPaquete frm = new FrmBuscarPaquete();
+            frm.ShowDialog();
+        }
+
+        private void ckbNumRerva_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ckbFechaRegreso_CheckedChanged(object sender, EventArgs e)
+        {
+            FrmCargaPasajeros frm = new FrmCargaPasajeros();
+            frm.ShowDialog();
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
