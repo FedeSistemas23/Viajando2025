@@ -13,6 +13,7 @@ namespace CapaNegocio
 
         ComparaDigitoVerificador comparador;
         CD_ValidarUsuario validarusuario;
+        CN_ComparaPassword comparadorPass;
 
         public CN_ValidarUsuario()
         {
