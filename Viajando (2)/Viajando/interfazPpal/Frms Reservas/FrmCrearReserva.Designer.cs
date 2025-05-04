@@ -37,9 +37,39 @@
             this.btnVer = new System.Windows.Forms.Button();
             this.dgvReservas = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+<<<<<<< Updated upstream
+=======
+            this.cbxDestino = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.txtNacionalidad = new System.Windows.Forms.TextBox();
+            this.cmbTipoDoc = new System.Windows.Forms.ComboBox();
+            this.txtNumDoc = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.FechaNacimiento = new System.Windows.Forms.DateTimePicker();
+>>>>>>> Stashed changes
             this.label17 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+<<<<<<< Updated upstream
+=======
+            this.txtObservaciones = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.npdCuadruple = new System.Windows.Forms.NumericUpDown();
+            this.label26 = new System.Windows.Forms.Label();
+            this.npdSingle = new System.Windows.Forms.NumericUpDown();
+            this.label25 = new System.Windows.Forms.Label();
+            this.lblDoble = new System.Windows.Forms.Label();
+            this.lblSingle = new System.Windows.Forms.Label();
+            this.npdTriple = new System.Windows.Forms.NumericUpDown();
+            this.npdCantHabitaciones = new System.Windows.Forms.NumericUpDown();
+            this.label20 = new System.Windows.Forms.Label();
+            this.npdDoble = new System.Windows.Forms.NumericUpDown();
+>>>>>>> Stashed changes
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -92,7 +122,11 @@
             this.txtAscenso = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+<<<<<<< Updated upstream
             this.button6 = new System.Windows.Forms.Button();
+=======
+            this.button2 = new System.Windows.Forms.Button();
+>>>>>>> Stashed changes
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label24 = new System.Windows.Forms.Label();
@@ -121,7 +155,11 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
+<<<<<<< Updated upstream
             this.button3.Location = new System.Drawing.Point(765, 655);
+=======
+            this.button3.Location = new System.Drawing.Point(923, 348);
+>>>>>>> Stashed changes
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(87, 30);
@@ -170,7 +208,11 @@
             this.btnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnviar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEnviar.ForeColor = System.Drawing.Color.White;
+<<<<<<< Updated upstream
             this.btnEnviar.Location = new System.Drawing.Point(856, 655);
+=======
+            this.btnEnviar.Location = new System.Drawing.Point(1014, 348);
+>>>>>>> Stashed changes
             this.btnEnviar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.Size = new System.Drawing.Size(87, 32);
@@ -199,7 +241,11 @@
             this.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVer.ForeColor = System.Drawing.Color.White;
+<<<<<<< Updated upstream
             this.btnVer.Location = new System.Drawing.Point(490, 654);
+=======
+            this.btnVer.Location = new System.Drawing.Point(740, 348);
+>>>>>>> Stashed changes
             this.btnVer.Margin = new System.Windows.Forms.Padding(4);
             this.btnVer.Name = "btnVer";
             this.btnVer.Size = new System.Drawing.Size(87, 30);
@@ -288,6 +334,126 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1363, 254);
             this.panel1.TabIndex = 156;
+<<<<<<< Updated upstream
+=======
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // cbxDestino
+            // 
+            this.cbxDestino.FormattingEnabled = true;
+            this.cbxDestino.Items.AddRange(new object[] {
+            "Seleccione Tipo",
+            "D.N.I",
+            "Pasaporte",
+            "Cuil",
+            "Cuit",
+            "Cedula Identidad"});
+            this.cbxDestino.Location = new System.Drawing.Point(191, 37);
+            this.cbxDestino.Name = "cbxDestino";
+            this.cbxDestino.Size = new System.Drawing.Size(150, 24);
+            this.cbxDestino.TabIndex = 277;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(188, 243);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(151, 22);
+            this.textBox1.TabIndex = 275;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(191, 224);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(41, 16);
+            this.label30.TabIndex = 276;
+            this.label30.Text = "Email";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(192, 174);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(88, 16);
+            this.label27.TabIndex = 274;
+            this.label27.Text = "Nacionalidad";
+            // 
+            // txtNacionalidad
+            // 
+            this.txtNacionalidad.Location = new System.Drawing.Point(14, 243);
+            this.txtNacionalidad.Name = "txtNacionalidad";
+            this.txtNacionalidad.Size = new System.Drawing.Size(151, 22);
+            this.txtNacionalidad.TabIndex = 271;
+            // 
+            // cmbTipoDoc
+            // 
+            this.cmbTipoDoc.FormattingEnabled = true;
+            this.cmbTipoDoc.Items.AddRange(new object[] {
+            "Seleccione Tipo",
+            "D.N.I",
+            "Pasaporte",
+            "Cuil",
+            "Cuit",
+            "Cedula Identidad"});
+            this.cmbTipoDoc.Location = new System.Drawing.Point(15, 140);
+            this.cmbTipoDoc.Name = "cmbTipoDoc";
+            this.cmbTipoDoc.Size = new System.Drawing.Size(150, 24);
+            this.cmbTipoDoc.TabIndex = 265;
+            // 
+            // txtNumDoc
+            // 
+            this.txtNumDoc.Location = new System.Drawing.Point(187, 139);
+            this.txtNumDoc.Name = "txtNumDoc";
+            this.txtNumDoc.Size = new System.Drawing.Size(154, 22);
+            this.txtNumDoc.TabIndex = 266;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(11, 121);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(105, 16);
+            this.label21.TabIndex = 267;
+            this.label21.Text = "Tipo documento";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(191, 120);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(127, 16);
+            this.label19.TabIndex = 268;
+            this.label19.Text = "Número Documento";
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.Location = new System.Drawing.Point(1090, 224);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(87, 32);
+            this.btnGuardar.TabIndex = 207;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click_1);
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(187, 195);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(154, 22);
+            this.txtTelefono.TabIndex = 270;
+            // 
+            // FechaNacimiento
+            // 
+            this.FechaNacimiento.Location = new System.Drawing.Point(14, 194);
+            this.FechaNacimiento.Name = "FechaNacimiento";
+            this.FechaNacimiento.Size = new System.Drawing.Size(151, 22);
+            this.FechaNacimiento.TabIndex = 269;
+>>>>>>> Stashed changes
             // 
             // label17
             // 
@@ -322,6 +488,131 @@
             this.label10.TabIndex = 262;
             this.label10.Text = "*";
             // 
+<<<<<<< Updated upstream
+=======
+            // txtObservaciones
+            // 
+            this.txtObservaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtObservaciones.Location = new System.Drawing.Point(1078, 139);
+            this.txtObservaciones.Margin = new System.Windows.Forms.Padding(4);
+            this.txtObservaciones.Name = "txtObservaciones";
+            this.txtObservaciones.Size = new System.Drawing.Size(254, 22);
+            this.txtObservaciones.TabIndex = 206;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(1081, 119);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(84, 16);
+            this.label14.TabIndex = 226;
+            this.label14.Text = "Observación";
+            // 
+            // npdCuadruple
+            // 
+            this.npdCuadruple.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.npdCuadruple.Location = new System.Drawing.Point(731, 244);
+            this.npdCuadruple.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.npdCuadruple.Name = "npdCuadruple";
+            this.npdCuadruple.Size = new System.Drawing.Size(72, 22);
+            this.npdCuadruple.TabIndex = 219;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(733, 224);
+            this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(104, 16);
+            this.label26.TabIndex = 232;
+            this.label26.Text = "Hab. Cuadruple:";
+            // 
+            // npdSingle
+            // 
+            this.npdSingle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.npdSingle.Location = new System.Drawing.Point(731, 87);
+            this.npdSingle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.npdSingle.Name = "npdSingle";
+            this.npdSingle.Size = new System.Drawing.Size(72, 22);
+            this.npdSingle.TabIndex = 216;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(733, 176);
+            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(77, 16);
+            this.label25.TabIndex = 231;
+            this.label25.Text = "Hab. Triple:";
+            // 
+            // lblDoble
+            // 
+            this.lblDoble.AutoSize = true;
+            this.lblDoble.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDoble.Location = new System.Drawing.Point(732, 119);
+            this.lblDoble.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDoble.Name = "lblDoble";
+            this.lblDoble.Size = new System.Drawing.Size(50, 16);
+            this.lblDoble.TabIndex = 230;
+            this.lblDoble.Text = " Doble:";
+            // 
+            // lblSingle
+            // 
+            this.lblSingle.AutoSize = true;
+            this.lblSingle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSingle.Location = new System.Drawing.Point(733, 68);
+            this.lblSingle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSingle.Name = "lblSingle";
+            this.lblSingle.Size = new System.Drawing.Size(51, 16);
+            this.lblSingle.TabIndex = 223;
+            this.lblSingle.Text = " Single:";
+            // 
+            // npdTriple
+            // 
+            this.npdTriple.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.npdTriple.Location = new System.Drawing.Point(731, 197);
+            this.npdTriple.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.npdTriple.Name = "npdTriple";
+            this.npdTriple.Size = new System.Drawing.Size(72, 22);
+            this.npdTriple.TabIndex = 218;
+            // 
+            // npdCantHabitaciones
+            // 
+            this.npdCantHabitaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.npdCantHabitaciones.Location = new System.Drawing.Point(731, 38);
+            this.npdCantHabitaciones.Margin = new System.Windows.Forms.Padding(4);
+            this.npdCantHabitaciones.Name = "npdCantHabitaciones";
+            this.npdCantHabitaciones.Size = new System.Drawing.Size(72, 22);
+            this.npdCantHabitaciones.TabIndex = 215;
+            this.npdCantHabitaciones.ValueChanged += new System.EventHandler(this.npdCantHabitaciones_ValueChanged);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(728, 17);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(90, 16);
+            this.label20.TabIndex = 224;
+            this.label20.Text = " Habitaciones";
+            this.label20.Click += new System.EventHandler(this.label20_Click);
+            // 
+            // npdDoble
+            // 
+            this.npdDoble.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.npdDoble.Location = new System.Drawing.Point(731, 140);
+            this.npdDoble.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.npdDoble.Name = "npdDoble";
+            this.npdDoble.Size = new System.Drawing.Size(72, 22);
+            this.npdDoble.TabIndex = 217;
+            // 
+>>>>>>> Stashed changes
             // txtApellido
             // 
             this.txtApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -879,6 +1170,7 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             // 
+<<<<<<< Updated upstream
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.CornflowerBlue;
@@ -892,6 +1184,21 @@
             this.button6.TabIndex = 265;
             this.button6.Text = "Buscar ";
             this.button6.UseVisualStyleBackColor = false;
+=======
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(1106, 349);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(87, 31);
+            this.button2.TabIndex = 210;
+            this.button2.Text = "Pagar";
+            this.button2.UseVisualStyleBackColor = false;
+>>>>>>> Stashed changes
             // 
             // button5
             // 
@@ -899,7 +1206,11 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
+<<<<<<< Updated upstream
             this.button5.Location = new System.Drawing.Point(673, 653);
+=======
+            this.button5.Location = new System.Drawing.Point(1199, 349);
+>>>>>>> Stashed changes
             this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(87, 32);
@@ -914,7 +1225,11 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
+<<<<<<< Updated upstream
             this.button4.Location = new System.Drawing.Point(581, 654);
+=======
+            this.button4.Location = new System.Drawing.Point(831, 348);
+>>>>>>> Stashed changes
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(87, 30);
