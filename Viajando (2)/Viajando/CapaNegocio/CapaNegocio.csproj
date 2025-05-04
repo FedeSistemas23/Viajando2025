@@ -51,7 +51,6 @@
     <Compile Include="CN_Alta usuario\CN_Alta_Usuario.cs" />
     <Compile Include="Bitacora\CN_Bitacora.cs" />
     <Compile Include="Backup\CN_BackUp.cs" />
-    <Compile Include="CN_ResetearIntentosFallidos.cs" />
     <Compile Include="CN_Usuario\CN_BloquearUsuario.cs" />
     <Compile Include="CN_Paquetes\CN_BuscarPaquete.cs" />
     <Compile Include="CN_Reservas\CN_Busqueda.cs" />
@@ -87,11 +86,11 @@
     <Compile Include="CN_Paquetes\CN_MostrarPaquetes.cs" />
     <Compile Include="CN_Pasajeros\CN_MostrarPasajero.cs" />
     <Compile Include="CN_Hoteles\CN_MostrarProveedor.cs" />
-    <Compile Include="CN_Usuario\CN_registrarIntentosFallidos.cs" />
     <Compile Include="CN_Usuario\CN_TraerPreguntasYRespuestas.cs" />
     <Compile Include="CN_Usuario\CN_UsuarioEnSesion.cs" />
     <Compile Include="CN_Usuario\CN_ValidarUsuario.cs" />
     <Compile Include="CN_Reservas\MuestraNumReserva.cs" />
+    <Compile Include="ComparaDigitoVerificador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

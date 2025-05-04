@@ -10,7 +10,7 @@ namespace interfazLogin
     public partial class FrmPreguntasSeguridad : Form
     {
         CN_UsuarioEnSesion usuario = new CN_UsuarioEnSesion();
-        CN_ValidarUsuario validarUsuario = new CN_ValidarUsuario();
+        
         CN_TraerPreguntasYRespuestas pregYresp = new CN_TraerPreguntasYRespuestas();
         CN_EditarPassword editarPass = new CN_EditarPassword();
         FrmLogin1 form = new FrmLogin1();
@@ -35,7 +35,8 @@ namespace interfazLogin
         private void btnEnviarUsuario_Click(object sender, EventArgs e)
         {
             int idUsuario = CS_UsuarioEnSesion.Id_Usuario;
-            bool existe = validarUsuario.ValidarUsuarioL();
+            CN_ValidarUsuario validarUsuario = new CN_ValidarUsuario();
+            bool existe = validarUsuario.ValidarNombreUsuarioL(txtUsuario.Text);
             if (!existe)
             {
                 lblNoexisteUsuario.Text = "El usuario no existe. Ingrese el usuario correcto";
