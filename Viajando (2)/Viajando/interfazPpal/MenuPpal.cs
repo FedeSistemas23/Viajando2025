@@ -45,7 +45,7 @@ namespace Loggin
         private void editarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
            CrearReserva frm = new CrearReserva();
-            frm.ShowDialog();
+           frm.ShowDialog();
         }
 
         private void crearNuevoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -154,14 +154,31 @@ namespace Loggin
 
         private void buscarReservaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmBuscarReserva buscarReserva = new FrmBuscarReserva();
-            buscarReserva.ShowDialog(); 
+            FrmConfiguracionDelSistema Reservas = new FrmConfiguracionDelSistema();
+            Reservas.ShowDialog(); 
+            //   FrmBuscarReserva buscarReserva = new FrmBuscarReserva();
+            // buscarReserva.ShowDialog(); 
         }
 
         private void paquetesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmBuscarPaquete buscarPaquete = new FrmBuscarPaquete();
             buscarPaquete.ShowDialog();
+        }
+
+        private void gestiónReservasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuContenedor_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

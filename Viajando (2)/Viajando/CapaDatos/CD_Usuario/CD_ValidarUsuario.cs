@@ -12,7 +12,7 @@ namespace CapaDatos
     {
         Conexion conn = new Conexion();
         SqlCommand cmd = new SqlCommand();
-        public bool ValidarUsuarioD(string username)
+        public bool ValidarNombreUsuarioD(string username)
         {
 
             try
@@ -24,7 +24,7 @@ namespace CapaDatos
                 SqlDataReader leer = cmd.ExecuteReader();
                 if (leer.HasRows)
                 {
-                    while (leer.Read())
+                   while (leer.Read())
                     {
                         CS_UsuarioEnSesion.Id_Usuario = leer.GetInt32(leer.GetOrdinal("Id_Usuario"));
                         CS_UsuarioEnSesion.Username = leer["Username"].ToString();

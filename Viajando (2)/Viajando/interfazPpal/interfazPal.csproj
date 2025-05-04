@@ -59,6 +59,9 @@
     <Compile Include="Frm Usuarios\FrmConfiguracionDeSeguridad.Designer.cs">
       <DependentUpon>FrmConfiguracionDeSeguridad.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmConfiguracionDelSistema.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Frms Reservas\FrmCrearReserva.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,12 +79,6 @@
     </Compile>
     <Compile Include="Frms Reservas\FrmBuscarReserva.Designer.cs">
       <DependentUpon>FrmBuscarReserva.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmConfiguracionDelSistema.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmConfiguracionDelSistema.Designer.cs">
-      <DependentUpon>FrmConfiguracionDelSistema.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmEnviarPorEmail.cs">
       <SubType>Form</SubType>
@@ -196,6 +193,9 @@
     <EmbeddedResource Include="Frm Usuarios\FrmConfiguracionDeSeguridad.resx">
       <DependentUpon>FrmConfiguracionDeSeguridad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmConfiguracionDelSistema.resx">
+      <DependentUpon>FrmConfiguracionDelSistema.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frms Reservas\FrmCrearReserva.resx">
       <DependentUpon>FrmCrearReserva.cs</DependentUpon>
     </EmbeddedResource>
@@ -204,9 +204,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frms Reservas\FrmBuscarReserva.resx">
       <DependentUpon>FrmBuscarReserva.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmConfiguracionDelSistema.resx">
-      <DependentUpon>FrmConfiguracionDelSistema.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEnviarPorEmail.resx">
       <DependentUpon>FrmEnviarPorEmail.cs</DependentUpon>

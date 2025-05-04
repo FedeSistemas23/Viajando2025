@@ -34,7 +34,6 @@ namespace CapaSesion
         public static string password { get; set; }
         public static int venceCada { get; set; }
         public static int intentos { get; set; }
-        public static int digito { get; set; }
         public static int Digito { get; set; }
         public static int VencePass { get; set; }
         public static bool AvisarVencimientoPassword { get; set; }

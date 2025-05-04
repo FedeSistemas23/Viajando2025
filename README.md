@@ -1,14 +1,4 @@
-using System;
 
-public class Class1
-{
-	public Class1()
-	{
-
-		// - Requerimientos del login
-		/****
-		 * 
-		 * 
  * 1)El formulario de Login deberá enviar la contraseña encriptada en SHA256.
  * 
  * 
