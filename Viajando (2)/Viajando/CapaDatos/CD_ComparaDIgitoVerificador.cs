@@ -31,19 +31,14 @@ namespace CapaDatos
                         // Devuelve true si el resultado es 1, false si es 0
                         return resultado == 1;
                     }
-                        else
+                       
+                } else
                     {
                         // Si no se encontraron filas (por ejemplo, usuario no existe), devolvemos false
                         return false;
                     }
-                }
 
-                    return true; // Usuario válido
-                }
-                else
-                {
-                    return false; /*Usuario no encontrado*/
-                }
+                  
 
             }
             catch (Exception ex)

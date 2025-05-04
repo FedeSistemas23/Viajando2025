@@ -26,7 +26,7 @@ namespace CapaNegocio
         {
             int digito = Seguridad.hasheo(Username, Password);
             bool existe = validarusuario.ValidarNombreUsuarioD(Username);
-            if (existe && ComparaDigitoVerificador.ComparaDigito(digito, Username) == true && )
+            if (existe && ComparaDigitoVerificador.ComparaDigito(digito, Username) == true )
             {
                 return true;
             }
