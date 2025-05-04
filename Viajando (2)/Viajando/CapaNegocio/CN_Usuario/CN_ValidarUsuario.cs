@@ -6,10 +6,13 @@ namespace CapaNegocio
 {
     public class CN_ValidarUsuario
     {
-        private string nombreusuario;
-        string Username;
-        private string Password;
-        CD_ValidarUsuario validarusuario = new CD_ValidarUsuario();
+        private readonly string nombreusuario;
+        private readonly string Username;
+        private readonly string Password;
+        private readonly int digito;
+
+        ComparaDigitoVerificador comparador;
+        CD_ValidarUsuario validarusuario;
 
         public CN_ValidarUsuario()
         {
@@ -19,14 +22,17 @@ namespace CapaNegocio
         {
             Username = username;
             Password = pass;
+            comparador = new ComparaDigitoVerificador();
+            validarusuario = new CD_ValidarUsuario();
+            digito = Seguridad.hasheo(Username, Password);
         }
 
 
         public bool ValidarNombreUsuarioL()
         {
-            int digito = Seguridad.hasheo(Username, Password);
+            
             bool existe = validarusuario.ValidarNombreUsuarioD(Username);
-            if (existe && ComparaDigitoVerificador.ComparaDigito(digito, Username) == true )
+            if (existe && comparador.ComparaDigito(digito, Username) == true && comparadorPass.ComparaPass(Username, Password) && )
             {
                 return true;
             }

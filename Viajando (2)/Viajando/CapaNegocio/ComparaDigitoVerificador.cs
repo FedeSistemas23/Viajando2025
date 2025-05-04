@@ -2,10 +2,10 @@
 
 namespace CapaServicios
 {
-    public static class ComparaDigitoVerificador
+    public  class ComparaDigitoVerificador
     {
         
-        public static bool ComparaDigito(int digito, string username)
+        public bool ComparaDigito(int digito, string username)
         {
             CD_ComparaDigitoVerificador comparador = new CD_ComparaDigitoVerificador();
             bool correcto = comparador.ComparaDigitoD(digito, username);
