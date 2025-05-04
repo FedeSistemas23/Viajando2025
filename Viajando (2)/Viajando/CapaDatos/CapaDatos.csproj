@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Bitacora\CD_Bitacora.cs" />
     <Compile Include="CD_BackUp.cs" />
+    <Compile Include="CD_ComparaDigitoVerificador.cs" />
     <Compile Include="CD_Usuario\CD_BloquearUsuario.cs" />
     <Compile Include="CD_Reservas\CD_Busqueda.cs" />
     <Compile Include="CD_Paquetes\CD_NuevaDisponiblidad.cs" />
