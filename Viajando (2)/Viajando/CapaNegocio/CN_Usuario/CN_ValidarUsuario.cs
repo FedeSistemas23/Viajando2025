@@ -33,7 +33,7 @@ namespace CapaNegocio
         {
             
             bool existe = validarusuario.ValidarNombreUsuarioD(Username);
-            if (existe && comparador.ComparaDigito(digito, Username) == true && comparadorPass.ComparaPass(Username, Password) && )
+            if (existe && comparador.ComparaDigito(digito, Username) == true && comparadorPass.ComparaPass(Username, Password)==true )
             {
                 return true;
             }

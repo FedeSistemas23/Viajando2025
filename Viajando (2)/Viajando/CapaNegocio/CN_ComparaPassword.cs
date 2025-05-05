@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CapaDatos;
+using CapaSesion;
+using Microsoft.SqlServer.Server;
 
 namespace CapaNegocio
+ 
 {
     public class CN_ComparaPassword
     {
@@ -12,15 +11,18 @@ namespace CapaNegocio
 
         public CN_ComparaPassword()
         {
-            comparador= new CD_ComparaPassword();
+            comparador = new CD_ComparaPassword();
         }
-        public bool ComparaPass(string username, string password )
+        public bool ComparaPass(string username, string password)
         {
-            bool correcto=comparador.ComparaPassD(username, password);
+            string concatenados=username+password;
+            string passwordHasheado = Seguridad.SHA256(concatenados);
+            bool correcto = comparador.ComparaPassD(username, passwordHasheado);
             if (correcto)
             {
                 return true;
-            }else
+            }
+            else
             {
                 return false;
             }
