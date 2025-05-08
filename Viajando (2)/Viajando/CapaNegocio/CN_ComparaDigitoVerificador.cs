@@ -1,12 +1,14 @@
 ﻿using CapaDatos;
+using CapaSesion;
 
-namespace CapaServicios
+namespace CapaNegocio
 {
-    public  class ComparaDigitoVerificador
+    public class CN_ComparaDigitoVerificador
     {
-        
-        public bool ComparaDigito(int digito, string username)
+
+        public bool ComparaDigito(string username, string password)
         {
+            int digito = Seguridad.hasheo(username, password);
             CD_ComparaDigitoVerificador comparador = new CD_ComparaDigitoVerificador();
             bool correcto = comparador.ComparaDigitoD(digito, username);
             if (correcto)

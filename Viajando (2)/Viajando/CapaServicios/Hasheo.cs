@@ -38,7 +38,7 @@ namespace CapaSesion
         }
         public static int hasheo(string username, string pass)
         {
-            string userpass = username + pass;
+            string userpass = pass+username;
             string hasheo = Seguridad.SHA256(userpass);
             int digito = CreaDigitoVerificador.Calcular(hasheo);
             return digito;

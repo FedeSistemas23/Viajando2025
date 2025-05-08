@@ -15,7 +15,7 @@ namespace CapaNegocio
         }
         public bool ComparaPass(string username, string password)
         {
-            string concatenados=username+password;
+            string concatenados=password+username;
             string passwordHasheado = Seguridad.SHA256(concatenados);
             bool correcto = comparador.ComparaPassD(username, passwordHasheado);
             if (correcto)
