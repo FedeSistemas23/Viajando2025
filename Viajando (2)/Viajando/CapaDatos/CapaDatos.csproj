@@ -90,6 +90,7 @@
     <Compile Include="CD_Pasajeros\CD_MostrarPasajeros.cs" />
     <Compile Include="CD_Hoteles\CD_MostrarProveedor.cs" />
     <Compile Include="CD_Usuario\CD_TraePreguntasYRespuestas.cs" />
+    <Compile Include="CD_Usuario\CD_TraerDatosUsuario.cs" />
     <Compile Include="CD_Usuario\CD_ValidarPassword.cs" />
     <Compile Include="CD_Usuario\CD_ValidarUsuario.cs" />
     <Compile Include="CD_Buses\CD_MostrarBuses.cs" />
