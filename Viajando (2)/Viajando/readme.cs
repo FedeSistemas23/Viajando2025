@@ -1,4 +1,4 @@
-﻿using System;
+﻿   using System;
 
 public class Class1
 {
@@ -91,19 +91,3 @@ l) En este formulario de configuración de seguridad, el administrador deberá
 poder ver las diversas familias de usuario (grupos) pudiendo agregar nuevas,
 asimismo, deberá poder agregar y/o quitar funcionalidades del sistema
 (permisos) a cada Familia.
-
-
-
-		*********Realizado // Falta intefaz de cada solapa
-10) Al ingresar al sistema, el mismo deberá abrir una pantalla general con un menú el cual le
-dará acceso a los diferentes formularios dependiendo de los niveles de acceso.
-		 * 
-		 *
-		 */
-
-/*
-		// vencimiento de cambio de password
-
-		// seleccion desde checkbox cantidad dias
-		//forLLogin captura el valor del textbox y se lo pasa a capaNegocio
-}

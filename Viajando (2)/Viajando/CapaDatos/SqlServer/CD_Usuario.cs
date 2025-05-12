@@ -14,7 +14,7 @@ using System.Diagnostics.Eventing.Reader;
 using System.Collections.Specialized;
 
 namespace CapaDatos
-    //
+    
 {
     public class CD_Usuario : Conexion
     {

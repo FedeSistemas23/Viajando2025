@@ -9,8 +9,8 @@ using CapaSesion;
 namespace CapaSesion
 {
    public class CS_AtributosUsuario
-
     {
+        // usuuario de alta
         public string Username { get; set; }
         public string password { get; set; } // se genera con el Aleatorio en Servicios
         public int Digito { get; set; }

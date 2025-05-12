@@ -51,6 +51,13 @@
     <Compile Include="CN_Alta usuario\CN_Alta_Usuario.cs" />
     <Compile Include="Bitacora\CN_Bitacora.cs" />
     <Compile Include="Backup\CN_BackUp.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="CN_GuardarContraseña.cs" />
+    <Compile Include="CN_MostrarDatosUsuario.cs" />
+    <Compile Include="CN_GuardarFamilias y roles.cs" />
+    <Compile Include="CN_GuardarPreguntasSeguridad.cs" />
+>>>>>>> origin/castel
     <Compile Include="CN_Usuario\CN_BloquearUsuario.cs" />
     <Compile Include="CN_Paquetes\CN_BuscarPaquete.cs" />
     <Compile Include="CN_Reservas\CN_Busqueda.cs" />
@@ -86,12 +93,20 @@
     <Compile Include="CN_Paquetes\CN_MostrarPaquetes.cs" />
     <Compile Include="CN_Pasajeros\CN_MostrarPasajero.cs" />
     <Compile Include="CN_Hoteles\CN_MostrarProveedor.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="CN_Usuario\CN_MostrarDatosUsuarios.cs" />
+>>>>>>> origin/castel
     <Compile Include="CN_Usuario\CN_TraerPreguntasYRespuestas.cs" />
     <Compile Include="CN_Usuario\CN_UsuarioEnSesion.cs" />
     <Compile Include="CN_Usuario\CN_ValidarUsuario.cs" />
     <Compile Include="CN_Reservas\MuestraNumReserva.cs" />
+<<<<<<< HEAD
     <Compile Include="CN_ComparaDigitoVerificador.cs" />
     <Compile Include="CN_ComparaPassword.cs" />
+=======
+    <Compile Include="ComparaDigitoVerificador.cs" />
+>>>>>>> origin/castel
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
