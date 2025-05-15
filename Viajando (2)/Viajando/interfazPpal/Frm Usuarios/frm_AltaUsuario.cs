@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using CapaNegocio;
 using CapaNegocio.CN_Usuario;
@@ -269,9 +270,11 @@ namespace interfazPpal.Frm_Usuarios
 
         private void button13_Click_1(object sender, EventArgs e)
         {
-
+            string nombre = txtNombre.Text;
+            var usuarioFiltrado = listaUsuariosCS.Where(u =>
+            string.IsNullOrEmpty(nombre) || u.Nombre.Contains(nombre)).ToList();
         }
-
+        
         private void label7_Click(object sender, EventArgs e)
         {
 
@@ -349,6 +352,17 @@ namespace interfazPpal.Frm_Usuarios
         private void txtLocalidad_TextChanged_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvDatosUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dgvDatosUsuario.DataSource = null;
+            dgvDatosUsuario.Rows.Clear();
         }
     }
 }

@@ -239,6 +239,11 @@ namespace interfazLogin
         {
             btnIngresar.Enabled = true;
         }
+
+        private void FrmLogin1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
