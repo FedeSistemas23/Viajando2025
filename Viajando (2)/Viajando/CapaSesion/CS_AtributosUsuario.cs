@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CapaSesion;
 
-//ordenar los atributos entre los datos de usuario y persona
+
 namespace CapaSesion
 {
-   public class CS_AtributosUsuario
+
+    // Esta clase es la del usuario que esta logeado en el sistema.
+    public class CN_Nuevo_Usuario
     {
-        // usuuario de alta
+
         public string Username { get; set; }
         public string password { get; set; } // se genera con el Aleatorio en Servicios
         public int Digito { get; set; }
@@ -21,6 +19,8 @@ namespace CapaSesion
         public string NumDocumento { get; set; }
         public string Telefono { get; set; }
         public string Celular { get; set; }
+        public int Comision { get; set; }
+        public string Estado {  get; set; } 
         public string Calle { get; set; }
         public int NumCalle { get; set; }
         public string Localidad { get; set; }
@@ -45,8 +45,10 @@ namespace CapaSesion
         public int VenceUsuario { get; set; }
         public int VencenPermisos { get; set; }
         public List<string> Permisos { get; set; } = new List<string>();
-        public  DateTime? fechaPrimerIngreso { get; set; }
-        public  DateTime? fechaUltimoCambio { get; set; }
+        public DateTime? fechaPrimerIngreso { get; set; }
+        public DateTime? fechaUltimoCambio { get; set; }
+
+        List<string> Usuarios { get; set; } = new List<string>();
 
     }
 }

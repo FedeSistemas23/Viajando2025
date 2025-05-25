@@ -26,7 +26,7 @@ namespace Loggin
             string hasheo = Seguridad.SHA256(concatenados);
 
 
-            CS_AtributosUsuario NuevoUsuario = new CS_AtributosUsuario()
+            CapaSesion.CN_Nuevo_Usuario NuevoUsuario = new CapaSesion.CN_Nuevo_Usuario()
 
             {
                 Username = txtUsuario.Text,

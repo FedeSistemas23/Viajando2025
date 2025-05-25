@@ -14,9 +14,9 @@ namespace CapaDatos
 {
    public class CD_TraerDatosUsuario : Conexion
     {
-        List<CS_AtributosUsuario> lista = new List<CS_AtributosUsuario>();
+        List<CN_Nuevo_Usuario> lista = new List<CN_Nuevo_Usuario>();
 
-        public List<CS_AtributosUsuario> ObtenerUsuarios()
+        public List<CN_Nuevo_Usuario> ObtenerUsuarios()
         {
             try
             {
@@ -29,13 +29,12 @@ namespace CapaDatos
 
                         while (dr.Read())
                         {
-
-                            CS_AtributosUsuario usuario = new CS_AtributosUsuario
+                            CN_Nuevo_Usuario usuario = new CN_Nuevo_Usuario
                             {
                                 //IdUsuario = Convert.ToInt32(dr["IdUsuario"]),
                                 Username = dr["Username"].ToString(),
-                                password = dr["Password"].ToString(),
-                                Digito = Convert.ToInt32(dr["Digito"].ToString()),
+                               // password = dr["Password"].ToString(),
+                                //Digito = Convert.ToInt32(dr["Digito"].ToString()),
                                 Nombre = dr["Nombre"].ToString(),
                                 Email = dr["Email"].ToString(),
                                 Apellidos = dr["Apellidos"].ToString(),
@@ -55,7 +54,7 @@ namespace CapaDatos
             }
             catch (Exception ex)
             {
-                throw new Exception("Error al ejecutar SP o Conexion a la BD. \n\n" + ex.Message);
+                   throw new Exception("Error al ejecutar SP o Conexion a la BD. \n\n" + ex.Message);
             }
         }
     }

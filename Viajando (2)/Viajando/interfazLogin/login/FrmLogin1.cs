@@ -95,7 +95,7 @@ namespace interfazLogin
         {
             this.Hide();
             bienvenida saludo = new bienvenida();
-            saludo.ShowDialog();
+          //  saludo.ShowDialog();
             menu1.Show();
             /*
             string pass = txtPass.Text;

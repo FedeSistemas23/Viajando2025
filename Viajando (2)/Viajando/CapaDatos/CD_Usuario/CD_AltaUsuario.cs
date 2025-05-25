@@ -7,9 +7,9 @@ namespace CapaDatos
 {
     public class CD_AltaUsuario : Conexion
     {
-        public void GuardarUsuarioD(CS_AtributosUsuario usuario)
+        public void GuardarUsuarioD(CN_Nuevo_Usuario usuario)
         {
-            List<CS_AtributosUsuario> lista = new List<CS_AtributosUsuario>();
+            List<CN_Nuevo_Usuario> lista = new List<CN_Nuevo_Usuario>();
             try
             {
                 using (SqlConnection conexion = AbrirConexion())
@@ -27,38 +27,9 @@ namespace CapaDatos
                         command.Parameters.AddWithValue("@NumDocumento", usuario.NumDocumento);
                         command.Parameters.AddWithValue("@Telefono", usuario.Telefono);
                         command.Parameters.AddWithValue("@Celular", usuario.Celular);
-
-
-
                         command.ExecuteNonQuery();
                     }
-                    /* command.Parameters.AddWithValue("@Calle", usuario.Calle);
-                     command.Parameters.AddWithValue("@NumCalle", usuario.NumCalle);
-                     command.Parameters.AddWithValue("@Localidad", usuario.Localidad);
-                     command.Parameters.AddWithValue("@Partido", usuario.Partido);*/
-
-                    //
-                    /*command.Parameters.AddWithValue("@Provincia", usuario.Provincia);
-                    command.Parameters.AddWithValue("@Familia", usuario.Familia);
-                    command.Parameters.AddWithValue("@Intentos", usuario.intentos);
-                    command.Parameters.AddWithValue("@VencePass", usuario.VencePass);
-                    command.Parameters.AddWithValue("@AvisarVencimientoPassword", usuario.AvisarVencimientoPassword);
-                    command.Parameters.AddWithValue("@ContraseñasAnteriores", usuario.ContraseñasAnteriores);
-                    command.Parameters.AddWithValue("@Minuscula", usuario.Minuscula);
-                    command.Parameters.AddWithValue("@Mayuscula", usuario.Mayuscula);
-                    command.Parameters.AddWithValue("@Numeros", usuario.Numeros);
-                    command.Parameters.AddWithValue("@CaracterEspecial", usuario.CaracterEspecial);
-                    command.Parameters.AddWithValue("@Minimo8Caracteres", usuario.Minimo8Caracteres);
-                    command.Parameters.AddWithValue("@RealizarPreguntasSeguridad", usuario.RealizarPreguntasSeguridad);
-                    command.Parameters.AddWithValue("@Autenticacion2pasos", usuario.Autenticacion2pasos);
-                    command.Parameters.AddWithValue("@Bloqueado", usuario.Bloqueado);
-                    command.Parameters.AddWithValue("@BloqueadoHasta", usuario.BloqueadoHasta);
-                    command.Parameters.AddWithValue("@UsuarioTemporal", usuario.UsuarioTemporal);
-                    command.Parameters.AddWithValue("@VenceUsuario", usuario.VenceUsuario);
-                    command.Parameters.AddWithValue("@VencenPermisos", usuario.VencenPermisos);
-                    //command.Parameters.AddWithValue("@FechaPrimerIngreso", usuario.fechaPrimerIngreso);
-                    //command.Parameters.AddWithValue("@FechaUltimoCambio", usuario.fechaUltimoCambio);
-                    */
+                   
 
 
                 }

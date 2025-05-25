@@ -13,7 +13,7 @@ namespace CapaServicios
         public static void sendMail(string to, string asunto, string body)
         {
             string from = "castellanoporto@Gmail.com"; //correo de la empresa
-            string displayName = "Recuperacion de Cuenta"; //Lo que se ve al recibir el mail
+            string displayName = "Recuperacion de Cuenta"; //Asunto del mensaje
             try
             {
                 MailMessage mail = new MailMessage
@@ -33,29 +33,17 @@ namespace CapaServicios
                 };
                 client.Send(mail);
             }
-
-
             catch (SmtpException smtpEx)
             {
-                // MOSTRÁ EL MENSAJE REAL DEL ERROR SMTP
+                // MueSTRÁ EL MENSAJE REAL DEL ERROR SMTP
                 throw new Exception("Error SMTP: " + smtpEx.Message + "\n" + smtpEx.InnerException?.Message);
             }
             catch (Exception ex)
             {
                 throw new Exception("Error general al enviar correo: " + ex.Message);
             }
-            catch
-            {
-                throw new Exception("ERROR AL ENVIAR EL MENSAJE. \n \n " +
-                    "Por favor verifica tu conexión a internet y que tus datos sean correctos e intenta nuevamente.");
-            }
+  
         }
     }
 }
 
-/*
- catch (SmtpException smtpEx)
-{
-    MessageBox.Show("Error SMTP: " + smtpEx.Message + "\nDetalle: " + smtpEx.InnerException?.Message);
-}
- */
