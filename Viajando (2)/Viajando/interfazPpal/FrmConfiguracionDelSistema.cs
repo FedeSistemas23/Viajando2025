@@ -85,7 +85,6 @@ namespace interfazPpal
         private Button btnBuscar;
         private Button btnCancelar;
         private Button btnEditar;
-        CN_BackUp backup = new CN_BackUp();
      /*   public FrmConfiguracionDelSistema()
         {
             InitializeComponent();
