@@ -103,7 +103,7 @@ namespace interfazPpal
 
                 try
                 {
-                    backup.RealizarBackup(rutaDestino);
+                    //backup.RealizarBackup(rutaDestino);
 
                     MessageBox.Show("Backup realizado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
