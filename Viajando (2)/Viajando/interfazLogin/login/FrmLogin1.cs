@@ -93,11 +93,11 @@ namespace interfazLogin
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            /*this.Hide();
             bienvenida saludo = new bienvenida();
             saludo.ShowDialog();
-            menu1.Show();
-            /*
+            menu1.Show();*/
+            
             string pass = txtPass.Text;
             string usuario = txtUsuario.Text;
             CN_ValidarUsuario Usuario = new CN_ValidarUsuario(usuario, pass);
