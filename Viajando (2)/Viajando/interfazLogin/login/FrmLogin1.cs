@@ -11,10 +11,10 @@ namespace interfazLogin
     public partial class FrmLogin1 : Form
     {
         MenuPpal menu1 = new MenuPpal();
-        CN_GuardaRespuestas guardaRespuestas = new CN_GuardaRespuestas();
+        CN_GuardaRespuestas guardaRespuestas;
         //CN_ValidarUsuario validarusuario = new CN_ValidarUsuario();
-        CN_UsuarioEnSesion usuario = new CN_UsuarioEnSesion();
-
+        CN_UsuarioEnSesion usuario;
+        CN_ValidarUsuario Usuario;
         string Aleatorio;
         public FrmLogin1()
         {
@@ -24,6 +24,9 @@ namespace interfazLogin
         {
             InitializeComponent();
             Aleatorio = aleatorio;
+            Usuario = new CN_ValidarUsuario();
+            usuario = new CN_UsuarioEnSesion();
+            guardaRespuestas = new CN_GuardaRespuestas();
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -100,8 +103,8 @@ namespace interfazLogin
             
             string pass = txtPass.Text;
             string usuario = txtUsuario.Text;
-            CN_ValidarUsuario Usuario = new CN_ValidarUsuario(usuario, pass);
-            bool Existe = Usuario.ValidarNombreUsuarioL();
+            
+            bool Existe = Usuario.ValidarUsuarioL(usuario, pass);
             if (Existe) 
             {
                 this.Hide();

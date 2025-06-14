@@ -9,24 +9,20 @@ namespace CapaNegocio
         private string nombreusuario;
         string Username;
         private string Password;
-        CD_ValidarUsuario validarusuario = new CD_ValidarUsuario();
+        CD_ValidarUsuario validador;
+        CN_ComparaDigitoVerificador comparador;
 
         public CN_ValidarUsuario()
         {
+            comparador=new CN_ComparaDigitoVerificador();
+            validador = new CD_ValidarUsuario();
         }
 
-        public CN_ValidarUsuario(string username, string pass)
+        public bool ValidarUsuarioL(string usuario, string pass)
         {
-            Username = username;
-            Password = pass;
-        }
+            bool existe = validador.ValidarNombreUsuarioD(usuario);
 
-
-        public bool ValidarNombreUsuarioL()
-        {
-            int digito = Seguridad.hasheo(Username, Password);
-            bool existe = validarusuario.ValidarNombreUsuarioD(Username);
-            if (existe && ComparaDigitoVerificador.ComparaDigito(digito, Username) == true )
+            if (existe && comparador.comparaDigitoVerificador(pass, usuario) == true )
             {
                 return true;
             }

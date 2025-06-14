@@ -1,15 +1,20 @@
 ﻿using CapaDatos;
+using CapaSesion;
 
 namespace CapaServicios
 {
-    public static class ComparaDigitoVerificador
+    public class CN_ComparaDigitoVerificador
     {
+        CD_ComparaDigitoVerificador comparador;
+        public CN_ComparaDigitoVerificador() { comparador = new CD_ComparaDigitoVerificador(); }
         
-        public static bool ComparaDigito(int digito, string username)
+        public bool comparaDigitoVerificador(string pass, string Usuario)
         {
-            CD_ComparaDigitoVerificador comparador = new CD_ComparaDigitoVerificador();
-            bool correcto = comparador.ComparaDigitoD(digito, username);
-            if (correcto)
+            string concatenados = pass+Usuario;
+            string hasheo = Seguridad.SHA256(concatenados);
+            int digito = CreaDigitoVerificador.Calcular(hasheo);
+            //bool correcto = comparador.ComparaDigitoD(digito, Usuario);
+            if (digito==CS_UsuarioEnSesion.Digito)
             {
                 return true;
             }
