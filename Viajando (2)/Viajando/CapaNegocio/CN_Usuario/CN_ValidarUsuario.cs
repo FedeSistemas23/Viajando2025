@@ -26,7 +26,9 @@ namespace CapaNegocio
         {
             bool existe = validador.ValidarNombreUsuarioD(usuario);
 
-            if (existe && comparador.comparaDigitoVerificador(pass, usuario) && comparaPass.comparaPassword(pass))
+            if (existe && comparador.comparaDigitoVerificador(pass, usuario) 
+                && comparaPass.comparaPassword(pass) 
+                && verificadorBloqueo.VerificarUsuarioBloqueado())
             {
                 return true;
             }

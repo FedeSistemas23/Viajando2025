@@ -91,6 +91,7 @@
     <Compile Include="CN_Usuario\CN_ValidarUsuario.cs" />
     <Compile Include="CN_Reservas\MuestraNumReserva.cs" />
     <Compile Include="CN_Usuario\CN_ComparaDigitoVerificador.cs" />
+    <Compile Include="CN_VerificaUsuarioBloqueado.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

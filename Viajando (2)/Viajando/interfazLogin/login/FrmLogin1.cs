@@ -120,7 +120,10 @@ namespace interfazLogin
                     {
                         MessageBox.Show("El usuario no existe");
                     }
-
+                }
+                else
+                {
+                    MessageBox.Show("Debe ingresar una contraseña");
                 }
                 /*CN_BloquearUsuario BloqueadorUsuario = new CN_BloquearUsuario();
                 FrmPreguntasSeguridad FrmPreguntasSeguridad = new FrmPreguntasSeguridad();
@@ -234,6 +237,10 @@ namespace interfazLogin
 
 
 
+            }
+            else
+            {
+                MessageBox.Show("Dede ingresar un nombre de usuario");
             }
         }
         private void lnkOlvidar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
