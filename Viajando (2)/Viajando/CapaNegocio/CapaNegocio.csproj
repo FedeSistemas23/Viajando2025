@@ -77,6 +77,7 @@
     <Compile Include="CN_Hoteles\CN_EliminarProveedorHotel.cs" />
     <Compile Include="CN_Hoteles\CN_GuardarHotel.cs" />
     <Compile Include="CN_Paquetes\CN_GuardarPaquete.cs" />
+    <Compile Include="CN_Usuario\CN_ComparaPassword.cs" />
     <Compile Include="CN_Usuario\CN_EditarPassword.cs" />
     <Compile Include="CN_Usuario\CN_EnviaDigitoVerificador.cs" />
     <Compile Include="CN_Usuario\CN_Mail.cs" />
@@ -89,7 +90,7 @@
     <Compile Include="CN_Usuario\CN_UsuarioEnSesion.cs" />
     <Compile Include="CN_Usuario\CN_ValidarUsuario.cs" />
     <Compile Include="CN_Reservas\MuestraNumReserva.cs" />
-    <Compile Include="ComparaDigitoVerificador.cs" />
+    <Compile Include="CN_Usuario\CN_ComparaDigitoVerificador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

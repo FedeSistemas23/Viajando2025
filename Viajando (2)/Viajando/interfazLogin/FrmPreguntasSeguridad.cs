@@ -67,7 +67,9 @@ namespace interfazLogin
         {
             // log= new FrmLogin1();
             FrmEditarPassword editarPassword = new FrmEditarPassword();
-            if (CS_PregRespSeg.Respuesta1 == txtRespuesta1.Text && CS_PregRespSeg.Respuesta2 == txtRespuesta2.Text && CS_PregRespSeg.Respuesta3 == txtRespuesta3.Text)
+            if (CS_PregRespSeg.Respuesta1 == txtRespuesta1.Text && 
+                CS_PregRespSeg.Respuesta2 == txtRespuesta2.Text && 
+                CS_PregRespSeg.Respuesta3 == txtRespuesta3.Text)
             {
 
                 string aleatorio = Aleatorios.Armar();

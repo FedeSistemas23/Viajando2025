@@ -6,57 +6,52 @@ using System.Data.SqlClient;
 
 namespace CapaDatos
 {
-
-
     public class CD_ValidarUsuario : Conexion
     {
-        Conexion conn = new Conexion();
-        SqlCommand cmd = new SqlCommand();
         public bool ValidarNombreUsuarioD(string username)
         {
-
             try
             {
-                cmd.Connection = conn.AbrirConexion();
-                cmd.CommandText = "ValidarUsuario";
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Username", username);
-                SqlDataReader leer = cmd.ExecuteReader();
-                if (leer.HasRows)
+                using (SqlConnection connection = AbrirConexion())
+                using (SqlCommand cmd = new SqlCommand("ValidarUsuario", connection))
                 {
-                   while (leer.Read())
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Username", username);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        CS_UsuarioEnSesion.Id_Usuario = leer.GetInt32(leer.GetOrdinal("Id_Usuario"));
-                        CS_UsuarioEnSesion.Username = leer["Username"].ToString();
-                        CS_UsuarioEnSesion.Apellido = leer["Apellidos"].ToString();
-                        CS_UsuarioEnSesion.Nombre = leer["Nombre"].ToString();
-                        if (leer["Id_Familia"] != DBNull.Value && int.TryParse(leer["Id_Familia"].ToString(), out int idFamilia))
+                        if (reader.HasRows)
                         {
-                            CS_UsuarioEnSesion.Id_Familia = idFamilia;
+                            while (reader.Read())
+                            {
+                                CS_UsuarioEnSesion.Id_Usuario = reader.GetInt32(reader.GetOrdinal("Id_Usuario"));
+                                CS_UsuarioEnSesion.Username = reader["Username"].ToString();
+                                CS_UsuarioEnSesion.Apellido = reader["Apellidos"].ToString();
+                                CS_UsuarioEnSesion.Nombre = reader["Nombre"].ToString();
+                                CS_UsuarioEnSesion.password = reader["Pass"].ToString();
+                                CS_UsuarioEnSesion.Digito = Convert.ToInt32(reader["Digito"]);
+                                // Manejo del valor Id_Familia
+                               // object idFamiliaValue = reader["Id_Familia"];
+                                //CS_UsuarioEnSesion.Id_Familia = (idFamiliaValue != DBNull.Value && int.TryParse(idFamiliaValue.ToString(), out int idFamilia))
+                                   // ? idFamilia
+                                    //: 0;
+                            }
+                            return true;
                         }
                         else
                         {
-                            // Manejar el caso en que el valor es nulo o no es un entero válido
-                            CS_UsuarioEnSesion.Id_Familia = 0; // O algún otro manejo adecuado
+                            return false; // Usuario no encontrado
                         }
                     }
-
-                    return true; // Usuario válido
                 }
-                else
-                {
-                    return false; /*Usuario no encontrado*/
-                }
-
             }
             catch (Exception ex)
             {
-                 throw new Exception("Error al ejecutar SP o Conexion a la BD. \n \n" + ex.Message);
+                throw new Exception("Error al validar el usuario: " + ex.Message, ex);
             }
             finally
             {
-                cmd.Parameters.Clear();
-                conn.CerrarConexion();
+                CerrarConexion();
             }
         }
     }

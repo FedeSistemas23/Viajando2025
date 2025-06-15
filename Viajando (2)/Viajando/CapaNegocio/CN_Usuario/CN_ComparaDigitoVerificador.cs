@@ -10,7 +10,7 @@ namespace CapaServicios
         
         public bool comparaDigitoVerificador(string pass, string Usuario)
         {
-            string concatenados = pass+Usuario;
+            string concatenados =pass+Usuario;
             string hasheo = Seguridad.SHA256(concatenados);
             int digito = CreaDigitoVerificador.Calcular(hasheo);
             //bool correcto = comparador.ComparaDigitoD(digito, Usuario);
