@@ -8,9 +8,9 @@ namespace CapaServicios
         CD_ComparaDigitoVerificador comparador;
         public CN_ComparaDigitoVerificador() { comparador = new CD_ComparaDigitoVerificador(); }
         
-        public bool comparaDigitoVerificador(string pass, string Usuario)
+        public bool comparaDigitoVerificador(string pass, string usuario)
         {
-            string concatenados =pass+Usuario;
+            string concatenados= pass +usuario;
             string hasheo = Seguridad.SHA256(concatenados);
             int digito = CreaDigitoVerificador.Calcular(hasheo);
             //bool correcto = comparador.ComparaDigitoD(digito, Usuario);
