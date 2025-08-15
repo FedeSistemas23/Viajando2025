@@ -36,7 +36,7 @@ namespace CapaSesion
 
 
         }
-        public static int hasheo(string username, string pass)
+        public static int Hasheo(string username, string pass)
         {
             string userpass = username + pass;
             string hasheo = Seguridad.SHA256(userpass);
