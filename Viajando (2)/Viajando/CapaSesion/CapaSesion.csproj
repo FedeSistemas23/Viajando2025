@@ -47,7 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AtributosUsuario.cs" />
+    <Compile Include="CS_UsuarioNuevo.cs" />
     <Compile Include="CS_AtributosBus.cs" />
     <Compile Include="CS_AtributosHotel.cs" />
     <Compile Include="CS_AtributosUsuario.cs" />

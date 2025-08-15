@@ -15,7 +15,7 @@ namespace CapaNegocio
 {
     public class CN_UsuarioEnSesion
     {
-        CD_Usuario cdUsuario = new CD_Usuario();
+        CD_Usuarios cdUsuario = new CD_Usuarios();
 
         /*public bool Login(string username, string password)
         {

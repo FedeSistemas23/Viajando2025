@@ -16,7 +16,7 @@ using System.Collections.Specialized;
 namespace CapaDatos
     
 {
-    public class CD_Usuario : Conexion
+    public class CD_Usuarios : Conexion
     {
         private Conexion conexion = new Conexion();
         DataTable tabla = new DataTable();

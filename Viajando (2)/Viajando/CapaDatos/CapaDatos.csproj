@@ -81,6 +81,7 @@
     <Compile Include="CD_Paquetes\CD_EditarPaquete.cs" />
     <Compile Include="CD_Hoteles\CD_EditarHotel.cs" />
     <Compile Include="CD_Pasajeros\CD_EditarPasajero.cs" />
+    <Compile Include="CD_Usuario\CD_EditarDatosUsuario.cs" />
     <Compile Include="CD_Usuario\CD_EditarPassword.cs" />
     <Compile Include="CD_Paquetes\CD_EliminarPaquete.cs" />
     <Compile Include="CD_Pasajeros\CD_EliminarPasajero.cs" />

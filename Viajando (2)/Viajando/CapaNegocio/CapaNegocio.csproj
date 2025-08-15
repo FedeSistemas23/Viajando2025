@@ -85,6 +85,7 @@
     <Compile Include="CN_Hoteles\CN_EliminarProveedorHotel.cs" />
     <Compile Include="CN_Hoteles\CN_GuardarHotel.cs" />
     <Compile Include="CN_Paquetes\CN_GuardarPaquete.cs" />
+    <Compile Include="CN_Usuario\CN_EditardatosUsuario.cs" />
     <Compile Include="CN_Usuario\CN_EditarPassword.cs" />
     <Compile Include="CN_Usuario\CN_EnviaDigitoVerificador.cs" />
     <Compile Include="CN_Usuario\CN_EstadosUsuario.cs" />

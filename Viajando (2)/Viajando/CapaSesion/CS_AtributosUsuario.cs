@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 
 
-namespace CapaSesion
-{
-
-    // Esta clase es la del usuario que esta logeado en el sistema.
+namespace CapaSesion { 
+       // Esta clase es la del usuario que esta logeado en el sistema.
     public class CN_Nuevo_Usuario
     {
-
+        public int Id_Usuario { get; set; }
         public string Username { get; set; }
         public string password { get; set; } // se genera con el Aleatorio en Servicios
         public int Digito { get; set; }
