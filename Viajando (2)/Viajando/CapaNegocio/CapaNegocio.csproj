@@ -47,11 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BackUp\CN_BackUp.cs" />
     <Compile Include="CN_Alta usuario\AtributosUsuario.cs" />
     <Compile Include="CN_Alta usuario\CN_Alta_Usuario.cs" />
     <Compile Include="Bitacora\CN_Bitacora.cs" />
-    <Compile Include="CN_ResetearIntentosFallidos.cs" />
+    <Compile Include="CN_TraePreguntasSeguridad.cs" />
     <Compile Include="CN_Usuario\CN_BloquearUsuario.cs" />
     <Compile Include="CN_Paquetes\CN_BuscarPaquete.cs" />
     <Compile Include="CN_Reservas\CN_Busqueda.cs" />
@@ -79,6 +78,7 @@
     <Compile Include="CN_Hoteles\CN_EliminarProveedorHotel.cs" />
     <Compile Include="CN_Hoteles\CN_GuardarHotel.cs" />
     <Compile Include="CN_Paquetes\CN_GuardarPaquete.cs" />
+    <Compile Include="CN_Usuario\CN_ComparaPassword.cs" />
     <Compile Include="CN_Usuario\CN_EditarPassword.cs" />
     <Compile Include="CN_Usuario\CN_EnviaDigitoVerificador.cs" />
     <Compile Include="CN_Usuario\CN_Mail.cs" />
@@ -87,11 +87,12 @@
     <Compile Include="CN_Paquetes\CN_MostrarPaquetes.cs" />
     <Compile Include="CN_Pasajeros\CN_MostrarPasajero.cs" />
     <Compile Include="CN_Hoteles\CN_MostrarProveedor.cs" />
-    <Compile Include="CN_Usuario\CN_registrarIntentosFallidos.cs" />
     <Compile Include="CN_Usuario\CN_TraerPreguntasYRespuestas.cs" />
     <Compile Include="CN_Usuario\CN_UsuarioEnSesion.cs" />
     <Compile Include="CN_Usuario\CN_ValidarUsuario.cs" />
     <Compile Include="CN_Reservas\MuestraNumReserva.cs" />
+    <Compile Include="CN_Usuario\CN_ComparaDigitoVerificador.cs" />
+    <Compile Include="CN_VerificaUsuarioBloqueado.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

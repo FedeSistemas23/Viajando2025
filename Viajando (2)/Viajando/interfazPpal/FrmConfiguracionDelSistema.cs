@@ -85,7 +85,6 @@ namespace interfazPpal
         private Button btnBuscar;
         private Button btnCancelar;
         private Button btnEditar;
-        CN_BackUp backup = new CN_BackUp();
      /*   public FrmConfiguracionDelSistema()
         {
             InitializeComponent();
@@ -104,7 +103,7 @@ namespace interfazPpal
 
                 try
                 {
-                    backup.RealizarBackup(rutaDestino);
+                    //backup.RealizarBackup(rutaDestino);
 
                     MessageBox.Show("Backup realizado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
