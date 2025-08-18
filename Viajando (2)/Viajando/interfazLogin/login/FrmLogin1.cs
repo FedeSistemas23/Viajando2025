@@ -14,7 +14,7 @@ namespace interfazLogin
         CN_GuardaRespuestas guardaRespuestas;
         //CN_ValidarUsuario validarusuario = new CN_ValidarUsuario();
         CN_UsuarioEnSesion usuario;
-       
+
         string Aleatorio;
         public FrmLogin1()
         {
@@ -24,7 +24,7 @@ namespace interfazLogin
         {
             InitializeComponent();
             Aleatorio = aleatorio;
-            
+
             usuario = new CN_UsuarioEnSesion();
             guardaRespuestas = new CN_GuardaRespuestas();
         }
@@ -96,11 +96,40 @@ namespace interfazLogin
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            /*this.Hide();
-            bienvenida saludo = new bienvenida();
-            saludo.ShowDialog();
-            menu1.Show();*/
-            CN_ValidarUsuario Usuario = new CN_ValidarUsuario();
+
+
+            string pass = txtPass.Text;
+            string usuario = txtUsuario.Text;
+            CN_ValidarUsuario Usuario = new CN_ValidarUsuario(usuario, pass);
+            bool Existe = Usuario.ValidarNombreUsuarioL();
+            if (Existe)
+            {
+                this.Hide();
+                bienvenida saludo = new bienvenida();
+                saludo.ShowDialog();
+                menu1.Show();
+            }
+            else
+            {
+                MessageBox.Show("El usuario no existe");
+            }
+
+        }
+        /*CN_BloquearUsuario BloqueadorUsuario = new CN_BloquearUsuario();
+        FrmPreguntasSeguridad FrmPreguntasSeguridad = new FrmPreguntasSeguridad();
+        FrmPrimerIngreso frmPrimerIngreso = new FrmPrimerIngreso();
+        CN_registrarIntentosFallidos intentosFallidos = new CN_registrarIntentosFallidos();
+
+        string pass = txtPass.Text;
+        string Usuario = txtUsuario.Text;
+
+        if (Aleatorio != txtPass.Text)
+        {
+            string concatenados = pass+Usuario;
+            string hasheo = Seguridad.SHA256(concatenados);
+            int digito = CreaDigitoVerificador.Calcular(hasheo);
+            btnIngresar.Enabled = true; ;
+>>>>>>> castel
 
             if (txtUsuario.Text != "Ej.: ejemplo@gmail.com")
             {
@@ -237,13 +266,9 @@ namespace interfazLogin
 
 
 
-            }
-            else
-            {
-                MessageBox.Show("Dede ingresar un nombre de usuario");
-            }
-        }
-        private void lnkOlvidar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    
+
+private void lnkOlvidar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             FrmPreguntasSeguridad preguntas = new FrmPreguntasSeguridad();
             this.Hide();
@@ -253,6 +278,11 @@ namespace interfazLogin
         private void txtPass_TextChanged(object sender, EventArgs e)
         {
             btnIngresar.Enabled = true;
+        }
+
+        private void FrmLogin1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

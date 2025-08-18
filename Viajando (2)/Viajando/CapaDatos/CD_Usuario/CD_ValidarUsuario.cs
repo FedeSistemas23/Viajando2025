@@ -8,6 +8,11 @@ namespace CapaDatos
 {
     public class CD_ValidarUsuario : Conexion
     {
+<<<<<<< HEAD
+=======
+        Conexion conn = new Conexion();
+        SqlCommand cmd = new SqlCommand();
+>>>>>>> castel
         public bool ValidarNombreUsuarioD(string username)
         {
             try
@@ -15,10 +20,14 @@ namespace CapaDatos
                 using (SqlConnection connection = AbrirConexion())
                 using (SqlCommand cmd = new SqlCommand("ValidarUsuario", connection))
                 {
+<<<<<<< HEAD
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Username", username);
 
                     using (SqlDataReader reader = cmd.ExecuteReader())
+=======
+                   while (leer.Read())
+>>>>>>> castel
                     {
                         if (reader.HasRows)
                         {

@@ -50,7 +50,15 @@
     <Compile Include="Bitacora\CD_Bitacora.cs" />
     <Compile Include="CD_BackUp.cs" />
     <Compile Include="CD_ComparaDigitoVerificador.cs" />
+<<<<<<< HEAD
     <Compile Include="CD_TraePreguntasSeguridad.cs" />
+=======
+    <Compile Include="CD_EstadosUsuario\CD_AgegarEstado.cs" />
+    <Compile Include="CD_EstadosUsuario\CD_ObtenerEstadoUsuario.cs" />
+    <Compile Include="CD_TraerLocalidades.cs" />
+    <Compile Include="CD_TraerPartidos.cs" />
+    <Compile Include="CD_TraerProvincias.cs" />
+>>>>>>> castel
     <Compile Include="CD_Usuario\CD_BloquearUsuario.cs" />
     <Compile Include="CD_Reservas\CD_Busqueda.cs" />
     <Compile Include="CD_Paquetes\CD_NuevaDisponiblidad.cs" />
@@ -77,6 +85,7 @@
     <Compile Include="CD_Paquetes\CD_EditarPaquete.cs" />
     <Compile Include="CD_Hoteles\CD_EditarHotel.cs" />
     <Compile Include="CD_Pasajeros\CD_EditarPasajero.cs" />
+    <Compile Include="CD_Usuario\CD_EditarDatosUsuario.cs" />
     <Compile Include="CD_Usuario\CD_EditarPassword.cs" />
     <Compile Include="CD_Paquetes\CD_EliminarPaquete.cs" />
     <Compile Include="CD_Pasajeros\CD_EliminarPasajero.cs" />
@@ -91,6 +100,7 @@
     <Compile Include="CD_Pasajeros\CD_MostrarPasajeros.cs" />
     <Compile Include="CD_Hoteles\CD_MostrarProveedor.cs" />
     <Compile Include="CD_Usuario\CD_TraePreguntasYRespuestas.cs" />
+    <Compile Include="CD_Usuario\CD_TraerDatosUsuario.cs" />
     <Compile Include="CD_Usuario\CD_ValidarPassword.cs" />
     <Compile Include="CD_Usuario\CD_ValidarUsuario.cs" />
     <Compile Include="CD_Buses\CD_MostrarBuses.cs" />

@@ -270,8 +270,7 @@ namespace Loggin
                 }
                 else
                 {
-                    // Establece un valor por defecto o maneja el caso en que el valor es nulo
-                    npdAsientosCama.Value = 0; // O cualquier valor que tenga sentido en tu contexto
+                    npdAsientosCama.Value = 0; 
                 }
                 var CantHabitaciones = dgvReservas.CurrentRow.Cells["Habitaciones"].Value;
 
@@ -304,8 +303,7 @@ namespace Loggin
                 }
                 else
                 {
-                    // Establece un valor por defecto o maneja el caso en que el valor es nulo
-                    npdDoble.Value = 0; // O cualquier valor que tenga sentido en tu contexto
+                    npdDoble.Value = 0; 
                 }
 
                 var Triple = dgvReservas.CurrentRow.Cells["Triple"].Value;
@@ -315,8 +313,7 @@ namespace Loggin
                 }
                 else
                 {
-                    // Establece un valor por defecto o maneja el caso en que el valor es nulo
-                    npdTriple.Value = 0; // O cualquier valor que tenga sentido en tu contexto
+                    npdTriple.Value = 0; 
                 }
                 var Cuadruple = dgvReservas.CurrentRow.Cells["Cuadruple"].Value;
 
@@ -326,8 +323,7 @@ namespace Loggin
                 }
                 else
                 {
-                    // Establece un valor por defecto o maneja el caso en que el valor es nulo
-                    npdCuadruple.Value = 0; // O cualquier valor que tenga sentido en tu contexto
+                    npdCuadruple.Value = 0;
                 }
                 txtAscenso.Text = dgvReservas.CurrentRow.Cells["Ascenso"].Value.ToString();
                 var CamaSimple = dgvReservas.CurrentRow.Cells["CamaSimple"].Value;
@@ -338,8 +334,7 @@ namespace Loggin
                 }
                 else
                 {
-                    // Establece un valor por defecto o maneja el caso en que el valor es nulo
-                    npdCamaSimple.Value = 0; // O cualquier valor que tenga sentido en tu contexto
+                    npdCamaSimple.Value = 0; 
                 }
                 var CamaMatrimonial = dgvReservas.CurrentRow.Cells["CamaMatrimonial"].Value;
                 if (CamaMatrimonial != DBNull.Value)
@@ -348,8 +343,7 @@ namespace Loggin
                 }
                 else
                 {
-                    // Establece un valor por defecto o maneja el caso en que el valor es nulo
-                    npdCamaMatrimonial.Value = 0; // O cualquier valor que tenga sentido en tu contexto
+                    npdCamaMatrimonial.Value = 0;
                 }
                 ckbCotizar.Text = dgvReservas.CurrentRow.Cells["Cotizar"].Value.ToString();
                 txtSeña.Text = dgvReservas.CurrentRow.Cells["Seña"].Value.ToString();

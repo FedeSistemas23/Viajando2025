@@ -36,7 +36,11 @@ namespace CapaSesion
 
 
         }
+<<<<<<< HEAD
         public static int Hasheo(string username, string pass)
+=======
+        public static int hasheo(string username, string pass)
+>>>>>>> castel
         {
             string userpass = username + pass;
             string hasheo = Seguridad.SHA256(userpass);
