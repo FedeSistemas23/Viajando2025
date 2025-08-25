@@ -4,17 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-//ordenar los atributos entre los datos de usuario y persona
 namespace CapaNegocio
 {
 
-  
-   public class CN_Nuevo_Usuario
+    // Esta clase se llama al momento de dar de alta a un usuario en el sistema  
+    public class CN_NuevoUsuario
 
     {
         public string Username { get; set; }
-        public string nombre { get; set; }
-        public string email { get; set; }
+        public string Nombre { get; set; }
+        public string password { get; set; }
+        public string Email { get; set; }
 
         public string Apellidos { get; set; }
 
@@ -26,21 +26,20 @@ namespace CapaNegocio
 
         public string Calle { get; set; }
         public string NumCalle { get; set; }
+        public int Digito { get; set; }
 
-        public string Barrio { get; set; } //tenemos barrio en la base de datos?
         public string Localidad { get; set; }
 
-        
+        List<CN_NuevoUsuario> cN_NuevoUsuarios { get; set; }
 
-        public  string password { get; set; } // se genera con el Aleatorio en Servicios
-        public  int digito { get; set; }      // se genera con su metodo usando el aleatorio Todo esto en la capa
-        public  int familia { get; set; }
-        
-        public  int intentos { get; set; }
-        public  int venceCada { get; set; }
+
+        public int familia { get; set; }
+
+        public int intentos { get; set; }
+        public int venceCada { get; set; }
         public bool Bloqueado { get; set; }
 
-        
+    } 
 
-    }
+    
 }

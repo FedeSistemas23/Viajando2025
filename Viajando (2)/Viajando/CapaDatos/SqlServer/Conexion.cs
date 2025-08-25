@@ -12,7 +12,11 @@ namespace CapaDatos
     public class Conexion
     {
 
+<<<<<<< HEAD
         private SqlConnection ConexionBd = new SqlConnection("Server = .;DataBase = Viajando; integrated security = true");
+=======
+        private SqlConnection ConexionBd = new SqlConnection("Server =DESKTOP-HJA3EM4;DataBase = Viajando; integrated security = true");
+>>>>>>> castel
         public SqlConnection AbrirConexion()
         {
             if (ConexionBd.State == ConnectionState.Closed)

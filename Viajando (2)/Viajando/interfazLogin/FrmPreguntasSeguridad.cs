@@ -34,6 +34,7 @@ namespace interfazLogin
 
         private void btnEnviarUsuario_Click(object sender, EventArgs e)
         {
+            string username = txtUsuario.Text;
             int idUsuario = CS_UsuarioEnSesion.Id_Usuario;
             CN_ValidarUsuario validarUsuario = new CN_ValidarUsuario();
             bool existe = validarUsuario.ValidarNombreUsuarioL(txtUsuario.Text);
@@ -67,7 +68,9 @@ namespace interfazLogin
         {
             // log= new FrmLogin1();
             FrmEditarPassword editarPassword = new FrmEditarPassword();
-            if (CS_PregRespSeg.Respuesta1 == txtRespuesta1.Text && CS_PregRespSeg.Respuesta2 == txtRespuesta2.Text && CS_PregRespSeg.Respuesta3 == txtRespuesta3.Text)
+            if (CS_PregRespSeg.Respuesta1 == txtRespuesta1.Text && 
+                CS_PregRespSeg.Respuesta2 == txtRespuesta2.Text && 
+                CS_PregRespSeg.Respuesta3 == txtRespuesta3.Text)
             {
 
                 string aleatorio = Aleatorios.Armar();

@@ -1,5 +1,9 @@
 ﻿using CapaDatos;
+<<<<<<< HEAD
+using CapaNegocio.CN_Usuario;
+=======
 using CapaSesion;
+>>>>>>> castel
 using CapaServicios;
 
 namespace CapaNegocio
@@ -9,6 +13,26 @@ namespace CapaNegocio
         private string nombreusuario;
         string Username;
         private string Password;
+<<<<<<< HEAD
+        CD_ValidarUsuario validador;
+        CN_ComparaDigitoVerificador comparador;
+        CN_ComparaPassword comparaPass;
+
+        public CN_ValidarUsuario()
+        {
+            comparador = new CN_ComparaDigitoVerificador();
+            validador = new CD_ValidarUsuario();
+            comparaPass = new CN_ComparaPassword();
+        }
+
+        public bool ValidarUsuarioL(string usuario, string pass)
+        {
+            bool existe = validador.ValidarNombreUsuarioD(usuario);
+
+            if (existe && comparador.ComparaDigitoVerificador(pass, usuario)
+                && comparaPass.ComparaPassword(pass, usuario)) 
+                //&& verificadorBloqueo.VerificarUsuarioBloqueado()
+=======
         CD_ValidarUsuario validarusuario = new CD_ValidarUsuario();
 
         public CN_ValidarUsuario()
@@ -27,6 +51,7 @@ namespace CapaNegocio
             int digito = Seguridad.hasheo(Username, Password);
             bool existe = validarusuario.ValidarNombreUsuarioD(Username);
             if (existe && ComparaDigitoVerificador.ComparaDigito(digito, Username) == true )
+>>>>>>> castel
             {
                 return true;
             }
@@ -41,7 +66,11 @@ namespace CapaNegocio
         public bool ValidarNombreUsuarioL(string usuario)
         {
 
+<<<<<<< HEAD
+            bool existe = validador.ValidarNombreUsuarioD(usuario);
+=======
             bool existe = validarusuario.ValidarNombreUsuarioD(usuario);
+>>>>>>> castel
             if (existe)
             {
 

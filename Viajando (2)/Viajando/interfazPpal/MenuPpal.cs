@@ -1,5 +1,6 @@
 ﻿using CapaSesion;
 using interfazPpal;
+using interfazPpal.Frm_Usuarios;
 using System;
 using System.Windows.Forms;
 
@@ -35,9 +36,9 @@ namespace Loggin
         }
         private void altaUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Alta_de_Usuarios form = new Alta_de_Usuarios();
-            // form.Show();
-            AbrirFormuEnPanelMenu(form);
+            frm_AltaUsuario form = new frm_AltaUsuario();
+            form.Show();
+           // AbrirFormuEnPanelMenu(form);
             //Alta_de_Usuarios frm = new Alta_de_Usuarios();
             //nuContenedor.Show();
         }
@@ -51,7 +52,8 @@ namespace Loggin
         private void crearNuevoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmIngresarEditarPaquetes frm = new FrmIngresarEditarPaquetes();
-            AbrirFormuEnPanelMenu(frm);
+           frm.Show();
+           //AbrirFormuEnPanelMenu(frm);
         }
 
         private void pagoAVendedoresToolStripMenuItem_Click(object sender, EventArgs e)
@@ -154,10 +156,16 @@ namespace Loggin
 
         private void buscarReservaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             FrmConfiguracionDelSistema Reservas = new FrmConfiguracionDelSistema();
             Reservas.ShowDialog(); 
             //   FrmBuscarReserva buscarReserva = new FrmBuscarReserva();
             // buscarReserva.ShowDialog(); 
+=======
+         
+             FrmBuscarReserva buscarReserva = new FrmBuscarReserva();
+             buscarReserva.ShowDialog(); 
+>>>>>>> castel
         }
 
         private void paquetesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -180,5 +188,13 @@ namespace Loggin
         {
 
         }
+<<<<<<< HEAD
+=======
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+>>>>>>> castel
     }
 }

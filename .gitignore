@@ -398,3 +398,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/Viajando (2)/Viajando/CapaNegocio/Backup/CN_BackUp.cs
