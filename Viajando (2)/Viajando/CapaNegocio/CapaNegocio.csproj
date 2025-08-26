@@ -46,68 +46,80 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
-	<ItemGroup>
-		<Compile Include="CN_Alta usuario\AtributosUsuario.cs" />
-		<Compile Include="CN_Alta usuario\CN_Alta_Usuario.cs" />
-		<Compile Include="Bitacora\CN_Bitacora.cs" />
-		<Compile Include="CN_TraePreguntasSeguridad.cs" />
-		<Compile Include="Backup\CN_BackUp.cs" />
-		<Compile Include="CN_GuardarContraseña.cs" />
-		<Compile Include="CN_Localidades\CN_TraerLocalidades.cs" />
-		<Compile Include="CN_MostrarDatosUsuario.cs" />
-		<Compile Include="CN_GuardarFamilias y roles.cs" />
-		<Compile Include="CN_GuardarPreguntasSeguridad.cs" />
-		<Compile Include="CN_TraerPartidos.cs" />
-		<Compile Include="CN_TraerProvincias.cs" />
-		<Compile Include="CN_Usuario\CN_BloquearUsuario.cs" />
-		<Compile Include="CN_Paquetes\CN_BuscarPaquete.cs" />
-		<Compile Include="CN_Reservas\CN_Busqueda.cs" />
-		<Compile Include="CN_Paquetes\CN_NuevaDisponibilidad.cs" />
-		<Compile Include="CN_Reservas\CN_EditarReserva.cs" />
-		<Compile Include="CN_Reservas\CN_GuardarReserva.cs" />
-		<Compile Include="CN_Reservas\CN_MostrarReserva.cs" />
-		<Compile Include="CN_Reservas\CN_EliimnarReserva.cs" />
-		<Compile Include="CN_Paquetes\CN_CargaAsientosBuses.cs" />
-		<Compile Include="CN_Buses\CN_MostrarBuses.cs" />
-		<Compile Include="CN_Paquetes\CN_CargaComboBus.cs" />
-		<Compile Include="CN_Buses\CN_EditarBus.cs" />
-		<Compile Include="CN_Buses\CN_ELiminarBus.cs" />
-		<Compile Include="CN_Buses\CN_GuardarBus.cs" />
-		<Compile Include="CN_Paquetes\CN_CargarHabitacionesHotel.cs" />
-		<Compile Include="CN_Paquetes\CN_CargaComboHotel.cs" />
-		<Compile Include="CN_Paquetes\CN_CargarComboDestino.cs" />
-		<Compile Include="CN_Pasajeros\CN_CargarPasajero.cs" />
-		<Compile Include="CN_Paquetes\CN_Destino.cs" />
-		<Compile Include="CN_Paquetes\CN_EditarPaquete.cs" />
-		<Compile Include="CN_Hoteles\CN_EditarHotel.cs" />
-		<Compile Include="CN_Pasajeros\CN_EditarPasajero.cs" />
-		<Compile Include="CN_Paquetes\CN_EliminarPaquete.cs" />
-		<Compile Include="CN_Pasajeros\CN_EliminarPasajero.cs" />
-		<Compile Include="CN_Hoteles\CN_EliminarProveedorHotel.cs" />
-		<Compile Include="CN_Hoteles\CN_GuardarHotel.cs" />
-		<Compile Include="CN_Paquetes\CN_GuardarPaquete.cs" />
-		<Compile Include="CN_Usuario\CN_ComparaPassword.cs" />
-		<Compile Include="CN_Usuario\CN_EditardatosUsuario.cs" />
-		<Compile Include="CN_Usuario\CN_EditarPassword.cs" />
-		<Compile Include="CN_Usuario\CN_EnviaDigitoVerificador.cs" />
-		<Compile Include="CN_Usuario\CN_EstadosUsuario.cs" />
-		<Compile Include="CN_Usuario\CN_Mail.cs" />
-		<Compile Include="CN_Usuario\CN_GuardaRespuestas.cs" />
-		<Compile Include="CN_Usuario\CN_GuardarPrimerIngreso.cs" />
-		<Compile Include="CN_Paquetes\CN_MostrarPaquetes.cs" />
-		<Compile Include="CN_Pasajeros\CN_MostrarPasajero.cs" />
-		<Compile Include="CN_Hoteles\CN_MostrarProveedor.cs" />
-		<Compile Include="CN_Usuario\CN_MostrarDatosUsuarios.cs" />
-		<Compile Include="CN_Usuario\CN_ObtenerEstadosUsuario.cs" />
-		<Compile Include="CN_Usuario\CN_TraerPreguntasYRespuestas.cs" />
-		<Compile Include="CN_Usuario\CN_UsuarioEnSesion.cs" />
-		<Compile Include="CN_Usuario\CN_ValidarUsuario.cs" />
-		<Compile Include="CN_Reservas\MuestraNumReserva.cs" />
-		<Compile Include="CN_Usuario\CN_ComparaDigitoVerificador.cs" />
-		<Compile Include="CN_VerificaUsuarioBloqueado.cs" />
-		<Compile Include="ComparaDigitoVerificador.cs" />
-		<Compile Include="Properties\AssemblyInfo.cs" />
-	</ItemGroup>
+  <ItemGroup>
+    <Compile Include="CN_Alta usuario\AtributosUsuario.cs" />
+    <Compile Include="CN_Alta usuario\CN_Alta_Usuario.cs" />
+    <Compile Include="Bitacora\CN_Bitacora.cs" />
+<<<<<<< HEAD
+    <Compile Include="CN_TraePreguntasSeguridad.cs" />
+=======
+    <Compile Include="Backup\CN_BackUp.cs" />
+    <Compile Include="CN_GuardarContraseña.cs" />
+    <Compile Include="CN_Localidades\CN_TraerLocalidades.cs" />
+    <Compile Include="CN_MostrarDatosUsuario.cs" />
+    <Compile Include="CN_GuardarFamilias y roles.cs" />
+    <Compile Include="CN_GuardarPreguntasSeguridad.cs" />
+    <Compile Include="CN_TraerPartidos.cs" />
+    <Compile Include="CN_TraerProvincias.cs" />
+>>>>>>> castel
+    <Compile Include="CN_Usuario\CN_BloquearUsuario.cs" />
+    <Compile Include="CN_Paquetes\CN_BuscarPaquete.cs" />
+    <Compile Include="CN_Reservas\CN_Busqueda.cs" />
+    <Compile Include="CN_Paquetes\CN_NuevaDisponibilidad.cs" />
+    <Compile Include="CN_Reservas\CN_EditarReserva.cs" />
+    <Compile Include="CN_Reservas\CN_GuardarReserva.cs" />
+    <Compile Include="CN_Reservas\CN_MostrarReserva.cs" />
+    <Compile Include="CN_Reservas\CN_EliimnarReserva.cs" />
+    <Compile Include="CN_Paquetes\CN_CargaAsientosBuses.cs" />
+    <Compile Include="CN_Buses\CN_MostrarBuses.cs" />
+    <Compile Include="CN_Paquetes\CN_CargaComboBus.cs" />
+    <Compile Include="CN_Buses\CN_EditarBus.cs" />
+    <Compile Include="CN_Buses\CN_ELiminarBus.cs" />
+    <Compile Include="CN_Buses\CN_GuardarBus.cs" />
+    <Compile Include="CN_Paquetes\CN_CargarHabitacionesHotel.cs" />
+    <Compile Include="CN_Paquetes\CN_CargaComboHotel.cs" />
+    <Compile Include="CN_Paquetes\CN_CargarComboDestino.cs" />
+    <Compile Include="CN_Pasajeros\CN_CargarPasajero.cs" />
+    <Compile Include="CN_Paquetes\CN_Destino.cs" />
+    <Compile Include="CN_Paquetes\CN_EditarPaquete.cs" />
+    <Compile Include="CN_Hoteles\CN_EditarHotel.cs" />
+    <Compile Include="CN_Pasajeros\CN_EditarPasajero.cs" />
+    <Compile Include="CN_Paquetes\CN_EliminarPaquete.cs" />
+    <Compile Include="CN_Pasajeros\CN_EliminarPasajero.cs" />
+    <Compile Include="CN_Hoteles\CN_EliminarProveedorHotel.cs" />
+    <Compile Include="CN_Hoteles\CN_GuardarHotel.cs" />
+    <Compile Include="CN_Paquetes\CN_GuardarPaquete.cs" />
+<<<<<<< HEAD
+    <Compile Include="CN_Usuario\CN_ComparaPassword.cs" />
+=======
+    <Compile Include="CN_Usuario\CN_EditardatosUsuario.cs" />
+>>>>>>> castel
+    <Compile Include="CN_Usuario\CN_EditarPassword.cs" />
+    <Compile Include="CN_Usuario\CN_EnviaDigitoVerificador.cs" />
+    <Compile Include="CN_Usuario\CN_EstadosUsuario.cs" />
+    <Compile Include="CN_Usuario\CN_Mail.cs" />
+    <Compile Include="CN_Usuario\CN_GuardaRespuestas.cs" />
+    <Compile Include="CN_Usuario\CN_GuardarPrimerIngreso.cs" />
+    <Compile Include="CN_Paquetes\CN_MostrarPaquetes.cs" />
+    <Compile Include="CN_Pasajeros\CN_MostrarPasajero.cs" />
+    <Compile Include="CN_Hoteles\CN_MostrarProveedor.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="CN_Usuario\CN_MostrarDatosUsuarios.cs" />
+    <Compile Include="CN_Usuario\CN_ObtenerEstadosUsuario.cs" />
+>>>>>>> castel
+    <Compile Include="CN_Usuario\CN_TraerPreguntasYRespuestas.cs" />
+    <Compile Include="CN_Usuario\CN_UsuarioEnSesion.cs" />
+    <Compile Include="CN_Usuario\CN_ValidarUsuario.cs" />
+    <Compile Include="CN_Reservas\MuestraNumReserva.cs" />
+<<<<<<< HEAD
+    <Compile Include="CN_Usuario\CN_ComparaDigitoVerificador.cs" />
+    <Compile Include="CN_VerificaUsuarioBloqueado.cs" />
+=======
+    <Compile Include="ComparaDigitoVerificador.cs" />
+>>>>>>> castel
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
       <Project>{66631d9d-56c3-497f-b962-9136ce3c4c6b}</Project>
