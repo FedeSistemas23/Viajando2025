@@ -65,18 +65,12 @@
     <Compile Include="Frm Usuarios\FrmConfiguracionDeSeguridad.Designer.cs">
       <DependentUpon>FrmConfiguracionDeSeguridad.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="FrmConfiguracionDelSistema.cs">
-      <SubType>Form</SubType>
-    </Compile>
-=======
     <Compile Include="Frm Usuarios\frm_AltaUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm Usuarios\frm_AltaUsuario.Designer.cs">
       <DependentUpon>frm_AltaUsuario.cs</DependentUpon>
     </Compile>
->>>>>>> castel
     <Compile Include="Frms Reservas\FrmCrearReserva.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,13 +205,10 @@
     <EmbeddedResource Include="Frm Usuarios\FrmConfiguracionDeSeguridad.resx">
       <DependentUpon>FrmConfiguracionDeSeguridad.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
-    <EmbeddedResource Include="FrmConfiguracionDelSistema.resx">
-      <DependentUpon>FrmConfiguracionDelSistema.cs</DependentUpon>
-=======
+
     <EmbeddedResource Include="Frm Usuarios\frm_AltaUsuario.resx">
       <DependentUpon>frm_AltaUsuario.cs</DependentUpon>
->>>>>>> castel
+
     </EmbeddedResource>
     <EmbeddedResource Include="Frms Reservas\FrmCrearReserva.resx">
       <DependentUpon>FrmCrearReserva.cs</DependentUpon>
