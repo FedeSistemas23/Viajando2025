@@ -96,35 +96,13 @@ namespace interfazLogin
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            /*this.Hide();
+            this.Hide();
             bienvenida saludo = new bienvenida();
             saludo.ShowDialog();
-            menu1.Show();*/
+            menu1.Show();
             CN_ValidarUsuario Usuario = new CN_ValidarUsuario();
 
-            if (txtUsuario.Text != "Ej.: ejemplo@gmail.com")
-            {
-                if (txtPass.Text != "Contraseña")
-                {
-                    string pass = txtPass.Text;
-                    string usuario = txtUsuario.Text;
-                    bool Existe = Usuario.ValidarUsuarioL(usuario, pass);
-                    if (Existe)
-                    {
-                        this.Hide();
-                        bienvenida saludo = new bienvenida();
-                        saludo.ShowDialog();
-                        menu1.Show();
-                    }
-                    else
-                    {
-                        MessageBox.Show("El usuario no existe");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Debe ingresar una contraseña");
-                }
+           
                 /*CN_BloquearUsuario BloqueadorUsuario = new CN_BloquearUsuario();
                 FrmPreguntasSeguridad FrmPreguntasSeguridad = new FrmPreguntasSeguridad();
                 FrmPrimerIngreso frmPrimerIngreso = new FrmPrimerIngreso();
@@ -237,11 +215,7 @@ namespace interfazLogin
 
 
 
-            }
-            else
-            {
-                MessageBox.Show("Dede ingresar un nombre de usuario");
-            }
+            
         }
         private void lnkOlvidar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -253,6 +227,11 @@ namespace interfazLogin
         private void txtPass_TextChanged(object sender, EventArgs e)
         {
             btnIngresar.Enabled = true;
+        }
+
+        private void FrmLogin1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using CapaSesion;
 using interfazPpal;
 using System;
+using System.Drawing;
+using System.Security.AccessControl;
 using System.Windows.Forms;
 
 
@@ -8,7 +10,10 @@ namespace Loggin
 {
     public partial class MenuPpal : Form
     {
-        
+        private static ToolStripMenuItem menuActivo = null;
+      
+        private static Form formularioActivo = null;
+
         FrmIngresarEditarPaquetes NuevoPaquete = new FrmIngresarEditarPaquetes();
         // frmlogin = new FrmLogin1();
         public MenuPpal()
@@ -22,22 +27,32 @@ namespace Loggin
             this.Name = "Sistema de reservas Viajando";
         }
 
-        private void AbrirFormuEnPanelMenu(object formHijo)
+        private void AbrirFormuEnPanelMenu(ToolStripMenuItem menu, Form formulario)
         {
-            if (this.menuContenedor.Controls.Count > 0)
-                this.menuContenedor.Controls.RemoveAt(0);
-            Form form = formHijo as Form;
-            form.TopLevel = false;
-            form.Dock = DockStyle.Fill;
-            this.menuContenedor.Controls.Add(form);
-            this.menuContenedor.Tag = form;
-            form.Show();
+            if (menuActivo != null)
+            {
+                menuActivo.BackColor = Color.White;
+            }
+
+            if (formularioActivo != null)
+            {
+                formularioActivo.Close();
+            }
+
+            formularioActivo = formulario;
+            formulario.TopLevel = false;
+            formulario.FormBorderStyle = FormBorderStyle.None;
+            formulario.Dock = DockStyle.Fill;
+            menuContenedor.Controls.Add(formulario);
+            formulario.Show();
+
+
         }
         private void altaUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Alta_de_Usuarios form = new Alta_de_Usuarios();
             // form.Show();
-            AbrirFormuEnPanelMenu(form);
+            //AbrirFormuEnPanelMenu(form);
             //Alta_de_Usuarios frm = new Alta_de_Usuarios();
             //nuContenedor.Show();
         }
@@ -50,8 +65,10 @@ namespace Loggin
 
         private void crearNuevoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmIngresarEditarPaquetes frm = new FrmIngresarEditarPaquetes();
-            AbrirFormuEnPanelMenu(frm);
+
+            AbrirFormuEnPanelMenu(submenucreareditarpaquete, new FrmIngresarEditarPaquetes());
+            //FrmIngresarEditarPaquetes frm = new FrmIngresarEditarPaquetes();
+            //AbrirFormuEnPanelMenu(frm);
         }
 
         private void pagoAVendedoresToolStripMenuItem_Click(object sender, EventArgs e)
@@ -111,8 +128,10 @@ namespace Loggin
 
         private void buscarPaqueteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmBuscarPaquete buscarPaquete = new FrmBuscarPaquete();
-            buscarPaquete.ShowDialog();
+
+            AbrirFormuEnPanelMenu(submenubuscarpaquete, new FrmBuscarPaquete());
+            //FrmBuscarPaquete buscarPaquete = new FrmBuscarPaquete();
+            //buscarPaquete.ShowDialog();
         }
 
         private void cancelarReservaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -177,6 +196,16 @@ namespace Loggin
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void ckbNumRerva_CheckedChanged(object sender, EventArgs e)
         {
 
         }
