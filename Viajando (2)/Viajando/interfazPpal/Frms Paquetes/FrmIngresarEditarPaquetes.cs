@@ -29,9 +29,9 @@ namespace interfazPpal
         }
         private void FrmIngresarEditarPaquetes_Load(object sender, EventArgs e)
         {
-            MostrarPaquetes();
-            CargarComboDestino();
-            cmbBus.Items.Clear();
+            //MostrarPaquetes();
+            //CargarComboDestino();
+            /*cmbBus.Items.Clear();
             cmbBus.Items.Insert(0, "Seleccione el Bus");
             cmbTipoBus.Items.Clear();
             cmbTipoBus.Items.Insert(0, "Tipo de Bus");
@@ -44,7 +44,7 @@ namespace interfazPpal
             cmbBus.SelectedIndex = 0;
             cmbTipoBus.SelectedIndex = 0;
             cmbHotel.SelectedIndex = 0;
-
+            */
             //txtDestino.Enabled = false;
             //a partir de aca hago algunas configuraciones del dgvPaquetes.
 

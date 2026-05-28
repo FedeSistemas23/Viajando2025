@@ -33,8 +33,8 @@
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestiónPaquetesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.crearNuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.buscarPaqueteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.submenucreareditarpaquete = new System.Windows.Forms.ToolStripMenuItem();
+            this.submenubuscarpaquete = new System.Windows.Forms.ToolStripMenuItem();
             this.gestiónReservasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.cancelarReservaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,39 +73,9 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.datosPersonalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-<<<<<<< HEAD
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.ckbFechaReserva = new System.Windows.Forms.CheckBox();
-=======
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.ckbFechaReserva = new System.Windows.Forms.CheckBox();
-            this.ckbNombre = new System.Windows.Forms.CheckBox();
->>>>>>> castel
-            this.ckbDestino = new System.Windows.Forms.CheckBox();
-            this.ckbNumRerva = new System.Windows.Forms.CheckBox();
-            this.ckbFechaSalida = new System.Windows.Forms.CheckBox();
-            this.ckbFechaRegreso = new System.Windows.Forms.CheckBox();
-<<<<<<< HEAD
-            this.ckbNombre = new System.Windows.Forms.CheckBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             this.menuContenedor.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-=======
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.menuStrip1.SuspendLayout();
-            this.menuContenedor.SuspendLayout();
-            this.contextMenuStrip2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel2.SuspendLayout();
->>>>>>> castel
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -124,7 +94,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1028, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(770, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -148,27 +118,27 @@
             // gestiónPaquetesToolStripMenuItem
             // 
             this.gestiónPaquetesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.crearNuevoToolStripMenuItem,
-            this.buscarPaqueteToolStripMenuItem});
+            this.submenucreareditarpaquete,
+            this.submenubuscarpaquete});
             this.gestiónPaquetesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.gestiónPaquetesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gestiónPaquetesToolStripMenuItem.Name = "gestiónPaquetesToolStripMenuItem";
             this.gestiónPaquetesToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
             this.gestiónPaquetesToolStripMenuItem.Text = "Paquetes";
             // 
-            // crearNuevoToolStripMenuItem
+            // submenucreareditarpaquete
             // 
-            this.crearNuevoToolStripMenuItem.Name = "crearNuevoToolStripMenuItem";
-            this.crearNuevoToolStripMenuItem.Size = new System.Drawing.Size(230, 24);
-            this.crearNuevoToolStripMenuItem.Text = "Ingresar / Editar Paquete";
-            this.crearNuevoToolStripMenuItem.Click += new System.EventHandler(this.crearNuevoToolStripMenuItem_Click);
+            this.submenucreareditarpaquete.Name = "submenucreareditarpaquete";
+            this.submenucreareditarpaquete.Size = new System.Drawing.Size(230, 24);
+            this.submenucreareditarpaquete.Text = "Ingresar / Editar Paquete";
+            this.submenucreareditarpaquete.Click += new System.EventHandler(this.crearNuevoToolStripMenuItem_Click);
             // 
-            // buscarPaqueteToolStripMenuItem
+            // submenubuscarpaquete
             // 
-            this.buscarPaqueteToolStripMenuItem.Name = "buscarPaqueteToolStripMenuItem";
-            this.buscarPaqueteToolStripMenuItem.Size = new System.Drawing.Size(230, 24);
-            this.buscarPaqueteToolStripMenuItem.Text = "Buscar Paquete";
-            this.buscarPaqueteToolStripMenuItem.Click += new System.EventHandler(this.buscarPaqueteToolStripMenuItem_Click);
+            this.submenubuscarpaquete.Name = "submenubuscarpaquete";
+            this.submenubuscarpaquete.Size = new System.Drawing.Size(230, 24);
+            this.submenubuscarpaquete.Text = "Buscar Paquete";
+            this.submenubuscarpaquete.Click += new System.EventHandler(this.buscarPaqueteToolStripMenuItem_Click);
             // 
             // gestiónReservasToolStripMenuItem
             // 
@@ -460,26 +430,20 @@
             // 
             this.menuContenedor.AutoSize = true;
             this.menuContenedor.BackColor = System.Drawing.SystemColors.ButtonFace;
-<<<<<<< HEAD
-            this.menuContenedor.Controls.Add(this.dataGridView1);
-            this.menuContenedor.Controls.Add(this.panel2);
-=======
-            this.menuContenedor.Controls.Add(this.panel1);
->>>>>>> castel
             this.menuContenedor.Controls.Add(this.statusStrip1);
             this.menuContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.menuContenedor.Location = new System.Drawing.Point(0, 28);
             this.menuContenedor.Name = "menuContenedor";
-            this.menuContenedor.Size = new System.Drawing.Size(1028, 581);
+            this.menuContenedor.Size = new System.Drawing.Size(770, 565);
             this.menuContenedor.TabIndex = 1;
             this.menuContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.menuContenedor_Paint);
             // 
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Location = new System.Drawing.Point(0, 559);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 543);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1028, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(770, 22);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -497,255 +461,11 @@
             this.datosPersonalesToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.datosPersonalesToolStripMenuItem.Text = "Datos Personales";
             // 
-<<<<<<< HEAD
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.label5);
-=======
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1004, 529);
-            this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.CornflowerBlue;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 116);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(977, 359);
-            this.dataGridView1.TabIndex = 82;
-            // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
->>>>>>> castel
-            this.panel2.Controls.Add(this.ckbFechaReserva);
-            this.panel2.Controls.Add(this.ckbNombre);
-            this.panel2.Controls.Add(this.ckbDestino);
-            this.panel2.Controls.Add(this.ckbNumRerva);
-            this.panel2.Controls.Add(this.ckbFechaSalida);
-            this.panel2.Controls.Add(this.ckbFechaRegreso);
-<<<<<<< HEAD
-            this.panel2.Location = new System.Drawing.Point(26, 12);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(977, 49);
-            this.panel2.TabIndex = 79;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(44, 11);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 20);
-            this.label5.TabIndex = 71;
-            this.label5.Text = "Buscar ";
-=======
-            this.panel2.Location = new System.Drawing.Point(12, 12);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(662, 44);
-            this.panel2.TabIndex = 81;
->>>>>>> castel
-            // 
-            // ckbFechaReserva
-            // 
-            this.ckbFechaReserva.Appearance = System.Windows.Forms.Appearance.Button;
-            this.ckbFechaReserva.AutoSize = true;
-<<<<<<< HEAD
-            this.ckbFechaReserva.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ckbFechaReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbFechaReserva.Location = new System.Drawing.Point(345, 9);
-            this.ckbFechaReserva.Name = "ckbFechaReserva";
-            this.ckbFechaReserva.Size = new System.Drawing.Size(110, 26);
-            this.ckbFechaReserva.TabIndex = 73;
-            this.ckbFechaReserva.Text = "Fecha Reserva";
-            this.ckbFechaReserva.UseVisualStyleBackColor = true;
-            // 
-            // ckbDestino
-            // 
-            this.ckbDestino.Appearance = System.Windows.Forms.Appearance.Button;
-            this.ckbDestino.AutoSize = true;
-            this.ckbDestino.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ckbDestino.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbDestino.Location = new System.Drawing.Point(203, 9);
-            this.ckbDestino.Name = "ckbDestino";
-            this.ckbDestino.Size = new System.Drawing.Size(75, 26);
-            this.ckbDestino.TabIndex = 72;
-            this.ckbDestino.Text = "Paquetes";
-            this.ckbDestino.UseVisualStyleBackColor = true;
-            // 
-            // ckbNumRerva
-            // 
-            this.ckbNumRerva.Appearance = System.Windows.Forms.Appearance.Button;
-            this.ckbNumRerva.AutoSize = true;
-            this.ckbNumRerva.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ckbNumRerva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbNumRerva.Location = new System.Drawing.Point(126, 9);
-            this.ckbNumRerva.Name = "ckbNumRerva";
-            this.ckbNumRerva.Size = new System.Drawing.Size(72, 26);
-            this.ckbNumRerva.TabIndex = 71;
-            this.ckbNumRerva.Text = "Resevas";
-            this.ckbNumRerva.UseVisualStyleBackColor = true;
-            // 
-            // ckbFechaSalida
-            // 
-            this.ckbFechaSalida.Appearance = System.Windows.Forms.Appearance.Button;
-            this.ckbFechaSalida.AutoSize = true;
-            this.ckbFechaSalida.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ckbFechaSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbFechaSalida.Location = new System.Drawing.Point(578, 9);
-            this.ckbFechaSalida.Name = "ckbFechaSalida";
-            this.ckbFechaSalida.Size = new System.Drawing.Size(100, 26);
-            this.ckbFechaSalida.TabIndex = 74;
-            this.ckbFechaSalida.Text = "Fecha  Salida";
-            this.ckbFechaSalida.UseVisualStyleBackColor = true;
-            // 
-            // ckbFechaRegreso
-            // 
-            this.ckbFechaRegreso.Appearance = System.Windows.Forms.Appearance.Button;
-            this.ckbFechaRegreso.AutoSize = true;
-            this.ckbFechaRegreso.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ckbFechaRegreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbFechaRegreso.Location = new System.Drawing.Point(461, 9);
-            this.ckbFechaRegreso.Name = "ckbFechaRegreso";
-            this.ckbFechaRegreso.Size = new System.Drawing.Size(111, 26);
-            this.ckbFechaRegreso.TabIndex = 75;
-            this.ckbFechaRegreso.Text = "Fecha Regreso";
-            this.ckbFechaRegreso.UseVisualStyleBackColor = true;
-=======
-            this.ckbFechaReserva.BackColor = System.Drawing.Color.SteelBlue;
-            this.ckbFechaReserva.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ckbFechaReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbFechaReserva.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ckbFechaReserva.Location = new System.Drawing.Point(265, 5);
-            this.ckbFechaReserva.Margin = new System.Windows.Forms.Padding(5);
-            this.ckbFechaReserva.Name = "ckbFechaReserva";
-            this.ckbFechaReserva.Size = new System.Drawing.Size(127, 30);
-            this.ckbFechaReserva.TabIndex = 73;
-            this.ckbFechaReserva.Text = "Fecha Reserva";
-            this.ckbFechaReserva.UseVisualStyleBackColor = false;
->>>>>>> castel
-            // 
-            // ckbNombre
-            // 
-            this.ckbNombre.Appearance = System.Windows.Forms.Appearance.Button;
-            this.ckbNombre.AutoSize = true;
-<<<<<<< HEAD
-            this.ckbNombre.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ckbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbNombre.Location = new System.Drawing.Point(282, 9);
-            this.ckbNombre.Name = "ckbNombre";
-            this.ckbNombre.Size = new System.Drawing.Size(57, 26);
-            this.ckbNombre.TabIndex = 76;
-            this.ckbNombre.Text = "Pagos";
-            this.ckbNombre.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(26, 88);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(977, 374);
-            this.dataGridView1.TabIndex = 80;
-=======
-            this.ckbNombre.BackColor = System.Drawing.Color.SteelBlue;
-            this.ckbNombre.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ckbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbNombre.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ckbNombre.Location = new System.Drawing.Point(193, 5);
-            this.ckbNombre.Margin = new System.Windows.Forms.Padding(5);
-            this.ckbNombre.Name = "ckbNombre";
-            this.ckbNombre.Size = new System.Drawing.Size(64, 30);
-            this.ckbNombre.TabIndex = 76;
-            this.ckbNombre.Text = "Pagos";
-            this.ckbNombre.UseVisualStyleBackColor = false;
-            // 
-            // ckbDestino
-            // 
-            this.ckbDestino.Appearance = System.Windows.Forms.Appearance.Button;
-            this.ckbDestino.AutoSize = true;
-            this.ckbDestino.BackColor = System.Drawing.Color.SteelBlue;
-            this.ckbDestino.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ckbDestino.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbDestino.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ckbDestino.Location = new System.Drawing.Point(96, 5);
-            this.ckbDestino.Margin = new System.Windows.Forms.Padding(5);
-            this.ckbDestino.Name = "ckbDestino";
-            this.ckbDestino.Size = new System.Drawing.Size(87, 30);
-            this.ckbDestino.TabIndex = 72;
-            this.ckbDestino.Text = "Paquetes";
-            this.ckbDestino.UseVisualStyleBackColor = false;
-            // 
-            // ckbNumRerva
-            // 
-            this.ckbNumRerva.Appearance = System.Windows.Forms.Appearance.Button;
-            this.ckbNumRerva.AutoSize = true;
-            this.ckbNumRerva.BackColor = System.Drawing.Color.SteelBlue;
-            this.ckbNumRerva.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ckbNumRerva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbNumRerva.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ckbNumRerva.Location = new System.Drawing.Point(5, 5);
-            this.ckbNumRerva.Margin = new System.Windows.Forms.Padding(5);
-            this.ckbNumRerva.Name = "ckbNumRerva";
-            this.ckbNumRerva.Size = new System.Drawing.Size(81, 30);
-            this.ckbNumRerva.TabIndex = 71;
-            this.ckbNumRerva.Text = "Resevas";
-            this.ckbNumRerva.UseVisualStyleBackColor = false;
-            // 
-            // ckbFechaSalida
-            // 
-            this.ckbFechaSalida.Appearance = System.Windows.Forms.Appearance.Button;
-            this.ckbFechaSalida.AutoSize = true;
-            this.ckbFechaSalida.BackColor = System.Drawing.Color.SteelBlue;
-            this.ckbFechaSalida.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ckbFechaSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbFechaSalida.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ckbFechaSalida.Location = new System.Drawing.Point(536, 5);
-            this.ckbFechaSalida.Margin = new System.Windows.Forms.Padding(5);
-            this.ckbFechaSalida.Name = "ckbFechaSalida";
-            this.ckbFechaSalida.Size = new System.Drawing.Size(116, 30);
-            this.ckbFechaSalida.TabIndex = 74;
-            this.ckbFechaSalida.Text = "Fecha  Salida";
-            this.ckbFechaSalida.UseVisualStyleBackColor = false;
-            // 
-            // ckbFechaRegreso
-            // 
-            this.ckbFechaRegreso.Appearance = System.Windows.Forms.Appearance.Button;
-            this.ckbFechaRegreso.AutoSize = true;
-            this.ckbFechaRegreso.BackColor = System.Drawing.Color.SteelBlue;
-            this.ckbFechaRegreso.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ckbFechaRegreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbFechaRegreso.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ckbFechaRegreso.Location = new System.Drawing.Point(400, 5);
-            this.ckbFechaRegreso.Margin = new System.Windows.Forms.Padding(0);
-            this.ckbFechaRegreso.Name = "ckbFechaRegreso";
-            this.ckbFechaRegreso.Size = new System.Drawing.Size(129, 30);
-            this.ckbFechaRegreso.TabIndex = 75;
-            this.ckbFechaRegreso.Text = "Fecha Regreso";
-            this.ckbFechaRegreso.UseVisualStyleBackColor = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(147, 73);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(259, 20);
-            this.textBox1.TabIndex = 83;
->>>>>>> castel
-            // 
             // MenuPpal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 609);
+            this.ClientSize = new System.Drawing.Size(770, 593);
             this.Controls.Add(this.menuContenedor);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -760,17 +480,6 @@
             this.menuContenedor.ResumeLayout(false);
             this.menuContenedor.PerformLayout();
             this.contextMenuStrip2.ResumeLayout(false);
-<<<<<<< HEAD
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-=======
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
->>>>>>> castel
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -780,7 +489,7 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem gestiónPaquetesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem crearNuevoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem submenucreareditarpaquete;
         private System.Windows.Forms.ToolStripMenuItem gestiónReservasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem cancelarReservaToolStripMenuItem;
@@ -811,7 +520,7 @@
         private System.Windows.Forms.ToolStripMenuItem busesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inicioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem buscarPaqueteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem submenubuscarpaquete;
         private System.Windows.Forms.ToolStripMenuItem buscarReservaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pasajeroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ingresarPasajeroToolStripMenuItem;
@@ -822,25 +531,5 @@
         private System.Windows.Forms.ToolStripMenuItem cordinadoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem configuracionSistemaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem altaUsuariosToolStripMenuItem;
-<<<<<<< HEAD
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label5;
-=======
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Panel panel2;
->>>>>>> castel
-        private System.Windows.Forms.CheckBox ckbFechaReserva;
-        private System.Windows.Forms.CheckBox ckbNombre;
-        private System.Windows.Forms.CheckBox ckbDestino;
-        private System.Windows.Forms.CheckBox ckbNumRerva;
-        private System.Windows.Forms.CheckBox ckbFechaSalida;
-        private System.Windows.Forms.CheckBox ckbFechaRegreso;
-<<<<<<< HEAD
-        private System.Windows.Forms.DataGridView dataGridView1;
-=======
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.TextBox textBox1;
->>>>>>> castel
     }
 }

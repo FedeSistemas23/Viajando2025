@@ -96,64 +96,13 @@ namespace interfazLogin
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            bienvenida saludo = new bienvenida();
+            saludo.ShowDialog();
+            menu1.Show();
+            CN_ValidarUsuario Usuario = new CN_ValidarUsuario();
 
-
-            string pass = txtPass.Text;
-            string usuario = txtUsuario.Text;
-            CN_ValidarUsuario Usuario = new CN_ValidarUsuario(usuario, pass);
-            bool Existe = Usuario.ValidarNombreUsuarioL();
-            if (Existe)
-            {
-                this.Hide();
-                bienvenida saludo = new bienvenida();
-                saludo.ShowDialog();
-                menu1.Show();
-            }
-            else
-            {
-                MessageBox.Show("El usuario no existe");
-            }
-
-        }
-        /*CN_BloquearUsuario BloqueadorUsuario = new CN_BloquearUsuario();
-        FrmPreguntasSeguridad FrmPreguntasSeguridad = new FrmPreguntasSeguridad();
-        FrmPrimerIngreso frmPrimerIngreso = new FrmPrimerIngreso();
-        CN_registrarIntentosFallidos intentosFallidos = new CN_registrarIntentosFallidos();
-
-        string pass = txtPass.Text;
-        string Usuario = txtUsuario.Text;
-
-        if (Aleatorio != txtPass.Text)
-        {
-            string concatenados = pass+Usuario;
-            string hasheo = Seguridad.SHA256(concatenados);
-            int digito = CreaDigitoVerificador.Calcular(hasheo);
-            btnIngresar.Enabled = true; ;
->>>>>>> castel
-
-            if (txtUsuario.Text != "Ej.: ejemplo@gmail.com")
-            {
-                if (txtPass.Text != "Contraseña")
-                {
-                    string pass = txtPass.Text;
-                    string usuario = txtUsuario.Text;
-                    bool Existe = Usuario.ValidarUsuarioL(usuario, pass);
-                    if (Existe)
-                    {
-                        this.Hide();
-                        bienvenida saludo = new bienvenida();
-                        saludo.ShowDialog();
-                        menu1.Show();
-                    }
-                    else
-                    {
-                        MessageBox.Show("El usuario no existe");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Debe ingresar una contraseña");
-                }
+           
                 /*CN_BloquearUsuario BloqueadorUsuario = new CN_BloquearUsuario();
                 FrmPreguntasSeguridad FrmPreguntasSeguridad = new FrmPreguntasSeguridad();
                 FrmPrimerIngreso frmPrimerIngreso = new FrmPrimerIngreso();
@@ -266,9 +215,9 @@ namespace interfazLogin
 
 
 
-    
-
-private void lnkOlvidar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+            
+        }
+        private void lnkOlvidar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             FrmPreguntasSeguridad preguntas = new FrmPreguntasSeguridad();
             this.Hide();

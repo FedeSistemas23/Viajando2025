@@ -76,7 +76,7 @@
             this.txtUsuario.ForeColor = System.Drawing.Color.Silver;
             this.txtUsuario.Location = new System.Drawing.Point(308, 129);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(409, 24);
+            this.txtUsuario.Size = new System.Drawing.Size(409, 26);
             this.txtUsuario.TabIndex = 1;
             this.txtUsuario.Text = "Ej.: ejemplo@gmail.com";
             this.txtUsuario.Enter += new System.EventHandler(this.txtUsuario_Enter);
@@ -90,7 +90,7 @@
             this.txtPass.ForeColor = System.Drawing.Color.Silver;
             this.txtPass.Location = new System.Drawing.Point(308, 179);
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(409, 24);
+            this.txtPass.Size = new System.Drawing.Size(409, 26);
             this.txtPass.TabIndex = 2;
             this.txtPass.Text = "Contraseña";
             this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
@@ -105,7 +105,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(456, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 31);
+            this.label1.Size = new System.Drawing.Size(100, 33);
             this.label1.TabIndex = 3;
             this.label1.Text = "LOGIN";
             // 
@@ -136,7 +136,7 @@
             this.lnkOlvidar.LinkColor = System.Drawing.Color.DimGray;
             this.lnkOlvidar.Location = new System.Drawing.Point(565, 327);
             this.lnkOlvidar.Name = "lnkOlvidar";
-            this.lnkOlvidar.Size = new System.Drawing.Size(140, 16);
+            this.lnkOlvidar.Size = new System.Drawing.Size(155, 17);
             this.lnkOlvidar.TabIndex = 4;
             this.lnkOlvidar.TabStop = true;
             this.lnkOlvidar.Text = "Olvide mi contraseña?";
@@ -162,7 +162,7 @@
             this.lblUno.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblUno.Location = new System.Drawing.Point(304, 89);
             this.lblUno.Name = "lblUno";
-            this.lblUno.Size = new System.Drawing.Size(274, 20);
+            this.lblUno.Size = new System.Drawing.Size(296, 21);
             this.lblUno.TabIndex = 12;
             this.lblUno.Text = "Ingrese su nombre de usuario o email";
             // 
