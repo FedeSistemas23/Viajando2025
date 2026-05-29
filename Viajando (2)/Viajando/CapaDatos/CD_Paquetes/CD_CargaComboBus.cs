@@ -13,7 +13,7 @@ namespace CapaDatos
     {
         SqlCommand cmd = new SqlCommand();
         Conexion conexion = new Conexion();
-        int asientos;
+        //int asientos;
         List<string> Buses = new List<string>();
         public List<string> CargadorComboBusD(string destino)
         {
