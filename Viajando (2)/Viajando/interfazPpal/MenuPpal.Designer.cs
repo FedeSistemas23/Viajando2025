@@ -352,42 +352,32 @@
             // paquetesToolStripMenuItem
             // 
             this.paquetesToolStripMenuItem.Name = "paquetesToolStripMenuItem";
-
-            this.paquetesToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-
+            this.paquetesToolStripMenuItem.Size = new System.Drawing.Size(160, 24);
             this.paquetesToolStripMenuItem.Text = "Paquetes";
             this.paquetesToolStripMenuItem.Click += new System.EventHandler(this.paquetesToolStripMenuItem_Click);
             // 
             // reservasToolStripMenuItem
             // 
             this.reservasToolStripMenuItem.Name = "reservasToolStripMenuItem";
-
-            this.reservasToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-
+            this.reservasToolStripMenuItem.Size = new System.Drawing.Size(160, 24);
             this.reservasToolStripMenuItem.Text = "Reservas";
             // 
             // vendedoresToolStripMenuItem1
             // 
             this.vendedoresToolStripMenuItem1.Name = "vendedoresToolStripMenuItem1";
-
-            this.vendedoresToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
-
+            this.vendedoresToolStripMenuItem1.Size = new System.Drawing.Size(160, 24);
             this.vendedoresToolStripMenuItem1.Text = "Vendedores";
             // 
             // proovedoresToolStripMenuItem
             // 
             this.proovedoresToolStripMenuItem.Name = "proovedoresToolStripMenuItem";
-
-            this.proovedoresToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-
+            this.proovedoresToolStripMenuItem.Size = new System.Drawing.Size(160, 24);
             this.proovedoresToolStripMenuItem.Text = "Proovedores";
             // 
             // cordinadoresToolStripMenuItem
             // 
             this.cordinadoresToolStripMenuItem.Name = "cordinadoresToolStripMenuItem";
-
-            this.cordinadoresToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-
+            this.cordinadoresToolStripMenuItem.Size = new System.Drawing.Size(160, 24);
             this.cordinadoresToolStripMenuItem.Text = "Cordinadores";
             // 
             // configuracionSistemaToolStripMenuItem
@@ -402,9 +392,7 @@
             // altaUsuariosToolStripMenuItem
             // 
             this.altaUsuariosToolStripMenuItem.Name = "altaUsuariosToolStripMenuItem";
-
-            this.altaUsuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-
+            this.altaUsuariosToolStripMenuItem.Size = new System.Drawing.Size(157, 24);
             this.altaUsuariosToolStripMenuItem.Text = "Alta usuarios";
             this.altaUsuariosToolStripMenuItem.Click += new System.EventHandler(this.altaUsuariosToolStripMenuItem_Click);
             // 

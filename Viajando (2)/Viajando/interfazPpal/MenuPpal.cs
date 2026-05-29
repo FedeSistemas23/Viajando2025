@@ -131,8 +131,7 @@ namespace Loggin
         {
 
             AbrirFormuEnPanelMenu(submenubuscarpaquete, new FrmBuscarPaquete());
-            //FrmBuscarPaquete buscarPaquete = new FrmBuscarPaquete();
-            //buscarPaquete.ShowDialog();
+            
         }
 
         private void cancelarReservaToolStripMenuItem_Click(object sender, EventArgs e)
