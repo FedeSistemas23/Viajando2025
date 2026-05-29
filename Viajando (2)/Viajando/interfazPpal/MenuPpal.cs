@@ -174,16 +174,11 @@ namespace Loggin
 
         private void buscarReservaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-            FrmConfiguracionDelSistema Reservas = new FrmConfiguracionDelSistema();
-            Reservas.ShowDialog(); 
-            //   FrmBuscarReserva buscarReserva = new FrmBuscarReserva();
-            // buscarReserva.ShowDialog(); 
-=======
+
          
              FrmBuscarReserva buscarReserva = new FrmBuscarReserva();
              buscarReserva.ShowDialog(); 
->>>>>>> castel
+
         }
 
         private void paquetesToolStripMenuItem_Click(object sender, EventArgs e)
