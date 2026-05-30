@@ -192,7 +192,7 @@
             this.tabPage1.Size = new System.Drawing.Size(1014, 362);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Usuario";
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            
             // 
             // btn_editar
             // 
@@ -313,7 +313,6 @@
             this.button4.TabIndex = 153;
             this.button4.Text = "Nuevo";
             this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // panelForm
             // 
@@ -353,7 +352,7 @@
             this.panelForm.Name = "panelForm";
             this.panelForm.Size = new System.Drawing.Size(1005, 273);
             this.panelForm.TabIndex = 0;
-            this.panelForm.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            
             // 
             // cmbLocalidades
             // 
@@ -363,7 +362,6 @@
             this.cmbLocalidades.Size = new System.Drawing.Size(210, 24);
             this.cmbLocalidades.TabIndex = 138;
             this.cmbLocalidades.Text = "Seleccione la Localidad";
-            this.cmbLocalidades.SelectedIndexChanged += new System.EventHandler(this.cmbLocalidades_SelectedIndexChanged);
             // 
             // cmbPartido
             // 
@@ -393,7 +391,6 @@
             this.cmbEstado.Size = new System.Drawing.Size(214, 24);
             this.cmbEstado.TabIndex = 131;
             this.cmbEstado.Text = "Estado del usuario";
-            this.cmbEstado.SelectedIndexChanged += new System.EventHandler(this.cmbEstado_SelectedIndexChanged);
             // 
             // label15
             // 
@@ -412,7 +409,7 @@
             this.label7.Size = new System.Drawing.Size(43, 16);
             this.label7.TabIndex = 124;
             this.label7.Text = "Email*";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            
             // 
             // checkBox1
             // 
@@ -423,7 +420,7 @@
             this.checkBox1.TabIndex = 123;
             this.checkBox1.Text = "Usuario Temporal";
             this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            
             // 
             // txt_Apellido
             // 
@@ -431,7 +428,6 @@
             this.txt_Apellido.Name = "txt_Apellido";
             this.txt_Apellido.Size = new System.Drawing.Size(214, 24);
             this.txt_Apellido.TabIndex = 107;
-            this.txt_Apellido.TextChanged += new System.EventHandler(this.txt_Apellido_TextChanged);
             // 
             // txtCalle
             // 
@@ -440,7 +436,7 @@
             this.txtCalle.Name = "txtCalle";
             this.txtCalle.Size = new System.Drawing.Size(211, 24);
             this.txtCalle.TabIndex = 115;
-            this.txtCalle.TextChanged += new System.EventHandler(this.txt_Calle_TextChanged);
+            
             // 
             // npdComision
             // 
@@ -457,7 +453,6 @@
             this.lblComision.Size = new System.Drawing.Size(64, 16);
             this.lblComision.TabIndex = 122;
             this.lblComision.Text = "Comision:";
-            this.lblComision.Click += new System.EventHandler(this.lblComision_Click);
             // 
             // lblProvincia
             // 
@@ -476,7 +471,6 @@
             this.lblPartido.Size = new System.Drawing.Size(49, 16);
             this.lblPartido.TabIndex = 120;
             this.lblPartido.Text = "Partido";
-            this.lblPartido.Click += new System.EventHandler(this.lblPartido_Click);
             // 
             // txtUsuario
             // 
@@ -484,7 +478,6 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(211, 24);
             this.txtUsuario.TabIndex = 99;
-            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 
             // label17
             // 
@@ -502,7 +495,6 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(210, 24);
             this.txtNombre.TabIndex = 111;
-            this.txtNombre.TextChanged += new System.EventHandler(this.txtLocalidad_TextChanged_1);
             // 
             // label14
             // 
@@ -542,7 +534,7 @@
             this.txtNumeroCalle.Name = "txtNumeroCalle";
             this.txtNumeroCalle.Size = new System.Drawing.Size(214, 24);
             this.txtNumeroCalle.TabIndex = 108;
-            this.txtNumeroCalle.TextChanged += new System.EventHandler(this.txtCalle_TextChanged);
+            
             // 
             // label8
             // 
@@ -552,7 +544,7 @@
             this.label8.Size = new System.Drawing.Size(35, 16);
             this.label8.TabIndex = 114;
             this.label8.Text = "Calle";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
+            
             // 
             // label6
             // 
@@ -702,7 +694,7 @@
             this.tabPage3.Size = new System.Drawing.Size(1014, 362);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Familias y roles";
-            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
+            
             // 
             // panel2
             // 
@@ -724,7 +716,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(888, 517);
             this.panel2.TabIndex = 0;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint_1);
+            
             // 
             // comboBox1
             // 
@@ -776,7 +768,7 @@
             this.dgvFamilias.Name = "dgvFamilias";
             this.dgvFamilias.Size = new System.Drawing.Size(416, 265);
             this.dgvFamilias.TabIndex = 141;
-            this.dgvFamilias.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            
             // 
             // btnNuevoRol
             // 
@@ -947,7 +939,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1003, 317);
             this.panel3.TabIndex = 0;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            
             // 
             // btnedit
             // 
@@ -1151,7 +1143,6 @@
             this.chbDesbloqueoAuto.TabIndex = 90;
             this.chbDesbloqueoAuto.Text = "Desbloqueo Automático";
             this.chbDesbloqueoAuto.UseVisualStyleBackColor = true;
-            this.chbDesbloqueoAuto.CheckedChanged += new System.EventHandler(this.chbDesbloqueoAuto_CheckedChanged_1);
             // 
             // chbContraseñasAnteriores
             // 
@@ -1320,7 +1311,6 @@
             this.DGV_datosUsuario.Name = "DGV_datosUsuario";
             this.DGV_datosUsuario.Size = new System.Drawing.Size(1016, 196);
             this.DGV_datosUsuario.TabIndex = 1;
-            this.DGV_datosUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_datosUsuario_CellContentClick_1);
             this.DGV_datosUsuario.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_datosUsuario_CellContentDoubleClick_1);
             // 
             // frm_AltaUsuario

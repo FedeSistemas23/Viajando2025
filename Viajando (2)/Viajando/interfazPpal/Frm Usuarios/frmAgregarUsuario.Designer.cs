@@ -98,7 +98,7 @@
             this.btnNombre.TabIndex = 144;
             this.btnNombre.Text = "Nombre";
             this.btnNombre.UseVisualStyleBackColor = false;
-            this.btnNombre.Click += new System.EventHandler(this.btnNombre_Click);
+            
             // 
             // btnActivos
             // 
@@ -244,6 +244,7 @@
             this.Controls.Add(this.btnApellido);
             this.Name = "frmAgregarUsuario";
             this.Text = "frmAgregarUsuario";
+            
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosUsuario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

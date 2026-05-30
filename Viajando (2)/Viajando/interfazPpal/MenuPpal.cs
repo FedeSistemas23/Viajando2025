@@ -159,8 +159,9 @@ namespace Loggin
 
         private void usuariosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Alta_de_Usuarios NuevoUsuario = new Alta_de_Usuarios();
-            NuevoUsuario.ShowDialog();
+            AbrirFormuEnPanelMenu(submenualtausuarios, new frm_AltaUsuario());
+            //Alta_de_Usuarios NuevoUsuario = new Alta_de_Usuarios();
+            //NuevoUsuario.ShowDialog();
         }
 
         private void eliminarPasajeroToolStripMenuItem_Click(object sender, EventArgs e)

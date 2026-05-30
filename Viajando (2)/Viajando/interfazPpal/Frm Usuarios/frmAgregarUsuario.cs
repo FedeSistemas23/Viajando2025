@@ -16,15 +16,6 @@ namespace interfazPpal.Frm_Usuarios
         {
             InitializeComponent();
         }
-
-        private void cmbProvincia_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnNombre_Click(object sender, EventArgs e)
-        {
-
-        }
+ 
     }
 }
