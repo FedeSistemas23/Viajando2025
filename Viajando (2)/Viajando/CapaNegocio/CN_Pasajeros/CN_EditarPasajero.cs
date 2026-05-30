@@ -11,7 +11,7 @@ namespace CapaNegocio
     public class CN_EditarPasajero
     {
         CD_EditarPasajero EditarPax = new CD_EditarPasajero();
-        public void EditarPasajeroL(CS_AtributosPasajeros pasajero)
+        public void EditarPasajeroL(Pasajero pasajero)
         {
             EditarPax.EditarPasajeroD(pasajero);
         }

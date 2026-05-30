@@ -10,7 +10,7 @@ namespace CapaDatos
         Conexion conexion = new Conexion();
         SqlCommand cmd = new SqlCommand();
 
-        public void AltaPasajero(CS_AtributosPasajeros pasajero)
+        public void AltaPasajero(Pasajero pasajero)
         {
             try
             {

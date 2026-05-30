@@ -12,7 +12,7 @@ namespace CapaDatos
         Conexion conexion = new Conexion();
         DataTable tabla = new DataTable();
 
-        public void GuardarHotelD(CS_AtributosHotel Hotel)
+        public void GuardarHotelD(Hotel Hotel)
         {
             try
             {

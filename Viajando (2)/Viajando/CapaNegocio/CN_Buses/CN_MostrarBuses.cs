@@ -11,14 +11,14 @@ namespace CapaNegocio
     public class CN_MostrarBuses
     {
         CD_MostrarBuses MostradorBuses;
-        List<CS_AtributosBus> Buses;
+        List<Bus> Buses;
         public CN_MostrarBuses()
         {
              MostradorBuses = new CD_MostrarBuses();
-            Buses = new List<CS_AtributosBus> ();
+            Buses = new List<Bus> ();
         }
         
-        public List<CS_AtributosBus> MostrarBusesL()
+        public List<Bus> MostrarBusesL()
         {
             Buses=null;
             Buses = MostradorBuses.MostrarBusesD();

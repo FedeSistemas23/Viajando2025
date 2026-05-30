@@ -28,7 +28,7 @@ namespace interfazPpal
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            CS_AtributosHotel Hotel;
+            Hotel Hotel;
             CN_GuardarHotel NuevoHotel = new CN_GuardarHotel();
             try
             {
@@ -40,7 +40,7 @@ namespace interfazPpal
                 {
                     if (editar == false)
                     {
-                        Hotel = new CS_AtributosHotel()
+                        Hotel = new Hotel()
                         {
                             NombreDelHotel = txtNombreProveedor.Text,
                             Destino = txtDestino.Text,
@@ -79,7 +79,7 @@ namespace interfazPpal
             if (editar == true)
             {
                 CN_EditarHotel HotelEditado = new CN_EditarHotel();
-                Hotel = new CS_AtributosHotel()
+                Hotel = new Hotel()
                 {
                     Id_ProvedorHotel = Convert.ToInt32(dgvHotel.CurrentRow.Cells["Id_ProvedorHotel"].Value.ToString()),
                     NombreDelHotel = txtNombreProveedor.Text,

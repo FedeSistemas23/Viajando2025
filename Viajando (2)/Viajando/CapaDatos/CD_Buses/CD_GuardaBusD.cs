@@ -7,7 +7,7 @@ namespace CapaDatos
 {
     public class CD_GuardaBusD : Conexion
     {
-        public void GuardarBusD(CS_AtributosBus bus)
+        public void GuardarBusD(Bus bus)
         {
             try
             {

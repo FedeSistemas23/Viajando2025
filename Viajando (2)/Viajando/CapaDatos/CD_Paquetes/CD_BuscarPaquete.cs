@@ -12,7 +12,7 @@ namespace CapaDatos
 {
     public class CD_BuscarPaquete:Conexion
     {
-        public DataTable BuscarPaqueteCD(CS_AtributosPaquete paquete)
+        public DataTable BuscarPaqueteCD(Paquete paquete)
         {
 
         

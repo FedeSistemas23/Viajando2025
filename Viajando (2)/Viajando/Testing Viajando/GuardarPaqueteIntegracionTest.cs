@@ -20,7 +20,7 @@ namespace Viajando.IntegrationTests
         public void SetUp()
         {
             CN_GuardarPaquete _guardarPaquete= new CN_GuardarPaquete(); 
-            CS_AtributosPaquete paquete = new CS_AtributosPaquete()
+            Paquete paquete = new Paquete()
             {
 
                 FechaSalida = DateTime.Now,
@@ -55,7 +55,7 @@ namespace Viajando.IntegrationTests
         {
             
             CD_GuardarPaquete paquete= new CD_GuardarPaquete();           
-            CS_AtributosPaquete nuevoPaquete = paquete.VerificarNuevoPaqueteD(id);
+            Paquete nuevoPaquete = paquete.VerificarNuevoPaqueteD(id);
             
             string newdestino= nuevoPaquete.Destino;
             int cantidaddias = nuevoPaquete.CantidadDias;

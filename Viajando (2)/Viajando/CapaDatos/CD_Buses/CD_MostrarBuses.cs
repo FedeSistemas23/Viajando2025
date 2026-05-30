@@ -8,9 +8,9 @@ namespace CapaDatos
 {
     public class CD_MostrarBuses : Conexion
     {
-        public List<CS_AtributosBus> MostrarBusesD()
+        public List<Bus> MostrarBusesD()
         {
-            List<CS_AtributosBus> buses = new List<CS_AtributosBus>();
+            List<Bus> buses = new List<Bus>();
 
             try
             {
@@ -24,7 +24,7 @@ namespace CapaDatos
                         {
                             while (leer.Read())
                             {
-                                CS_AtributosBus bus = new CS_AtributosBus
+                                Bus bus = new Bus
                                 {
                                     Id_ProvedorBus = Convert.ToInt32(leer["Id_ProvedorBus"]),
                                     CantidadDeAsientos = Convert.ToInt32(leer["Cantidad_Asientos"]),

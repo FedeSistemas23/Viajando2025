@@ -13,7 +13,7 @@ namespace CapaNegocio
        CD_CargarPasajero CargarPasajero = new CD_CargarPasajero();
       // CS_AtributosPasajeros CN_Pasajero= new CS_AtributosPasajeros();
 
-       public void CargarPax(CS_AtributosPasajeros pasajero) {
+       public void CargarPax(Pasajero pasajero) {
 
            CargarPasajero.AltaPasajero(pasajero);
 

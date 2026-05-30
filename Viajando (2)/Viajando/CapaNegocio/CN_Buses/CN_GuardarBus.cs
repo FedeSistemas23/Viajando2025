@@ -7,7 +7,7 @@ namespace CapaNegocio
     {
         CD_GuardaBusD guardarBus = new CD_GuardaBusD();
 
-        public void GuardarBusL(CS_AtributosBus bus)
+        public void GuardarBusL(Bus bus)
         {
             guardarBus.GuardarBusD(bus);
         }

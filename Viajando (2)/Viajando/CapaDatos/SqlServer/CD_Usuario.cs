@@ -316,18 +316,18 @@ namespace CapaDatos
                         if (contador == 1)
                         {
                             preguntasAleatorias[0] = leer["Pregunta"].ToString();
-                            CS_GuardaPreguntasRespuestas.id_preg1= leer.GetInt32(leer.GetOrdinal("Id_Preg")) ;
+                            PreguntasSeguridad.id_preg1= leer.GetInt32(leer.GetOrdinal("Id_Preg")) ;
                             
                         }
                         else if (contador == 2)
                         {
                             preguntasAleatorias[1] = leer["Pregunta"].ToString();
-                            CS_GuardaPreguntasRespuestas.id_preg2= leer.GetInt32(leer.GetOrdinal("Id_Preg"));
+                            PreguntasSeguridad.id_preg2= leer.GetInt32(leer.GetOrdinal("Id_Preg"));
                         }
                         else if (contador == 3)
                         {
                             preguntasAleatorias[2] = leer["Pregunta"].ToString();
-                            CS_GuardaPreguntasRespuestas.id_preg3= leer.GetInt32(leer.GetOrdinal("Id_Preg"));
+                            PreguntasSeguridad.id_preg3= leer.GetInt32(leer.GetOrdinal("Id_Preg"));
                         }
                         contador++;
                     }                                        

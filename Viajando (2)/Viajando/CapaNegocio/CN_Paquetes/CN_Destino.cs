@@ -15,9 +15,9 @@ namespace CapaNegocio
             Destino.GuardarDestinoD(nombre, localidad, partido, provincia);
         }
 
-        public List<CS_Destino> MostrarD()
+        public List<Destino> MostrarD()
         {
-            List<CS_Destino> Destinos = new List<CS_Destino> ();
+            List<Destino> Destinos = new List<Destino> ();
             Destinos=null;
             Destinos = Destino.MostrarDestinos();
             if (Destinos != null)

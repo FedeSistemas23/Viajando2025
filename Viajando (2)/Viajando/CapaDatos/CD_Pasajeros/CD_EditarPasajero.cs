@@ -11,7 +11,7 @@ namespace CapaDatos
         Conexion conexion = new Conexion();
         
 
-        public void EditarPasajeroD(CS_AtributosPasajeros pasajero)
+        public void EditarPasajeroD(Pasajero pasajero)
         {
             try
             {

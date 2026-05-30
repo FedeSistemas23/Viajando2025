@@ -9,7 +9,7 @@ namespace interfazPpal
     public partial class FrmCargaPasajeros : Form
 
     {
-        CS_AtributosPasajeros CV_Pasajero = new CS_AtributosPasajeros();
+        Pasajero CV_Pasajero = new Pasajero();
         CN_CargarPasajero CV_CargarPasajero = new CN_CargarPasajero();
         CN_MostrarPasajero MostrarPasajero = new CN_MostrarPasajero();
         CS_ValidarFormulario frm = new CS_ValidarFormulario();
@@ -59,7 +59,7 @@ namespace interfazPpal
                         MessageBox.Show("Debe completar todos los campos.");
                     }
                     else*/
-                    CV_Pasajero = new CS_AtributosPasajeros()
+                    CV_Pasajero = new Pasajero()
                     {
                         NroReserva = Convert.ToInt32(txtNroReserva.Text),
                         nombre = txtNombrePax.Text,

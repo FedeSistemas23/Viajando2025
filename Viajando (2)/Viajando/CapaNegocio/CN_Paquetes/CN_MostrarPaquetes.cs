@@ -8,8 +8,8 @@ namespace CapaNegocio
     public class CN_MostrarPaquetes
     {
         CD_MostrarPaquete Paquete = new CD_MostrarPaquete();
-        List<CS_AtributosPaquete> Paquetes = new List<CS_AtributosPaquete>();
-        public List<CS_AtributosPaquete> MostrarPaquetes()
+        List<Paquete> Paquetes = new List<Paquete>();
+        public List<Paquete> MostrarPaquetes()
         {
             Paquetes = null;
             Paquetes = Paquete.MostrarPaquetes();

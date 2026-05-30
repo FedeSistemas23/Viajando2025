@@ -128,7 +128,7 @@ namespace Loggin
                 {
                     try
                     {
-                        CS_Reserva reserva = new CS_Reserva()
+                        Reserva reserva = new Reserva()
 
                         {
                             NroReserva = Convert.ToInt32(txtNumeroReserva.Text),
@@ -196,7 +196,7 @@ namespace Loggin
             if (editar == true)
             {
                 CN_EditarReserva reservaEditar = new CN_EditarReserva();
-                CS_Reserva reserva = new CS_Reserva()
+                Reserva reserva = new Reserva()
 
                 {
                     NroReserva = Convert.ToInt32(txtNumeroReserva.Text),
@@ -368,7 +368,7 @@ namespace Loggin
         private void button5_Click(object sender, EventArgs e)
         {
             CN_ElimnarReserva eliminar = new CN_ElimnarReserva();
-            CS_Reserva reserva = new CS_Reserva();
+            Reserva reserva = new Reserva();
             CN_MostrarReserva mostrar = new CN_MostrarReserva();
             if (dgvReservas.SelectedRows.Count > 0)
             {

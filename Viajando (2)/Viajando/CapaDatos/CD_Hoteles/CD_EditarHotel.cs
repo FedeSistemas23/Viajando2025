@@ -10,7 +10,7 @@ namespace CapaDatos
         SqlCommand cmd = new SqlCommand();
         Conexion conexion = new Conexion();
 
-        public void EditarHotelD(CS_AtributosHotel Hotel)
+        public void EditarHotelD(Hotel Hotel)
         {
             try
             {

@@ -11,7 +11,7 @@ namespace CapaNegocio
     public class CN_EditarPaquetes
     {
         CD_EditarPaquete ModificarPaquete = new CD_EditarPaquete();
-        public void EditarPaqueteL (CS_AtributosPaquete paquete)
+        public void EditarPaqueteL (Paquete paquete)
         {
             ModificarPaquete.EditarPaqueteD(paquete);
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaSesion
 {
-    public class CS_AtributosPersona
+    public class Persona
     {
         public int IdPersona { get; set; }
 

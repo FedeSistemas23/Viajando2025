@@ -6,7 +6,7 @@ namespace CapaSesion {
        // Esta clase es la del usuario que esta logeado en el sistema.
     public class CN_Nuevo_Usuario
     {
-        public int Id_Usuario { get; set; }
+        /*public int Id_Usuario { get; set; }
         public string Username { get; set; }
         public string password { get; set; } // se genera con el Aleatorio en Servicios
         public int Digito { get; set; }
@@ -47,6 +47,55 @@ namespace CapaSesion {
         public DateTime? fechaUltimoCambio { get; set; }
 
         List<string> Usuarios { get; set; } = new List<string>();
+        */
+        public int IdUsuario { get; set; }
+
+        public int IdPersona { get; set; }
+
+        public string Username { get; set; }
+
+        // SHA256(Username+Password)
+        public string PasswordHash { get; set; }
+
+        public bool PrimeraPassword { get; set; }
+
+        public bool DebeCambiarPassword { get; set; }
+
+        public bool PasswordVence { get; set; }
+
+        public int DiasVencimiento { get; set; }
+
+        public DateTime FechaUltimoCambio { get; set; }
+
+        public bool UsuarioTemporal { get; set; }
+
+        public DateTime? FechaCaducidad { get; set; }
+
+        public int IntentosFallidos { get; set; }
+
+        public DateTime FechaIntento { get; set; }
+
+        public bool Bloqueado { get; set; }
+
+        public DateTime? BloqueadoHasta { get; set; }
+
+        public bool Estado { get; set; }
+
+
+        // Relaciones
+
+        public Persona Persona { get; set; }
+
+        public List<CS_AtributosHistorialPassword> HistorialPasswords { get; set; }
+
+        public List<CS_AtributosUsuarioPregunta> PreguntasSeguridad { get; set; }
+
+        public List<CS_AtributosUsuarioPermiso> Permisos { get; set; }
+
+        public List<CS_AtributosUsuarioFamilia> Familias { get; set; }
+
+        public List<CS_AtributosLogIntento> IntentosLogin { get; set; }
+
 
     }
 }

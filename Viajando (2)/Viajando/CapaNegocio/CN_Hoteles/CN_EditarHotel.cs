@@ -13,7 +13,7 @@ namespace CapaNegocio
     {
         readonly CD_EditarHotel HotelEditado = new CD_EditarHotel();
         
-        public void EditarHotelL(CS_AtributosHotel hotel)
+        public void EditarHotelL(Hotel hotel)
         {
             HotelEditado.EditarHotelD(hotel);
         }

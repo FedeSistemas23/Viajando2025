@@ -1,6 +1,6 @@
 ﻿namespace CapaSesion
 {
-    public class CS_AtributosHotel
+    public class Hotel
     {
         public int Id_ProvedorHotel {  get; set; } 
         public string Destino {  get; set; }

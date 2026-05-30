@@ -10,9 +10,9 @@ namespace CapaNegocio
 {
     public class CN_GuardarReserva
     {   CD_GuardarReserva reservaCD = new CD_GuardarReserva();
-        CS_Reserva reservaCN = new CS_Reserva();
+        Reserva reservaCN = new Reserva();
 
-        public bool GuardarReservaCN(CS_Reserva reserva)
+        public bool GuardarReservaCN(Reserva reserva)
         {
             try
             {

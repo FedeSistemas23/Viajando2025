@@ -8,7 +8,7 @@ namespace TestProjectViajando
     public class GuardarReservaIntregationTest
     {
         CN_GuardarReserva guardar;
-        CS_Reserva reserva;
+        Reserva reserva;
         //CD_GuardarReserva datos = new CD_GuardarReserva();
         [SetUp]
         public void SetUp()
@@ -17,7 +17,7 @@ namespace TestProjectViajando
             // Arrange
           //  CD_GuardarReserva datos = new CD_GuardarReserva();
             guardar = new CN_GuardarReserva();
-            reserva = new CS_Reserva
+            reserva = new Reserva
             {
                 Id_Paquete = 6,
                 CantidadPasajeros = 3,

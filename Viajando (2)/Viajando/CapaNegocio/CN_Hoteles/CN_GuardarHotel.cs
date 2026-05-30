@@ -11,7 +11,7 @@ namespace CapaNegocio
             NewHotel = new CD_GuardarHotel();
         }
 
-        public void GuardarHotelL(CS_AtributosHotel Hotel)
+        public void GuardarHotelL(Hotel Hotel)
         {
 
             NewHotel.GuardarHotelD(Hotel);

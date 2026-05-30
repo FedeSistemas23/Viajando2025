@@ -7,7 +7,7 @@ namespace CapaNegocio
     {
         CD_EditarBus Bus = new CD_EditarBus();
 
-        public void EditarBusL(CS_AtributosBus bus)
+        public void EditarBusL(Bus bus)
         {
             Bus.EditarBusD(bus);
         }

@@ -12,7 +12,7 @@ namespace CapaDatos
         Conexion conexion = new Conexion();
         SqlCommand cmd = new SqlCommand();
 
-        public int GuardarPaqueteD(CS_AtributosPaquete paquete)
+        public int GuardarPaqueteD(Paquete paquete)
         {
             try
             {
@@ -81,9 +81,9 @@ namespace CapaDatos
             }
         }
 
-        public CS_AtributosPaquete VerificarNuevoPaqueteD(int id)
+        public Paquete VerificarNuevoPaqueteD(int id)
         {
-            CS_AtributosPaquete nuevopaquete = new CS_AtributosPaquete();
+            Paquete nuevopaquete = new Paquete();
             Conexion conexion = new Conexion();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conexion.AbrirConexion();
@@ -96,7 +96,7 @@ namespace CapaDatos
             {
                 while (leer.Read())
                 {
-                    nuevopaquete = new CS_AtributosPaquete()
+                    nuevopaquete = new Paquete()
                     {
                         Destino = leer["Destino"].ToString(),
                         Disponibilidad = Convert.ToInt32(leer["Disponibilidad"]),

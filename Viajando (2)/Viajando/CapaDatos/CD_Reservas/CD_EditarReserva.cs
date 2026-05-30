@@ -13,7 +13,7 @@ namespace CapaDatos
     {
         SqlCommand cmd = new SqlCommand();
         Conexion conexion = new Conexion();
-        public bool EditarReserva_CD(CS_Reserva reserva)
+        public bool EditarReserva_CD(Reserva reserva)
         {
             cmd.Connection = AbrirConexion();
             cmd.CommandText = "EditarReserva";

@@ -15,10 +15,10 @@ namespace CapaDatos
         SqlCommand cmd = new SqlCommand();  
         Conexion conexion = new Conexion();
 
-        public bool GuardarReserva_CD(CS_Reserva reserva)
+        public bool GuardarReserva_CD(Reserva reserva)
         {
             
-            CS_Reserva CD_reserva = new CS_Reserva();
+            Reserva CD_reserva = new Reserva();
 
             cmd.Connection = AbrirConexion();
             cmd.CommandText = "GuardarReservas";

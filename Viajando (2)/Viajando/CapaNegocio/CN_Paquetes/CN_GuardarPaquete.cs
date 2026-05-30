@@ -16,7 +16,7 @@ namespace CapaNegocio
             NuevoPaquete = new CD_GuardarPaquete();
         }
 
-        public  int GuardarPaqueteL(CS_AtributosPaquete paquete)
+        public  int GuardarPaqueteL(Paquete paquete)
         {           
             Id = NuevoPaquete.GuardarPaqueteD(paquete);
             return Id;
@@ -24,7 +24,7 @@ namespace CapaNegocio
         }
         public void VerificarNuevoPaquete (int id)
         {
-            CS_AtributosPaquete NewPaquete = NuevoPaquete.VerificarNuevoPaqueteD(id);
+            Paquete NewPaquete = NuevoPaquete.VerificarNuevoPaqueteD(id);
         }
     }
 }

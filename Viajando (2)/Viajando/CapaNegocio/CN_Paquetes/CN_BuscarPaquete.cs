@@ -12,10 +12,10 @@ namespace CapaNegocio
     public class CN_BuscarPaquete
     {
         CD_BuscarPaquete paqueteCD = new CD_BuscarPaquete();  
-        CS_AtributosPaquete CamposPaquete = new CS_AtributosPaquete();
+        Paquete CamposPaquete = new Paquete();
         DataTable dt = new DataTable();
 
-        public DataTable BuscarPaqueteCN(CS_AtributosPaquete parametros)
+        public DataTable BuscarPaqueteCN(Paquete parametros)
         {
             dt = paqueteCD.BuscarPaqueteCD(parametros);
             return dt;

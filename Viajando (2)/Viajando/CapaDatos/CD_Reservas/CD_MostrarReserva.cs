@@ -16,7 +16,7 @@ namespace CapaDatos
         DataTable dt = new DataTable();
         SqlDataReader leer;
         
-        public DataTable MostarReservaCD(CS_Reserva reserva)
+        public DataTable MostarReservaCD(Reserva reserva)
         {
             cmd.Connection = AbrirConexion();
             cmd.CommandText = "MostrarReserva";
@@ -56,7 +56,7 @@ namespace CapaDatos
             try
             {
                 DataTable tabla = new DataTable();
-                CS_Reserva CD_reserva = new CS_Reserva();
+                Reserva CD_reserva = new Reserva();
                 cmd.Connection = AbrirConexion();
                 cmd.CommandText = "MostrarReservasPorNombre";
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -78,7 +78,7 @@ namespace CapaDatos
             try
             {
                 DataTable tabla = new DataTable();
-                CS_Reserva CD_reserva = new CS_Reserva();
+                Reserva CD_reserva = new Reserva();
 
                 cmd.Connection = AbrirConexion();
                 cmd.CommandText = "MostrarReservaPorApellido";
@@ -104,7 +104,7 @@ namespace CapaDatos
             try
             {
                 DataTable tabla = new DataTable();
-                CS_Reserva CD_reserva = new CS_Reserva();
+                Reserva CD_reserva = new Reserva();
 
                 cmd.Connection = AbrirConexion();
                 cmd.CommandText = "MostrarReservaPorFechaSalida";
@@ -130,7 +130,7 @@ namespace CapaDatos
             try
             {
                 DataTable tabla = new DataTable();
-                CS_Reserva CD_reserva = new CS_Reserva();
+                Reserva CD_reserva = new Reserva();
 
                 cmd.Connection = AbrirConexion();
                 cmd.CommandText = "MostrarReservaPorFechaReserva";
@@ -156,7 +156,7 @@ namespace CapaDatos
             try
             {
                 DataTable tabla = new DataTable();
-                CS_Reserva CD_reserva = new CS_Reserva();
+                Reserva CD_reserva = new Reserva();
 
                 cmd.Connection = AbrirConexion();
                 cmd.CommandText = "MostrarReservaPorDestino";
@@ -182,7 +182,7 @@ namespace CapaDatos
             try
             {
                 DataTable tabla = new DataTable();
-                CS_Reserva CD_reserva = new CS_Reserva();
+                Reserva CD_reserva = new Reserva();
 
                 cmd.Connection = AbrirConexion();
                 cmd.CommandText = "MostrarReservaPorNumReserva";
@@ -208,7 +208,7 @@ namespace CapaDatos
             try
             {
                 DataTable tabla = new DataTable();
-                CS_Reserva CD_reserva = new CS_Reserva();
+                Reserva CD_reserva = new Reserva();
 
                 cmd.Connection = AbrirConexion();
                 cmd.CommandText = "MostrarReservaPorFechaRegreso";

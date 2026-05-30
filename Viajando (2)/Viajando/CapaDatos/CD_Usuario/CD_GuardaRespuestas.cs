@@ -22,16 +22,16 @@ namespace CapaDatos
             string[] respuesta = new string[3];
             for (int i = 0; i <=1; i++)
             {
-                respuesta[0] = CS_GuardaPreguntasRespuestas.respuesta1;
-                respuesta[1] = CS_GuardaPreguntasRespuestas.respuesta2;
-                respuesta[2] = CS_GuardaPreguntasRespuestas.respuesta3;
+                respuesta[0] = PreguntasSeguridad.respuesta1;
+                respuesta[1] = PreguntasSeguridad.respuesta2;
+                respuesta[2] = PreguntasSeguridad.respuesta3;
             }
             int[] id_preg = new int[3];
             for (int i = 0; i <= 2; i++)
             {
-                id_preg[0] = CS_GuardaPreguntasRespuestas.id_preg1;
-                id_preg[1] = CS_GuardaPreguntasRespuestas.id_preg2;
-                id_preg[2] = CS_GuardaPreguntasRespuestas.id_preg3;
+                id_preg[0] = PreguntasSeguridad.id_preg1;
+                id_preg[1] = PreguntasSeguridad.id_preg2;
+                id_preg[2] = PreguntasSeguridad.id_preg3;
             }
 
             for (int i = 0; i <= 2; i++)

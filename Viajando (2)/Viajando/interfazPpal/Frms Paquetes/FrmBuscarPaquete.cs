@@ -17,7 +17,7 @@ namespace interfazPpal
     public partial class FrmBuscarPaquete : Form
     {
         CN_Busqueda objNegocio = new CN_Busqueda();
-        List<CS_AtributosPaquete> Paquetes = new List<CS_AtributosPaquete>();
+        List<Paquete> Paquetes = new List<Paquete>();
 
         public FrmBuscarPaquete()
         {

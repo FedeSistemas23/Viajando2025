@@ -17,7 +17,7 @@ namespace interfazPpal
     {
         CS_LimpiarFormularios limpiar = new CS_LimpiarFormularios();
         CS_ValidarFormulario Validar = new CS_ValidarFormulario();
-        List<CS_AtributosBus> listaBuses;
+        List<Bus> listaBuses;
 
 
         bool editar = false;
@@ -28,7 +28,7 @@ namespace interfazPpal
         public void MostrarBuses()
         {
             CN_MostrarBuses buses = new CN_MostrarBuses();
-            List<CS_AtributosBus> listaBuses = buses.MostrarBusesL();
+            List<Bus> listaBuses = buses.MostrarBusesL();
             dgvBus.DataSource = listaBuses;
         }
 
@@ -97,7 +97,7 @@ namespace interfazPpal
 
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
-                CS_AtributosBus Bus;
+                Bus Bus;
                 CN_GuardarBus NuevoBus = new CN_GuardarBus();
                 try
                 {
@@ -110,7 +110,7 @@ namespace interfazPpal
                     {
                         if (editar == false)
                         {
-                            Bus = new CS_AtributosBus()
+                            Bus = new Bus()
                             {
                                 CantidadDeAsientos = Convert.ToInt32(npdCantidadAsientos.Value),
                                 Cama = Convert.ToInt32(npdAsientosCama.Value),
@@ -143,7 +143,7 @@ namespace interfazPpal
                 if (editar == true)
                 {
                     CN_EditarBus editarBus = new CN_EditarBus();
-                    Bus = new CS_AtributosBus()
+                    Bus = new Bus()
                     {
                         Id_ProvedorBus = Convert.ToInt32(dgvBus.CurrentRow.Cells["Id_ProvedorBus"].Value),
                         CantidadDeAsientos = Convert.ToInt32(npdCantidadAsientos.Value),

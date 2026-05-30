@@ -2,7 +2,7 @@
 
 namespace CapaSesion
 {
-    public class CS_AtributosPaquete
+    public class Paquete
     {
         public int Id_Paquete { get; set; }
         public DateTime FechaSalida { get; set; }

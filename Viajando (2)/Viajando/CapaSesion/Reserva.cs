@@ -10,7 +10,7 @@ using System.Linq.Expressions;
 
 namespace CapaSesion
 {
-    public class CS_Reserva
+    public class Reserva
     {
         public int NroReserva { get; set; }
         public int Id_pasajero { get; set; }
@@ -42,9 +42,9 @@ namespace CapaSesion
         public string NombreVendedor { get; set; }
         public string Destino { get; set; }
 
-        public List<CS_Reserva> ListReserva = new List<CS_Reserva>();
+        public List<Reserva> ListReserva = new List<Reserva>();
 
-        public List<CS_Reserva> AgregarLista(CS_Reserva reserva)
+        public List<Reserva> AgregarLista(Reserva reserva)
         {
             ListReserva.Add(reserva);
             var reservaNueva = ListReserva.Where(p => p.NroReserva == reserva.NroReserva).ToList();

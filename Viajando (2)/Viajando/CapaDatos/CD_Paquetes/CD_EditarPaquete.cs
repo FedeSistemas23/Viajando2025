@@ -11,7 +11,7 @@ namespace CapaDatos
         Conexion conexion = new Conexion();
 
 
-        public void EditarPaqueteD(CS_AtributosPaquete paquete)
+        public void EditarPaqueteD(Paquete paquete)
         {
             try
             {

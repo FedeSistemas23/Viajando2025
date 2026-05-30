@@ -55,9 +55,9 @@ namespace interfazLogin
         private void btnEnviar_Click_1(object sender, EventArgs e)
         {
             FrmEditarPassword cambioContraseña = new FrmEditarPassword();
-            CS_GuardaPreguntasRespuestas.respuesta1 = txtRespuesta1.Text;
-            CS_GuardaPreguntasRespuestas.respuesta2 = txtRespuesta2.Text;
-            CS_GuardaPreguntasRespuestas.respuesta3 = txtRespuesta3.Text;           
+            PreguntasSeguridad.respuesta1 = txtRespuesta1.Text;
+            PreguntasSeguridad.respuesta2 = txtRespuesta2.Text;
+            PreguntasSeguridad.respuesta3 = txtRespuesta3.Text;           
             guardarrespuestas.GuardarRespuestas();            
             DateTime PrimerIngreso = DateTime.Now;
             primerIngreso.GuardarPrimerIngreso(PrimerIngreso);

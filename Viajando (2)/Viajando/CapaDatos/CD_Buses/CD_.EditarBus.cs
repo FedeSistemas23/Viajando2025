@@ -7,7 +7,7 @@ namespace CapaDatos
 {
     public class CD_EditarBus : Conexion
     {
-        public void EditarBusD(CS_AtributosBus bus)
+        public void EditarBusD(Bus bus)
         {
             try
             {

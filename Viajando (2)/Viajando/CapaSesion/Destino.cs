@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaSesion
 {
-    public class CS_Destino
+    public class Destino
     {
         public int Id_Destino { get; set; }
         public string Nombre { get; set; }

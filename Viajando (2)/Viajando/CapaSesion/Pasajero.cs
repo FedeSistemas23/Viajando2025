@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaSesion
 {
-   public class CS_AtributosPasajeros
+   public class Pasajero
     {
         public int? Id_Pasajero {  get; set; }
         public int NroReserva { get; set; }

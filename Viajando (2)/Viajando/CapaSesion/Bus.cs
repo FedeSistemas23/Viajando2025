@@ -1,6 +1,6 @@
 ﻿namespace CapaSesion
 {
-    public class CS_AtributosBus
+    public class Bus
     {
         public int Id_ProvedorBus { get; set; }
         

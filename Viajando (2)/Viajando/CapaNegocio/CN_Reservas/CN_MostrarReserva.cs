@@ -12,7 +12,7 @@ namespace CapaNegocio
     public class CN_MostrarReserva
     {
         CD_MostrarReservaDataGrid reservaCD = new CD_MostrarReservaDataGrid();
-        CS_Reserva reservaCN = new CS_Reserva();
+        Reserva reservaCN = new Reserva();
         public DataTable MostrarReservaCN(/*int NroReserva**/)
         {
             //int Nreserva = reserva.NroReserva;

@@ -16,7 +16,7 @@ namespace Loggin
 {
     public partial class FrmBuscarReserva : Form
     {
-        CS_Reserva reservaCS = new CS_Reserva();
+        Reserva reservaCS = new Reserva();
         CN_MostrarReserva mostrar = new CN_MostrarReserva();
 
         public FrmBuscarReserva()

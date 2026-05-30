@@ -38,9 +38,9 @@ namespace CapaDatos
                 conexion.CerrarConexion();
             }
         }
-        public List<CS_Destino> MostrarDestinos()
+        public List<Destino> MostrarDestinos()
         {
-            List<CS_Destino> Destinos = new List<CS_Destino>(); 
+            List<Destino> Destinos = new List<Destino>(); 
             SqlDataReader leer;
             try
             {
@@ -52,7 +52,7 @@ namespace CapaDatos
                 {
                     while (leer.Read())
                     {
-                        CS_Destino destino = new CS_Destino()
+                        Destino destino = new Destino()
                         {
                             Id_Destino = Convert.ToInt32(leer["Id_Destino"]),
                             Nombre= leer["Nombre"].ToString(),

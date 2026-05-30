@@ -9,9 +9,9 @@ namespace CapaDatos
 
     public class CD_MostrarPaquete : Conexion
     {
-        public List<CS_AtributosPaquete> MostrarPaquetes()
+        public List<Paquete> MostrarPaquetes()
         {
-            List<CS_AtributosPaquete> Paquetes = new List<CS_AtributosPaquete>();
+            List<Paquete> Paquetes = new List<Paquete>();
 
             try
             {
@@ -29,7 +29,7 @@ namespace CapaDatos
                                 {
 
 
-                                    CS_AtributosPaquete paquete = new CS_AtributosPaquete
+                                    Paquete paquete = new Paquete
                                     {
                                         Id_Paquete = Convert.ToInt32(leer["Id_Paquete"]),
                                         FechaSalida = Convert.ToDateTime(leer["FechaSalida"]),

@@ -36,7 +36,7 @@ namespace interfazPpal
 
         public void CargarDgvDestinos()
         {
-            List<CS_Destino> Destinos = new List<CS_Destino>();
+            List<Destino> Destinos = new List<Destino>();
             Destinos = destino.MostrarD();
             dgvDestinos.DataSource = Destinos;
         }

@@ -72,7 +72,7 @@ namespace interfazPpal
         private void MostrarPaquetes()
         {
             CN_MostrarPaquetes CargadorDgv = new CN_MostrarPaquetes();
-            List<CS_AtributosPaquete> Paquetes = new List<CS_AtributosPaquete>();
+            List<Paquete> Paquetes = new List<Paquete>();
             Paquetes = CargadorDgv.MostrarPaquetes();
             dgvPaquetes.DataSource = Paquetes;
         }
@@ -107,7 +107,7 @@ namespace interfazPpal
                     }
                     else
                     {
-                        CS_AtributosPaquete Paquete = new CS_AtributosPaquete()
+                        Paquete Paquete = new Paquete()
                         {
                             FechaSalida = Convert.ToDateTime(dtpFechaSalida.Value),
                             FechaRegreso = Convert.ToDateTime(dtpFechaRegreso.Value),
@@ -161,7 +161,7 @@ namespace interfazPpal
 
                 try
                 {
-                    CS_AtributosPaquete Paquete = new CS_AtributosPaquete()
+                    Paquete Paquete = new Paquete()
                     {
                         Id_Paquete = Convert.ToInt32(dgvPaquetes.CurrentRow.Cells["Id_Paquete"].Value.ToString()),
                         FechaSalida = Convert.ToDateTime(dtpFechaSalida.Value),
