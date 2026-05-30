@@ -51,9 +51,8 @@ namespace Loggin
         }
         private void altaUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Alta_de_Usuarios form = new Alta_de_Usuarios();
-            // form.Show();
-            //AbrirFormuEnPanelMenu(form);
+            
+            AbrirFormuEnPanelMenu(submenualtausuarios, new frm_AltaUsuario());
             //Alta_de_Usuarios frm = new Alta_de_Usuarios();
             //nuContenedor.Show();
         }

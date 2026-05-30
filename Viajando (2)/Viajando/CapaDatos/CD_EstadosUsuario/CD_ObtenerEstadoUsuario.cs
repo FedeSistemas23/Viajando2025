@@ -8,7 +8,7 @@ using CapaSesion;
 
 namespace CapaDatos.CD_EstadosUsuario
 {
-    public class CD_ObtenerEstadoUsuario:Conexion
+    /*public class CD_ObtenerEstadoUsuario:Conexion
     {
         public List<CS_EstadosUsuario> ObtenerEstadosCD()
         {
@@ -37,5 +37,5 @@ namespace CapaDatos.CD_EstadosUsuario
             return lista;
         }
 
-    }
+    }*/
 }

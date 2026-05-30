@@ -24,6 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <IntermediateOutputPath>C:\Users\feder\AppData\Local\Temp\vs4212.tmp\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -32,6 +33,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <IntermediateOutputPath>C:\Users\feder\AppData\Local\Temp\vs4212.tmp\Release\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualStudio.CodeCoverage.Shim, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -50,9 +52,7 @@
     <Compile Include="Bitacora\CD_Bitacora.cs" />
     <Compile Include="CD_BackUp.cs" />
     <Compile Include="CD_ComparaDigitoVerificador.cs" />
-
     <Compile Include="CD_TraePreguntasSeguridad.cs" />
-
     <Compile Include="CD_EstadosUsuario\CD_AgegarEstado.cs" />
     <Compile Include="CD_EstadosUsuario\CD_ObtenerEstadoUsuario.cs" />
     <Compile Include="CD_TraerLocalidades.cs" />

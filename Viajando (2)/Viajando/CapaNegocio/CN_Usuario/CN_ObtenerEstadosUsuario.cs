@@ -13,11 +13,11 @@ namespace CapaNegocio.CN_Usuario
     public class CN_ObtenerEstadosUsuario:CN_EstadosUsuario
     {
         List<CS_EstadosUsuario> listaEstadosUsuario = new List<CS_EstadosUsuario> ();
-        CD_ObtenerEstadoUsuario traerEstados = new CD_ObtenerEstadoUsuario ();
+        //CD_ObtenerEstadoUsuario traerEstados = new CD_ObtenerEstadoUsuario ();
 
         public List<CS_EstadosUsuario> TraerEstadosCN()
         {
-            listaEstadosUsuario = traerEstados.ObtenerEstadosCD();
+            //listaEstadosUsuario = traerEstados.ObtenerEstadosCD();
             return listaEstadosUsuario;
         }
 

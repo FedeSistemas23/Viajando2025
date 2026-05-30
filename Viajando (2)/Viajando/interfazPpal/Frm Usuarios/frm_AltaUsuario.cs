@@ -581,9 +581,9 @@ namespace interfazPpal.Frm_Usuarios
             {
                 CN_EstadosUsuario datos = new CN_EstadosUsuario();
                 List<CS_EstadosUsuario> estados = new List<CS_EstadosUsuario>();
-                CD_ObtenerEstadoUsuario traerDatos = new CD_ObtenerEstadoUsuario();
+                //CD_ObtenerEstadoUsuario traerDatos = new CD_ObtenerEstadoUsuario();
 
-                estados = traerDatos.ObtenerEstadosCD();
+                //estados = traerDatos.ObtenerEstadosCD();
                 cmbEstado.DataSource = estados;
                 cmbEstado.DisplayMember = "Nombre";
                 cmbEstado.ValueMember = "Id";
