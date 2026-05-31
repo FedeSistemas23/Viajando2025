@@ -11,17 +11,17 @@ namespace CapaNegocio.CN_Usuario
   public class CN_MostrarDatosUsuario
     {
         CD_TraerDatosUsuario cdUsuario;
-        List<CapaSesion.CN_Nuevo_Usuario> listaUsuarios;
+        List<CapaSesion.Usuario> listaUsuarios;
 
         public CN_MostrarDatosUsuario()
         {
-            listaUsuarios = new List<CapaSesion.CN_Nuevo_Usuario>();
+            listaUsuarios = new List<CapaSesion.Usuario>();
             cdUsuario = new CD_TraerDatosUsuario();
         }
 
       
 
-        public  List<CapaSesion.CN_Nuevo_Usuario> MostrarDatosDGV()
+        public  List<CapaSesion.Usuario> MostrarDatosDGV()
         {
             listaUsuarios = null;
             listaUsuarios = cdUsuario.ObtenerUsuarios();

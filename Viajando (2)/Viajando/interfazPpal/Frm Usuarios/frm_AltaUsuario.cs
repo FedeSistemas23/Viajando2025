@@ -16,7 +16,7 @@ namespace interfazPpal.Frm_Usuarios
     {
         bool editarUsuario = false;
 
-        List<CN_Nuevo_Usuario> listaUsuariosCS = new List<CN_Nuevo_Usuario>();
+        List<Usuario> listaUsuariosCS = new List<Usuario>();
         CN_MostrarDatosUsuario usuario = new CN_MostrarDatosUsuario();
         CN_ObtenerEstadosUsuario MostrarEstado = new CN_ObtenerEstadosUsuario();
         CN_EditarDatosUsuario editarUsuarioCN = new CN_EditarDatosUsuario();
@@ -118,7 +118,7 @@ namespace interfazPpal.Frm_Usuarios
         string filtroActual = "";
         private void FiltrarUsuarios()
         {
-            string texto = txtInput.Text.ToLower();
+            /*string texto = txtInput.Text.ToLower();
 
             var resultado = listaUsuariosCS.AsEnumerable();
 
@@ -138,7 +138,7 @@ namespace interfazPpal.Frm_Usuarios
                     break;
 
             }
-
+            */
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
@@ -283,7 +283,7 @@ namespace interfazPpal.Frm_Usuarios
                         string hasheo = Seguridad.SHA256(concatenados);
 
 
-                        CapaSesion.CN_Nuevo_Usuario NuevoUsuario = new CapaSesion.CN_Nuevo_Usuario()
+                        CapaSesion.Usuario NuevoUsuario = new CapaSesion.Usuario()
                         {
                             Username = txtUsuario.Text,
                             password = hasheo,
@@ -310,7 +310,7 @@ namespace interfazPpal.Frm_Usuarios
                     }//  EDITAR USUARIO
                     else if (editarUsuario == true)
                     {
-                        CN_Nuevo_Usuario UsuarioEditar = new CN_Nuevo_Usuario
+                        Usuario UsuarioEditar = new Usuario
                         {
                             Username = txtUsuario.Text,
                             Nombre = txtNombre.Text,
@@ -331,6 +331,11 @@ namespace interfazPpal.Frm_Usuarios
                 {
                     MessageBox.Show("Error al guardar los datos: " + ex.Message);
                 }
+        }
+
+        private void tabPage4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

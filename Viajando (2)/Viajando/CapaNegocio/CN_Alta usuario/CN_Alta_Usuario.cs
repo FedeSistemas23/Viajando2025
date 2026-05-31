@@ -7,7 +7,7 @@ namespace CapaNegocio
     {
         CD_AltaUsuario usuarioD = new CD_AltaUsuario();
         
-        public void AñadirAtributos(CN_Nuevo_Usuario usuario)
+        public void AñadirAtributos(Usuario usuario)
         {
             usuarioD.GuardarUsuarioD(usuario);
         }

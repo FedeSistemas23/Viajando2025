@@ -10,10 +10,10 @@ using CapaSesion;
 
 namespace CapaNegocio
 {
-    class CN_MostrarDatosUsuario : CapaSesion.CN_Nuevo_Usuario
+    class CN_MostrarDatosUsuario : CapaSesion.Usuario
     {
 
-        CapaSesion.CN_Nuevo_Usuario CS_usuario = new CapaSesion.CN_Nuevo_Usuario();
+        CapaSesion.Usuario CS_usuario = new CapaSesion.Usuario();
 
 
     }  

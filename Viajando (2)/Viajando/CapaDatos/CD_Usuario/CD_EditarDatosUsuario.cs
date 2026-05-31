@@ -12,7 +12,7 @@ namespace CapaDatos.CD_Usuario
     public class CD_EditarDatosUsuario : Conexion
     {
 
-        public bool EditarUsuario_CD(CN_Nuevo_Usuario usuario)
+        public bool EditarUsuario_CD(Usuario usuario)
         {
             using (SqlConnection conn = AbrirConexion())
             {

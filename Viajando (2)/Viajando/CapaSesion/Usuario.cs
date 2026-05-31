@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace CapaSesion { 
        // Esta clase es la del usuario que esta logeado en el sistema.
-    public class CN_Nuevo_Usuario
+    public class Usuario
     {
         /*public int Id_Usuario { get; set; }
         public string Username { get; set; }
@@ -48,6 +48,15 @@ namespace CapaSesion {
 
         List<string> Usuarios { get; set; } = new List<string>();
         */
+
+        public Usuario()
+        {
+            HistorialPasswords = new List<HistorialPassword>();
+            PreguntasSeguridad = new List<UsuarioPregunta>();
+            Permisos = new List<UsuarioPermiso>();
+            Familias = new List<UsuarioFamilia>();
+            IntentosLogin = new List<LogIntentos>();
+        }
         public int IdUsuario { get; set; }
 
         public int IdPersona { get; set; }
@@ -86,15 +95,15 @@ namespace CapaSesion {
 
         public Persona Persona { get; set; }
 
-        public List<CS_AtributosHistorialPassword> HistorialPasswords { get; set; }
+        public List<HistorialPassword> HistorialPasswords { get; set; }
 
-        public List<CS_AtributosUsuarioPregunta> PreguntasSeguridad { get; set; }
+        public List<UsuarioPregunta> PreguntasSeguridad { get; set; }
 
-        public List<CS_AtributosUsuarioPermiso> Permisos { get; set; }
+        public List<UsuarioPermiso> Permisos { get; set; }
 
-        public List<CS_AtributosUsuarioFamilia> Familias { get; set; }
+        public List<UsuarioFamilia> Familias { get; set; }
 
-        public List<CS_AtributosLogIntento> IntentosLogin { get; set; }
+        public List<LogIntentos> IntentosLogin { get; set; }
 
 
     }

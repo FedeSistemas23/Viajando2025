@@ -14,9 +14,9 @@ namespace CapaDatos
 {
    public class CD_TraerDatosUsuario : Conexion
     {
-        List<CN_Nuevo_Usuario> lista = new List<CN_Nuevo_Usuario>();
+        List<Usuario> lista = new List<Usuario>();
 
-        public List<CN_Nuevo_Usuario> ObtenerUsuarios()
+        public List<Usuario> ObtenerUsuarios()
         {
             try
             {
@@ -29,7 +29,7 @@ namespace CapaDatos
 
                         while (dr.Read())
                         {
-                            CN_Nuevo_Usuario usuario = new CN_Nuevo_Usuario
+                            Usuario usuario = new Usuario
                             {
                                 //IdUsuario = Convert.ToInt32(dr["IdUsuario"]),
                                 Username = dr["Username"].ToString(),

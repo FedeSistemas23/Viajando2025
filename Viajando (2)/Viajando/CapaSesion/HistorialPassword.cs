@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaSesion
 {
-    public class CS_AtributosHistorialPassword
+    public class HistorialPassword
     {
         public int IdHistorial { get; set; }
 

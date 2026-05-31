@@ -11,7 +11,7 @@ using System.Globalization;
 
 namespace CapaServicios
 {
-    public static class ArmarMail
+    public class ArmarMail
     {
         
         public static string DireccionCorreo { get; set; }

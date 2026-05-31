@@ -12,7 +12,7 @@ namespace CapaNegocio.CN_Usuario
    public class CN_EditarDatosUsuario : CD_EditarDatosUsuario
     {
         CD_EditarDatosUsuario usuarioCD = new CD_EditarDatosUsuario();
-        public bool editarDatosUsuarioCN(CN_Nuevo_Usuario usuario)
+        public bool editarDatosUsuarioCN(Usuario usuario)
         {
             try
             {

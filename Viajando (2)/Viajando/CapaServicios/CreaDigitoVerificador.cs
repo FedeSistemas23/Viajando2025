@@ -3,9 +3,9 @@ using System.Linq;
 
 namespace CapaServicios
 {
-    public static class CreaDigitoVerificador
+    public class CreaDigitoVerificador
     {       
-        public static int Calcular(string Hexa)
+        public int Calcular(string Hexa)
         {
             int[] decimales = new int[Hexa.Length];
             int i = 0;

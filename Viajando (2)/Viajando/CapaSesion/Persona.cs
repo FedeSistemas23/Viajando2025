@@ -20,8 +20,21 @@ namespace CapaSesion
 
         public string Email { get; set; }
 
-        public bool Activo { get; set; }
+        public string Telefono { get; set; }
 
+        public string Celular { get; set; }
+
+        public string Provincia { get; set; }
+
+        public string Partido { get; set; }
+
+        public string Localidad { get; set; }
+
+        public string Calle { get; set; }
+
+        public string Numero { get; set; }
+
+        public bool Activo { get; set; }
 
     }
 }

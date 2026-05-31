@@ -1,4 +1,4 @@
-﻿using CapaSesion;
+﻿    using CapaSesion;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -7,9 +7,9 @@ namespace CapaDatos
 {
     public class CD_AltaUsuario : Conexion
     {
-        public void GuardarUsuarioD(CN_Nuevo_Usuario usuario)
+        public void GuardarUsuarioD(Usuario usuario)
         {
-            List<CN_Nuevo_Usuario> lista = new List<CN_Nuevo_Usuario>();
+            List<Usuario> lista = new List<Usuario>();
             try
             {
                 using (SqlConnection conexion = AbrirConexion())

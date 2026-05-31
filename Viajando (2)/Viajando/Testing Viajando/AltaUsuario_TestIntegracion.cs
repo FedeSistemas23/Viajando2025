@@ -13,13 +13,13 @@ namespace TestProjectViajando
     [TestFixture]
     public class AltaUsuario_TestIntegracion
     {
-        CapaSesion.CN_Nuevo_Usuario NuevoUsuario = new CapaSesion.CN_Nuevo_Usuario();
+        CapaSesion.Usuario NuevoUsuario = new CapaSesion.Usuario();
        [SetUp]
         public void setup()
         {
             
             CN_Alta_Usuario alta_Usuario = new CN_Alta_Usuario();
-            NuevoUsuario = new CapaSesion.CN_Nuevo_Usuario()
+            NuevoUsuario = new CapaSesion.Usuario()
             {
                 Username = "usuarioDefault",
                 password = "contraseñaAleatoria",
