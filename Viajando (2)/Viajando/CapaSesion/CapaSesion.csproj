@@ -141,6 +141,7 @@
     <Compile Include="HistorialPassword.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioFamilia.cs" />
+    <Compile Include="UsuarioPermiso.cs" />
     <Compile Include="UsuarioPregunta.cs" />
   </ItemGroup>
   <ItemGroup>

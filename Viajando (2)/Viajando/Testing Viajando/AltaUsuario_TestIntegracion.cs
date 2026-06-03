@@ -18,7 +18,7 @@ namespace TestProjectViajando
         public void setup()
         {
             
-            CN_Alta_Usuario alta_Usuario = new CN_Alta_Usuario();
+            CN_AltaUsuario alta_Usuario = new CN_AltaUsuario();
             NuevoUsuario = new CapaSesion.Usuario()
             {
                 Username = "usuarioDefault",
@@ -63,7 +63,7 @@ namespace TestProjectViajando
 
         public void DarAltaUsuario_retornaTrue()
         {
-            CN_Alta_Usuario alta_Usuario = new CN_Alta_Usuario();
+            CN_AltaUsuario alta_Usuario = new CN_AltaUsuario();
             DataTable tabla = new DataTable();
           
             //tabla = alta_Usuario.AñadirAtributos(NuevoUsuario);
