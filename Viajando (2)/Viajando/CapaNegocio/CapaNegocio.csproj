@@ -47,15 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CN_Alta usuario\AtributosUsuario.cs" />
-    <Compile Include="CN_Alta usuario\CN_Alta_Usuario.cs" />
+    <Compile Include="CN_Alta usuario\CN_AltaUsuario.cs" />
     <Compile Include="Bitacora\CN_Bitacora.cs" />
     <Compile Include="CN_TraePreguntasSeguridad.cs" />
-    <Compile Include="CN_GuardarContraseña.cs" />
     <Compile Include="CN_Localidades\CN_TraerLocalidades.cs" />
-    <Compile Include="CN_MostrarDatosUsuario.cs" />
-    <Compile Include="CN_GuardarFamilias y roles.cs" />
-    <Compile Include="CN_GuardarPreguntasSeguridad.cs" />
     <Compile Include="CN_TraerPartidos.cs" />
     <Compile Include="CN_TraerProvincias.cs" />
     <Compile Include="CN_Usuario\CN_BloquearUsuario.cs" />
@@ -109,7 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
-      <Project>{66631d9d-56c3-497f-b962-9136ce3c4c6b}</Project>
+      <Project>{66631D9D-56C3-497F-B962-9136CE3C4C6B}</Project>
       <Name>CapaDatos</Name>
     </ProjectReference>
     <ProjectReference Include="..\CapaServicios\CapaServicios.csproj">
@@ -137,6 +132,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

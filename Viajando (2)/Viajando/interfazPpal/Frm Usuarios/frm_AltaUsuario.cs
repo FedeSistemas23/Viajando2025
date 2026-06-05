@@ -1,23 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using CapaNegocio;
 using CapaNegocio.CN_Localidades;
-using CapaNegocio.CN_Usuario;
 using CapaServicios;
 using CapaSesion;
 
 
-namespace interfazPpal.Frm_Usuarios
+namespace interfazPpal
 {
     public partial class frm_AltaUsuario : Form
     {
         bool editarUsuario = false;
 
         List<Usuario> listaUsuariosCS = new List<Usuario>();
-        CN_MostrarDatosUsuario usuario = new CN_MostrarDatosUsuario();
+        CS_EstadosUsuario usuario = new CS_EstadosUsuario();
         CN_ObtenerEstadosUsuario MostrarEstado = new CN_ObtenerEstadosUsuario();
         CN_EditarDatosUsuario editarUsuarioCN = new CN_EditarDatosUsuario();
 
@@ -200,7 +198,7 @@ namespace interfazPpal.Frm_Usuarios
         {
             try
             {
-                CN_EstadosUsuario datos = new CN_EstadosUsuario();
+                CS_EstadosUsuario datos = new CS_EstadosUsuario();
                 List<CS_EstadosUsuario> estados = new List<CS_EstadosUsuario>();
                 //CD_ObtenerEstadoUsuario traerDatos = new CD_ObtenerEstadoUsuario();
 
@@ -275,7 +273,7 @@ namespace interfazPpal.Frm_Usuarios
                     if (editarUsuario == false)
                     {
 
-                        CN_Alta_Usuario AltaUsuario = new CN_Alta_Usuario();
+                        CN_AltaUsuario AltaUsuario = new CN_AltaUsuario();
                         string pass = Aleatorios.Armar();
                         string concatenados = pass + txtUsuario.Text;
 
@@ -333,9 +331,6 @@ namespace interfazPpal.Frm_Usuarios
                 }
         }
 
-        private void tabPage4_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

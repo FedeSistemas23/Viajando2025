@@ -3,7 +3,7 @@ using CapaSesion;
 
 namespace CapaNegocio
 {
-    public class CN_Alta_Usuario
+    public class CN_AltaUsuario
     {
         CD_AltaUsuario usuarioD = new CD_AltaUsuario();
         

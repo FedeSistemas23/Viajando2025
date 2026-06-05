@@ -1,4 +1,4 @@
-﻿namespace interfazPpal.Frm_Usuarios
+﻿namespace interfazPpal
 {
     partial class frm_AltaUsuario
     {
@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btn_editar = new System.Windows.Forms.Button();
@@ -94,8 +91,7 @@
             this.npdVencePermisos = new System.Windows.Forms.NumericUpDown();
             this.label13 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dgvDatosUsuario = new System.Windows.Forms.DataGridView();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnlcontraseñayseguridad = new System.Windows.Forms.Panel();
             this.btnedit = new System.Windows.Forms.Button();
             this.CancelarBtn = new System.Windows.Forms.Button();
             this.guardarBtn = new System.Windows.Forms.Button();
@@ -121,7 +117,7 @@
             this.chbBloqueado = new System.Windows.Forms.CheckBox();
             this.label19 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.pnlpreguntaseguridad = new System.Windows.Forms.Panel();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnVer = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -142,14 +138,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvFamilias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.npdVencePermisos)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDatosUsuario)).BeginInit();
-            this.panel3.SuspendLayout();
+            this.pnlcontraseñayseguridad.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.npdBloqueadoPorDias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.npdVenceCada)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.npdIntentos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.npdHorasDeBloqueo)).BeginInit();
             this.tabPage4.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.pnlpreguntaseguridad.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPreguntas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_datosUsuario)).BeginInit();
             this.SuspendLayout();
@@ -161,17 +156,19 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(5, 0);
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1022, 391);
+            this.tabControl1.Size = new System.Drawing.Size(1028, 605);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.tabPage1.Controls.Add(this.DGV_datosUsuario);
             this.tabPage1.Controls.Add(this.btn_editar);
             this.tabPage1.Controls.Add(this.button5);
             this.tabPage1.Controls.Add(this.btnEditarUsuario);
@@ -189,7 +186,8 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1014, 362);
+            this.tabPage1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.tabPage1.Size = new System.Drawing.Size(1020, 576);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Usuario";
             // 
@@ -684,7 +682,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1014, 362);
+            this.tabPage3.Size = new System.Drawing.Size(1020, 576);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Familias y roles";
             // 
@@ -704,15 +702,16 @@
             this.panel2.Controls.Add(this.label27);
             this.panel2.Controls.Add(this.npdVencePermisos);
             this.panel2.Controls.Add(this.label13);
-            this.panel2.Location = new System.Drawing.Point(62, 22);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(888, 517);
+            this.panel2.Size = new System.Drawing.Size(1014, 570);
             this.panel2.TabIndex = 0;
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(162, 35);
+            this.comboBox1.Location = new System.Drawing.Point(217, 31);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(208, 24);
             this.comboBox1.TabIndex = 145;
@@ -723,7 +722,7 @@
             this.eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.eliminar.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eliminar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.eliminar.Location = new System.Drawing.Point(744, 433);
+            this.eliminar.Location = new System.Drawing.Point(600, 431);
             this.eliminar.Name = "eliminar";
             this.eliminar.Size = new System.Drawing.Size(109, 34);
             this.eliminar.TabIndex = 144;
@@ -737,7 +736,7 @@
             this.editar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.editar.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.editar.Location = new System.Drawing.Point(513, 433);
+            this.editar.Location = new System.Drawing.Point(369, 431);
             this.editar.Name = "editar";
             this.editar.Size = new System.Drawing.Size(109, 34);
             this.editar.TabIndex = 143;
@@ -747,7 +746,7 @@
             // dgvRoles
             // 
             this.dgvRoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRoles.Location = new System.Drawing.Point(454, 96);
+            this.dgvRoles.Location = new System.Drawing.Point(509, 92);
             this.dgvRoles.Name = "dgvRoles";
             this.dgvRoles.Size = new System.Drawing.Size(416, 265);
             this.dgvRoles.TabIndex = 142;
@@ -755,7 +754,7 @@
             // dgvFamilias
             // 
             this.dgvFamilias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFamilias.Location = new System.Drawing.Point(16, 96);
+            this.dgvFamilias.Location = new System.Drawing.Point(71, 92);
             this.dgvFamilias.Name = "dgvFamilias";
             this.dgvFamilias.Size = new System.Drawing.Size(416, 265);
             this.dgvFamilias.TabIndex = 141;
@@ -766,7 +765,7 @@
             this.btnNuevoRol.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNuevoRol.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoRol.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnNuevoRol.Location = new System.Drawing.Point(454, 366);
+            this.btnNuevoRol.Location = new System.Drawing.Point(509, 362);
             this.btnNuevoRol.Name = "btnNuevoRol";
             this.btnNuevoRol.Size = new System.Drawing.Size(416, 33);
             this.btnNuevoRol.TabIndex = 140;
@@ -779,7 +778,7 @@
             this.btnCrearFamilia.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCrearFamilia.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCrearFamilia.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCrearFamilia.Location = new System.Drawing.Point(14, 366);
+            this.btnCrearFamilia.Location = new System.Drawing.Point(69, 362);
             this.btnCrearFamilia.Name = "btnCrearFamilia";
             this.btnCrearFamilia.Size = new System.Drawing.Size(418, 33);
             this.btnCrearFamilia.TabIndex = 139;
@@ -792,7 +791,7 @@
             this.cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cancelar.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.cancelar.Location = new System.Drawing.Point(628, 433);
+            this.cancelar.Location = new System.Drawing.Point(484, 431);
             this.cancelar.Name = "cancelar";
             this.cancelar.Size = new System.Drawing.Size(110, 34);
             this.cancelar.TabIndex = 138;
@@ -805,7 +804,7 @@
             this.Guardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Guardar.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Guardar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Guardar.Location = new System.Drawing.Point(398, 433);
+            this.Guardar.Location = new System.Drawing.Point(254, 431);
             this.Guardar.Name = "Guardar";
             this.Guardar.Size = new System.Drawing.Size(109, 34);
             this.Guardar.TabIndex = 137;
@@ -815,7 +814,7 @@
             // ckbRolesTemporarios
             // 
             this.ckbRolesTemporarios.AutoSize = true;
-            this.ckbRolesTemporarios.Location = new System.Drawing.Point(455, 35);
+            this.ckbRolesTemporarios.Location = new System.Drawing.Point(510, 31);
             this.ckbRolesTemporarios.Name = "ckbRolesTemporarios";
             this.ckbRolesTemporarios.Size = new System.Drawing.Size(179, 20);
             this.ckbRolesTemporarios.TabIndex = 136;
@@ -825,7 +824,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(29, 39);
+            this.label27.Location = new System.Drawing.Point(84, 35);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(127, 16);
             this.label27.TabIndex = 135;
@@ -833,7 +832,7 @@
             // 
             // npdVencePermisos
             // 
-            this.npdVencePermisos.Location = new System.Drawing.Point(628, 59);
+            this.npdVencePermisos.Location = new System.Drawing.Point(683, 55);
             this.npdVencePermisos.Name = "npdVencePermisos";
             this.npdVencePermisos.Size = new System.Drawing.Size(151, 24);
             this.npdVencePermisos.TabIndex = 133;
@@ -841,7 +840,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(468, 63);
+            this.label13.Location = new System.Drawing.Point(523, 59);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(154, 16);
             this.label13.TabIndex = 134;
@@ -850,85 +849,46 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tabPage2.Controls.Add(this.dgvDatosUsuario);
-            this.tabPage2.Controls.Add(this.panel3);
+            this.tabPage2.Controls.Add(this.pnlcontraseñayseguridad);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(5);
-            this.tabPage2.Size = new System.Drawing.Size(1014, 362);
+            this.tabPage2.Size = new System.Drawing.Size(1020, 576);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Contraseña y seguridad";
             // 
-            // dgvDatosUsuario
+            // pnlcontraseñayseguridad
             // 
-            this.dgvDatosUsuario.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dgvDatosUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvDatosUsuario.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDatosUsuario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvDatosUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDatosUsuario.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvDatosUsuario.EnableHeadersVisualStyles = false;
-            this.dgvDatosUsuario.GridColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dgvDatosUsuario.Location = new System.Drawing.Point(2, 341);
-            this.dgvDatosUsuario.Name = "dgvDatosUsuario";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDatosUsuario.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvDatosUsuario.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dgvDatosUsuario.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Blue;
-            this.dgvDatosUsuario.Size = new System.Drawing.Size(1004, 228);
-            this.dgvDatosUsuario.TabIndex = 146;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel3.Controls.Add(this.btnedit);
-            this.panel3.Controls.Add(this.CancelarBtn);
-            this.panel3.Controls.Add(this.guardarBtn);
-            this.panel3.Controls.Add(this.label10);
-            this.panel3.Controls.Add(this.lblDias);
-            this.panel3.Controls.Add(this.npdBloqueadoPorDias);
-            this.panel3.Controls.Add(this.lblBloqueadoPor);
-            this.panel3.Controls.Add(this.npdVenceCada);
-            this.panel3.Controls.Add(this.ckbRealizarPreguntasSeguridad);
-            this.panel3.Controls.Add(this.label20);
-            this.panel3.Controls.Add(this.npdIntentos);
-            this.panel3.Controls.Add(this.ckbAvisarVencimiento);
-            this.panel3.Controls.Add(this.ckbMinimo);
-            this.panel3.Controls.Add(this.ckbEspecial);
-            this.panel3.Controls.Add(this.ckbNumero);
-            this.panel3.Controls.Add(this.ckbMayuscula);
-            this.panel3.Controls.Add(this.ckbMinuscula);
-            this.panel3.Controls.Add(this.label16);
-            this.panel3.Controls.Add(this.npdHorasDeBloqueo);
-            this.panel3.Controls.Add(this.ckbAutenticacion2FA);
-            this.panel3.Controls.Add(this.chbDesbloqueoAuto);
-            this.panel3.Controls.Add(this.chbContraseñasAnteriores);
-            this.panel3.Controls.Add(this.chbBloqueado);
-            this.panel3.Controls.Add(this.label19);
-            this.panel3.Location = new System.Drawing.Point(3, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1003, 317);
-            this.panel3.TabIndex = 0;
+            this.pnlcontraseñayseguridad.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnlcontraseñayseguridad.Controls.Add(this.btnedit);
+            this.pnlcontraseñayseguridad.Controls.Add(this.CancelarBtn);
+            this.pnlcontraseñayseguridad.Controls.Add(this.guardarBtn);
+            this.pnlcontraseñayseguridad.Controls.Add(this.label10);
+            this.pnlcontraseñayseguridad.Controls.Add(this.lblDias);
+            this.pnlcontraseñayseguridad.Controls.Add(this.npdBloqueadoPorDias);
+            this.pnlcontraseñayseguridad.Controls.Add(this.lblBloqueadoPor);
+            this.pnlcontraseñayseguridad.Controls.Add(this.npdVenceCada);
+            this.pnlcontraseñayseguridad.Controls.Add(this.ckbRealizarPreguntasSeguridad);
+            this.pnlcontraseñayseguridad.Controls.Add(this.label20);
+            this.pnlcontraseñayseguridad.Controls.Add(this.npdIntentos);
+            this.pnlcontraseñayseguridad.Controls.Add(this.ckbAvisarVencimiento);
+            this.pnlcontraseñayseguridad.Controls.Add(this.ckbMinimo);
+            this.pnlcontraseñayseguridad.Controls.Add(this.ckbEspecial);
+            this.pnlcontraseñayseguridad.Controls.Add(this.ckbNumero);
+            this.pnlcontraseñayseguridad.Controls.Add(this.ckbMayuscula);
+            this.pnlcontraseñayseguridad.Controls.Add(this.ckbMinuscula);
+            this.pnlcontraseñayseguridad.Controls.Add(this.label16);
+            this.pnlcontraseñayseguridad.Controls.Add(this.npdHorasDeBloqueo);
+            this.pnlcontraseñayseguridad.Controls.Add(this.ckbAutenticacion2FA);
+            this.pnlcontraseñayseguridad.Controls.Add(this.chbDesbloqueoAuto);
+            this.pnlcontraseñayseguridad.Controls.Add(this.chbContraseñasAnteriores);
+            this.pnlcontraseñayseguridad.Controls.Add(this.chbBloqueado);
+            this.pnlcontraseñayseguridad.Controls.Add(this.label19);
+            this.pnlcontraseñayseguridad.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlcontraseñayseguridad.Location = new System.Drawing.Point(5, 5);
+            this.pnlcontraseñayseguridad.Name = "pnlcontraseñayseguridad";
+            this.pnlcontraseñayseguridad.Size = new System.Drawing.Size(1010, 317);
+            this.pnlcontraseñayseguridad.TabIndex = 0;
             // 
             // btnedit
             // 
@@ -1165,29 +1125,30 @@
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tabPage4.Controls.Add(this.panel4);
+            this.tabPage4.Controls.Add(this.pnlpreguntaseguridad);
             this.tabPage4.Controls.Add(this.dgvPreguntas);
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1014, 362);
+            this.tabPage4.Size = new System.Drawing.Size(1020, 576);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Preguntas de seguridad";
             // 
-            // panel4
+            // pnlpreguntaseguridad
             // 
-            this.panel4.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel4.Controls.Add(this.btnEliminar);
-            this.panel4.Controls.Add(this.btnVer);
-            this.panel4.Controls.Add(this.btnEditar);
-            this.panel4.Controls.Add(this.btnCancelar);
-            this.panel4.Controls.Add(this.txtguardar);
-            this.panel4.Controls.Add(this.label23);
-            this.panel4.Controls.Add(this.txtNuevaPregunta);
-            this.panel4.Location = new System.Drawing.Point(139, 6);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(773, 126);
-            this.panel4.TabIndex = 114;
+            this.pnlpreguntaseguridad.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnlpreguntaseguridad.Controls.Add(this.btnEliminar);
+            this.pnlpreguntaseguridad.Controls.Add(this.btnVer);
+            this.pnlpreguntaseguridad.Controls.Add(this.btnEditar);
+            this.pnlpreguntaseguridad.Controls.Add(this.btnCancelar);
+            this.pnlpreguntaseguridad.Controls.Add(this.txtguardar);
+            this.pnlpreguntaseguridad.Controls.Add(this.label23);
+            this.pnlpreguntaseguridad.Controls.Add(this.txtNuevaPregunta);
+            this.pnlpreguntaseguridad.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlpreguntaseguridad.Location = new System.Drawing.Point(3, 3);
+            this.pnlpreguntaseguridad.Name = "pnlpreguntaseguridad";
+            this.pnlpreguntaseguridad.Size = new System.Drawing.Size(1014, 126);
+            this.pnlpreguntaseguridad.TabIndex = 114;
             // 
             // btnEliminar
             // 
@@ -1196,7 +1157,7 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEliminar.Location = new System.Drawing.Point(559, 93);
+            this.btnEliminar.Location = new System.Drawing.Point(664, 92);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(113, 28);
             this.btnEliminar.TabIndex = 155;
@@ -1210,7 +1171,7 @@
             this.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnVer.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVer.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnVer.Location = new System.Drawing.Point(444, 93);
+            this.btnVer.Location = new System.Drawing.Point(549, 92);
             this.btnVer.Name = "btnVer";
             this.btnVer.Size = new System.Drawing.Size(113, 28);
             this.btnVer.TabIndex = 154;
@@ -1224,7 +1185,7 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEditar.Location = new System.Drawing.Point(329, 93);
+            this.btnEditar.Location = new System.Drawing.Point(434, 92);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(113, 28);
             this.btnEditar.TabIndex = 153;
@@ -1238,7 +1199,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCancelar.Location = new System.Drawing.Point(214, 93);
+            this.btnCancelar.Location = new System.Drawing.Point(319, 92);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(113, 28);
             this.btnCancelar.TabIndex = 152;
@@ -1252,7 +1213,7 @@
             this.txtguardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.txtguardar.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtguardar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtguardar.Location = new System.Drawing.Point(99, 93);
+            this.txtguardar.Location = new System.Drawing.Point(204, 92);
             this.txtguardar.Name = "txtguardar";
             this.txtguardar.Size = new System.Drawing.Size(113, 28);
             this.txtguardar.TabIndex = 151;
@@ -1262,7 +1223,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(103, 14);
+            this.label23.Location = new System.Drawing.Point(208, 13);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(182, 16);
             this.label23.TabIndex = 150;
@@ -1270,7 +1231,7 @@
             // 
             // txtNuevaPregunta
             // 
-            this.txtNuevaPregunta.Location = new System.Drawing.Point(99, 35);
+            this.txtNuevaPregunta.Location = new System.Drawing.Point(204, 34);
             this.txtNuevaPregunta.Name = "txtNuevaPregunta";
             this.txtNuevaPregunta.Size = new System.Drawing.Size(573, 24);
             this.txtNuevaPregunta.TabIndex = 149;
@@ -1278,9 +1239,9 @@
             // dgvPreguntas
             // 
             this.dgvPreguntas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPreguntas.Location = new System.Drawing.Point(20, 138);
+            this.dgvPreguntas.Location = new System.Drawing.Point(3, 138);
             this.dgvPreguntas.Name = "dgvPreguntas";
-            this.dgvPreguntas.Size = new System.Drawing.Size(960, 233);
+            this.dgvPreguntas.Size = new System.Drawing.Size(1014, 233);
             this.dgvPreguntas.TabIndex = 113;
             // 
             // tabPage5
@@ -1288,7 +1249,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1014, 362);
+            this.tabPage5.Size = new System.Drawing.Size(1020, 576);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Admin";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1296,9 +1257,10 @@
             // DGV_datosUsuario
             // 
             this.DGV_datosUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_datosUsuario.Location = new System.Drawing.Point(5, 397);
+            this.DGV_datosUsuario.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.DGV_datosUsuario.Location = new System.Drawing.Point(3, 362);
             this.DGV_datosUsuario.Name = "DGV_datosUsuario";
-            this.DGV_datosUsuario.Size = new System.Drawing.Size(1016, 196);
+            this.DGV_datosUsuario.Size = new System.Drawing.Size(1014, 211);
             this.DGV_datosUsuario.TabIndex = 1;
             this.DGV_datosUsuario.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_datosUsuario_CellContentDoubleClick_1);
             // 
@@ -1308,7 +1270,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1028, 605);
-            this.Controls.Add(this.DGV_datosUsuario);
             this.Controls.Add(this.tabControl1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -1328,16 +1289,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvFamilias)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.npdVencePermisos)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDatosUsuario)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.pnlcontraseñayseguridad.ResumeLayout(false);
+            this.pnlcontraseñayseguridad.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.npdBloqueadoPorDias)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.npdVenceCada)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.npdIntentos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.npdHorasDeBloqueo)).EndInit();
             this.tabPage4.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.pnlpreguntaseguridad.ResumeLayout(false);
+            this.pnlpreguntaseguridad.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPreguntas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_datosUsuario)).EndInit();
             this.ResumeLayout(false);
@@ -1398,7 +1358,7 @@
         private System.Windows.Forms.TextBox txtTipoDocumento;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_Apellido;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pnlcontraseñayseguridad;
         private System.Windows.Forms.Button CancelarBtn;
         private System.Windows.Forms.Button guardarBtn;
         private System.Windows.Forms.Label label10;
@@ -1424,7 +1384,7 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel pnlpreguntaseguridad;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnVer;
         private System.Windows.Forms.Button btnEditar;
@@ -1436,7 +1396,6 @@
         private System.Windows.Forms.ComboBox cmbLocalidades;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.DataGridView dgvDatosUsuario;
         private System.Windows.Forms.Button btn_editar;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btnApellido;
