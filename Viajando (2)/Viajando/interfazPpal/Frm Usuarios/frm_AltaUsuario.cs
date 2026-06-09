@@ -331,6 +331,74 @@ namespace interfazPpal
                 }
         }
 
-        
+        private void btguardarconfiguracionesseguridad_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ConfiguracionSeguridad config =
+                    ObtenerConfiguracionDesdePantalla();
+
+                CN_ConfiguracionSeguridad cn =
+                    new CN_ConfiguracionSeguridad();
+
+                cn.GuardarConfiguracion(config);
+
+                MessageBox.Show(
+                    "Configuración guardada correctamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private ConfiguracionSeguridad ObtenerConfiguracionDesdePantalla()
+        {
+            ConfiguracionSeguridad config =
+                new ConfiguracionSeguridad
+                {
+                    MinCaracteres =
+                    Convert.ToInt32(ckbMinimo.Text),
+
+                    RequiereMay =
+                    ckbMayuscula.Checked,
+
+                    RequiereMin =
+                    ckbMinuscula.Checked,
+
+                    RequiereNumeros =
+                    ckbNumero.Checked,
+
+                    RequiereEspecial =
+                    ckbEspecial.Checked,
+
+                    Usa2FA =
+                    ckbAutenticacion2FA.Checked,
+
+                    IntentosFallidos =
+                    Convert.ToInt32(npdIntentos.Text),
+
+                    TiempoDesbloqueoDias =
+                    Convert.ToInt32(npdBloqueadoPorDias.Text),
+
+                    TiempoDesbloqueoHoras =
+                    Convert.ToInt32(npdHorasDeBloqueo.Text),
+
+                    DesbloqueoAutomatico =
+                    ckbDesbloqueoAuto.Checked,
+
+                    AvisarVencimiento =
+                    ckbAvisarVencimiento.Checked,
+
+                    UsaPreguntasSeguridad =
+                    ckbRealizarPreguntasSeguridad.Checked,
+
+                    UsuarioBloqueado =
+                    ckbBloqueado.Checked,
+
+                    DiasAviso = Convert.ToInt32(npdVenceCada.Text),
+                };
+
+            return config;
+        }
     }
 }

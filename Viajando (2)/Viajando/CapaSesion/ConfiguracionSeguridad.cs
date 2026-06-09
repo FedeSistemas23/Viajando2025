@@ -12,7 +12,9 @@ namespace CapaSesion
 
         public int MinCaracteres { get; set; }
 
-        public bool RequiereMayMin { get; set; }
+        public bool RequiereMay { get; set; }
+
+        public bool RequiereMin { get; set; }
 
         public bool RequiereNumeros { get; set; }
 
@@ -24,18 +26,24 @@ namespace CapaSesion
 
         public bool VerificarDatosPersonales { get; set; }
 
-        public int MaxIntentosFallidos { get; set; }
-
         public bool DesbloqueoAutomatico { get; set; }
 
         public int TiempoDesbloqueoHoras { get; set; }
+
+        public int TiempoDesbloqueoDias { get; set; }
 
         public bool UsaPreguntasSeguridad { get; set; }
 
         public bool AvisarVencimiento { get; set; }
 
         public int DiasAviso { get; set; }
+
+        public bool UsuarioBloqueado { get; set; } 
+
+        public int IntentosFallidos { get; set; }
     }
  
+
+
 }
 
