@@ -13,8 +13,8 @@ namespace CapaDatos
     {
         SqlCommand cmd = new SqlCommand();
         Conexion conexion = new Conexion();
-        List<string> Destinos = new List<string>();
-        public List<string> CargarComboDestinosD()
+        List<Destino> destinos = new List<Destino>();
+        public List<Destino> CargarComboDestinosD()
         {
             SqlDataReader leer;
             try
@@ -30,11 +30,11 @@ namespace CapaDatos
                             // Id_Destino = Convert.ToInt32(leer["Id_Destino"].ToString()),
                           
                        
-                        Destinos.Add((string)leer["Nombre"]);
+                        destinos.Add((Destino)leer["Nombre"]);
                     }
                 }
                
-                return Destinos;
+                return destinos;
             }
             catch (Exception ex)
             {

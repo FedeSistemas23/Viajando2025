@@ -29,25 +29,7 @@ namespace interfazPpal
         }
         private void FrmIngresarEditarPaquetes_Load(object sender, EventArgs e)
         {
-            //MostrarPaquetes();
-            //CargarComboDestino();
-            /*cmbBus.Items.Clear();
-            cmbBus.Items.Insert(0, "Seleccione el Bus");
-            cmbTipoBus.Items.Clear();
-            cmbTipoBus.Items.Insert(0, "Tipo de Bus");
-            cmbHotel.Items.Clear();
-            cmbHotel.Items.Insert(0, "Selecione el hotel");
-            cmbRegimen.Items.Clear();
-            cmbRegimen.Items.Insert(0, "Selecione el regimen");
-            cmbDestino.SelectedIndex = 0;
-            cmbRegimen.SelectedIndex = 0;
-            cmbBus.SelectedIndex = 0;
-            cmbTipoBus.SelectedIndex = 0;
-            cmbHotel.SelectedIndex = 0;
-            */
-            //txtDestino.Enabled = false;
-            //a partir de aca hago algunas configuraciones del dgvPaquetes.
-
+            CargarComboDestino();
             dgvPaquetes.RowHeadersVisible = false;
             dgvPaquetes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvPaquetes.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -57,8 +39,7 @@ namespace interfazPpal
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
 
-            //dgvPaquetes.Columns["FechaSalida"].DisplayIndex = 4; // Primera posición
-            //dgvPaquetes.Columns["FechaRegreso"].DisplayIndex = 5; // Segunda posición
+            
             int[] columnasParaOcultar = { 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 };
 
             foreach (int indice in columnasParaOcultar)
@@ -308,9 +289,7 @@ namespace interfazPpal
         }
         public void CargarComboDestino()
         {
-            CN_CargarComboDestino comboDestino = new CN_CargarComboDestino();
-            List<string> Destino = new List<string>();
-            Destino = comboDestino.CargarComboDestinosL();
+            List<Destino> listaDestinos = new List<Destino>(new CN_CargarComboDestino().CargarComboDestinosL());
             cmbDestino.Items.Clear(); 
             
             // Limpia el ComboBox
@@ -318,9 +297,9 @@ namespace interfazPpal
             cmbDestino.Items.Add("Seleccione el Destino");
 
             // Luego, agrega los elementos de la lista
-            foreach (string item in Destino)
+            foreach (Destino destino in listaDestinos)
             {
-                cmbDestino.Items.Add(item);
+                cmbDestino.Items.Add(destino.Nombre);
             }
 
             // Opcional: Establece "Seleccione el Destino" como el elemento seleccionado predeterminado
@@ -426,36 +405,38 @@ namespace interfazPpal
 
         private void cmbDestino_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            List<string> Buses = new List<string>();
-            List<string> Hoteles = new List<string>();
-            CN_CargaComboBus CargadorBus = new CN_CargaComboBus();
-            CN_CargaComboHotel CargadorComboHotel = new CN_CargaComboHotel();
+         
             try
             {
                 if (cmbDestino.SelectedIndex > 0)
                 {
-                    string Destino = cmbDestino.SelectedItem.ToString();
-                    Hoteles = null;
-                    Hoteles = CargadorComboHotel.CargaComboHotelL(Destino);
-                    Buses = null;
-                    Buses = CargadorBus.CargadorComboBusL(Destino);
-                    if (Hoteles.Count > 0)
+                    Destino destino = (Destino)cmbDestino.SelectedItem;
+                    List<Bus> listaBuses = new List<Bus>(new CN_CargaComboBus().CargadorComboBusL(destino));
+                    List<Hotel> listaHoteles = new List<Hotel>(new CN_CargaComboHotel().cargaComboHotel(destino));
+                    if (listaHoteles.Count > 0)
                     {
-                        cmbHotel.Items.AddRange(Hoteles.ToArray());
-                        if (Buses.Count > 0)
+                        foreach (Hotel hotel in listaHoteles)
                         {
-                            cmbBus.Items.AddRange(Buses.ToArray());
+                            cmbHotel.Items.Add(hotel.NombreDelHotel);
                         }
-                        else
+                    }
+                    else
+                     {
+                         MessageBox.Show("Ese destino no tiene hoteles, debe cargarlos.");
+                     }
+                    if(listaBuses.Count > 0)
+                    {
+                        foreach(Bus bus in listaBuses)
                         {
-                            MessageBox.Show("Ese destino no tiene buses, debe cargarlos.");
+                            cmbBus.Items.Add(bus.NombreBus);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Ese destino no tiene hoteles, debe cargarlos.");
+                        MessageBox.Show("Ese destino no tiene buses, debe cargarlos.");
                     }
                 }
+                   
             }
             catch (Exception ex)
             {

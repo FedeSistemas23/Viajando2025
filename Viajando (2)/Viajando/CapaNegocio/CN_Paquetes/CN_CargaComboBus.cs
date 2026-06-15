@@ -1,4 +1,5 @@
 ﻿using CapaDatos;
+using CapaSesion;
 using System.Collections.Generic;
 
 namespace CapaNegocio
@@ -6,19 +7,19 @@ namespace CapaNegocio
     public class CN_CargaComboBus
     {
         CD_CargaComboBus bus = new CD_CargaComboBus();
-        List<string> buses;
+        
 
-        public List<string> CargadorComboBusL(string destino)
+        public List<Bus> CargadorComboBusL(Destino destino)
         {
-            buses = bus.CargadorComboBusD(destino);
+            List<Bus> listaBuses = bus.CargadorComboBusD(destino);
 
-            if (buses == null)
+            if (listaBuses == null)
             {
                 return null;
             }
             else
             {
-                return buses;
+                return listaBuses;
             }
         }
     }

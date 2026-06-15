@@ -1,15 +1,15 @@
 ﻿using CapaDatos;
+using CapaSesion;
 using System.Collections.Generic;
 
 namespace CapaNegocio
 {
     public class CN_CargaComboHotel
     {
-        CD_CargaComboHotel Cargador = new CD_CargaComboHotel();
-        List<string> Hoteles;
-        public List<string> CargaComboHotelL(string destino)
+               
+        public List<Hotel> cargaComboHotel(Destino nombre)
         {
-            Hoteles = Cargador.CargarComboHotelD(destino);
+            List<Hotel> Hoteles =  new CD_CargaComboHotel().CargarComboHotelD(nombre);
             if (Hoteles != null)
             {
                 return Hoteles;

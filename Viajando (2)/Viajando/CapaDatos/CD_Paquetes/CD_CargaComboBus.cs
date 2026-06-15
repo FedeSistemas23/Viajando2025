@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Security.Policy;
+using CapaSesion;
 
 namespace CapaDatos
 {
@@ -13,9 +14,8 @@ namespace CapaDatos
     {
         SqlCommand cmd = new SqlCommand();
         Conexion conexion = new Conexion();
-        //int asientos;
-        List<string> Buses = new List<string>();
-        public List<string> CargadorComboBusD(string destino)
+        List<Bus> listaBuses = new List<Bus>();
+        public List<Bus> CargadorComboBusD(Destino nombre)
         {
             SqlDataReader leer;
             try
@@ -23,16 +23,16 @@ namespace CapaDatos
                 cmd.Connection = conexion.AbrirConexion();
                 cmd.CommandText = "CargaComboBus";
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("Destino", destino);
+                cmd.Parameters.AddWithValue("Destino", nombre);
                 leer = cmd.ExecuteReader();
                 if (leer != null)
                 {
                     while (leer.Read())
                     {
-                        Buses.Add(leer["NombreBus"].ToString());
+                        listaBuses.Add((Bus)leer["NombreBus"]);
                     }
                 }
-                return Buses;
+                return listaBuses;
             }
             catch (Exception ex)
             {

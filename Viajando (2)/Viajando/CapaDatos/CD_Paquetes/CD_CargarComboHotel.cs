@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaSesion;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -9,8 +10,8 @@ namespace CapaDatos
     {
         SqlCommand cmd = new SqlCommand();
         Conexion conexion = new Conexion();
-        List<string> listaHoteles = new List<string>();
-        public List<string> CargarComboHotelD(string destino)
+        List<Hotel> listaHoteles = new List<Hotel>();
+        public List<Hotel> CargarComboHotelD(Destino destino)
         {
             SqlDataReader leer;
             try
@@ -25,7 +26,7 @@ namespace CapaDatos
                 {
                     while (leer.Read())
                     {
-                        listaHoteles.Add(leer["Nombre_Hotel"].ToString());
+                        listaHoteles.Add((Hotel)leer["Nombre_Hotel"]);
                     }
                 }
                 else
@@ -40,8 +41,6 @@ namespace CapaDatos
             }
             finally
             {
-                //listaHoteles = null;
-                // listaHoteles.Clear();
                 cmd.Parameters.Clear();
                 conexion.CerrarConexion();
             }
