@@ -128,7 +128,7 @@ namespace interfazPpal
                 }
             }
 
-            if (editar == true)
+            if (!editar == false)
             {
                 CN_EditarPaquetes EditarPaquete = new CN_EditarPaquetes();
 
@@ -139,26 +139,16 @@ namespace interfazPpal
                         Id_Paquete = Convert.ToInt32(dgvPaquetes.CurrentRow.Cells["Id_Paquete"].Value.ToString()),
                         FechaSalida = Convert.ToDateTime(dtpFechaSalida.Value),
                         FechaRegreso = Convert.ToDateTime(dtpFechaRegreso.Value),
-                        Destino = Convert.ToString(cmbDestino.Text),
+                        Destino = new Destino() { Nombre = cmbHotel.SelectedItem.ToString() },
                         CantidadDias = Convert.ToInt32(npdCantidasDias.Value),
                         CantidadNoches = Convert.ToInt32(npdCantidadNoches.Value),
-                        Regimen = Convert.ToString(cmbRegimen.Text),
-                        ProveedorHotel = Convert.ToString(cmbHotel.Text),
-                        ProveedorBus = Convert.ToString(cmbBus.Text),
+                        ProveedorHotel = new Hotel() { NombreDelHotel = cmbHotel.SelectedItem.ToString() },
+                        ProveedorBus = new Bus() { NombreBus = cmbBus.Text.ToString() },
                         GastosAdministrativos = Convert.ToDecimal(txtGastosAdministrativos.Text),
                         PrecioLista = Convert.ToDecimal(txtPrecioLista.Text),
                         PrecioEfectivo = Convert.ToDecimal(txtPrecioEfectivo.Text),
                         Coste = Convert.ToDecimal(txtCoste.Text),
                         Disponibilidad = Convert.ToInt32(npdDisponibilidad.Value),
-                        CantidadDeHab = Convert.ToInt32(npdCantidadHabitaciones.Value),
-                        Single = Convert.ToInt32(npdSIngle.Value),
-                        Doble = Convert.ToInt32(npdDobles.Value),
-                        Triple = Convert.ToInt32(npdTriple.Value),
-                        Cuadruple = Convert.ToInt32(npdCuadruple.Value),
-                        TipoBus = Convert.ToString(cmbTipoBus.Text),
-                        CantidadAsientos = Convert.ToInt32(npdCantidadAsientos.Value),
-                        AsientosCama = Convert.ToInt32(npdAsientosSemicama.Value),
-                        AsientosSemicama = Convert.ToInt32(npdAsientosCama.Value),
                     };
                     EditarPaquete.EditarPaqueteL(Paquete);
                     MessageBox.Show("Los campos se han modificado con exito");
