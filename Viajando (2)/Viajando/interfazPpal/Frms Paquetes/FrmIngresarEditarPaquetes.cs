@@ -52,9 +52,8 @@ namespace interfazPpal
         }
         private void MostrarPaquetes()
         {
-            CN_MostrarPaquetes CargadorDgv = new CN_MostrarPaquetes();
-            List<Paquete> Paquetes = new List<Paquete>();
-            Paquetes = CargadorDgv.MostrarPaquetes();
+
+            List<Paquete> Paquetes = new List<Paquete>(new CN_MostrarPaquetes().MostrarPaquetes());   
             dgvPaquetes.DataSource = Paquetes;
         }
 
@@ -77,7 +76,8 @@ namespace interfazPpal
 
         public void btnGuardar_Click(object sender, EventArgs e)
         {
-            CN_GuardarPaquete NuevoPaquete = new CN_GuardarPaquete();
+            string mensaje = string.Empty;
+
             if (editar == false)
             {
                 try
@@ -88,47 +88,39 @@ namespace interfazPpal
                     }
                     else
                     {
-                        Paquete Paquete = new Paquete()
+                        Paquete nuevoPaquete = new Paquete()
                         {
                             FechaSalida = Convert.ToDateTime(dtpFechaSalida.Value),
                             FechaRegreso = Convert.ToDateTime(dtpFechaRegreso.Value),
-                            Destino = Convert.ToString(cmbDestino.ValueMember),
+                            Destino = new Destino() { Nombre= cmbHotel.SelectedItem.ToString() },
                             CantidadDias = Convert.ToInt32(npdCantidasDias.Value),
                             CantidadNoches = Convert.ToInt32(npdCantidadNoches.Value),
-                            Regimen = Convert.ToString(cmbRegimen.Text),
-                            ProveedorHotel = Convert.ToString(cmbHotel.Text),
-                            ProveedorBus = Convert.ToString(cmbBus.Text),
+                            ProveedorHotel = new Hotel() { NombreDelHotel = cmbHotel.SelectedItem.ToString() },
+                            ProveedorBus = new Bus() { NombreBus = cmbBus.Text.ToString()},
                             GastosAdministrativos = Convert.ToDecimal(txtGastosAdministrativos.Text),
                             PrecioLista = Convert.ToDecimal(txtPrecioLista.Text),
                             PrecioEfectivo = Convert.ToDecimal(txtPrecioEfectivo.Text),
                             Coste = Convert.ToDecimal(txtCoste.Text),
                             Disponibilidad = Convert.ToInt32(npdDisponibilidad.Value),
-                            CantidadDeHab = Convert.ToInt32(npdCantidadHabitaciones.Value),
-                            Single = Convert.ToInt32(npdSIngle.Value),
-                            Doble = Convert.ToInt32(npdDobles.Value),
-                            Triple = Convert.ToInt32(npdTriple.Value),
-                            Cuadruple = Convert.ToInt32(npdCuadruple.Value),
-                            TipoBus = Convert.ToString(cmbTipoBus.Text),
-                            CantidadAsientos = Convert.ToInt32(npdCantidadAsientos.Value),
-                            AsientosCama = Convert.ToInt32(npdAsientosSemicama.Value),
-                            AsientosSemicama = Convert.ToInt32(npdAsientosCama.Value),
                         };
-                        int SeGuardoPaquete = NuevoPaquete.GuardarPaqueteL(Paquete);
-                        if (SeGuardoPaquete == 1)
+                        
+                        int IdNuevoPaquete = new CN_GuardarPaquete().GuardarNuevoPaquete(nuevoPaquete, out mensaje);
+                        if (IdNuevoPaquete != 0)
                         {
-                            MessageBox.Show("El producto se ha creado con exito");
+                            MessageBox.Show(mensaje);
                             //bitacora.GuardarBitacora(CS_Usuario.Id_Usuario, "Creacion de paquete", "Se ha creado un paquete nuevo.");
                             MostrarPaquetes();
                         }
                         else
                         {
-                            MessageBox.Show("No se puede guardar el paquete. Reintenrtelo nuevamente");
+                            MessageBox.Show(mensaje);
                         }
+                       
                     }
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("Error al ejecutar SP o Conexion a la BD. \n \n" + ex.Message);
+                    MessageBox.Show(ex.Message);
                 }
                 finally
                 {
@@ -405,7 +397,6 @@ namespace interfazPpal
 
         private void cmbDestino_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-         
             try
             {
                 if (cmbDestino.SelectedIndex > 0)

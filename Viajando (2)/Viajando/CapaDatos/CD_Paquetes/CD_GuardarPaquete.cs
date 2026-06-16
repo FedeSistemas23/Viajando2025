@@ -2,6 +2,7 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Data.SqlTypes;
 
 
 namespace CapaDatos
@@ -12,73 +13,50 @@ namespace CapaDatos
         Conexion conexion = new Conexion();
         SqlCommand cmd = new SqlCommand();
 
-        public int GuardarPaqueteD(Paquete paquete)
+        public int GuardarPaqueteD(Paquete paquete, out string mensaje)
         {
             try
             {
-
-                cmd.Connection = conexion.AbrirConexion();
                 cmd.CommandText = "GuardarPaquete";
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 // Parámetros de entrada
-                cmd.Parameters.AddWithValue("@Destino", paquete.Destino);
+                cmd.Parameters.AddWithValue("@Destino", paquete.Destino.Nombre);
                 cmd.Parameters.AddWithValue("@Disponibilidad", paquete.Disponibilidad);
-                cmd.Parameters.AddWithValue("@Single", paquete.Single);
-                cmd.Parameters.AddWithValue("@Doble", paquete.Doble);
-                cmd.Parameters.AddWithValue("@Triple", paquete.Triple);
-                cmd.Parameters.AddWithValue("@Cuadruple", paquete.Cuadruple);
-                cmd.Parameters.AddWithValue("@Regimen", paquete.Regimen);
                 cmd.Parameters.AddWithValue("@FechaRegreso", paquete.FechaRegreso);
                 cmd.Parameters.AddWithValue("@CantidadDias", paquete.CantidadDias);
                 cmd.Parameters.AddWithValue("@CantidadNoches", paquete.CantidadNoches);
                 cmd.Parameters.AddWithValue("@ProveedorHotel", paquete.ProveedorHotel);
                 cmd.Parameters.AddWithValue("@ProveedorBus", paquete.ProveedorBus);
-                cmd.Parameters.AddWithValue("@CantidadAsientos", paquete.CantidadAsientos);
-                cmd.Parameters.AddWithValue("@CantidadCamas", paquete.AsientosCama);
-                cmd.Parameters.AddWithValue("@CantidadSemicamas", paquete.AsientosSemicama);
                 cmd.Parameters.AddWithValue("@GastosAdministrativos", paquete.GastosAdministrativos);
                 cmd.Parameters.AddWithValue("@PrecioEfectivo", paquete.PrecioEfectivo);
-                cmd.Parameters.AddWithValue("@PrecioLista", paquete.PrecioLista);
-                cmd.Parameters.AddWithValue("@CantidadDeHab", paquete.CantidadDeHab);
+                cmd.Parameters.AddWithValue("@PrecioLista", paquete.PrecioLista);               
                 cmd.Parameters.AddWithValue("@Coste", paquete.Coste);
                 cmd.Parameters.AddWithValue("@FechaSalida", paquete.FechaSalida);
-                cmd.Parameters.AddWithValue("@TipoBus", paquete.TipoBus);
+                cmd.Parameters.Add("@IdnuevoPaquete", SqlDbType.Int).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
 
-                // Parámetro de salida para el ID del nuevo paquete
-                SqlParameter idPaqueteParam = new SqlParameter("@IdnuevoPaquete", SqlDbType.Int)
-                {
-                    Direction = ParameterDirection.Output
-                };
-                cmd.Parameters.Add(idPaqueteParam);
 
-                // Parámetro de salida para el resultado de éxito o error
-                SqlParameter resultadoParam = new SqlParameter("@Resultado", SqlDbType.Int)
-                {
-                    Direction = ParameterDirection.Output
-                };
-                cmd.Parameters.Add(resultadoParam);
-
-                conexion.AbrirConexion();
+                cmd.Connection = conexion.AbrirConexion();
                 cmd.ExecuteNonQuery();
-                conexion.CerrarConexion();
-
+                
                 // Obtener los valores de salida
-                idNuevoPaquete = (int)idPaqueteParam.Value;
-                int resultado = (int)resultadoParam.Value;
+                idNuevoPaquete = Convert.ToInt32(cmd.Parameters["@IdNuevoPaquete"].Value);
+                mensaje = cmd.Parameters["@Mensaje"].Value.ToString();
 
-                // Retornar true si resultado es 1, indicando éxito
-                return resultado;
+                
             }
             catch (Exception ex)
             {
-                throw new Exception("Error al ejecutar SP o Conexion a la BD. \n \n" + ex.Message);
+                idNuevoPaquete = 0;
+                mensaje= ex.Message;
             }
             finally
             {
                 cmd.Parameters.Clear();
                 conexion.CerrarConexion();
             }
+            return idNuevoPaquete;
         }
 
         public Paquete VerificarNuevoPaqueteD(int id)

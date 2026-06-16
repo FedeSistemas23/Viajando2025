@@ -34,19 +34,19 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.dgvPaquetes = new System.Windows.Forms.DataGridView();
+            this.IdPaquete = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Destino1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaDeSalida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaDeRegreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dsiponibilidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioEnEfectivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cmbDestino = new System.Windows.Forms.ComboBox();
-            this.cmbTipoBus = new System.Windows.Forms.ComboBox();
-            this.cmbRegimen = new System.Windows.Forms.ComboBox();
             this.cmbBus = new System.Windows.Forms.ComboBox();
             this.cmbHotel = new System.Windows.Forms.ComboBox();
             this.btnAgregarDestino = new System.Windows.Forms.Button();
             this.btnBuscarHotel = new System.Windows.Forms.Button();
             this.btnBuscarBus = new System.Windows.Forms.Button();
-            this.npdCantidadAsientos = new System.Windows.Forms.NumericUpDown();
-            this.lblCantidadAsientos = new System.Windows.Forms.Label();
-            this.txtCoste = new System.Windows.Forms.TextBox();
-            this.lblCosto = new System.Windows.Forms.Label();
             this.lblSingle = new System.Windows.Forms.Label();
             this.npdCuadruple = new System.Windows.Forms.NumericUpDown();
             this.npdTriple = new System.Windows.Forms.NumericUpDown();
@@ -72,9 +72,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtPrecioLista = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtGastosAdministrativos = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lblTransporte = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -85,16 +82,18 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnVer = new System.Windows.Forms.Button();
             this.tableLayoutPanelBotones = new System.Windows.Forms.TableLayoutPanel();
-            this.IdPaquete = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Destino1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaDeSalida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaDeRegreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dsiponibilidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecioEnEfectivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmbDestino = new System.Windows.Forms.ComboBox();
+            this.lblnrodepaquete = new System.Windows.Forms.Label();
+            this.nrodepaquete = new System.Windows.Forms.Label();
+            this.txtCoste = new System.Windows.Forms.TextBox();
+            this.txtGastosAdministrativos = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblRegimen = new System.Windows.Forms.Label();
+            this.lblTransporte = new System.Windows.Forms.Label();
+            this.lbltipodebus = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPaquetes)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.npdCantidadAsientos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.npdCuadruple)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.npdTriple)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.npdDobles)).BeginInit();
@@ -197,20 +196,64 @@
             this.dgvPaquetes.TabIndex = 19;
             this.dgvPaquetes.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPaquetes_CellContentDoubleClick);
             // 
+            // IdPaquete
+            // 
+            this.IdPaquete.HeaderText = "IdPaquete";
+            this.IdPaquete.Name = "IdPaquete";
+            this.IdPaquete.ReadOnly = true;
+            // 
+            // Destino1
+            // 
+            this.Destino1.HeaderText = "Destino";
+            this.Destino1.Name = "Destino1";
+            this.Destino1.ReadOnly = true;
+            // 
+            // FechaDeSalida
+            // 
+            this.FechaDeSalida.HeaderText = "Fecha de Salida";
+            this.FechaDeSalida.Name = "FechaDeSalida";
+            this.FechaDeSalida.ReadOnly = true;
+            // 
+            // FechaDeRegreso
+            // 
+            this.FechaDeRegreso.HeaderText = "Fecha de Regreso";
+            this.FechaDeRegreso.Name = "FechaDeRegreso";
+            this.FechaDeRegreso.ReadOnly = true;
+            // 
+            // Dsiponibilidad
+            // 
+            this.Dsiponibilidad.HeaderText = "Disponibilidad";
+            this.Dsiponibilidad.Name = "Dsiponibilidad";
+            this.Dsiponibilidad.ReadOnly = true;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            // 
+            // PrecioEnEfectivo
+            // 
+            this.PrecioEnEfectivo.HeaderText = "Precio en Efectivo";
+            this.PrecioEnEfectivo.Name = "PrecioEnEfectivo";
+            this.PrecioEnEfectivo.ReadOnly = true;
+            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lbltipodebus);
+            this.groupBox1.Controls.Add(this.lblRegimen);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.txtGastosAdministrativos);
+            this.groupBox1.Controls.Add(this.txtCoste);
+            this.groupBox1.Controls.Add(this.nrodepaquete);
+            this.groupBox1.Controls.Add(this.lblnrodepaquete);
             this.groupBox1.Controls.Add(this.cmbDestino);
-            this.groupBox1.Controls.Add(this.cmbTipoBus);
-            this.groupBox1.Controls.Add(this.cmbRegimen);
             this.groupBox1.Controls.Add(this.cmbBus);
             this.groupBox1.Controls.Add(this.cmbHotel);
             this.groupBox1.Controls.Add(this.btnAgregarDestino);
             this.groupBox1.Controls.Add(this.btnBuscarHotel);
             this.groupBox1.Controls.Add(this.btnBuscarBus);
-            this.groupBox1.Controls.Add(this.npdCantidadAsientos);
-            this.groupBox1.Controls.Add(this.lblCantidadAsientos);
-            this.groupBox1.Controls.Add(this.txtCoste);
-            this.groupBox1.Controls.Add(this.lblCosto);
             this.groupBox1.Controls.Add(this.lblSingle);
             this.groupBox1.Controls.Add(this.npdCuadruple);
             this.groupBox1.Controls.Add(this.npdTriple);
@@ -236,8 +279,6 @@
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.txtPrecioLista);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.txtGastosAdministrativos);
-            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.lblTransporte);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -254,42 +295,10 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Crear Nuevo Paquete";
             // 
-            // cmbDestino
-            // 
-            this.cmbDestino.FormattingEnabled = true;
-            this.cmbDestino.Location = new System.Drawing.Point(113, 98);
-            this.cmbDestino.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbDestino.Name = "cmbDestino";
-            this.cmbDestino.Size = new System.Drawing.Size(149, 21);
-            this.cmbDestino.TabIndex = 3;
-            this.cmbDestino.SelectedIndexChanged += new System.EventHandler(this.cmbDestino_SelectedIndexChanged_1);
-            // 
-            // cmbTipoBus
-            // 
-            this.cmbTipoBus.AutoCompleteCustomSource.AddRange(new string[] {
-            "Suite",
-            "Cama",
-            "Semicama"});
-            this.cmbTipoBus.FormattingEnabled = true;
-            this.cmbTipoBus.Location = new System.Drawing.Point(344, 204);
-            this.cmbTipoBus.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbTipoBus.Name = "cmbTipoBus";
-            this.cmbTipoBus.Size = new System.Drawing.Size(149, 21);
-            this.cmbTipoBus.TabIndex = 17;
-            // 
-            // cmbRegimen
-            // 
-            this.cmbRegimen.FormattingEnabled = true;
-            this.cmbRegimen.Location = new System.Drawing.Point(348, 69);
-            this.cmbRegimen.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbRegimen.Name = "cmbRegimen";
-            this.cmbRegimen.Size = new System.Drawing.Size(149, 21);
-            this.cmbRegimen.TabIndex = 10;
-            // 
             // cmbBus
             // 
             this.cmbBus.FormattingEnabled = true;
-            this.cmbBus.Location = new System.Drawing.Point(344, 159);
+            this.cmbBus.Location = new System.Drawing.Point(616, 47);
             this.cmbBus.Margin = new System.Windows.Forms.Padding(2);
             this.cmbBus.Name = "cmbBus";
             this.cmbBus.Size = new System.Drawing.Size(149, 21);
@@ -299,7 +308,7 @@
             // cmbHotel
             // 
             this.cmbHotel.FormattingEnabled = true;
-            this.cmbHotel.Location = new System.Drawing.Point(348, 31);
+            this.cmbHotel.Location = new System.Drawing.Point(344, 46);
             this.cmbHotel.Margin = new System.Windows.Forms.Padding(2);
             this.cmbHotel.Name = "cmbHotel";
             this.cmbHotel.Size = new System.Drawing.Size(149, 21);
@@ -313,9 +322,9 @@
             this.btnAgregarDestino.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarDestino.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarDestino.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarDestino.Location = new System.Drawing.Point(114, 125);
+            this.btnAgregarDestino.Location = new System.Drawing.Point(112, 125);
             this.btnAgregarDestino.Name = "btnAgregarDestino";
-            this.btnAgregarDestino.Size = new System.Drawing.Size(148, 32);
+            this.btnAgregarDestino.Size = new System.Drawing.Size(149, 32);
             this.btnAgregarDestino.TabIndex = 4;
             this.btnAgregarDestino.Text = "Destino";
             this.btnAgregarDestino.UseVisualStyleBackColor = false;
@@ -328,9 +337,9 @@
             this.btnBuscarHotel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarHotel.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarHotel.Location = new System.Drawing.Point(516, 28);
+            this.btnBuscarHotel.Location = new System.Drawing.Point(344, 72);
             this.btnBuscarHotel.Name = "btnBuscarHotel";
-            this.btnBuscarHotel.Size = new System.Drawing.Size(144, 32);
+            this.btnBuscarHotel.Size = new System.Drawing.Size(149, 32);
             this.btnBuscarHotel.TabIndex = 9;
             this.btnBuscarHotel.Text = "Hotel";
             this.btnBuscarHotel.UseVisualStyleBackColor = false;
@@ -342,52 +351,18 @@
             this.btnBuscarBus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarBus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarBus.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarBus.Location = new System.Drawing.Point(516, 155);
+            this.btnBuscarBus.Location = new System.Drawing.Point(616, 73);
             this.btnBuscarBus.Name = "btnBuscarBus";
-            this.btnBuscarBus.Size = new System.Drawing.Size(144, 36);
+            this.btnBuscarBus.Size = new System.Drawing.Size(149, 31);
             this.btnBuscarBus.TabIndex = 17;
             this.btnBuscarBus.Text = "Transporte";
             this.btnBuscarBus.UseVisualStyleBackColor = false;
             this.btnBuscarBus.Click += new System.EventHandler(this.btnBuscarBus_Click);
             // 
-            // npdCantidadAsientos
-            // 
-            this.npdCantidadAsientos.Location = new System.Drawing.Point(572, 207);
-            this.npdCantidadAsientos.Margin = new System.Windows.Forms.Padding(2);
-            this.npdCantidadAsientos.Name = "npdCantidadAsientos";
-            this.npdCantidadAsientos.Size = new System.Drawing.Size(33, 20);
-            this.npdCantidadAsientos.TabIndex = 19;
-            // 
-            // lblCantidadAsientos
-            // 
-            this.lblCantidadAsientos.AutoSize = true;
-            this.lblCantidadAsientos.Location = new System.Drawing.Point(507, 199);
-            this.lblCantidadAsientos.Name = "lblCantidadAsientos";
-            this.lblCantidadAsientos.Size = new System.Drawing.Size(68, 26);
-            this.lblCantidadAsientos.TabIndex = 127;
-            this.lblCantidadAsientos.Text = "Cantidad de\r\n      Asientos:";
-            // 
-            // txtCoste
-            // 
-            this.txtCoste.Location = new System.Drawing.Point(797, 40);
-            this.txtCoste.Name = "txtCoste";
-            this.txtCoste.Size = new System.Drawing.Size(149, 20);
-            this.txtCoste.TabIndex = 22;
-            this.txtCoste.Leave += new System.EventHandler(this.txtCoste_Leave);
-            // 
-            // lblCosto
-            // 
-            this.lblCosto.AutoSize = true;
-            this.lblCosto.Location = new System.Drawing.Point(751, 42);
-            this.lblCosto.Name = "lblCosto";
-            this.lblCosto.Size = new System.Drawing.Size(40, 13);
-            this.lblCosto.TabIndex = 125;
-            this.lblCosto.Text = "Coste: ";
-            // 
             // lblSingle
             // 
             this.lblSingle.AutoSize = true;
-            this.lblSingle.Location = new System.Drawing.Point(290, 112);
+            this.lblSingle.Location = new System.Drawing.Point(295, 165);
             this.lblSingle.Name = "lblSingle";
             this.lblSingle.Size = new System.Drawing.Size(39, 13);
             this.lblSingle.TabIndex = 124;
@@ -395,64 +370,69 @@
             // 
             // npdCuadruple
             // 
-            this.npdCuadruple.Location = new System.Drawing.Point(616, 107);
+            this.npdCuadruple.Location = new System.Drawing.Point(458, 191);
             this.npdCuadruple.Margin = new System.Windows.Forms.Padding(2);
             this.npdCuadruple.Name = "npdCuadruple";
+            this.npdCuadruple.ReadOnly = true;
             this.npdCuadruple.Size = new System.Drawing.Size(35, 20);
             this.npdCuadruple.TabIndex = 15;
             // 
             // npdTriple
             // 
-            this.npdTriple.Location = new System.Drawing.Point(509, 107);
+            this.npdTriple.Location = new System.Drawing.Point(344, 191);
             this.npdTriple.Margin = new System.Windows.Forms.Padding(2);
             this.npdTriple.Name = "npdTriple";
+            this.npdTriple.ReadOnly = true;
             this.npdTriple.Size = new System.Drawing.Size(35, 20);
             this.npdTriple.TabIndex = 14;
             // 
             // npdDobles
             // 
-            this.npdDobles.Location = new System.Drawing.Point(422, 107);
+            this.npdDobles.Location = new System.Drawing.Point(458, 163);
             this.npdDobles.Margin = new System.Windows.Forms.Padding(2);
             this.npdDobles.Name = "npdDobles";
+            this.npdDobles.ReadOnly = true;
             this.npdDobles.Size = new System.Drawing.Size(35, 20);
             this.npdDobles.TabIndex = 13;
             // 
             // npdSIngle
             // 
-            this.npdSIngle.Location = new System.Drawing.Point(334, 108);
+            this.npdSIngle.Location = new System.Drawing.Point(344, 163);
             this.npdSIngle.Margin = new System.Windows.Forms.Padding(2);
             this.npdSIngle.Name = "npdSIngle";
+            this.npdSIngle.ReadOnly = true;
             this.npdSIngle.Size = new System.Drawing.Size(35, 20);
             this.npdSIngle.TabIndex = 12;
             // 
             // npdCantidadHabitaciones
             // 
-            this.npdCantidadHabitaciones.Location = new System.Drawing.Point(588, 71);
+            this.npdCantidadHabitaciones.Location = new System.Drawing.Point(419, 136);
             this.npdCantidadHabitaciones.Margin = new System.Windows.Forms.Padding(2);
             this.npdCantidadHabitaciones.Name = "npdCantidadHabitaciones";
-            this.npdCantidadHabitaciones.Size = new System.Drawing.Size(35, 20);
+            this.npdCantidadHabitaciones.ReadOnly = true;
+            this.npdCantidadHabitaciones.Size = new System.Drawing.Size(74, 20);
             this.npdCantidadHabitaciones.TabIndex = 11;
             // 
             // npdCantidadNoches
             // 
-            this.npdCantidadNoches.Location = new System.Drawing.Point(227, 166);
+            this.npdCantidadNoches.Location = new System.Drawing.Point(112, 219);
             this.npdCantidadNoches.Margin = new System.Windows.Forms.Padding(2);
             this.npdCantidadNoches.Name = "npdCantidadNoches";
-            this.npdCantidadNoches.Size = new System.Drawing.Size(35, 20);
+            this.npdCantidadNoches.Size = new System.Drawing.Size(149, 20);
             this.npdCantidadNoches.TabIndex = 6;
             // 
             // npdCantidasDias
             // 
-            this.npdCantidasDias.Location = new System.Drawing.Point(138, 167);
+            this.npdCantidasDias.Location = new System.Drawing.Point(112, 191);
             this.npdCantidasDias.Margin = new System.Windows.Forms.Padding(2);
             this.npdCantidasDias.Name = "npdCantidasDias";
-            this.npdCantidasDias.Size = new System.Drawing.Size(35, 20);
+            this.npdCantidasDias.Size = new System.Drawing.Size(149, 20);
             this.npdCantidasDias.TabIndex = 5;
             // 
             // lblCuadruples
             // 
             this.lblCuadruples.AutoSize = true;
-            this.lblCuadruples.Location = new System.Drawing.Point(550, 110);
+            this.lblCuadruples.Location = new System.Drawing.Point(387, 193);
             this.lblCuadruples.Name = "lblCuadruples";
             this.lblCuadruples.Size = new System.Drawing.Size(66, 13);
             this.lblCuadruples.TabIndex = 116;
@@ -462,7 +442,7 @@
             // lblTriples
             // 
             this.lblTriples.AutoSize = true;
-            this.lblTriples.Location = new System.Drawing.Point(463, 110);
+            this.lblTriples.Location = new System.Drawing.Point(290, 193);
             this.lblTriples.Name = "lblTriples";
             this.lblTriples.Size = new System.Drawing.Size(44, 13);
             this.lblTriples.TabIndex = 114;
@@ -471,7 +451,7 @@
             // lblDoble
             // 
             this.lblDoble.AutoSize = true;
-            this.lblDoble.Location = new System.Drawing.Point(374, 112);
+            this.lblDoble.Location = new System.Drawing.Point(407, 165);
             this.lblDoble.Name = "lblDoble";
             this.lblDoble.Size = new System.Drawing.Size(46, 13);
             this.lblDoble.TabIndex = 112;
@@ -480,24 +460,24 @@
             // lblCantidadHabitaciones
             // 
             this.lblCantidadHabitaciones.AutoSize = true;
-            this.lblCantidadHabitaciones.Location = new System.Drawing.Point(513, 67);
+            this.lblCantidadHabitaciones.Location = new System.Drawing.Point(279, 138);
             this.lblCantidadHabitaciones.Name = "lblCantidadHabitaciones";
-            this.lblCantidadHabitaciones.Size = new System.Drawing.Size(75, 26);
+            this.lblCantidadHabitaciones.Size = new System.Drawing.Size(135, 26);
             this.lblCantidadHabitaciones.TabIndex = 110;
-            this.lblCantidadHabitaciones.Text = "Cantidad de \r\nHabitaciones :\r\n";
+            this.lblCantidadHabitaciones.Text = "Cantidad de Habitaciones :\r\n\r\n";
             // 
             // npdDisponibilidad
             // 
-            this.npdDisponibilidad.Location = new System.Drawing.Point(190, 198);
+            this.npdDisponibilidad.Location = new System.Drawing.Point(112, 164);
             this.npdDisponibilidad.Margin = new System.Windows.Forms.Padding(2);
             this.npdDisponibilidad.Name = "npdDisponibilidad";
-            this.npdDisponibilidad.Size = new System.Drawing.Size(46, 20);
+            this.npdDisponibilidad.Size = new System.Drawing.Size(149, 20);
             this.npdDisponibilidad.TabIndex = 7;
             // 
             // lblDisponibilidad
             // 
             this.lblDisponibilidad.AutoSize = true;
-            this.lblDisponibilidad.Location = new System.Drawing.Point(110, 201);
+            this.lblDisponibilidad.Location = new System.Drawing.Point(25, 166);
             this.lblDisponibilidad.Name = "lblDisponibilidad";
             this.lblDisponibilidad.Size = new System.Drawing.Size(78, 13);
             this.lblDisponibilidad.TabIndex = 106;
@@ -505,16 +485,17 @@
             // 
             // npdAsientosCama
             // 
-            this.npdAsientosCama.Location = new System.Drawing.Point(712, 207);
+            this.npdAsientosCama.Location = new System.Drawing.Point(616, 136);
             this.npdAsientosCama.Margin = new System.Windows.Forms.Padding(2);
             this.npdAsientosCama.Name = "npdAsientosCama";
-            this.npdAsientosCama.Size = new System.Drawing.Size(35, 20);
+            this.npdAsientosCama.ReadOnly = true;
+            this.npdAsientosCama.Size = new System.Drawing.Size(149, 20);
             this.npdAsientosCama.TabIndex = 20;
             // 
             // lbbAsientosSemicama
             // 
             this.lbbAsientosSemicama.AutoSize = true;
-            this.lbbAsientosSemicama.Location = new System.Drawing.Point(761, 206);
+            this.lbbAsientosSemicama.Location = new System.Drawing.Point(508, 165);
             this.lbbAsientosSemicama.Name = "lbbAsientosSemicama";
             this.lbbAsientosSemicama.Size = new System.Drawing.Size(103, 13);
             this.lbbAsientosSemicama.TabIndex = 104;
@@ -522,25 +503,26 @@
             // 
             // npdAsientosSemicama
             // 
-            this.npdAsientosSemicama.Location = new System.Drawing.Point(866, 202);
+            this.npdAsientosSemicama.Location = new System.Drawing.Point(616, 163);
             this.npdAsientosSemicama.Margin = new System.Windows.Forms.Padding(2);
             this.npdAsientosSemicama.Name = "npdAsientosSemicama";
-            this.npdAsientosSemicama.Size = new System.Drawing.Size(35, 20);
+            this.npdAsientosSemicama.ReadOnly = true;
+            this.npdAsientosSemicama.Size = new System.Drawing.Size(149, 20);
             this.npdAsientosSemicama.TabIndex = 21;
             // 
             // lblNombreBus
             // 
             this.lblNombreBus.AutoSize = true;
-            this.lblNombreBus.Location = new System.Drawing.Point(284, 162);
+            this.lblNombreBus.Location = new System.Drawing.Point(537, 54);
             this.lblNombreBus.Name = "lblNombreBus";
-            this.lblNombreBus.Size = new System.Drawing.Size(58, 13);
+            this.lblNombreBus.Size = new System.Drawing.Size(74, 13);
             this.lblNombreBus.TabIndex = 101;
-            this.lblNombreBus.Text = "Transporte";
+            this.lblNombreBus.Text = "Transportista :";
             // 
             // lblAsientosCama
             // 
             this.lblAsientosCama.AutoSize = true;
-            this.lblAsientosCama.Location = new System.Drawing.Point(621, 207);
+            this.lblAsientosCama.Location = new System.Drawing.Point(528, 138);
             this.lblAsientosCama.Name = "lblAsientosCama";
             this.lblAsientosCama.Size = new System.Drawing.Size(83, 13);
             this.lblAsientosCama.TabIndex = 100;
@@ -548,7 +530,7 @@
             // 
             // dtpFechaSalida
             // 
-            this.dtpFechaSalida.Location = new System.Drawing.Point(113, 32);
+            this.dtpFechaSalida.Location = new System.Drawing.Point(112, 48);
             this.dtpFechaSalida.Name = "dtpFechaSalida";
             this.dtpFechaSalida.Size = new System.Drawing.Size(149, 20);
             this.dtpFechaSalida.TabIndex = 1;
@@ -556,7 +538,7 @@
             // lblFechaSalida
             // 
             this.lblFechaSalida.AutoSize = true;
-            this.lblFechaSalida.Location = new System.Drawing.Point(14, 34);
+            this.lblFechaSalida.Location = new System.Drawing.Point(13, 54);
             this.lblFechaSalida.Name = "lblFechaSalida";
             this.lblFechaSalida.Size = new System.Drawing.Size(90, 13);
             this.lblFechaSalida.TabIndex = 97;
@@ -564,7 +546,7 @@
             // 
             // txtPrecioEfectivo
             // 
-            this.txtPrecioEfectivo.Location = new System.Drawing.Point(797, 133);
+            this.txtPrecioEfectivo.Location = new System.Drawing.Point(807, 218);
             this.txtPrecioEfectivo.Name = "txtPrecioEfectivo";
             this.txtPrecioEfectivo.Size = new System.Drawing.Size(149, 20);
             this.txtPrecioEfectivo.TabIndex = 25;
@@ -572,7 +554,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(718, 136);
+            this.label9.Location = new System.Drawing.Point(848, 202);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(79, 13);
             this.label9.TabIndex = 87;
@@ -580,7 +562,7 @@
             // 
             // txtPrecioLista
             // 
-            this.txtPrecioLista.Location = new System.Drawing.Point(797, 107);
+            this.txtPrecioLista.Location = new System.Drawing.Point(807, 179);
             this.txtPrecioLista.Name = "txtPrecioLista";
             this.txtPrecioLista.Size = new System.Drawing.Size(149, 20);
             this.txtPrecioLista.TabIndex = 24;
@@ -588,68 +570,43 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(734, 108);
+            this.label8.Location = new System.Drawing.Point(848, 163);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(62, 13);
             this.label8.TabIndex = 85;
             this.label8.Text = "Precio Lista";
             // 
-            // txtGastosAdministrativos
-            // 
-            this.txtGastosAdministrativos.Location = new System.Drawing.Point(797, 72);
-            this.txtGastosAdministrativos.Name = "txtGastosAdministrativos";
-            this.txtGastosAdministrativos.Size = new System.Drawing.Size(149, 20);
-            this.txtGastosAdministrativos.TabIndex = 23;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(688, 75);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(105, 13);
-            this.label7.TabIndex = 83;
-            this.label7.Text = "Gast. Administrativos";
-            // 
-            // lblTransporte
-            // 
-            this.lblTransporte.AutoSize = true;
-            this.lblTransporte.Location = new System.Drawing.Point(272, 204);
-            this.lblTransporte.Name = "lblTransporte";
-            this.lblTransporte.Size = new System.Drawing.Size(70, 13);
-            this.lblTransporte.TabIndex = 79;
-            this.lblTransporte.Text = "Tipo de Bus :";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(292, 72);
+            this.label3.Location = new System.Drawing.Point(279, 111);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 13);
+            this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 77;
-            this.label3.Text = "Régimen";
+            this.label3.Text = "Régimen :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(306, 38);
+            this.label2.Location = new System.Drawing.Point(296, 54);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 13);
+            this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 75;
-            this.label2.Text = "Hotel";
+            this.label2.Text = "Hotel :";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(178, 167);
+            this.label1.Location = new System.Drawing.Point(53, 221);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 73;
-            this.label1.Text = "Noches";
+            this.label1.Text = "Noches :";
             // 
             // lblDestino
             // 
             this.lblDestino.AutoSize = true;
-            this.lblDestino.Location = new System.Drawing.Point(35, 102);
+            this.lblDestino.Location = new System.Drawing.Point(54, 100);
             this.lblDestino.Name = "lblDestino";
             this.lblDestino.Size = new System.Drawing.Size(49, 13);
             this.lblDestino.TabIndex = 71;
@@ -658,15 +615,15 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(103, 169);
+            this.label4.Location = new System.Drawing.Point(67, 193);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(30, 13);
+            this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 69;
-            this.label4.Text = "Días";
+            this.label4.Text = "Días :";
             // 
             // dtpFechaRegreso
             // 
-            this.dtpFechaRegreso.Location = new System.Drawing.Point(113, 70);
+            this.dtpFechaRegreso.Location = new System.Drawing.Point(112, 72);
             this.dtpFechaRegreso.Name = "dtpFechaRegreso";
             this.dtpFechaRegreso.Size = new System.Drawing.Size(149, 20);
             this.dtpFechaRegreso.TabIndex = 2;
@@ -674,7 +631,7 @@
             // lblFechaRegreso
             // 
             this.lblFechaRegreso.AutoSize = true;
-            this.lblFechaRegreso.Location = new System.Drawing.Point(6, 74);
+            this.lblFechaRegreso.Location = new System.Drawing.Point(5, 79);
             this.lblFechaRegreso.Name = "lblFechaRegreso";
             this.lblFechaRegreso.Size = new System.Drawing.Size(98, 13);
             this.lblFechaRegreso.TabIndex = 67;
@@ -731,47 +688,88 @@
             this.tableLayoutPanelBotones.Size = new System.Drawing.Size(981, 100);
             this.tableLayoutPanelBotones.TabIndex = 95;
             // 
-            // IdPaquete
+            // cmbDestino
             // 
-            this.IdPaquete.HeaderText = "IdPaquete";
-            this.IdPaquete.Name = "IdPaquete";
-            this.IdPaquete.ReadOnly = true;
+            this.cmbDestino.FormattingEnabled = true;
+            this.cmbDestino.Location = new System.Drawing.Point(112, 97);
+            this.cmbDestino.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbDestino.Name = "cmbDestino";
+            this.cmbDestino.Size = new System.Drawing.Size(149, 21);
+            this.cmbDestino.TabIndex = 125;
             // 
-            // Destino1
+            // lblnrodepaquete
             // 
-            this.Destino1.HeaderText = "Destino";
-            this.Destino1.Name = "Destino1";
-            this.Destino1.ReadOnly = true;
+            this.lblnrodepaquete.AutoSize = true;
+            this.lblnrodepaquete.Location = new System.Drawing.Point(12, 30);
+            this.lblnrodepaquete.Name = "lblnrodepaquete";
+            this.lblnrodepaquete.Size = new System.Drawing.Size(91, 13);
+            this.lblnrodepaquete.TabIndex = 126;
+            this.lblnrodepaquete.Text = "Nro. de Paquete :";
             // 
-            // FechaDeSalida
+            // nrodepaquete
             // 
-            this.FechaDeSalida.HeaderText = "Fecha de Salida";
-            this.FechaDeSalida.Name = "FechaDeSalida";
-            this.FechaDeSalida.ReadOnly = true;
+            this.nrodepaquete.AutoSize = true;
+            this.nrodepaquete.Location = new System.Drawing.Point(109, 30);
+            this.nrodepaquete.Name = "nrodepaquete";
+            this.nrodepaquete.Size = new System.Drawing.Size(0, 13);
+            this.nrodepaquete.TabIndex = 127;
             // 
-            // FechaDeRegreso
+            // txtCoste
             // 
-            this.FechaDeRegreso.HeaderText = "Fecha de Regreso";
-            this.FechaDeRegreso.Name = "FechaDeRegreso";
-            this.FechaDeRegreso.ReadOnly = true;
+            this.txtCoste.Location = new System.Drawing.Point(807, 140);
+            this.txtCoste.Name = "txtCoste";
+            this.txtCoste.Size = new System.Drawing.Size(149, 20);
+            this.txtCoste.TabIndex = 128;
             // 
-            // Dsiponibilidad
+            // txtGastosAdministrativos
             // 
-            this.Dsiponibilidad.HeaderText = "Disponibilidad";
-            this.Dsiponibilidad.Name = "Dsiponibilidad";
-            this.Dsiponibilidad.ReadOnly = true;
+            this.txtGastosAdministrativos.Location = new System.Drawing.Point(807, 101);
+            this.txtGastosAdministrativos.Name = "txtGastosAdministrativos";
+            this.txtGastosAdministrativos.Size = new System.Drawing.Size(149, 20);
+            this.txtGastosAdministrativos.TabIndex = 129;
             // 
-            // Precio
+            // label5
             // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(827, 124);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(100, 13);
+            this.label5.TabIndex = 130;
+            this.label5.Text = "Costo por paquete :";
             // 
-            // PrecioEnEfectivo
+            // label6
             // 
-            this.PrecioEnEfectivo.HeaderText = "Precio en Efectivo";
-            this.PrecioEnEfectivo.Name = "PrecioEnEfectivo";
-            this.PrecioEnEfectivo.ReadOnly = true;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(820, 85);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(119, 13);
+            this.label6.TabIndex = 131;
+            this.label6.Text = "Gastos Administrativos :";
+            // 
+            // lblRegimen
+            // 
+            this.lblRegimen.AutoSize = true;
+            this.lblRegimen.Location = new System.Drawing.Point(341, 111);
+            this.lblRegimen.Name = "lblRegimen";
+            this.lblRegimen.Size = new System.Drawing.Size(0, 13);
+            this.lblRegimen.TabIndex = 132;
+            // 
+            // lblTransporte
+            // 
+            this.lblTransporte.AutoSize = true;
+            this.lblTransporte.Location = new System.Drawing.Point(541, 111);
+            this.lblTransporte.Name = "lblTransporte";
+            this.lblTransporte.Size = new System.Drawing.Size(70, 13);
+            this.lblTransporte.TabIndex = 79;
+            this.lblTransporte.Text = "Tipo de Bus :";
+            // 
+            // lbltipodebus
+            // 
+            this.lbltipodebus.AutoSize = true;
+            this.lbltipodebus.Location = new System.Drawing.Point(613, 111);
+            this.lbltipodebus.Name = "lbltipodebus";
+            this.lbltipodebus.Size = new System.Drawing.Size(0, 13);
+            this.lbltipodebus.TabIndex = 133;
             // 
             // FrmIngresarEditarPaquetes
             // 
@@ -790,7 +788,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPaquetes)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.npdCantidadAsientos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.npdCuadruple)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.npdTriple)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.npdDobles)).EndInit();
@@ -813,7 +810,6 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.DataGridView dgvPaquetes;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label lblCosto;
         private System.Windows.Forms.Label lblSingle;
         private System.Windows.Forms.NumericUpDown npdCuadruple;
         private System.Windows.Forms.NumericUpDown npdTriple;
@@ -837,9 +833,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtPrecioLista;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtGastosAdministrativos;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lblTransporte;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -848,18 +841,12 @@
         private System.Windows.Forms.DateTimePicker dtpFechaRegreso;
         private System.Windows.Forms.Label lblFechaRegreso;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.TextBox txtCoste;
-        private System.Windows.Forms.NumericUpDown npdCantidadAsientos;
-        private System.Windows.Forms.Label lblCantidadAsientos;
         private System.Windows.Forms.Button btnBuscarHotel;
         private System.Windows.Forms.Button btnBuscarBus;
         private System.Windows.Forms.Button btnVer;
         private System.Windows.Forms.Button btnAgregarDestino;
         private System.Windows.Forms.ComboBox cmbBus;
         private System.Windows.Forms.ComboBox cmbHotel;
-        private System.Windows.Forms.ComboBox cmbRegimen;
-        private System.Windows.Forms.ComboBox cmbTipoBus;
-        private System.Windows.Forms.ComboBox cmbDestino;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelBotones;
         private System.Windows.Forms.NumericUpDown npdDisponibilidad;
         private System.Windows.Forms.Label lblDisponibilidad;
@@ -870,5 +857,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Dsiponibilidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioEnEfectivo;
+        private System.Windows.Forms.ComboBox cmbDestino;
+        private System.Windows.Forms.Label lblnrodepaquete;
+        private System.Windows.Forms.Label nrodepaquete;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtGastosAdministrativos;
+        private System.Windows.Forms.TextBox txtCoste;
+        private System.Windows.Forms.Label lblRegimen;
+        private System.Windows.Forms.Label lbltipodebus;
+        private System.Windows.Forms.Label lblTransporte;
     }
 }

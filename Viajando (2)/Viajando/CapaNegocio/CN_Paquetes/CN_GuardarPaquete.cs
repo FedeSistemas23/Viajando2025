@@ -1,6 +1,6 @@
-﻿
-using CapaDatos;
+﻿using CapaDatos;
 using CapaSesion;
+using System;
 
 namespace CapaNegocio
 {
@@ -8,23 +8,43 @@ namespace CapaNegocio
     // y luego los envia a la capa de datos para guardarlos en la base de datos
     public class CN_GuardarPaquete
     {
-        public int Id { get; set; }
         
-        private CD_GuardarPaquete NuevoPaquete;
-        public CN_GuardarPaquete()
+        
+        private CD_GuardarPaquete GuardarNuevoPaqueteD = new CD_GuardarPaquete();
+       
+        
+        public int GuardarNuevoPaquete(Paquete paquete, out string mensaje)
         {
-            NuevoPaquete = new CD_GuardarPaquete();
-        }
+            mensaje = string.Empty;
 
-        public  int GuardarPaqueteL(Paquete paquete)
-        {           
-            Id = NuevoPaquete.GuardarPaqueteD(paquete);
-            return Id;
-            
+            if (paquete.FechaRegreso == default(DateTime) && paquete.FechaSalida == default(DateTime))
+            {
+                mensaje += "Tiene que selecionar las fechas validas";
+
+            }
+
+            if ((string.IsNullOrEmpty(paquete.Destino.Nombre)))
+            {
+                mensaje = "Tiene que selecionar un Destino";
+            }
+            if (mensaje != string.Empty)
+            {
+                return 0;
+            }
+
+            else
+            {
+                return GuardarNuevoPaqueteD.GuardarPaqueteD(paquete, out mensaje);
+            }
+                
+          
+
+
+
         }
         public void VerificarNuevoPaquete (int id)
         {
-            Paquete NewPaquete = NuevoPaquete.VerificarNuevoPaqueteD(id);
+            Paquete NewPaquete = GuardarNuevoPaqueteD.VerificarNuevoPaqueteD(id);
         }
     }
 }
