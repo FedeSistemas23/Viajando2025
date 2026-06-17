@@ -29,7 +29,8 @@ namespace interfazPpal
         }
         private void FrmIngresarEditarPaquetes_Load(object sender, EventArgs e)
         {
-            CargarComboDestino();
+            MostrarPaquetes();
+            /*CargarComboDestino();
             dgvPaquetes.RowHeadersVisible = false;
             dgvPaquetes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvPaquetes.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -48,7 +49,7 @@ namespace interfazPpal
                 {
                     dgvPaquetes.Columns[indice].Visible = false;
                 }
-            }
+            }*/
         }
         private void MostrarPaquetes()
         {
@@ -67,7 +68,10 @@ namespace interfazPpal
         public void AgregarDestinoAlTextBox(int id_destino, string destino)
         {
             Id_Destino = id_destino;
-            //txtDestino.Text = destino;
+            if (destino != "")
+            {
+                cmbDestino.Items.Add(destino);
+            }
         }
         public void AgregarHotelAlCombo(string nombreHotel)
         {
@@ -92,18 +96,18 @@ namespace interfazPpal
                         {
                             FechaSalida = Convert.ToDateTime(dtpFechaSalida.Value),
                             FechaRegreso = Convert.ToDateTime(dtpFechaRegreso.Value),
-                            Destino = new Destino() { Nombre= cmbHotel.SelectedItem.ToString() },
+                            Destino = new Destino() { Nombre = cmbHotel.SelectedItem.ToString() },
                             CantidadDias = Convert.ToInt32(npdCantidasDias.Value),
                             CantidadNoches = Convert.ToInt32(npdCantidadNoches.Value),
                             ProveedorHotel = new Hotel() { NombreDelHotel = cmbHotel.SelectedItem.ToString() },
-                            ProveedorBus = new Bus() { NombreBus = cmbBus.Text.ToString()},
+                            ProveedorBus = new Bus() { NombreBus = cmbBus.Text.ToString() },
                             GastosAdministrativos = Convert.ToDecimal(txtGastosAdministrativos.Text),
                             PrecioLista = Convert.ToDecimal(txtPrecioLista.Text),
                             PrecioEfectivo = Convert.ToDecimal(txtPrecioEfectivo.Text),
                             Coste = Convert.ToDecimal(txtCoste.Text),
                             Disponibilidad = Convert.ToInt32(npdDisponibilidad.Value),
                         };
-                        
+
                         int IdNuevoPaquete = new CN_GuardarPaquete().GuardarNuevoPaquete(nuevoPaquete, out mensaje);
                         if (IdNuevoPaquete != 0)
                         {
@@ -115,10 +119,9 @@ namespace interfazPpal
                         {
                             MessageBox.Show(mensaje);
                         }
-                       
+
                     }
-                }
-                catch (Exception ex)
+                } catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
@@ -127,45 +130,29 @@ namespace interfazPpal
                     Limpiador.Limpiar(this);
                 }
             }
-
-            if (!editar == false)
+            else
             {
                 CN_EditarPaquetes EditarPaquete = new CN_EditarPaquetes();
 
                 try
                 {
-                    Paquete Paquete = new Paquete()
-                    {
-                        Id_Paquete = Convert.ToInt32(dgvPaquetes.CurrentRow.Cells["Id_Paquete"].Value.ToString()),
-                        FechaSalida = Convert.ToDateTime(dtpFechaSalida.Value),
-                        FechaRegreso = Convert.ToDateTime(dtpFechaRegreso.Value),
-                        Destino = new Destino() { Nombre = cmbHotel.SelectedItem.ToString() },
-                        CantidadDias = Convert.ToInt32(npdCantidasDias.Value),
-                        CantidadNoches = Convert.ToInt32(npdCantidadNoches.Value),
-                        ProveedorHotel = new Hotel() { NombreDelHotel = cmbHotel.SelectedItem.ToString() },
-                        ProveedorBus = new Bus() { NombreBus = cmbBus.Text.ToString() },
-                        GastosAdministrativos = Convert.ToDecimal(txtGastosAdministrativos.Text),
-                        PrecioLista = Convert.ToDecimal(txtPrecioLista.Text),
-                        PrecioEfectivo = Convert.ToDecimal(txtPrecioEfectivo.Text),
-                        Coste = Convert.ToDecimal(txtCoste.Text),
-                        Disponibilidad = Convert.ToInt32(npdDisponibilidad.Value),
-                    };
-                    EditarPaquete.EditarPaqueteL(Paquete);
-                    MessageBox.Show("Los campos se han modificado con exito");
+                    EditarPaquete.EditarPaqueteL(nuevoPaquete);
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("Error al ejecutar SP o Conexion a la BD. \n \n" + ex.Message);
+                    MessageBox.Show("Los campos se han modificado con exito";
                 }
-                finally
-                {
-                    Limpiador.Limpiar(this);
-                    editar = false;
-                    MostrarPaquetes();
-                }
-            }
-        }
 
+            }
+
+        }
+            
+
+
+
+
+
+                
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             CN_EliminarPaquete EliminarPaquete = new CN_EliminarPaquete();
@@ -423,15 +410,6 @@ namespace interfazPpal
             {
                 throw new Exception("Error al ejecutar SP o Conexion a la BD. \n \n" + ex.Message);
             }
-        }
-
-        private void txtCoste_Leave(object sender, EventArgs e)
-        {
-            if (!int.TryParse(((TextBox)sender).Text, out _))
-            {
-                MessageBox.Show("Por favor, ingrese un número válido.");
-                ((TextBox)sender).Focus();
-            }
-        }
+        }  
     }
 }

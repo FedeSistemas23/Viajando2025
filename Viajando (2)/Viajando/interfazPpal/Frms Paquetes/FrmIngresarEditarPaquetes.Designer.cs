@@ -42,6 +42,15 @@
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioEnEfectivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbltipodebus = new System.Windows.Forms.Label();
+            this.lblRegimen = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtGastosAdministrativos = new System.Windows.Forms.TextBox();
+            this.txtCoste = new System.Windows.Forms.TextBox();
+            this.nrodepaquete = new System.Windows.Forms.Label();
+            this.lblnrodepaquete = new System.Windows.Forms.Label();
+            this.cmbDestino = new System.Windows.Forms.ComboBox();
             this.cmbBus = new System.Windows.Forms.ComboBox();
             this.cmbHotel = new System.Windows.Forms.ComboBox();
             this.btnAgregarDestino = new System.Windows.Forms.Button();
@@ -72,6 +81,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtPrecioLista = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.lblTransporte = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -82,16 +92,6 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnVer = new System.Windows.Forms.Button();
             this.tableLayoutPanelBotones = new System.Windows.Forms.TableLayoutPanel();
-            this.cmbDestino = new System.Windows.Forms.ComboBox();
-            this.lblnrodepaquete = new System.Windows.Forms.Label();
-            this.nrodepaquete = new System.Windows.Forms.Label();
-            this.txtCoste = new System.Windows.Forms.TextBox();
-            this.txtGastosAdministrativos = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lblRegimen = new System.Windows.Forms.Label();
-            this.lblTransporte = new System.Windows.Forms.Label();
-            this.lbltipodebus = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPaquetes)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.npdCuadruple)).BeginInit();
@@ -294,6 +294,80 @@
             this.groupBox1.TabIndex = 94;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Crear Nuevo Paquete";
+            // 
+            // lbltipodebus
+            // 
+            this.lbltipodebus.AutoSize = true;
+            this.lbltipodebus.Location = new System.Drawing.Point(613, 111);
+            this.lbltipodebus.Name = "lbltipodebus";
+            this.lbltipodebus.Size = new System.Drawing.Size(0, 13);
+            this.lbltipodebus.TabIndex = 133;
+            // 
+            // lblRegimen
+            // 
+            this.lblRegimen.AutoSize = true;
+            this.lblRegimen.Location = new System.Drawing.Point(341, 111);
+            this.lblRegimen.Name = "lblRegimen";
+            this.lblRegimen.Size = new System.Drawing.Size(0, 13);
+            this.lblRegimen.TabIndex = 132;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(820, 85);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(119, 13);
+            this.label6.TabIndex = 131;
+            this.label6.Text = "Gastos Administrativos :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(827, 124);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(100, 13);
+            this.label5.TabIndex = 130;
+            this.label5.Text = "Costo por paquete :";
+            // 
+            // txtGastosAdministrativos
+            // 
+            this.txtGastosAdministrativos.Location = new System.Drawing.Point(807, 101);
+            this.txtGastosAdministrativos.Name = "txtGastosAdministrativos";
+            this.txtGastosAdministrativos.Size = new System.Drawing.Size(149, 20);
+            this.txtGastosAdministrativos.TabIndex = 129;
+            // 
+            // txtCoste
+            // 
+            this.txtCoste.Location = new System.Drawing.Point(807, 140);
+            this.txtCoste.Name = "txtCoste";
+            this.txtCoste.Size = new System.Drawing.Size(149, 20);
+            this.txtCoste.TabIndex = 128;
+            // 
+            // nrodepaquete
+            // 
+            this.nrodepaquete.AutoSize = true;
+            this.nrodepaquete.Location = new System.Drawing.Point(109, 30);
+            this.nrodepaquete.Name = "nrodepaquete";
+            this.nrodepaquete.Size = new System.Drawing.Size(0, 13);
+            this.nrodepaquete.TabIndex = 127;
+            // 
+            // lblnrodepaquete
+            // 
+            this.lblnrodepaquete.AutoSize = true;
+            this.lblnrodepaquete.Location = new System.Drawing.Point(12, 30);
+            this.lblnrodepaquete.Name = "lblnrodepaquete";
+            this.lblnrodepaquete.Size = new System.Drawing.Size(91, 13);
+            this.lblnrodepaquete.TabIndex = 126;
+            this.lblnrodepaquete.Text = "Nro. de Paquete :";
+            // 
+            // cmbDestino
+            // 
+            this.cmbDestino.FormattingEnabled = true;
+            this.cmbDestino.Location = new System.Drawing.Point(112, 97);
+            this.cmbDestino.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbDestino.Name = "cmbDestino";
+            this.cmbDestino.Size = new System.Drawing.Size(149, 21);
+            this.cmbDestino.TabIndex = 125;
             // 
             // cmbBus
             // 
@@ -576,6 +650,15 @@
             this.label8.TabIndex = 85;
             this.label8.Text = "Precio Lista";
             // 
+            // lblTransporte
+            // 
+            this.lblTransporte.AutoSize = true;
+            this.lblTransporte.Location = new System.Drawing.Point(541, 111);
+            this.lblTransporte.Name = "lblTransporte";
+            this.lblTransporte.Size = new System.Drawing.Size(70, 13);
+            this.lblTransporte.TabIndex = 79;
+            this.lblTransporte.Text = "Tipo de Bus :";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -687,89 +770,6 @@
             this.tableLayoutPanelBotones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelBotones.Size = new System.Drawing.Size(981, 100);
             this.tableLayoutPanelBotones.TabIndex = 95;
-            // 
-            // cmbDestino
-            // 
-            this.cmbDestino.FormattingEnabled = true;
-            this.cmbDestino.Location = new System.Drawing.Point(112, 97);
-            this.cmbDestino.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbDestino.Name = "cmbDestino";
-            this.cmbDestino.Size = new System.Drawing.Size(149, 21);
-            this.cmbDestino.TabIndex = 125;
-            // 
-            // lblnrodepaquete
-            // 
-            this.lblnrodepaquete.AutoSize = true;
-            this.lblnrodepaquete.Location = new System.Drawing.Point(12, 30);
-            this.lblnrodepaquete.Name = "lblnrodepaquete";
-            this.lblnrodepaquete.Size = new System.Drawing.Size(91, 13);
-            this.lblnrodepaquete.TabIndex = 126;
-            this.lblnrodepaquete.Text = "Nro. de Paquete :";
-            // 
-            // nrodepaquete
-            // 
-            this.nrodepaquete.AutoSize = true;
-            this.nrodepaquete.Location = new System.Drawing.Point(109, 30);
-            this.nrodepaquete.Name = "nrodepaquete";
-            this.nrodepaquete.Size = new System.Drawing.Size(0, 13);
-            this.nrodepaquete.TabIndex = 127;
-            // 
-            // txtCoste
-            // 
-            this.txtCoste.Location = new System.Drawing.Point(807, 140);
-            this.txtCoste.Name = "txtCoste";
-            this.txtCoste.Size = new System.Drawing.Size(149, 20);
-            this.txtCoste.TabIndex = 128;
-            // 
-            // txtGastosAdministrativos
-            // 
-            this.txtGastosAdministrativos.Location = new System.Drawing.Point(807, 101);
-            this.txtGastosAdministrativos.Name = "txtGastosAdministrativos";
-            this.txtGastosAdministrativos.Size = new System.Drawing.Size(149, 20);
-            this.txtGastosAdministrativos.TabIndex = 129;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(827, 124);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(100, 13);
-            this.label5.TabIndex = 130;
-            this.label5.Text = "Costo por paquete :";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(820, 85);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(119, 13);
-            this.label6.TabIndex = 131;
-            this.label6.Text = "Gastos Administrativos :";
-            // 
-            // lblRegimen
-            // 
-            this.lblRegimen.AutoSize = true;
-            this.lblRegimen.Location = new System.Drawing.Point(341, 111);
-            this.lblRegimen.Name = "lblRegimen";
-            this.lblRegimen.Size = new System.Drawing.Size(0, 13);
-            this.lblRegimen.TabIndex = 132;
-            // 
-            // lblTransporte
-            // 
-            this.lblTransporte.AutoSize = true;
-            this.lblTransporte.Location = new System.Drawing.Point(541, 111);
-            this.lblTransporte.Name = "lblTransporte";
-            this.lblTransporte.Size = new System.Drawing.Size(70, 13);
-            this.lblTransporte.TabIndex = 79;
-            this.lblTransporte.Text = "Tipo de Bus :";
-            // 
-            // lbltipodebus
-            // 
-            this.lbltipodebus.AutoSize = true;
-            this.lbltipodebus.Location = new System.Drawing.Point(613, 111);
-            this.lbltipodebus.Name = "lbltipodebus";
-            this.lbltipodebus.Size = new System.Drawing.Size(0, 13);
-            this.lbltipodebus.TabIndex = 133;
             // 
             // FrmIngresarEditarPaquetes
             // 
