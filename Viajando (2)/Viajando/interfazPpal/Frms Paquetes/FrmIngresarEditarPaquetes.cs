@@ -86,8 +86,9 @@ namespace interfazPpal
             {
                 try
                 {
-                    if (!Validar.Validar(this))
+                    Paquete nuevoPaquete = new Paquete()
                     {
+<<<<<<< HEAD
                         MessageBox.Show("Debe completar todos los campos");
                     }
                     else
@@ -137,10 +138,57 @@ namespace interfazPpal
                 try
                 {
                     EditarPaquete.EditarPaqueteL(nuevoPaquete);
+=======
+                        FechaSalida = Convert.ToDateTime(dtpFechaSalida.Value),
+                        FechaRegreso = Convert.ToDateTime(dtpFechaRegreso.Value),
+                        Destino = new Destino() { Nombre = cmbHotel.SelectedItem.ToString() },
+                        CantidadDias = Convert.ToInt32(npdCantidasDias.Value),
+                        CantidadNoches = Convert.ToInt32(npdCantidadNoches.Value),
+                        ProveedorHotel = new Hotel() { NombreDelHotel = cmbHotel.SelectedItem.ToString() },
+                        ProveedorBus = new Bus() { NombreBus = cmbBus.Text.ToString() },
+                        GastosAdministrativos = Convert.ToDecimal(txtGastosAdministrativos.Text),
+                        PrecioLista = Convert.ToDecimal(txtPrecioLista.Text),
+                        PrecioEfectivo = Convert.ToDecimal(txtPrecioEfectivo.Text),
+                        Coste = Convert.ToDecimal(txtCoste.Text),
+                        Disponibilidad = Convert.ToInt32(npdDisponibilidad.Value),
+                    };
+
+                    int IdNuevoPaquete = new CN_GuardarPaquete().GuardarNuevoPaquete(nuevoPaquete, out mensaje);
+                    if (IdNuevoPaquete != 0)
+                    {
+                        MessageBox.Show(mensaje);
+                        //bitacora.GuardarBitacora(CS_Usuario.Id_Usuario, "Creacion de paquete", "Se ha creado un paquete nuevo.");
+                        MostrarPaquetes();
+                    }
+                    else
+                    {
+                        MessageBox.Show(mensaje);
+                    }
+
+                    if (!editar == false)
+                    {
+                        CN_EditarPaquetes EditarPaquete = new CN_EditarPaquetes();
+
+                        try
+                        {
+                            EditarPaquete.EditarPaqueteL(nuevoPaquete);
+                        }
+                        catch (Exception ex)
+                        {
+                            throw new Exception("Error al ejecutar SP o Conexion a la BD. \n \n" + ex.Message);
+                        }
+                        
+                    }
+>>>>>>> ef00c54 (.)
                 }
-                catch (Exception ex)
+                catch (Exception ex)    
                 {
+<<<<<<< HEAD
                     MessageBox.Show("Los campos se han modificado con exito";
+=======
+                    MessageBox.Show(ex.Message);    
+
+>>>>>>> ef00c54 (.)
                 }
 
             }
@@ -203,7 +251,7 @@ namespace interfazPpal
             }
         }
 
-        private void btnEditar_Click_1(object sender, EventArgs e)
+        private void btnEditar_Click_1(object sender, EventArgs e)  
         {
             try
             {
@@ -214,27 +262,17 @@ namespace interfazPpal
                     {
                         int Id_Paquete = Convert.ToInt32(dgvPaquetes.CurrentRow.Cells["Id_Paquete"].Value);
                         cmbDestino.Text = dgvPaquetes.CurrentRow.Cells["Destino"].Value.ToString();
-                        npdDisponibilidad.Value = Convert.ToInt32(dgvPaquetes.CurrentRow.Cells["Disponibilidad"].Value);
-                        npdSIngle.Value = Convert.ToInt32(dgvPaquetes.CurrentRow.Cells["Single"].Value);
-                        npdDobles.Value = Convert.ToInt32(dgvPaquetes.CurrentRow.Cells["Doble"].Value);
-                        npdTriple.Value = Convert.ToInt32(dgvPaquetes.CurrentRow.Cells["Triple"].Value);
-                        npdCuadruple.Value = Convert.ToInt32(dgvPaquetes.CurrentRow.Cells["Cuadruple"].Value);
-                        cmbRegimen.Text = dgvPaquetes.CurrentRow.Cells["Regimen"].Value.ToString();
+                        npdDisponibilidad.Value = Convert.ToInt32(dgvPaquetes.CurrentRow.Cells["Disponibilidad"].Value);                       
                         dtpFechaRegreso.Value = Convert.ToDateTime(dgvPaquetes.CurrentRow.Cells["FechaRegreso"].Value);
                         npdCantidasDias.Value = Convert.ToInt32(dgvPaquetes.CurrentRow.Cells["CantidadDias"].Value);
                         npdCantidadNoches.Value = Convert.ToInt32(dgvPaquetes.CurrentRow.Cells["CantidadNoches"].Value);
                         cmbHotel.Text = dgvPaquetes.CurrentRow.Cells["ProveedorHotel"].Value.ToString();
-                        cmbBus.Text = dgvPaquetes.CurrentRow.Cells["ProveedorBus"].Value.ToString();
-                        npdCantidadAsientos.Value = Convert.ToInt32(dgvPaquetes.CurrentRow.Cells["CantidadAsientos"].Value);
-                        npdAsientosSemicama.Value = Convert.ToInt32(dgvPaquetes.CurrentRow.Cells["AsientosCama"].Value);
-                        npdAsientosCama.Value = Convert.ToInt32(dgvPaquetes.CurrentRow.Cells["AsientosSemicama"].Value);
+                        cmbBus.Text = dgvPaquetes.CurrentRow.Cells["ProveedorBus"].Value.ToString(); 
                         txtGastosAdministrativos.Text = dgvPaquetes.CurrentRow.Cells["GastosAdministrativos"].Value.ToString();
                         txtPrecioEfectivo.Text = dgvPaquetes.CurrentRow.Cells["PrecioEfectivo"].Value.ToString();
                         txtPrecioLista.Text = dgvPaquetes.CurrentRow.Cells["PrecioLista"].Value.ToString();
-                        npdCantidadHabitaciones.Value = Convert.ToInt32(dgvPaquetes.CurrentRow.Cells["CantidadDeHab"].Value);
                         txtCoste.Text = dgvPaquetes.CurrentRow.Cells["Coste"].Value.ToString();
                         dtpFechaSalida.Value = Convert.ToDateTime(dgvPaquetes.CurrentRow.Cells["FechaSalida"].Value);
-                        cmbTipoBus.Text = dgvPaquetes.CurrentRow.Cells["TipoBus"].Value.ToString();
                     }
                     else
                     {

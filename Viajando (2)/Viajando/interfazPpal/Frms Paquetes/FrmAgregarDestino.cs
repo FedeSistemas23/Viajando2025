@@ -14,16 +14,16 @@ namespace interfazPpal
         FrmIngresarEditarPaquetes nuevoDestino;
         CS_LimpiarFormularios limpiar = new CS_LimpiarFormularios();
         CS_ValidarFormulario Validar = new CS_ValidarFormulario();
-        
         int Id_Destino;
         string Nombre;
+
+        CN_Destino destino;
         bool editar = false;
-        
         public FrmAgregarDestino(FrmIngresarEditarPaquetes nuevoDestino)
         {
             InitializeComponent();
             this.nuevoDestino = nuevoDestino;
-            
+            destino = new CN_Destino();
         }
         private void FrmAgregarDestino_Load(object sender, EventArgs e)
         {
@@ -36,15 +36,20 @@ namespace interfazPpal
 
         public void CargarDgvDestinos()
         {
-            List<Destino> Destinos = new CN_Destino().MostrarD();
+            List<Destino> Destinos = new List<Destino>();
+            Destinos = destino.MostrarD();
             dgvDestinos.DataSource = Destinos;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
-        {    
-            try
+        {
+            string nombre = txtDestino.Text;
+            string localidad = txtLocalidad.Text;
+            string partido = txtPartido.Text;
+            string provincia = txtProvincia.Text;
+            if (editar == false)
             {
-                if (editar == false)
+                try
                 {
                     if (!Validar.Validar(this))
                     {
@@ -52,51 +57,28 @@ namespace interfazPpal
                     }
                     else
                     {
-                        Destino NuevoDestino = new Destino
-                        {
-                            Nombre = txtDestino.Text,
-                            Localidad = txtLocalidad.Text,
-                            Partido = txtPartido.Text,
-                            Provincia = txtProvincia.Text,
-                        };
-                        int IdNuevoDestino = new CN_Destino().AgregarDestinoL(NuevoDestino, out mensaje);
-                        if (IdNuevoDestino != 0)
-                        {
-                            MessageBox.Show(mensaje);
-                            //bitacora.GuardarBitacora(CS_Usuario.Id_Usuario, "Creacion de paquete", "Se ha creado un paquete nuevo.");
-                            CargarDgvDestinos();
-                        }
-                        else
-                        {
-                            MessageBox.Show(mensaje);
-                        }
-                    }         
-                }
-                else
-                {         
-                    if (editar == true)
-                    {
-                        Id_Destino = Convert.ToInt32(dgvDestinos.CurrentRow.Cells["Id_Destino"].Value);
-                        destino.EditarDestinoL(NuevoDestino);
-                        editar = false;
+                        destino.AgregarDestinoL(nombre, localidad, partido, provincia);
                         CargarDgvDestinos();
-                        limpiar.Limpiar(this);
                     }
                 }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error al ejecutar SP o Conexion a la BD. \n \n" + ex.Message);
+                }
+                finally
+                {
+                    limpiar.Limpiar(this);
+                }
             }
-            catch (Exception ex)
+            if (editar == true)
             {
-                throw new Exception("Error al ejecutar SP o Conexion a la BD. \n \n" + ex.Message);
-
-
-            finally
-            {
+                Id_Destino = Convert.ToInt32(dgvDestinos.CurrentRow.Cells["Id_Destino"].Value);
+                destino.EditarDestinoL(Id_Destino, nombre, localidad, partido, provincia);
+                editar = false;
+                CargarDgvDestinos();
                 limpiar.Limpiar(this);
-
             }
-             
         }
-
 
         private void btnEditar_Click(object sender, EventArgs e)
         {

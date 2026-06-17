@@ -4,8 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using CapaNegocio;
 using CapaNegocio.CN_Localidades;
-using CapaServicios;
-using CapaSesion;
+
 
 
 namespace interfazPpal
