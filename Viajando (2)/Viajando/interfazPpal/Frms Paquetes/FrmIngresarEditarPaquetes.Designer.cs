@@ -35,7 +35,7 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.dgvPaquetes = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lbltipodebus = new System.Windows.Forms.Label();
+            this.lblTipoDeBus = new System.Windows.Forms.Label();
             this.lblRegimen = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -85,16 +85,6 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnVer = new System.Windows.Forms.Button();
             this.tableLayoutPanelBotones = new System.Windows.Forms.TableLayoutPanel();
-            this.cmbDestino = new System.Windows.Forms.ComboBox();
-            this.lblnrodepaquete = new System.Windows.Forms.Label();
-            this.nrodepaquete = new System.Windows.Forms.Label();
-            this.txtCoste = new System.Windows.Forms.TextBox();
-            this.txtGastosAdministrativos = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lblRegimen = new System.Windows.Forms.Label();
-            this.lblTransporte = new System.Windows.Forms.Label();
-            this.lbltipodebus = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPaquetes)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.npdCuadruple)).BeginInit();
@@ -117,8 +107,8 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(553, 38);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEliminar.Location = new System.Drawing.Point(553, 26);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(199, 47);
             this.btnEliminar.TabIndex = 28;
@@ -133,8 +123,8 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(1076, 38);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Location = new System.Drawing.Point(1076, 26);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(199, 47);
             this.btnCancelar.TabIndex = 30;
@@ -149,8 +139,8 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(292, 38);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditar.Location = new System.Drawing.Point(292, 26);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(199, 47);
             this.btnEditar.TabIndex = 27;
@@ -177,18 +167,10 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvPaquetes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPaquetes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPaquetes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdPaquete,
-            this.Destino1,
-            this.FechaDeSalida,
-            this.FechaDeRegreso,
-            this.Dsiponibilidad,
-            this.Precio,
-            this.PrecioEnEfectivo});
             this.dgvPaquetes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPaquetes.GridColor = System.Drawing.Color.CornflowerBlue;
             this.dgvPaquetes.Location = new System.Drawing.Point(0, 313);
-            this.dgvPaquetes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvPaquetes.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPaquetes.MultiSelect = false;
             this.dgvPaquetes.Name = "dgvPaquetes";
             this.dgvPaquetes.ReadOnly = true;
@@ -208,7 +190,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lbltipodebus);
+            this.groupBox1.Controls.Add(this.lblTipoDeBus);
             this.groupBox1.Controls.Add(this.lblRegimen);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
@@ -257,19 +239,22 @@
             this.groupBox1.Controls.Add(this.lblFechaRegreso);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(1308, 313);
             this.groupBox1.TabIndex = 94;
-            // lbltipodebus
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Crear Nuevo Paquete";
             // 
-            this.lbltipodebus.AutoSize = true;
-            this.lbltipodebus.Location = new System.Drawing.Point(817, 137);
-            this.lbltipodebus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbltipodebus.Name = "lbltipodebus";
-            this.lbltipodebus.Size = new System.Drawing.Size(0, 16);
-            this.lbltipodebus.TabIndex = 133;
+            // lblTipoDeBus
+            // 
+            this.lblTipoDeBus.AutoSize = true;
+            this.lblTipoDeBus.Location = new System.Drawing.Point(817, 137);
+            this.lblTipoDeBus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTipoDeBus.Name = "lblTipoDeBus";
+            this.lblTipoDeBus.Size = new System.Drawing.Size(0, 16);
+            this.lblTipoDeBus.TabIndex = 133;
             // 
             // lblRegimen
             // 
@@ -303,7 +288,7 @@
             // txtGastosAdministrativos
             // 
             this.txtGastosAdministrativos.Location = new System.Drawing.Point(1076, 124);
-            this.txtGastosAdministrativos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGastosAdministrativos.Margin = new System.Windows.Forms.Padding(4);
             this.txtGastosAdministrativos.Name = "txtGastosAdministrativos";
             this.txtGastosAdministrativos.Size = new System.Drawing.Size(197, 22);
             this.txtGastosAdministrativos.TabIndex = 129;
@@ -311,7 +296,7 @@
             // txtCoste
             // 
             this.txtCoste.Location = new System.Drawing.Point(1076, 172);
-            this.txtCoste.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCoste.Margin = new System.Windows.Forms.Padding(4);
             this.txtCoste.Name = "txtCoste";
             this.txtCoste.Size = new System.Drawing.Size(197, 22);
             this.txtCoste.TabIndex = 128;
@@ -344,9 +329,6 @@
             this.cmbDestino.Size = new System.Drawing.Size(197, 24);
             this.cmbDestino.TabIndex = 125;
             // 
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Crear Nuevo Paquete";
-            // 
             // cmbBus
             // 
             this.cmbBus.FormattingEnabled = true;
@@ -375,7 +357,7 @@
             this.btnAgregarDestino.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarDestino.ForeColor = System.Drawing.Color.White;
             this.btnAgregarDestino.Location = new System.Drawing.Point(149, 154);
-            this.btnAgregarDestino.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgregarDestino.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregarDestino.Name = "btnAgregarDestino";
             this.btnAgregarDestino.Size = new System.Drawing.Size(199, 46);
             this.btnAgregarDestino.TabIndex = 4;
@@ -391,7 +373,7 @@
             this.btnBuscarHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarHotel.ForeColor = System.Drawing.Color.White;
             this.btnBuscarHotel.Location = new System.Drawing.Point(459, 89);
-            this.btnBuscarHotel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuscarHotel.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscarHotel.Name = "btnBuscarHotel";
             this.btnBuscarHotel.Size = new System.Drawing.Size(199, 46);
             this.btnBuscarHotel.TabIndex = 9;
@@ -406,7 +388,7 @@
             this.btnBuscarBus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarBus.ForeColor = System.Drawing.Color.White;
             this.btnBuscarBus.Location = new System.Drawing.Point(821, 90);
-            this.btnBuscarBus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuscarBus.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscarBus.Name = "btnBuscarBus";
             this.btnBuscarBus.Size = new System.Drawing.Size(199, 38);
             this.btnBuscarBus.TabIndex = 17;
@@ -595,7 +577,7 @@
             // dtpFechaSalida
             // 
             this.dtpFechaSalida.Location = new System.Drawing.Point(149, 59);
-            this.dtpFechaSalida.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpFechaSalida.Margin = new System.Windows.Forms.Padding(4);
             this.dtpFechaSalida.Name = "dtpFechaSalida";
             this.dtpFechaSalida.Size = new System.Drawing.Size(197, 22);
             this.dtpFechaSalida.TabIndex = 1;
@@ -613,7 +595,7 @@
             // txtPrecioEfectivo
             // 
             this.txtPrecioEfectivo.Location = new System.Drawing.Point(1076, 268);
-            this.txtPrecioEfectivo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPrecioEfectivo.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrecioEfectivo.Name = "txtPrecioEfectivo";
             this.txtPrecioEfectivo.Size = new System.Drawing.Size(197, 22);
             this.txtPrecioEfectivo.TabIndex = 25;
@@ -631,7 +613,7 @@
             // txtPrecioLista
             // 
             this.txtPrecioLista.Location = new System.Drawing.Point(1076, 220);
-            this.txtPrecioLista.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPrecioLista.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrecioLista.Name = "txtPrecioLista";
             this.txtPrecioLista.Size = new System.Drawing.Size(197, 22);
             this.txtPrecioLista.TabIndex = 24;
@@ -643,6 +625,9 @@
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(77, 16);
+            this.label8.TabIndex = 85;
+            this.label8.Text = "Precio Lista";
+            // 
             // lblTransporte
             // 
             this.lblTransporte.AutoSize = true;
@@ -652,9 +637,6 @@
             this.lblTransporte.Size = new System.Drawing.Size(86, 16);
             this.lblTransporte.TabIndex = 79;
             this.lblTransporte.Text = "Tipo de Bus :";
-            // 
-            this.label8.TabIndex = 85;
-            this.label8.Text = "Precio Lista";
             // 
             // label3
             // 
@@ -709,7 +691,7 @@
             // dtpFechaRegreso
             // 
             this.dtpFechaRegreso.Location = new System.Drawing.Point(149, 89);
-            this.dtpFechaRegreso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpFechaRegreso.Margin = new System.Windows.Forms.Padding(4);
             this.dtpFechaRegreso.Name = "dtpFechaRegreso";
             this.dtpFechaRegreso.Size = new System.Drawing.Size(197, 22);
             this.dtpFechaRegreso.TabIndex = 2;
@@ -731,8 +713,8 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(31, 38);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuardar.Location = new System.Drawing.Point(31, 26);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(199, 47);
             this.btnGuardar.TabIndex = 26;
@@ -747,8 +729,8 @@
             this.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVer.ForeColor = System.Drawing.Color.White;
-            this.btnVer.Location = new System.Drawing.Point(814, 38);
-            this.btnVer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVer.Location = new System.Drawing.Point(814, 26);
+            this.btnVer.Margin = new System.Windows.Forms.Padding(4);
             this.btnVer.Name = "btnVer";
             this.btnVer.Size = new System.Drawing.Size(199, 47);
             this.btnVer.TabIndex = 29;
@@ -770,62 +752,13 @@
             this.tableLayoutPanelBotones.Controls.Add(this.btnEditar, 1, 0);
             this.tableLayoutPanelBotones.Controls.Add(this.btnEliminar, 2, 0);
             this.tableLayoutPanelBotones.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanelBotones.Location = new System.Drawing.Point(0, 691);
-            this.tableLayoutPanelBotones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanelBotones.Location = new System.Drawing.Point(0, 714);
+            this.tableLayoutPanelBotones.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanelBotones.Name = "tableLayoutPanelBotones";
             this.tableLayoutPanelBotones.RowCount = 1;
             this.tableLayoutPanelBotones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            // IdPaquete
-            // 
-            this.IdPaquete.HeaderText = "Nro. De Paquete";
-            this.IdPaquete.MinimumWidth = 6;
-            this.IdPaquete.Name = "IdPaquete";
-            this.IdPaquete.ReadOnly = true;
-            // 
-            // Destino1
-            // 
-            this.Destino1.HeaderText = "Destino";
-            this.Destino1.MinimumWidth = 6;
-            this.Destino1.Name = "Destino1";
-            this.Destino1.ReadOnly = true;
-            // 
-            // FechaDeSalida
-            // 
-            this.FechaDeSalida.HeaderText = "Fecha de Salida";
-            this.FechaDeSalida.MinimumWidth = 6;
-            this.FechaDeSalida.Name = "FechaDeSalida";
-            this.FechaDeSalida.ReadOnly = true;
-            // 
-            // FechaDeRegreso
-            // 
-            this.FechaDeRegreso.HeaderText = "Fecha de Regreso";
-            this.FechaDeRegreso.MinimumWidth = 6;
-            this.FechaDeRegreso.Name = "FechaDeRegreso";
-            this.FechaDeRegreso.ReadOnly = true;
-            // 
-            // Dsiponibilidad
-            // 
-            this.Dsiponibilidad.HeaderText = "Disponibilidad";
-            this.Dsiponibilidad.MinimumWidth = 6;
-            this.Dsiponibilidad.Name = "Dsiponibilidad";
-            this.Dsiponibilidad.ReadOnly = true;
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.MinimumWidth = 6;
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
-            // 
-            // PrecioEnEfectivo
-            // 
-            this.PrecioEnEfectivo.HeaderText = "Precio en Efectivo";
-            this.PrecioEnEfectivo.MinimumWidth = 6;
-            this.PrecioEnEfectivo.Name = "PrecioEnEfectivo";
-            this.PrecioEnEfectivo.ReadOnly = true;
-            // 
-            this.lbltipodebus.Size = new System.Drawing.Size(0, 13);
-            this.lbltipodebus.TabIndex = 133;
+            this.tableLayoutPanelBotones.Size = new System.Drawing.Size(1308, 100);
+            this.tableLayoutPanelBotones.TabIndex = 0;
             // 
             // FrmIngresarEditarPaquetes
             // 
@@ -914,7 +847,7 @@
         private System.Windows.Forms.TextBox txtGastosAdministrativos;
         private System.Windows.Forms.TextBox txtCoste;
         private System.Windows.Forms.Label lblRegimen;
-        private System.Windows.Forms.Label lbltipodebus;
+        private System.Windows.Forms.Label lblTipoDeBus;
         private System.Windows.Forms.Label lblTransporte;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdPaquete;
         private System.Windows.Forms.DataGridViewTextBoxColumn Destino1;

@@ -54,7 +54,7 @@ namespace interfazPpal
         private void MostrarPaquetes()
         {
 
-            List<Paquete> Paquetes = new List<Paquete>(new CN_MostrarPaquetes().MostrarPaquetes());   
+            List<Paquete> Paquetes = new List<Paquete>(new CN_MostrarPaquetes().MostrarPaquetes());
             dgvPaquetes.DataSource = Paquetes;
         }
 
@@ -80,65 +80,15 @@ namespace interfazPpal
 
         public void btnGuardar_Click(object sender, EventArgs e)
         {
+            Paquete NuevoPaquete;
             string mensaje = string.Empty;
 
             if (editar == false)
             {
                 try
                 {
-                    Paquete nuevoPaquete = new Paquete()
+                    NuevoPaquete = new Paquete()
                     {
-<<<<<<< HEAD
-                        MessageBox.Show("Debe completar todos los campos");
-                    }
-                    else
-                    {
-                        Paquete nuevoPaquete = new Paquete()
-                        {
-                            FechaSalida = Convert.ToDateTime(dtpFechaSalida.Value),
-                            FechaRegreso = Convert.ToDateTime(dtpFechaRegreso.Value),
-                            Destino = new Destino() { Nombre = cmbHotel.SelectedItem.ToString() },
-                            CantidadDias = Convert.ToInt32(npdCantidasDias.Value),
-                            CantidadNoches = Convert.ToInt32(npdCantidadNoches.Value),
-                            ProveedorHotel = new Hotel() { NombreDelHotel = cmbHotel.SelectedItem.ToString() },
-                            ProveedorBus = new Bus() { NombreBus = cmbBus.Text.ToString() },
-                            GastosAdministrativos = Convert.ToDecimal(txtGastosAdministrativos.Text),
-                            PrecioLista = Convert.ToDecimal(txtPrecioLista.Text),
-                            PrecioEfectivo = Convert.ToDecimal(txtPrecioEfectivo.Text),
-                            Coste = Convert.ToDecimal(txtCoste.Text),
-                            Disponibilidad = Convert.ToInt32(npdDisponibilidad.Value),
-                        };
-
-                        int IdNuevoPaquete = new CN_GuardarPaquete().GuardarNuevoPaquete(nuevoPaquete, out mensaje);
-                        if (IdNuevoPaquete != 0)
-                        {
-                            MessageBox.Show(mensaje);
-                            //bitacora.GuardarBitacora(CS_Usuario.Id_Usuario, "Creacion de paquete", "Se ha creado un paquete nuevo.");
-                            MostrarPaquetes();
-                        }
-                        else
-                        {
-                            MessageBox.Show(mensaje);
-                        }
-
-                    }
-                } catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                finally
-                {
-                    Limpiador.Limpiar(this);
-                }
-            }
-            else
-            {
-                CN_EditarPaquetes EditarPaquete = new CN_EditarPaquetes();
-
-                try
-                {
-                    EditarPaquete.EditarPaqueteL(nuevoPaquete);
-=======
                         FechaSalida = Convert.ToDateTime(dtpFechaSalida.Value),
                         FechaRegreso = Convert.ToDateTime(dtpFechaRegreso.Value),
                         Destino = new Destino() { Nombre = cmbHotel.SelectedItem.ToString() },
@@ -153,7 +103,7 @@ namespace interfazPpal
                         Disponibilidad = Convert.ToInt32(npdDisponibilidad.Value),
                     };
 
-                    int IdNuevoPaquete = new CN_GuardarPaquete().GuardarNuevoPaquete(nuevoPaquete, out mensaje);
+                    int IdNuevoPaquete = new CN_GuardarPaquete().GuardarNuevoPaquete(NuevoPaquete, out mensaje);
                     if (IdNuevoPaquete != 0)
                     {
                         MessageBox.Show(mensaje);
@@ -165,42 +115,33 @@ namespace interfazPpal
                         MessageBox.Show(mensaje);
                     }
 
-                    if (!editar == false)
-                    {
-                        CN_EditarPaquetes EditarPaquete = new CN_EditarPaquetes();
 
-                        try
-                        {
-                            EditarPaquete.EditarPaqueteL(nuevoPaquete);
-                        }
-                        catch (Exception ex)
-                        {
-                            throw new Exception("Error al ejecutar SP o Conexion a la BD. \n \n" + ex.Message);
-                        }
-                        
-                    }
->>>>>>> ef00c54 (.)
                 }
-                catch (Exception ex)    
+                catch (Exception ex)
                 {
-<<<<<<< HEAD
-                    MessageBox.Show("Los campos se han modificado con exito";
-=======
-                    MessageBox.Show(ex.Message);    
-
->>>>>>> ef00c54 (.)
+                    MessageBox.Show(ex.Message);
                 }
-
             }
+            else
+            {   
+                if (!editar == false)
+                {
+                    CN_EditarPaquetes EditarPaquete = new CN_EditarPaquetes();
 
+                    try
+                    {
+                        EditarPaquete.EditarPaqueteL(NuevoPaquete);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("Error al ejecutar SP o Conexion a la BD. \n \n" + ex.Message);
+                    }
+
+                }
+            }   
         }
-            
 
-
-
-
-
-                
+                  
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             CN_EliminarPaquete EliminarPaquete = new CN_EliminarPaquete();
@@ -356,34 +297,34 @@ namespace interfazPpal
 
         private void cmbBus_SelectedIndexChanged(object sender, EventArgs e)
         {
-            List<int> asientos = new List<int>();
-            CN_CargaAsientosBuses CargadorDeAsientos = new CN_CargaAsientosBuses();
-            if (cmbBus.SelectedIndex > 0)
-            {
-                string nombreBus = cmbBus.SelectedItem.ToString();
-                asientos = CargadorDeAsientos.CargaAsientosBusL(nombreBus);
-                if (asientos != null)
+            try
+            {  
+                if (cmbBus.SelectedIndex > 0)
                 {
-                    cmbTipoBus.Items.Add("Suite");
-                    cmbTipoBus.Items.Add("Cama");
-                    cmbTipoBus.Items.Add("SemiCama");
-                    npdCantidadAsientos.Value = asientos[0];
-                    npdAsientosCama.Value = asientos[1];
-                    npdAsientosSemicama.Value = asientos[2];
+                    string nombreBus = cmbBus.SelectedItem.ToString();
+                    List<Bus>listaBuses = new CN_CargaAsientosBuses().CargaAsientosBusL(nombreBus, out mensaje);
+                    if (listaBuses != null)
+                    {
+                       foreach (Bus bus in listaBuses)
+                        {
+                           
+                            npdAsientosCama.Value = bus.AsientosCama;
+                            npdAsientosSemicama.Value = bus.AsientosSemicama;
+                            lblTipoDeBus.Text = bus.TipoDeBus;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show(mensaje);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Este bus no tiene la cantidad de asientos cargadas");
+                    Limpiador.Limpiar(this);
                 }
-            }
-            else
+        }catch (Exception ex)
             {
-                cmbTipoBus.Items.Clear();
-                cmbTipoBus.Items.Insert(0, "Tipo de Bus");
-                cmbTipoBus.SelectedIndex = 0;
-                npdCantidadAsientos.Value = 0;
-                npdAsientosCama.Value = 0;
-                npdAsientosSemicama.Value = 0;
+                me("Error al ejecutar SP o Conexion a la BD. \n \n" + ex.Message);
             }
         }
 
