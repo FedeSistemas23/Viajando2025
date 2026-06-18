@@ -28,12 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.dgvPaquetes = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblTipoDeBus = new System.Windows.Forms.Label();
             this.lblRegimen = new System.Windows.Forms.Label();
@@ -50,11 +47,6 @@
             this.btnBuscarHotel = new System.Windows.Forms.Button();
             this.btnBuscarBus = new System.Windows.Forms.Button();
             this.lblSingle = new System.Windows.Forms.Label();
-            this.npdCuadruple = new System.Windows.Forms.NumericUpDown();
-            this.npdTriple = new System.Windows.Forms.NumericUpDown();
-            this.npdDobles = new System.Windows.Forms.NumericUpDown();
-            this.npdSIngle = new System.Windows.Forms.NumericUpDown();
-            this.npdCantidadHabitaciones = new System.Windows.Forms.NumericUpDown();
             this.npdCantidadNoches = new System.Windows.Forms.NumericUpDown();
             this.npdCantidasDias = new System.Windows.Forms.NumericUpDown();
             this.lblCuadruples = new System.Windows.Forms.Label();
@@ -85,13 +77,12 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnVer = new System.Windows.Forms.Button();
             this.tableLayoutPanelBotones = new System.Windows.Forms.TableLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPaquetes)).BeginInit();
+            this.lblCantidadDeHabitaciones = new System.Windows.Forms.Label();
+            this.lblHabitacionesSingles = new System.Windows.Forms.Label();
+            this.lblHabitacionesDobles = new System.Windows.Forms.Label();
+            this.lblHabitacionesTriples = new System.Windows.Forms.Label();
+            this.lblHabitacionesCuadruples = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.npdCuadruple)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.npdTriple)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.npdDobles)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.npdSIngle)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.npdCantidadHabitaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.npdCantidadNoches)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.npdCantidasDias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.npdDisponibilidad)).BeginInit();
@@ -148,48 +139,13 @@
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click_1);
             // 
-            // dgvPaquetes
-            // 
-            this.dgvPaquetes.AllowUserToAddRows = false;
-            this.dgvPaquetes.AllowUserToDeleteRows = false;
-            this.dgvPaquetes.AllowUserToResizeColumns = false;
-            this.dgvPaquetes.AllowUserToResizeRows = false;
-            this.dgvPaquetes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvPaquetes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvPaquetes.BackgroundColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPaquetes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvPaquetes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPaquetes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvPaquetes.GridColor = System.Drawing.Color.CornflowerBlue;
-            this.dgvPaquetes.Location = new System.Drawing.Point(0, 313);
-            this.dgvPaquetes.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvPaquetes.MultiSelect = false;
-            this.dgvPaquetes.Name = "dgvPaquetes";
-            this.dgvPaquetes.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPaquetes.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvPaquetes.RowHeadersWidth = 51;
-            this.dgvPaquetes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPaquetes.Size = new System.Drawing.Size(1308, 501);
-            this.dgvPaquetes.TabIndex = 19;
-            this.dgvPaquetes.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPaquetes_CellContentDoubleClick);
-            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblHabitacionesCuadruples);
+            this.groupBox1.Controls.Add(this.lblHabitacionesTriples);
+            this.groupBox1.Controls.Add(this.lblHabitacionesDobles);
+            this.groupBox1.Controls.Add(this.lblHabitacionesSingles);
+            this.groupBox1.Controls.Add(this.lblCantidadDeHabitaciones);
             this.groupBox1.Controls.Add(this.lblTipoDeBus);
             this.groupBox1.Controls.Add(this.lblRegimen);
             this.groupBox1.Controls.Add(this.label6);
@@ -205,11 +161,6 @@
             this.groupBox1.Controls.Add(this.btnBuscarHotel);
             this.groupBox1.Controls.Add(this.btnBuscarBus);
             this.groupBox1.Controls.Add(this.lblSingle);
-            this.groupBox1.Controls.Add(this.npdCuadruple);
-            this.groupBox1.Controls.Add(this.npdTriple);
-            this.groupBox1.Controls.Add(this.npdDobles);
-            this.groupBox1.Controls.Add(this.npdSIngle);
-            this.groupBox1.Controls.Add(this.npdCantidadHabitaciones);
             this.groupBox1.Controls.Add(this.npdCantidadNoches);
             this.groupBox1.Controls.Add(this.npdCantidasDias);
             this.groupBox1.Controls.Add(this.lblCuadruples);
@@ -405,51 +356,6 @@
             this.lblSingle.Size = new System.Drawing.Size(48, 16);
             this.lblSingle.TabIndex = 124;
             this.lblSingle.Text = "Single:";
-            // 
-            // npdCuadruple
-            // 
-            this.npdCuadruple.Location = new System.Drawing.Point(611, 235);
-            this.npdCuadruple.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.npdCuadruple.Name = "npdCuadruple";
-            this.npdCuadruple.ReadOnly = true;
-            this.npdCuadruple.Size = new System.Drawing.Size(47, 22);
-            this.npdCuadruple.TabIndex = 15;
-            // 
-            // npdTriple
-            // 
-            this.npdTriple.Location = new System.Drawing.Point(459, 235);
-            this.npdTriple.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.npdTriple.Name = "npdTriple";
-            this.npdTriple.ReadOnly = true;
-            this.npdTriple.Size = new System.Drawing.Size(47, 22);
-            this.npdTriple.TabIndex = 14;
-            // 
-            // npdDobles
-            // 
-            this.npdDobles.Location = new System.Drawing.Point(611, 201);
-            this.npdDobles.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.npdDobles.Name = "npdDobles";
-            this.npdDobles.ReadOnly = true;
-            this.npdDobles.Size = new System.Drawing.Size(47, 22);
-            this.npdDobles.TabIndex = 13;
-            // 
-            // npdSIngle
-            // 
-            this.npdSIngle.Location = new System.Drawing.Point(459, 201);
-            this.npdSIngle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.npdSIngle.Name = "npdSIngle";
-            this.npdSIngle.ReadOnly = true;
-            this.npdSIngle.Size = new System.Drawing.Size(47, 22);
-            this.npdSIngle.TabIndex = 12;
-            // 
-            // npdCantidadHabitaciones
-            // 
-            this.npdCantidadHabitaciones.Location = new System.Drawing.Point(559, 167);
-            this.npdCantidadHabitaciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.npdCantidadHabitaciones.Name = "npdCantidadHabitaciones";
-            this.npdCantidadHabitaciones.ReadOnly = true;
-            this.npdCantidadHabitaciones.Size = new System.Drawing.Size(99, 22);
-            this.npdCantidadHabitaciones.TabIndex = 11;
             // 
             // npdCantidadNoches
             // 
@@ -760,6 +666,51 @@
             this.tableLayoutPanelBotones.Size = new System.Drawing.Size(1308, 100);
             this.tableLayoutPanelBotones.TabIndex = 0;
             // 
+            // lblCantidadDeHabitaciones
+            // 
+            this.lblCantidadDeHabitaciones.AutoSize = true;
+            this.lblCantidadDeHabitaciones.Location = new System.Drawing.Point(581, 172);
+            this.lblCantidadDeHabitaciones.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCantidadDeHabitaciones.Name = "lblCantidadDeHabitaciones";
+            this.lblCantidadDeHabitaciones.Size = new System.Drawing.Size(0, 16);
+            this.lblCantidadDeHabitaciones.TabIndex = 134;
+            // 
+            // lblHabitacionesSingles
+            // 
+            this.lblHabitacionesSingles.AutoSize = true;
+            this.lblHabitacionesSingles.Location = new System.Drawing.Point(491, 204);
+            this.lblHabitacionesSingles.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHabitacionesSingles.Name = "lblHabitacionesSingles";
+            this.lblHabitacionesSingles.Size = new System.Drawing.Size(0, 16);
+            this.lblHabitacionesSingles.TabIndex = 135;
+            // 
+            // lblHabitacionesDobles
+            // 
+            this.lblHabitacionesDobles.AutoSize = true;
+            this.lblHabitacionesDobles.Location = new System.Drawing.Point(627, 204);
+            this.lblHabitacionesDobles.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHabitacionesDobles.Name = "lblHabitacionesDobles";
+            this.lblHabitacionesDobles.Size = new System.Drawing.Size(0, 16);
+            this.lblHabitacionesDobles.TabIndex = 136;
+            // 
+            // lblHabitacionesTriples
+            // 
+            this.lblHabitacionesTriples.AutoSize = true;
+            this.lblHabitacionesTriples.Location = new System.Drawing.Point(491, 237);
+            this.lblHabitacionesTriples.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHabitacionesTriples.Name = "lblHabitacionesTriples";
+            this.lblHabitacionesTriples.Size = new System.Drawing.Size(0, 16);
+            this.lblHabitacionesTriples.TabIndex = 137;
+            // 
+            // lblHabitacionesCuadruples
+            // 
+            this.lblHabitacionesCuadruples.AutoSize = true;
+            this.lblHabitacionesCuadruples.Location = new System.Drawing.Point(627, 241);
+            this.lblHabitacionesCuadruples.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHabitacionesCuadruples.Name = "lblHabitacionesCuadruples";
+            this.lblHabitacionesCuadruples.Size = new System.Drawing.Size(0, 16);
+            this.lblHabitacionesCuadruples.TabIndex = 138;
+            // 
             // FrmIngresarEditarPaquetes
             // 
             this.AllowDrop = true;
@@ -767,21 +718,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1308, 814);
             this.Controls.Add(this.tableLayoutPanelBotones);
-            this.Controls.Add(this.dgvPaquetes);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmIngresarEditarPaquetes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmIngresarEditarPaquetes";
             this.Load += new System.EventHandler(this.FrmIngresarEditarPaquetes_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPaquetes)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.npdCuadruple)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.npdTriple)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.npdDobles)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.npdSIngle)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.npdCantidadHabitaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.npdCantidadNoches)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.npdCantidasDias)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.npdDisponibilidad)).EndInit();
@@ -797,14 +741,8 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.DataGridView dgvPaquetes;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblSingle;
-        private System.Windows.Forms.NumericUpDown npdCuadruple;
-        private System.Windows.Forms.NumericUpDown npdTriple;
-        private System.Windows.Forms.NumericUpDown npdDobles;
-        private System.Windows.Forms.NumericUpDown npdSIngle;
-        private System.Windows.Forms.NumericUpDown npdCantidadHabitaciones;
         private System.Windows.Forms.NumericUpDown npdCantidadNoches;
         private System.Windows.Forms.NumericUpDown npdCantidasDias;
         private System.Windows.Forms.Label lblCuadruples;
@@ -856,5 +794,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Dsiponibilidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioEnEfectivo;
+        private System.Windows.Forms.Label lblCantidadDeHabitaciones;
+        private System.Windows.Forms.Label lblHabitacionesCuadruples;
+        private System.Windows.Forms.Label lblHabitacionesTriples;
+        private System.Windows.Forms.Label lblHabitacionesDobles;
+        private System.Windows.Forms.Label lblHabitacionesSingles;
     }
 }

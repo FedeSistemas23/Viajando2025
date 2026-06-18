@@ -256,42 +256,37 @@ namespace interfazPpal
 
         private void cmbHotel_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CN_CargarHabitacionesHotel CargadorHabitacionesyRegimen = new CN_CargarHabitacionesHotel();
-
-            if (cmbHotel.SelectedIndex > 0)
+            try
             {
-                string nombreHotel = cmbHotel.SelectedItem.ToString();
-                if (nombreHotel != null)
+                if (cmbBus.SelectedIndex > 0)
                 {
-                    CS_HabitacionesYRegimen habitacionesYRegimen = new CS_HabitacionesYRegimen();
-                    habitacionesYRegimen = CargadorHabitacionesyRegimen.CargarHabitacionesL(nombreHotel);
-                    if (habitacionesYRegimen != null)
+                    string nombreHotel = cmbHotel.SelectedItem.ToString();
+                    List<Hotel> listaHoteles = new CN_CargaComboHotel.CargaCmbHotel(nombreHotel, out mensaje);
+                    if (listaHoteles != null)
                     {
-                        cmbRegimen.Items.Add("Desayuno");
-                        cmbRegimen.Items.Add("Media Pension");
-                        cmbRegimen.Items.Add("Pension Completa");
-                        npdCantidadHabitaciones.Value = habitacionesYRegimen.CantidadHabitaciones;
-                        npdSIngle.Value = habitacionesYRegimen.Single;
-                        npdDobles.Value = habitacionesYRegimen.Doble;
-                        npdTriple.Value = habitacionesYRegimen.Triple;
-                        npdCuadruple.Value = habitacionesYRegimen.Cuadruple;
+                        foreach (Hotel hotel in listaHoteles)
+                        {
+                            lblRegimen.Text=hotel.Regimen;
+                            lblCantidadDeHabitaciones.Text=hotel.CantidadDeHabitaciones.ToString();
+                            lblHabitacionesSingles.Text=hotel.Single.ToString();
+                            lblHabitacionesDobles.Text=hotel.Doble.ToString();  
+                            lblHabitacionesTriples.Text=hotel.Triple.ToString();
+                            lblHabitacionesCuadruples.Text=hotel.Cuadruple.ToString();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Este hotel no tiene las habitaciones cargadas");
+                    MessageBox.Show("Seleccione un hotel para mostrar su información.");
                 }
             }
-            else
+            catch (Exception ex)
             {
-                cmbRegimen.Items.Clear();
-                cmbRegimen.Items.Insert(0, "Selecione el regimen");
-                cmbRegimen.SelectedIndex = 0;
-                npdCantidadHabitaciones.Value = 0;
-                npdSIngle.Value = 0;
-                npdDobles.Value = 0;
-                npdTriple.Value = 0;
-                npdCuadruple.Value = 0;
+                MessageBox.Show(ex.Message);
             }
         }
 

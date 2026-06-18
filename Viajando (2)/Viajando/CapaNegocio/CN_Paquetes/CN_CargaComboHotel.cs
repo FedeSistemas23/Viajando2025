@@ -7,9 +7,9 @@ namespace CapaNegocio
     public class CN_CargaComboHotel
     {
                
-        public List<Hotel> cargaComboHotel(Destino nombre)
+        public List<Hotel> CargaCmbHotel(Destino nombre, out string mensaje)
         {
-            List<Hotel> Hoteles =  new CD_CargaComboHotel().CargarComboHotelD(nombre);
+            List<Hotel> Hoteles =  new CD_CargaComboHotel().CargarComboHotelD(nombre, out mensaje);
             if (Hoteles != null)
             {
                 return Hoteles;
@@ -19,5 +19,7 @@ namespace CapaNegocio
                 return null;
             }
         }
+
+        public List
     }
 }

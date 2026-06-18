@@ -10,40 +10,44 @@ namespace CapaDatos
     {
         SqlCommand cmd = new SqlCommand();
         Conexion conexion = new Conexion();
-        List<Hotel> listaHoteles = new List<Hotel>();
-        public List<Hotel> CargarComboHotelD(Destino destino)
-        {
-            SqlDataReader leer;
+       
+        public List<Hotel> CargarComboHotelD(Destino destino, out string mensaje)
+        {   
+            List<Hotel> listaHoteles = new List<Hotel>();
+           
+            
             try
-            {
-                listaHoteles.Clear();
+            {   
                 cmd.Connection = conexion.AbrirConexion();
                 cmd.CommandText = "CargaComboHoteles";
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("Destino", destino);
-                leer = cmd.ExecuteReader();
-                if (leer != null)
+                SqlDataReader leer = cmd.ExecuteReader();
+               
+                while (leer.Read())
                 {
-                    while (leer.Read())
+                    listaHoteles.Add(new Hotel()
                     {
-                        listaHoteles.Add((Hotel)leer["Nombre_Hotel"]);
-                    }
-                }
-                else
-                {
-                    return null;
-                }
-                return listaHoteles;
+                        CantidadDeHabitaciones = Convert.ToInt32(leer["CantidadDeHabitaciones"]),
+                        Regimen = Convert.ToString(leer["Regimen"]),
+                        Single = Convert.ToInt32(leer["Single"]),
+                        Doble  = Convert.ToInt32(leer["Doble"]),
+                        Triple = Convert.ToInt32(leer["Triple"]),
+                        Cuadruple = Convert.ToInt32(leer["Cuadruple"]),
+                    });
+                }  
             }
             catch (Exception ex)
             {
                 throw new Exception("Error al ejecutar SP o Conexion a la BD. \n \n" + ex.Message);
             }
-            finally
+            finally 
             {
+                leer.Close(); 
                 cmd.Parameters.Clear();
                 conexion.CerrarConexion();
             }
+
         }
     }
 }
