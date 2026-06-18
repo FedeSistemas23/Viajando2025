@@ -28,10 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblHabitacionesCuadruples = new System.Windows.Forms.Label();
+            this.lblHabitacionesTriples = new System.Windows.Forms.Label();
+            this.lblHabitacionesDobles = new System.Windows.Forms.Label();
+            this.lblHabitacionesSingles = new System.Windows.Forms.Label();
+            this.lblCantidadDeHabitaciones = new System.Windows.Forms.Label();
             this.lblTipoDeBus = new System.Windows.Forms.Label();
             this.lblRegimen = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -77,11 +84,14 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnVer = new System.Windows.Forms.Button();
             this.tableLayoutPanelBotones = new System.Windows.Forms.TableLayoutPanel();
-            this.lblCantidadDeHabitaciones = new System.Windows.Forms.Label();
-            this.lblHabitacionesSingles = new System.Windows.Forms.Label();
-            this.lblHabitacionesDobles = new System.Windows.Forms.Label();
-            this.lblHabitacionesTriples = new System.Windows.Forms.Label();
-            this.lblHabitacionesCuadruples = new System.Windows.Forms.Label();
+            this.dgvPaquetes = new System.Windows.Forms.DataGridView();
+            this.PaqueteNro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnafechadesalida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnafechadeRegreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaDisponibilidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaPrecioenefectivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.npdCantidadNoches)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.npdCantidasDias)).BeginInit();
@@ -89,6 +99,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.npdAsientosCama)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.npdAsientosSemicama)).BeginInit();
             this.tableLayoutPanelBotones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPaquetes)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEliminar
@@ -98,10 +109,9 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(553, 26);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEliminar.Location = new System.Drawing.Point(415, 21);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(199, 47);
+            this.btnEliminar.Size = new System.Drawing.Size(149, 38);
             this.btnEliminar.TabIndex = 28;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -114,10 +124,9 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(1076, 26);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancelar.Location = new System.Drawing.Point(808, 21);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(199, 47);
+            this.btnCancelar.Size = new System.Drawing.Size(149, 38);
             this.btnCancelar.TabIndex = 30;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -130,10 +139,9 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(292, 26);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditar.Location = new System.Drawing.Point(219, 21);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(199, 47);
+            this.btnEditar.Size = new System.Drawing.Size(149, 38);
             this.btnEditar.TabIndex = 27;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -190,113 +198,143 @@
             this.groupBox1.Controls.Add(this.lblFechaRegreso);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(1308, 313);
+            this.groupBox1.Size = new System.Drawing.Size(981, 254);
             this.groupBox1.TabIndex = 94;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Crear Nuevo Paquete";
             // 
+            // lblHabitacionesCuadruples
+            // 
+            this.lblHabitacionesCuadruples.AutoSize = true;
+            this.lblHabitacionesCuadruples.Location = new System.Drawing.Point(470, 196);
+            this.lblHabitacionesCuadruples.Name = "lblHabitacionesCuadruples";
+            this.lblHabitacionesCuadruples.Size = new System.Drawing.Size(0, 13);
+            this.lblHabitacionesCuadruples.TabIndex = 138;
+            // 
+            // lblHabitacionesTriples
+            // 
+            this.lblHabitacionesTriples.AutoSize = true;
+            this.lblHabitacionesTriples.Location = new System.Drawing.Point(368, 193);
+            this.lblHabitacionesTriples.Name = "lblHabitacionesTriples";
+            this.lblHabitacionesTriples.Size = new System.Drawing.Size(0, 13);
+            this.lblHabitacionesTriples.TabIndex = 137;
+            // 
+            // lblHabitacionesDobles
+            // 
+            this.lblHabitacionesDobles.AutoSize = true;
+            this.lblHabitacionesDobles.Location = new System.Drawing.Point(470, 166);
+            this.lblHabitacionesDobles.Name = "lblHabitacionesDobles";
+            this.lblHabitacionesDobles.Size = new System.Drawing.Size(0, 13);
+            this.lblHabitacionesDobles.TabIndex = 136;
+            // 
+            // lblHabitacionesSingles
+            // 
+            this.lblHabitacionesSingles.AutoSize = true;
+            this.lblHabitacionesSingles.Location = new System.Drawing.Point(368, 166);
+            this.lblHabitacionesSingles.Name = "lblHabitacionesSingles";
+            this.lblHabitacionesSingles.Size = new System.Drawing.Size(0, 13);
+            this.lblHabitacionesSingles.TabIndex = 135;
+            // 
+            // lblCantidadDeHabitaciones
+            // 
+            this.lblCantidadDeHabitaciones.AutoSize = true;
+            this.lblCantidadDeHabitaciones.Location = new System.Drawing.Point(436, 140);
+            this.lblCantidadDeHabitaciones.Name = "lblCantidadDeHabitaciones";
+            this.lblCantidadDeHabitaciones.Size = new System.Drawing.Size(0, 13);
+            this.lblCantidadDeHabitaciones.TabIndex = 134;
+            // 
             // lblTipoDeBus
             // 
             this.lblTipoDeBus.AutoSize = true;
-            this.lblTipoDeBus.Location = new System.Drawing.Point(817, 137);
-            this.lblTipoDeBus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTipoDeBus.Location = new System.Drawing.Point(613, 111);
             this.lblTipoDeBus.Name = "lblTipoDeBus";
-            this.lblTipoDeBus.Size = new System.Drawing.Size(0, 16);
+            this.lblTipoDeBus.Size = new System.Drawing.Size(0, 13);
             this.lblTipoDeBus.TabIndex = 133;
             // 
             // lblRegimen
             // 
             this.lblRegimen.AutoSize = true;
-            this.lblRegimen.Location = new System.Drawing.Point(455, 137);
-            this.lblRegimen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRegimen.Location = new System.Drawing.Point(341, 111);
             this.lblRegimen.Name = "lblRegimen";
-            this.lblRegimen.Size = new System.Drawing.Size(0, 16);
+            this.lblRegimen.Size = new System.Drawing.Size(0, 13);
             this.lblRegimen.TabIndex = 132;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(1093, 105);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(820, 85);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(150, 16);
+            this.label6.Size = new System.Drawing.Size(119, 13);
             this.label6.TabIndex = 131;
             this.label6.Text = "Gastos Administrativos :";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1103, 153);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(827, 124);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(124, 16);
+            this.label5.Size = new System.Drawing.Size(100, 13);
             this.label5.TabIndex = 130;
             this.label5.Text = "Costo por paquete :";
             // 
             // txtGastosAdministrativos
             // 
-            this.txtGastosAdministrativos.Location = new System.Drawing.Point(1076, 124);
-            this.txtGastosAdministrativos.Margin = new System.Windows.Forms.Padding(4);
+            this.txtGastosAdministrativos.Location = new System.Drawing.Point(807, 101);
             this.txtGastosAdministrativos.Name = "txtGastosAdministrativos";
-            this.txtGastosAdministrativos.Size = new System.Drawing.Size(197, 22);
+            this.txtGastosAdministrativos.Size = new System.Drawing.Size(149, 20);
             this.txtGastosAdministrativos.TabIndex = 129;
             // 
             // txtCoste
             // 
-            this.txtCoste.Location = new System.Drawing.Point(1076, 172);
-            this.txtCoste.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCoste.Location = new System.Drawing.Point(807, 140);
             this.txtCoste.Name = "txtCoste";
-            this.txtCoste.Size = new System.Drawing.Size(197, 22);
+            this.txtCoste.Size = new System.Drawing.Size(149, 20);
             this.txtCoste.TabIndex = 128;
             // 
             // nrodepaquete
             // 
             this.nrodepaquete.AutoSize = true;
-            this.nrodepaquete.Location = new System.Drawing.Point(145, 37);
-            this.nrodepaquete.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.nrodepaquete.Location = new System.Drawing.Point(109, 30);
             this.nrodepaquete.Name = "nrodepaquete";
-            this.nrodepaquete.Size = new System.Drawing.Size(0, 16);
+            this.nrodepaquete.Size = new System.Drawing.Size(0, 13);
             this.nrodepaquete.TabIndex = 127;
             // 
             // lblnrodepaquete
             // 
             this.lblnrodepaquete.AutoSize = true;
-            this.lblnrodepaquete.Location = new System.Drawing.Point(16, 37);
-            this.lblnrodepaquete.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblnrodepaquete.Location = new System.Drawing.Point(12, 30);
             this.lblnrodepaquete.Name = "lblnrodepaquete";
-            this.lblnrodepaquete.Size = new System.Drawing.Size(111, 16);
+            this.lblnrodepaquete.Size = new System.Drawing.Size(91, 13);
             this.lblnrodepaquete.TabIndex = 126;
             this.lblnrodepaquete.Text = "Nro. de Paquete :";
             // 
             // cmbDestino
             // 
             this.cmbDestino.FormattingEnabled = true;
-            this.cmbDestino.Location = new System.Drawing.Point(149, 119);
-            this.cmbDestino.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbDestino.Location = new System.Drawing.Point(112, 97);
+            this.cmbDestino.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbDestino.Name = "cmbDestino";
-            this.cmbDestino.Size = new System.Drawing.Size(197, 24);
+            this.cmbDestino.Size = new System.Drawing.Size(149, 21);
             this.cmbDestino.TabIndex = 125;
             // 
             // cmbBus
             // 
             this.cmbBus.FormattingEnabled = true;
-            this.cmbBus.Location = new System.Drawing.Point(821, 58);
-            this.cmbBus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbBus.Location = new System.Drawing.Point(616, 47);
+            this.cmbBus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbBus.Name = "cmbBus";
-            this.cmbBus.Size = new System.Drawing.Size(197, 24);
+            this.cmbBus.Size = new System.Drawing.Size(149, 21);
             this.cmbBus.TabIndex = 16;
             this.cmbBus.SelectedIndexChanged += new System.EventHandler(this.cmbBus_SelectedIndexChanged);
             // 
             // cmbHotel
             // 
             this.cmbHotel.FormattingEnabled = true;
-            this.cmbHotel.Location = new System.Drawing.Point(459, 57);
-            this.cmbHotel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbHotel.Location = new System.Drawing.Point(344, 46);
+            this.cmbHotel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbHotel.Name = "cmbHotel";
-            this.cmbHotel.Size = new System.Drawing.Size(197, 24);
+            this.cmbHotel.Size = new System.Drawing.Size(149, 21);
             this.cmbHotel.TabIndex = 8;
             this.cmbHotel.SelectedIndexChanged += new System.EventHandler(this.cmbHotel_SelectedIndexChanged);
             // 
@@ -307,10 +345,9 @@
             this.btnAgregarDestino.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarDestino.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarDestino.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarDestino.Location = new System.Drawing.Point(149, 154);
-            this.btnAgregarDestino.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAgregarDestino.Location = new System.Drawing.Point(112, 125);
             this.btnAgregarDestino.Name = "btnAgregarDestino";
-            this.btnAgregarDestino.Size = new System.Drawing.Size(199, 46);
+            this.btnAgregarDestino.Size = new System.Drawing.Size(149, 37);
             this.btnAgregarDestino.TabIndex = 4;
             this.btnAgregarDestino.Text = "Destino";
             this.btnAgregarDestino.UseVisualStyleBackColor = false;
@@ -323,10 +360,9 @@
             this.btnBuscarHotel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarHotel.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarHotel.Location = new System.Drawing.Point(459, 89);
-            this.btnBuscarHotel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscarHotel.Location = new System.Drawing.Point(344, 72);
             this.btnBuscarHotel.Name = "btnBuscarHotel";
-            this.btnBuscarHotel.Size = new System.Drawing.Size(199, 46);
+            this.btnBuscarHotel.Size = new System.Drawing.Size(149, 37);
             this.btnBuscarHotel.TabIndex = 9;
             this.btnBuscarHotel.Text = "Hotel";
             this.btnBuscarHotel.UseVisualStyleBackColor = false;
@@ -338,10 +374,9 @@
             this.btnBuscarBus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarBus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarBus.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarBus.Location = new System.Drawing.Point(821, 90);
-            this.btnBuscarBus.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscarBus.Location = new System.Drawing.Point(616, 73);
             this.btnBuscarBus.Name = "btnBuscarBus";
-            this.btnBuscarBus.Size = new System.Drawing.Size(199, 38);
+            this.btnBuscarBus.Size = new System.Drawing.Size(149, 31);
             this.btnBuscarBus.TabIndex = 17;
             this.btnBuscarBus.Text = "Transporte";
             this.btnBuscarBus.UseVisualStyleBackColor = false;
@@ -350,36 +385,34 @@
             // lblSingle
             // 
             this.lblSingle.AutoSize = true;
-            this.lblSingle.Location = new System.Drawing.Point(393, 203);
-            this.lblSingle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSingle.Location = new System.Drawing.Point(295, 165);
             this.lblSingle.Name = "lblSingle";
-            this.lblSingle.Size = new System.Drawing.Size(48, 16);
+            this.lblSingle.Size = new System.Drawing.Size(39, 13);
             this.lblSingle.TabIndex = 124;
             this.lblSingle.Text = "Single:";
             // 
             // npdCantidadNoches
             // 
-            this.npdCantidadNoches.Location = new System.Drawing.Point(149, 270);
-            this.npdCantidadNoches.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.npdCantidadNoches.Location = new System.Drawing.Point(112, 219);
+            this.npdCantidadNoches.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.npdCantidadNoches.Name = "npdCantidadNoches";
-            this.npdCantidadNoches.Size = new System.Drawing.Size(199, 22);
+            this.npdCantidadNoches.Size = new System.Drawing.Size(149, 20);
             this.npdCantidadNoches.TabIndex = 6;
             // 
             // npdCantidasDias
             // 
-            this.npdCantidasDias.Location = new System.Drawing.Point(149, 235);
-            this.npdCantidasDias.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.npdCantidasDias.Location = new System.Drawing.Point(112, 191);
+            this.npdCantidasDias.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.npdCantidasDias.Name = "npdCantidasDias";
-            this.npdCantidasDias.Size = new System.Drawing.Size(199, 22);
+            this.npdCantidasDias.Size = new System.Drawing.Size(149, 20);
             this.npdCantidasDias.TabIndex = 5;
             // 
             // lblCuadruples
             // 
             this.lblCuadruples.AutoSize = true;
-            this.lblCuadruples.Location = new System.Drawing.Point(516, 238);
-            this.lblCuadruples.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCuadruples.Location = new System.Drawing.Point(387, 193);
             this.lblCuadruples.Name = "lblCuadruples";
-            this.lblCuadruples.Size = new System.Drawing.Size(82, 16);
+            this.lblCuadruples.Size = new System.Drawing.Size(66, 13);
             this.lblCuadruples.TabIndex = 116;
             this.lblCuadruples.Text = "Cuadruples :";
             this.lblCuadruples.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -387,228 +420,207 @@
             // lblTriples
             // 
             this.lblTriples.AutoSize = true;
-            this.lblTriples.Location = new System.Drawing.Point(387, 238);
-            this.lblTriples.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTriples.Location = new System.Drawing.Point(290, 193);
             this.lblTriples.Name = "lblTriples";
-            this.lblTriples.Size = new System.Drawing.Size(55, 16);
+            this.lblTriples.Size = new System.Drawing.Size(44, 13);
             this.lblTriples.TabIndex = 114;
             this.lblTriples.Text = "Triples :";
             // 
             // lblDoble
             // 
             this.lblDoble.AutoSize = true;
-            this.lblDoble.Location = new System.Drawing.Point(543, 203);
-            this.lblDoble.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDoble.Location = new System.Drawing.Point(407, 165);
             this.lblDoble.Name = "lblDoble";
-            this.lblDoble.Size = new System.Drawing.Size(57, 16);
+            this.lblDoble.Size = new System.Drawing.Size(46, 13);
             this.lblDoble.TabIndex = 112;
             this.lblDoble.Text = "Dobles :";
             // 
             // lblCantidadHabitaciones
             // 
             this.lblCantidadHabitaciones.AutoSize = true;
-            this.lblCantidadHabitaciones.Location = new System.Drawing.Point(372, 170);
-            this.lblCantidadHabitaciones.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCantidadHabitaciones.Location = new System.Drawing.Point(279, 138);
             this.lblCantidadHabitaciones.Name = "lblCantidadHabitaciones";
-            this.lblCantidadHabitaciones.Size = new System.Drawing.Size(169, 32);
+            this.lblCantidadHabitaciones.Size = new System.Drawing.Size(135, 26);
             this.lblCantidadHabitaciones.TabIndex = 110;
             this.lblCantidadHabitaciones.Text = "Cantidad de Habitaciones :\r\n\r\n";
             // 
             // npdDisponibilidad
             // 
-            this.npdDisponibilidad.Location = new System.Drawing.Point(149, 202);
-            this.npdDisponibilidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.npdDisponibilidad.Location = new System.Drawing.Point(112, 164);
+            this.npdDisponibilidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.npdDisponibilidad.Name = "npdDisponibilidad";
-            this.npdDisponibilidad.Size = new System.Drawing.Size(199, 22);
+            this.npdDisponibilidad.Size = new System.Drawing.Size(149, 20);
             this.npdDisponibilidad.TabIndex = 7;
             // 
             // lblDisponibilidad
             // 
             this.lblDisponibilidad.AutoSize = true;
-            this.lblDisponibilidad.Location = new System.Drawing.Point(33, 204);
-            this.lblDisponibilidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDisponibilidad.Location = new System.Drawing.Point(25, 166);
             this.lblDisponibilidad.Name = "lblDisponibilidad";
-            this.lblDisponibilidad.Size = new System.Drawing.Size(100, 16);
+            this.lblDisponibilidad.Size = new System.Drawing.Size(78, 13);
             this.lblDisponibilidad.TabIndex = 106;
             this.lblDisponibilidad.Text = "Disponibilidad :";
             // 
             // npdAsientosCama
             // 
-            this.npdAsientosCama.Location = new System.Drawing.Point(821, 167);
-            this.npdAsientosCama.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.npdAsientosCama.Location = new System.Drawing.Point(616, 136);
+            this.npdAsientosCama.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.npdAsientosCama.Name = "npdAsientosCama";
             this.npdAsientosCama.ReadOnly = true;
-            this.npdAsientosCama.Size = new System.Drawing.Size(199, 22);
+            this.npdAsientosCama.Size = new System.Drawing.Size(149, 20);
             this.npdAsientosCama.TabIndex = 20;
             // 
             // lbbAsientosSemicama
             // 
             this.lbbAsientosSemicama.AutoSize = true;
-            this.lbbAsientosSemicama.Location = new System.Drawing.Point(677, 203);
-            this.lbbAsientosSemicama.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbbAsientosSemicama.Location = new System.Drawing.Point(508, 165);
             this.lbbAsientosSemicama.Name = "lbbAsientosSemicama";
-            this.lbbAsientosSemicama.Size = new System.Drawing.Size(132, 16);
+            this.lbbAsientosSemicama.Size = new System.Drawing.Size(103, 13);
             this.lbbAsientosSemicama.TabIndex = 104;
             this.lbbAsientosSemicama.Text = "Asientos SemiCama:";
             // 
             // npdAsientosSemicama
             // 
-            this.npdAsientosSemicama.Location = new System.Drawing.Point(821, 201);
-            this.npdAsientosSemicama.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.npdAsientosSemicama.Location = new System.Drawing.Point(616, 163);
+            this.npdAsientosSemicama.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.npdAsientosSemicama.Name = "npdAsientosSemicama";
             this.npdAsientosSemicama.ReadOnly = true;
-            this.npdAsientosSemicama.Size = new System.Drawing.Size(199, 22);
+            this.npdAsientosSemicama.Size = new System.Drawing.Size(149, 20);
             this.npdAsientosSemicama.TabIndex = 21;
             // 
             // lblNombreBus
             // 
             this.lblNombreBus.AutoSize = true;
-            this.lblNombreBus.Location = new System.Drawing.Point(716, 66);
-            this.lblNombreBus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombreBus.Location = new System.Drawing.Point(537, 54);
             this.lblNombreBus.Name = "lblNombreBus";
-            this.lblNombreBus.Size = new System.Drawing.Size(92, 16);
+            this.lblNombreBus.Size = new System.Drawing.Size(74, 13);
             this.lblNombreBus.TabIndex = 101;
             this.lblNombreBus.Text = "Transportista :";
             // 
             // lblAsientosCama
             // 
             this.lblAsientosCama.AutoSize = true;
-            this.lblAsientosCama.Location = new System.Drawing.Point(704, 170);
-            this.lblAsientosCama.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAsientosCama.Location = new System.Drawing.Point(528, 138);
             this.lblAsientosCama.Name = "lblAsientosCama";
-            this.lblAsientosCama.Size = new System.Drawing.Size(104, 16);
+            this.lblAsientosCama.Size = new System.Drawing.Size(83, 13);
             this.lblAsientosCama.TabIndex = 100;
             this.lblAsientosCama.Text = "Asientos Cama :";
             // 
             // dtpFechaSalida
             // 
-            this.dtpFechaSalida.Location = new System.Drawing.Point(149, 59);
-            this.dtpFechaSalida.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpFechaSalida.Location = new System.Drawing.Point(112, 48);
             this.dtpFechaSalida.Name = "dtpFechaSalida";
-            this.dtpFechaSalida.Size = new System.Drawing.Size(197, 22);
+            this.dtpFechaSalida.Size = new System.Drawing.Size(149, 20);
             this.dtpFechaSalida.TabIndex = 1;
             // 
             // lblFechaSalida
             // 
             this.lblFechaSalida.AutoSize = true;
-            this.lblFechaSalida.Location = new System.Drawing.Point(17, 66);
-            this.lblFechaSalida.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFechaSalida.Location = new System.Drawing.Point(13, 54);
             this.lblFechaSalida.Name = "lblFechaSalida";
-            this.lblFechaSalida.Size = new System.Drawing.Size(112, 16);
+            this.lblFechaSalida.Size = new System.Drawing.Size(90, 13);
             this.lblFechaSalida.TabIndex = 97;
             this.lblFechaSalida.Text = "Fecha de Salida :";
             // 
             // txtPrecioEfectivo
             // 
-            this.txtPrecioEfectivo.Location = new System.Drawing.Point(1076, 268);
-            this.txtPrecioEfectivo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPrecioEfectivo.Location = new System.Drawing.Point(807, 218);
             this.txtPrecioEfectivo.Name = "txtPrecioEfectivo";
-            this.txtPrecioEfectivo.Size = new System.Drawing.Size(197, 22);
+            this.txtPrecioEfectivo.Size = new System.Drawing.Size(149, 20);
             this.txtPrecioEfectivo.TabIndex = 25;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(1131, 249);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(848, 202);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(97, 16);
+            this.label9.Size = new System.Drawing.Size(79, 13);
             this.label9.TabIndex = 87;
             this.label9.Text = "Precio Efectivo";
             // 
             // txtPrecioLista
             // 
-            this.txtPrecioLista.Location = new System.Drawing.Point(1076, 220);
-            this.txtPrecioLista.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPrecioLista.Location = new System.Drawing.Point(807, 179);
             this.txtPrecioLista.Name = "txtPrecioLista";
-            this.txtPrecioLista.Size = new System.Drawing.Size(197, 22);
+            this.txtPrecioLista.Size = new System.Drawing.Size(149, 20);
             this.txtPrecioLista.TabIndex = 24;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(1131, 201);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(848, 163);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(77, 16);
+            this.label8.Size = new System.Drawing.Size(62, 13);
             this.label8.TabIndex = 85;
             this.label8.Text = "Precio Lista";
             // 
             // lblTransporte
             // 
             this.lblTransporte.AutoSize = true;
-            this.lblTransporte.Location = new System.Drawing.Point(721, 137);
-            this.lblTransporte.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTransporte.Location = new System.Drawing.Point(541, 111);
             this.lblTransporte.Name = "lblTransporte";
-            this.lblTransporte.Size = new System.Drawing.Size(86, 16);
+            this.lblTransporte.Size = new System.Drawing.Size(70, 13);
             this.lblTransporte.TabIndex = 79;
             this.lblTransporte.Text = "Tipo de Bus :";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(372, 137);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(279, 111);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 16);
+            this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 77;
             this.label3.Text = "Régimen :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(395, 66);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(296, 54);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 16);
+            this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 75;
             this.label2.Text = "Hotel :";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(71, 272);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(53, 221);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 16);
+            this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 73;
             this.label1.Text = "Noches :";
             // 
             // lblDestino
             // 
             this.lblDestino.AutoSize = true;
-            this.lblDestino.Location = new System.Drawing.Point(72, 123);
-            this.lblDestino.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDestino.Location = new System.Drawing.Point(54, 100);
             this.lblDestino.Name = "lblDestino";
-            this.lblDestino.Size = new System.Drawing.Size(59, 16);
+            this.lblDestino.Size = new System.Drawing.Size(49, 13);
             this.lblDestino.TabIndex = 71;
             this.lblDestino.Text = "Destino :";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(89, 238);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(67, 193);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 16);
+            this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 69;
             this.label4.Text = "Días :";
             // 
             // dtpFechaRegreso
             // 
-            this.dtpFechaRegreso.Location = new System.Drawing.Point(149, 89);
-            this.dtpFechaRegreso.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpFechaRegreso.Location = new System.Drawing.Point(112, 72);
             this.dtpFechaRegreso.Name = "dtpFechaRegreso";
-            this.dtpFechaRegreso.Size = new System.Drawing.Size(197, 22);
+            this.dtpFechaRegreso.Size = new System.Drawing.Size(149, 20);
             this.dtpFechaRegreso.TabIndex = 2;
             // 
             // lblFechaRegreso
             // 
             this.lblFechaRegreso.AutoSize = true;
-            this.lblFechaRegreso.Location = new System.Drawing.Point(7, 97);
-            this.lblFechaRegreso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFechaRegreso.Location = new System.Drawing.Point(5, 79);
             this.lblFechaRegreso.Name = "lblFechaRegreso";
-            this.lblFechaRegreso.Size = new System.Drawing.Size(123, 16);
+            this.lblFechaRegreso.Size = new System.Drawing.Size(98, 13);
             this.lblFechaRegreso.TabIndex = 67;
             this.lblFechaRegreso.Text = "Fecha de Regreso:";
             // 
@@ -619,10 +631,9 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(31, 26);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGuardar.Location = new System.Drawing.Point(23, 21);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(199, 47);
+            this.btnGuardar.Size = new System.Drawing.Size(149, 38);
             this.btnGuardar.TabIndex = 26;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -635,10 +646,9 @@
             this.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVer.ForeColor = System.Drawing.Color.White;
-            this.btnVer.Location = new System.Drawing.Point(814, 26);
-            this.btnVer.Margin = new System.Windows.Forms.Padding(4);
+            this.btnVer.Location = new System.Drawing.Point(611, 21);
             this.btnVer.Name = "btnVer";
-            this.btnVer.Size = new System.Drawing.Size(199, 47);
+            this.btnVer.Size = new System.Drawing.Size(149, 38);
             this.btnVer.TabIndex = 29;
             this.btnVer.Text = "Ver";
             this.btnVer.UseVisualStyleBackColor = false;
@@ -658,68 +668,97 @@
             this.tableLayoutPanelBotones.Controls.Add(this.btnEditar, 1, 0);
             this.tableLayoutPanelBotones.Controls.Add(this.btnEliminar, 2, 0);
             this.tableLayoutPanelBotones.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanelBotones.Location = new System.Drawing.Point(0, 714);
-            this.tableLayoutPanelBotones.Margin = new System.Windows.Forms.Padding(4);
+            this.tableLayoutPanelBotones.Location = new System.Drawing.Point(0, 580);
             this.tableLayoutPanelBotones.Name = "tableLayoutPanelBotones";
             this.tableLayoutPanelBotones.RowCount = 1;
             this.tableLayoutPanelBotones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelBotones.Size = new System.Drawing.Size(1308, 100);
+            this.tableLayoutPanelBotones.Size = new System.Drawing.Size(981, 81);
             this.tableLayoutPanelBotones.TabIndex = 0;
             // 
-            // lblCantidadDeHabitaciones
+            // dgvPaquetes
             // 
-            this.lblCantidadDeHabitaciones.AutoSize = true;
-            this.lblCantidadDeHabitaciones.Location = new System.Drawing.Point(581, 172);
-            this.lblCantidadDeHabitaciones.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCantidadDeHabitaciones.Name = "lblCantidadDeHabitaciones";
-            this.lblCantidadDeHabitaciones.Size = new System.Drawing.Size(0, 16);
-            this.lblCantidadDeHabitaciones.TabIndex = 134;
+            this.dgvPaquetes.AllowUserToAddRows = false;
+            this.dgvPaquetes.AllowUserToDeleteRows = false;
+            this.dgvPaquetes.AllowUserToResizeRows = false;
+            this.dgvPaquetes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPaquetes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvPaquetes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPaquetes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.PaqueteNro,
+            this.columnaDestino,
+            this.columnafechadesalida,
+            this.columnafechadeRegreso,
+            this.columnaDisponibilidad,
+            this.columnaPrecio,
+            this.columnaPrecioenefectivo});
+            this.dgvPaquetes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvPaquetes.Location = new System.Drawing.Point(0, 254);
+            this.dgvPaquetes.Name = "dgvPaquetes";
+            this.dgvPaquetes.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvPaquetes.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvPaquetes.Size = new System.Drawing.Size(981, 326);
+            this.dgvPaquetes.TabIndex = 95;
             // 
-            // lblHabitacionesSingles
+            // PaqueteNro
             // 
-            this.lblHabitacionesSingles.AutoSize = true;
-            this.lblHabitacionesSingles.Location = new System.Drawing.Point(491, 204);
-            this.lblHabitacionesSingles.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblHabitacionesSingles.Name = "lblHabitacionesSingles";
-            this.lblHabitacionesSingles.Size = new System.Drawing.Size(0, 16);
-            this.lblHabitacionesSingles.TabIndex = 135;
+            this.PaqueteNro.HeaderText = "Nro. de Paquete";
+            this.PaqueteNro.Name = "PaqueteNro";
+            this.PaqueteNro.ReadOnly = true;
             // 
-            // lblHabitacionesDobles
+            // columnaDestino
             // 
-            this.lblHabitacionesDobles.AutoSize = true;
-            this.lblHabitacionesDobles.Location = new System.Drawing.Point(627, 204);
-            this.lblHabitacionesDobles.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblHabitacionesDobles.Name = "lblHabitacionesDobles";
-            this.lblHabitacionesDobles.Size = new System.Drawing.Size(0, 16);
-            this.lblHabitacionesDobles.TabIndex = 136;
+            this.columnaDestino.HeaderText = "Destino";
+            this.columnaDestino.Name = "columnaDestino";
+            this.columnaDestino.ReadOnly = true;
             // 
-            // lblHabitacionesTriples
+            // columnafechadesalida
             // 
-            this.lblHabitacionesTriples.AutoSize = true;
-            this.lblHabitacionesTriples.Location = new System.Drawing.Point(491, 237);
-            this.lblHabitacionesTriples.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblHabitacionesTriples.Name = "lblHabitacionesTriples";
-            this.lblHabitacionesTriples.Size = new System.Drawing.Size(0, 16);
-            this.lblHabitacionesTriples.TabIndex = 137;
+            this.columnafechadesalida.HeaderText = "Fecha de Salida";
+            this.columnafechadesalida.Name = "columnafechadesalida";
+            this.columnafechadesalida.ReadOnly = true;
             // 
-            // lblHabitacionesCuadruples
+            // columnafechadeRegreso
             // 
-            this.lblHabitacionesCuadruples.AutoSize = true;
-            this.lblHabitacionesCuadruples.Location = new System.Drawing.Point(627, 241);
-            this.lblHabitacionesCuadruples.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblHabitacionesCuadruples.Name = "lblHabitacionesCuadruples";
-            this.lblHabitacionesCuadruples.Size = new System.Drawing.Size(0, 16);
-            this.lblHabitacionesCuadruples.TabIndex = 138;
+            this.columnafechadeRegreso.HeaderText = "Fecha de Regreso";
+            this.columnafechadeRegreso.Name = "columnafechadeRegreso";
+            this.columnafechadeRegreso.ReadOnly = true;
+            // 
+            // columnaDisponibilidad
+            // 
+            this.columnaDisponibilidad.HeaderText = "Disponibilidad";
+            this.columnaDisponibilidad.Name = "columnaDisponibilidad";
+            this.columnaDisponibilidad.ReadOnly = true;
+            // 
+            // columnaPrecio
+            // 
+            this.columnaPrecio.HeaderText = "Precio";
+            this.columnaPrecio.Name = "columnaPrecio";
+            this.columnaPrecio.ReadOnly = true;
+            // 
+            // columnaPrecioenefectivo
+            // 
+            this.columnaPrecioenefectivo.HeaderText = "Precio en Efectivo";
+            this.columnaPrecioenefectivo.Name = "columnaPrecioenefectivo";
+            this.columnaPrecioenefectivo.ReadOnly = true;
             // 
             // FrmIngresarEditarPaquetes
             // 
             this.AllowDrop = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1308, 814);
+            this.ClientSize = new System.Drawing.Size(981, 661);
+            this.Controls.Add(this.dgvPaquetes);
             this.Controls.Add(this.tableLayoutPanelBotones);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmIngresarEditarPaquetes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmIngresarEditarPaquetes";
@@ -732,6 +771,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.npdAsientosCama)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.npdAsientosSemicama)).EndInit();
             this.tableLayoutPanelBotones.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPaquetes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -799,5 +839,13 @@
         private System.Windows.Forms.Label lblHabitacionesTriples;
         private System.Windows.Forms.Label lblHabitacionesDobles;
         private System.Windows.Forms.Label lblHabitacionesSingles;
+        private System.Windows.Forms.DataGridView dgvPaquetes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PaqueteNro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnaDestino;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnafechadesalida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnafechadeRegreso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnaDisponibilidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnaPrecio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnaPrecioenefectivo;
     }
 }

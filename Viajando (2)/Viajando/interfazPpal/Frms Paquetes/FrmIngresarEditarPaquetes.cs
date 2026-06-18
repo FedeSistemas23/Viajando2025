@@ -55,6 +55,12 @@ namespace interfazPpal
         {
 
             List<Paquete> Paquetes = new List<Paquete>(new CN_MostrarPaquetes().MostrarPaquetes());
+            foreach(Paquete paquete in Paquetes)
+            {
+                dgvPaquetes.
+            }
+
+
             dgvPaquetes.DataSource = Paquetes;
         }
 
