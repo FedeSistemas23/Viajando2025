@@ -5,7 +5,10 @@
         public int Id_ProvedorBus { get; set; }
         
         public int CantidadDeAsientos { get; set; }
-        public string TipoDeBus { get; set; }
+        public string TipoBus { get; set; }
+        public string Semicama { get; set; }
+        public string Cama { get; set; }
+        public string Suite { get; set; }
 
         public int AsientosCama { get; set; }
         public int AsientosSemicama { get; set; }

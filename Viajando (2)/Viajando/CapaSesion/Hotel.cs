@@ -21,8 +21,10 @@
         public int Doble { get; set; }
         public int Triple { get; set; }
         public int Cuadruple { get; set; }
+        public string Regimen { get; set; }
         public bool Desayuno { get; set; }
-        public string Regimen{ get; set; }
+        public bool MediaPension { get; set; }
+        public bool PensionCompleta { get; set; }
         public int Id_Destino { get; set; }
     }
 }

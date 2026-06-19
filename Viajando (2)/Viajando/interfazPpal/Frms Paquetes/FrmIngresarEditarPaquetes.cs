@@ -4,6 +4,7 @@ using CapaSesion;
 using Loggin;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace interfazPpal
@@ -29,39 +30,22 @@ namespace interfazPpal
         }
         private void FrmIngresarEditarPaquetes_Load(object sender, EventArgs e)
         {
-            MostrarPaquetes();
-            /*CargarComboDestino();
-            dgvPaquetes.RowHeadersVisible = false;
-            dgvPaquetes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvPaquetes.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-            foreach (DataGridViewColumn column in dgvPaquetes.Columns)
-            {
-                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            }
-
-            
-            int[] columnasParaOcultar = { 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 };
-
-            foreach (int indice in columnasParaOcultar)
-            {
-                if (indice < dgvPaquetes.Columns.Count)
-                {
-                    dgvPaquetes.Columns[indice].Visible = false;
-                }
-            }*/
+            List<Paquete> Paquetes = new List<Paquete>(new CN_MostrarPaquetes().MostrarPaquetes());
+            dgvPaquetes.DataSource = Paquetes;
         }
+        
         private void MostrarPaquetes()
         {
-
-            List<Paquete> Paquetes = new List<Paquete>(new CN_MostrarPaquetes().MostrarPaquetes());
-            foreach(Paquete paquete in Paquetes)
+            dgvPaquetes.Rows.Add(new object[]
             {
-                dgvPaquetes.
-            }
-
-
-            dgvPaquetes.DataSource = Paquetes;
+                lblnrodepaquete.Text,
+                cmbDestino.Items.Add(cmbDestino.Text),
+                dtpFechaSalida.Value,
+                dtpFechaRegreso.Value,
+                npdDisponibilidad.Value,
+                txtPrecioLista.Text,
+                txtPrecioEfectivo.Text,
+            });
         }
 
 
@@ -71,7 +55,7 @@ namespace interfazPpal
             NuevoDestino.ShowDialog();
         }
 
-        public void AgregarDestinoAlTextBox(int id_destino, string destino)
+        public void AgregarDestinoAlCombo(int id_destino, string destino)
         {
             Id_Destino = id_destino;
             if (destino != "")
@@ -86,22 +70,22 @@ namespace interfazPpal
 
         public void btnGuardar_Click(object sender, EventArgs e)
         {
-            Paquete NuevoPaquete;
+            
             string mensaje = string.Empty;
 
             if (editar == false)
             {
                 try
                 {
-                    NuevoPaquete = new Paquete()
+                    Paquete NuevoPaquete = new Paquete()
                     {
                         FechaSalida = Convert.ToDateTime(dtpFechaSalida.Value),
                         FechaRegreso = Convert.ToDateTime(dtpFechaRegreso.Value),
                         Destino = new Destino() { Nombre = cmbHotel.SelectedItem.ToString() },
                         CantidadDias = Convert.ToInt32(npdCantidasDias.Value),
                         CantidadNoches = Convert.ToInt32(npdCantidadNoches.Value),
-                        ProveedorHotel = new Hotel() { NombreDelHotel = cmbHotel.SelectedItem.ToString() },
-                        ProveedorBus = new Bus() { NombreBus = cmbBus.Text.ToString() },
+                        ProveedorHotel = new Hotel() { NombreDelHotel = cmbHotel.SelectedItem.ToString(), Regimen = cmbRegimen.SelectedItem.ToString()},
+                        ProveedorBus = new Bus() { NombreBus = cmbBus.Text.ToString(), TipoBus=cmbTipodeBus.SelectedItem.ToString()},
                         GastosAdministrativos = Convert.ToDecimal(txtGastosAdministrativos.Text),
                         PrecioLista = Convert.ToDecimal(txtPrecioLista.Text),
                         PrecioEfectivo = Convert.ToDecimal(txtPrecioEfectivo.Text),
@@ -114,7 +98,7 @@ namespace interfazPpal
                     {
                         MessageBox.Show(mensaje);
                         //bitacora.GuardarBitacora(CS_Usuario.Id_Usuario, "Creacion de paquete", "Se ha creado un paquete nuevo.");
-                        MostrarPaquetes();
+                       MostrarPaquetes();
                     }
                     else
                     {
@@ -262,17 +246,20 @@ namespace interfazPpal
 
         private void cmbHotel_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string mensaje = string.Empty;
             try
             {
                 if (cmbBus.SelectedIndex > 0)
                 {
                     string nombreHotel = cmbHotel.SelectedItem.ToString();
-                    List<Hotel> listaHoteles = new CN_CargaComboHotel.CargaCmbHotel(nombreHotel, out mensaje);
+                    List<Hotel> listaHoteles = new CN_CargaComboHotel.CargaComboHotelL(nombreHotel, out mensaje);
                     if (listaHoteles != null)
                     {
                         foreach (Hotel hotel in listaHoteles)
                         {
-                            lblRegimen.Text=hotel.Regimen;
+                            cmbRegimen.Items.Add(hotel.Desayuno ? "Desayuno" : "");
+                            cmbRegimen.Items.Add(hotel.MediaPension ? "Media Pension" : "");
+                            cmbRegimen.Items.Add(hotel.PensionCompleta ? "Pension Completa" : "");
                             lblCantidadDeHabitaciones.Text=hotel.CantidadDeHabitaciones.ToString();
                             lblHabitacionesSingles.Text=hotel.Single.ToString();
                             lblHabitacionesDobles.Text=hotel.Doble.ToString();  
@@ -298,6 +285,7 @@ namespace interfazPpal
 
         private void cmbBus_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string mensaje = string.Empty;
             try
             {  
                 if (cmbBus.SelectedIndex > 0)
@@ -306,12 +294,13 @@ namespace interfazPpal
                     List<Bus>listaBuses = new CN_CargaAsientosBuses().CargaAsientosBusL(nombreBus, out mensaje);
                     if (listaBuses != null)
                     {
-                       foreach (Bus bus in listaBuses)
+                        foreach (Bus bus in listaBuses)
                         {
-                           
+                            cmbBus.Items.Add(bus.Semicama);
+                            cmbBus.Items.Add(bus.Cama);
+                            cmbBus.Items.Add(bus.Suite);
                             npdAsientosCama.Value = bus.AsientosCama;
                             npdAsientosSemicama.Value = bus.AsientosSemicama;
-                            lblTipoDeBus.Text = bus.TipoDeBus;
                         }
                     }
                     else
@@ -325,7 +314,7 @@ namespace interfazPpal
                 }
         }catch (Exception ex)
             {
-                me("Error al ejecutar SP o Conexion a la BD. \n \n" + ex.Message);
+                throw new Exception ("Error al ejecutar SP o Conexion a la BD. \n \n" + ex.Message);
             }
         }
 
@@ -354,13 +343,15 @@ namespace interfazPpal
 
         private void cmbDestino_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+            string mensaje = string.Empty;
             try
             {
                 if (cmbDestino.SelectedIndex > 0)
                 {
                     Destino destino = (Destino)cmbDestino.SelectedItem;
                     List<Bus> listaBuses = new List<Bus>(new CN_CargaComboBus().CargadorComboBusL(destino));
-                    List<Hotel> listaHoteles = new List<Hotel>(new CN_CargaComboHotel().cargaComboHotel(destino));
+                    List<Hotel> listaHoteles = new List<Hotel>(new CN_CargaComboHotel().CargaComboHotel(destino, out mensaje));
+                    
                     if (listaHoteles.Count > 0)
                     {
                         foreach (Hotel hotel in listaHoteles)
@@ -388,7 +379,7 @@ namespace interfazPpal
             }
             catch (Exception ex)
             {
-                throw new Exception("Error al ejecutar SP o Conexion a la BD. \n \n" + ex.Message);
+                MessageBox.Show(ex.Message);
             }
         }  
     }

@@ -29,7 +29,9 @@ namespace CapaDatos
                     listaHoteles.Add(new Hotel()
                     {
                         CantidadDeHabitaciones = Convert.ToInt32(leer["CantidadDeHabitaciones"]),
-                        Regimen = Convert.ToString(leer["Regimen"]),
+                        Desayuno = Convert.ToBoolean(leer["Desayuno"]),
+                        MediaPension = Convert.ToBoolean(leer["MediaPension"]),
+                        PensionCompleta = Convert.ToBoolean(leer["PensionCompleta"]),
                         Single = Convert.ToInt32(leer["Single"]),
                         Doble  = Convert.ToInt32(leer["Doble"]),
                         Triple = Convert.ToInt32(leer["Triple"]),
@@ -43,11 +45,11 @@ namespace CapaDatos
             }
             finally 
             {
-                leer.Close(); 
+                 
                 cmd.Parameters.Clear();
                 conexion.CerrarConexion();
             }
-
+        return listaHoteles;
         }
     }
 }
