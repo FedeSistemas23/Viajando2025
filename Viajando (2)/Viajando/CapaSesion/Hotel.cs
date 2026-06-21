@@ -17,10 +17,10 @@
         public string Telefono { get; set; }
         public string Celular { get; set; }
         public int CantidadDeHabitaciones { get; set; }
-        public int Single { get; set; }
-        public int Doble { get; set; }
-        public int Triple { get; set; }
-        public int Cuadruple { get; set; }
+        public int HabitacionesSingle { get; set; }
+        public int HabitacionesDoble { get; set; }
+        public int HabitacionesTriple { get; set; }
+        public int HabitacionesCuadruple { get; set; }
         public string Regimen { get; set; }
         public bool Desayuno { get; set; }
         public bool MediaPension { get; set; }

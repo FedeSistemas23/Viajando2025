@@ -15,6 +15,7 @@ namespace interfazPpal
         CS_LimpiarFormularios Limpiador;
         CN_Bitacora bitacora;
 
+        int Id_ProveedorHotel;
         string NombreHotel;
         int Id_Destino;
         string destino;
@@ -82,15 +83,24 @@ namespace interfazPpal
                         FechaSalida = Convert.ToDateTime(dtpFechaSalida.Value),
                         FechaRegreso = Convert.ToDateTime(dtpFechaRegreso.Value),
                         Destino = new Destino() { Nombre = cmbHotel.SelectedItem.ToString() },
+                        Disponibilidad = Convert.ToInt32(npdDisponibilidad.Value),
                         CantidadDias = Convert.ToInt32(npdCantidasDias.Value),
                         CantidadNoches = Convert.ToInt32(npdCantidadNoches.Value),
-                        ProveedorHotel = new Hotel() { NombreDelHotel = cmbHotel.SelectedItem.ToString(), Regimen = cmbRegimen.SelectedItem.ToString()},
-                        ProveedorBus = new Bus() { NombreBus = cmbBus.Text.ToString(), TipoBus=cmbTipodeBus.SelectedItem.ToString()},
+                        ProveedorHotel = new Hotel() { NombreDelHotel = cmbHotel.SelectedItem.ToString(), Id_ProvedorHotel = Id_ProveedorHotel, Regimen = cmbRegimen.SelectedItem.ToString(),
+                                                       CantidadDeHabitaciones = Convert.ToInt32(lblCantidadHabitaciones.Text), 
+                                                       HabitacionesSingle = Convert.ToInt32(lblSingle.Text),
+                                                       HabitacionesDoble = Convert.ToInt32(lblDobles.Text), 
+                                                       HabitacionesTriple = Convert.ToInt32(lblHabitacionesTriples.Text),
+                                                       HabitacionesCuadruple = Convert.ToInt32(lblHabitacionesTriples.Text),
+                                                      },
+                        ProveedorBus = new Bus() { NombreBus = cmbBus.Text.ToString(), TipoBus=cmbTipodeBus.SelectedItem.ToString(), 
+                                                   AsientosCama = Convert.ToInt32(npdAsientosCama.Value), 
+                                                   AsientosSemicama = Convert.ToInt32(npdAsientosSemicama.Value)
+                                                 },
                         GastosAdministrativos = Convert.ToDecimal(txtGastosAdministrativos.Text),
                         PrecioLista = Convert.ToDecimal(txtPrecioLista.Text),
                         PrecioEfectivo = Convert.ToDecimal(txtPrecioEfectivo.Text),
-                        Coste = Convert.ToDecimal(txtCoste.Text),
-                        Disponibilidad = Convert.ToInt32(npdDisponibilidad.Value),
+                        Coste = Convert.ToDecimal(txtCoste.Text), 
                     };
 
                     int IdNuevoPaquete = new CN_GuardarPaquete().GuardarNuevoPaquete(NuevoPaquete, out mensaje);
@@ -189,9 +199,9 @@ namespace interfazPpal
                 editar = true;
                 if (dgvPaquetes.SelectedRows.Count > 0)
                 {
-                    if (dgvPaquetes.CurrentRow != null && dgvPaquetes.CurrentRow.Cells["Id_Paquete"].Value != null)
+                    if (dgvPaquetes.CurrentRow != null && dgvPaquetes.CurrentRow.Cells["Nrodepaquete"].Value != null)
                     {
-                        int Id_Paquete = Convert.ToInt32(dgvPaquetes.CurrentRow.Cells["Id_Paquete"].Value);
+                        int Id_Paquete = Convert.ToInt32(dgvPaquetes.CurrentRow.Cells["Nrodepaquete"].Value);
                         cmbDestino.Text = dgvPaquetes.CurrentRow.Cells["Destino"].Value.ToString();
                         npdDisponibilidad.Value = Convert.ToInt32(dgvPaquetes.CurrentRow.Cells["Disponibilidad"].Value);                       
                         dtpFechaRegreso.Value = Convert.ToDateTime(dgvPaquetes.CurrentRow.Cells["FechaRegreso"].Value);
@@ -249,7 +259,7 @@ namespace interfazPpal
             string mensaje = string.Empty;
             try
             {
-                if (cmbBus.SelectedIndex > 0)
+                if (cmbHotel.SelectedIndex > 0)
                 {
                     string nombreHotel = cmbHotel.SelectedItem.ToString();
                     List<Hotel> listaHoteles = new CN_CargaComboHotel.CargaComboHotelL(nombreHotel, out mensaje);
@@ -257,12 +267,13 @@ namespace interfazPpal
                     {
                         foreach (Hotel hotel in listaHoteles)
                         {
+                            Id_ProveedorHotel = hotel.Id_ProvedorHotel;
                             cmbRegimen.Items.Add(hotel.Desayuno ? "Desayuno" : "");
                             cmbRegimen.Items.Add(hotel.MediaPension ? "Media Pension" : "");
                             cmbRegimen.Items.Add(hotel.PensionCompleta ? "Pension Completa" : "");
                             lblCantidadDeHabitaciones.Text=hotel.CantidadDeHabitaciones.ToString();
                             lblHabitacionesSingles.Text=hotel.Single.ToString();
-                            lblHabitacionesDobles.Text=hotel.Doble.ToString();  
+                            lblDobles.Text=hotel.Doble.ToString();  
                             lblHabitacionesTriples.Text=hotel.Triple.ToString();
                             lblHabitacionesCuadruples.Text=hotel.Cuadruple.ToString();
                         }
@@ -328,8 +339,8 @@ namespace interfazPpal
         {
             if (dgvPaquetes.SelectedRows.Count > 0)
             {
-                int id = Convert.ToInt32(dgvPaquetes.SelectedRows[0].Cells["Id_Paquete"].Value);
-                string destino = dgvPaquetes.SelectedRows[0].Cells["Destino"].Value.ToString();
+                int id = Convert.ToInt32(dgvPaquetes.SelectedRows[0].Cells["PaqueteNro"].Value);
+                string destino = dgvPaquetes.SelectedRows[0].Cells["columnaDestino"].Value.ToString();
                 DateTime fechaSalida = Convert.ToDateTime(dgvPaquetes.SelectedRows[0].Cells["FechaSalida"].Value);
                 DateTime Regreso = Convert.ToDateTime(dgvPaquetes.SelectedRows[0].Cells["FechaRegreso"].Value);
                 int Disponibilidad = Convert.ToInt32(dgvPaquetes.SelectedRows[0].Cells["Disponibilidad"].Value);
@@ -357,6 +368,7 @@ namespace interfazPpal
                         foreach (Hotel hotel in listaHoteles)
                         {
                             cmbHotel.Items.Add(hotel.NombreDelHotel);
+                            int Id_ProvedorHotel = hotel.Id_ProvedorHotel;
                         }
                     }
                     else

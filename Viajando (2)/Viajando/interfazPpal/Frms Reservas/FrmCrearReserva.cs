@@ -240,11 +240,6 @@ namespace Loggin
                 }
             }
         }
-        private void button1_Click_2(object sender, EventArgs e)
-        {
-          
-
-        }
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -386,16 +381,6 @@ namespace Loggin
                     lblMsgOk.Text = "No se pudo editar la reserva";
                 }
             }
-        }
-        private void button6_Click(object sender, EventArgs e)
-        {
-            FrmBuscarReserva frm = new FrmBuscarReserva();
-            frm.Show();
-        }
-
-        private void label20_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void npdCantHabitaciones_ValueChanged(object sender, EventArgs e)

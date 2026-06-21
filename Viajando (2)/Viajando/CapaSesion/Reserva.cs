@@ -13,8 +13,8 @@ namespace CapaSesion
     public class Reserva
     {
         public int NroReserva { get; set; }
-        public int Id_pasajero { get; set; }
-        public int Id_Paquete { get; set; }
+        public Pasajero pasajero { get; set; }
+        public Paquete Paquete { get; set; }
         public int? NroPago { get; set; }
         public int CantidadPasajeros { get; set; }
         public int Id_Vendedor { get; set; }

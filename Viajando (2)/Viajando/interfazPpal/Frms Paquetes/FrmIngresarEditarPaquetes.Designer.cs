@@ -34,9 +34,11 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbTipodeBus = new System.Windows.Forms.ComboBox();
+            this.cmbRegimen = new System.Windows.Forms.ComboBox();
             this.lblHabitacionesCuadruples = new System.Windows.Forms.Label();
             this.lblHabitacionesTriples = new System.Windows.Forms.Label();
-            this.lblHabitacionesDobles = new System.Windows.Forms.Label();
+            this.lblDobles = new System.Windows.Forms.Label();
             this.lblHabitacionesSingles = new System.Windows.Forms.Label();
             this.lblCantidadDeHabitaciones = new System.Windows.Forms.Label();
             this.lblRegimen = new System.Windows.Forms.Label();
@@ -91,8 +93,19 @@
             this.columnaDisponibilidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnaPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnaPrecioenefectivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cmbRegimen = new System.Windows.Forms.ComboBox();
-            this.cmbTipodeBus = new System.Windows.Forms.ComboBox();
+            this.Gastosadministrativos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Costoporpaquete = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre_Hotel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Regimen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidaddehabitaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Single = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Doble = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Triple = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cuadruple = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre_bus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipodebus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Asientocama = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Asientosemicama = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.npdCantidadNoches)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.npdCantidasDias)).BeginInit();
@@ -111,7 +124,7 @@
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
             this.btnEliminar.Location = new System.Drawing.Point(553, 26);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(199, 47);
             this.btnEliminar.TabIndex = 28;
@@ -127,7 +140,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
             this.btnCancelar.Location = new System.Drawing.Point(1076, 26);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(199, 47);
             this.btnCancelar.TabIndex = 30;
@@ -143,7 +156,7 @@
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
             this.btnEditar.Location = new System.Drawing.Point(292, 26);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(199, 47);
             this.btnEditar.TabIndex = 27;
@@ -157,7 +170,7 @@
             this.groupBox1.Controls.Add(this.cmbRegimen);
             this.groupBox1.Controls.Add(this.lblHabitacionesCuadruples);
             this.groupBox1.Controls.Add(this.lblHabitacionesTriples);
-            this.groupBox1.Controls.Add(this.lblHabitacionesDobles);
+            this.groupBox1.Controls.Add(this.lblDobles);
             this.groupBox1.Controls.Add(this.lblHabitacionesSingles);
             this.groupBox1.Controls.Add(this.lblCantidadDeHabitaciones);
             this.groupBox1.Controls.Add(this.lblRegimen);
@@ -203,13 +216,31 @@
             this.groupBox1.Controls.Add(this.lblFechaRegreso);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(1308, 313);
             this.groupBox1.TabIndex = 94;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Crear Nuevo Paquete";
+            // 
+            // cmbTipodeBus
+            // 
+            this.cmbTipodeBus.FormattingEnabled = true;
+            this.cmbTipodeBus.Location = new System.Drawing.Point(821, 134);
+            this.cmbTipodeBus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbTipodeBus.Name = "cmbTipodeBus";
+            this.cmbTipodeBus.Size = new System.Drawing.Size(197, 24);
+            this.cmbTipodeBus.TabIndex = 140;
+            // 
+            // cmbRegimen
+            // 
+            this.cmbRegimen.FormattingEnabled = true;
+            this.cmbRegimen.Location = new System.Drawing.Point(459, 134);
+            this.cmbRegimen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbRegimen.Name = "cmbRegimen";
+            this.cmbRegimen.Size = new System.Drawing.Size(197, 24);
+            this.cmbRegimen.TabIndex = 139;
             // 
             // lblHabitacionesCuadruples
             // 
@@ -223,25 +254,25 @@
             // lblHabitacionesTriples
             // 
             this.lblHabitacionesTriples.AutoSize = true;
-            this.lblHabitacionesTriples.Location = new System.Drawing.Point(492, 231);
+            this.lblHabitacionesTriples.Location = new System.Drawing.Point(491, 238);
             this.lblHabitacionesTriples.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHabitacionesTriples.Name = "lblHabitacionesTriples";
             this.lblHabitacionesTriples.Size = new System.Drawing.Size(0, 16);
             this.lblHabitacionesTriples.TabIndex = 137;
             // 
-            // lblHabitacionesDobles
+            // lblDobles
             // 
-            this.lblHabitacionesDobles.AutoSize = true;
-            this.lblHabitacionesDobles.Location = new System.Drawing.Point(628, 197);
-            this.lblHabitacionesDobles.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblHabitacionesDobles.Name = "lblHabitacionesDobles";
-            this.lblHabitacionesDobles.Size = new System.Drawing.Size(0, 16);
-            this.lblHabitacionesDobles.TabIndex = 136;
+            this.lblDobles.AutoSize = true;
+            this.lblDobles.Location = new System.Drawing.Point(604, 204);
+            this.lblDobles.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDobles.Name = "lblDobles";
+            this.lblDobles.Size = new System.Drawing.Size(0, 16);
+            this.lblDobles.TabIndex = 136;
             // 
             // lblHabitacionesSingles
             // 
             this.lblHabitacionesSingles.AutoSize = true;
-            this.lblHabitacionesSingles.Location = new System.Drawing.Point(492, 197);
+            this.lblHabitacionesSingles.Location = new System.Drawing.Point(514, 204);
             this.lblHabitacionesSingles.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHabitacionesSingles.Name = "lblHabitacionesSingles";
             this.lblHabitacionesSingles.Size = new System.Drawing.Size(0, 16);
@@ -250,7 +281,7 @@
             // lblCantidadDeHabitaciones
             // 
             this.lblCantidadDeHabitaciones.AutoSize = true;
-            this.lblCantidadDeHabitaciones.Location = new System.Drawing.Point(582, 165);
+            this.lblCantidadDeHabitaciones.Location = new System.Drawing.Point(604, 172);
             this.lblCantidadDeHabitaciones.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCantidadDeHabitaciones.Name = "lblCantidadDeHabitaciones";
             this.lblCantidadDeHabitaciones.Size = new System.Drawing.Size(0, 16);
@@ -288,7 +319,7 @@
             // txtGastosAdministrativos
             // 
             this.txtGastosAdministrativos.Location = new System.Drawing.Point(1076, 124);
-            this.txtGastosAdministrativos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGastosAdministrativos.Margin = new System.Windows.Forms.Padding(4);
             this.txtGastosAdministrativos.Name = "txtGastosAdministrativos";
             this.txtGastosAdministrativos.Size = new System.Drawing.Size(197, 22);
             this.txtGastosAdministrativos.TabIndex = 129;
@@ -296,7 +327,7 @@
             // txtCoste
             // 
             this.txtCoste.Location = new System.Drawing.Point(1076, 172);
-            this.txtCoste.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCoste.Margin = new System.Windows.Forms.Padding(4);
             this.txtCoste.Name = "txtCoste";
             this.txtCoste.Size = new System.Drawing.Size(197, 22);
             this.txtCoste.TabIndex = 128;
@@ -357,7 +388,7 @@
             this.btnAgregarDestino.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarDestino.ForeColor = System.Drawing.Color.White;
             this.btnAgregarDestino.Location = new System.Drawing.Point(149, 154);
-            this.btnAgregarDestino.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgregarDestino.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregarDestino.Name = "btnAgregarDestino";
             this.btnAgregarDestino.Size = new System.Drawing.Size(199, 46);
             this.btnAgregarDestino.TabIndex = 4;
@@ -373,7 +404,7 @@
             this.btnBuscarHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarHotel.ForeColor = System.Drawing.Color.White;
             this.btnBuscarHotel.Location = new System.Drawing.Point(459, 89);
-            this.btnBuscarHotel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuscarHotel.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscarHotel.Name = "btnBuscarHotel";
             this.btnBuscarHotel.Size = new System.Drawing.Size(199, 39);
             this.btnBuscarHotel.TabIndex = 9;
@@ -388,7 +419,7 @@
             this.btnBuscarBus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarBus.ForeColor = System.Drawing.Color.White;
             this.btnBuscarBus.Location = new System.Drawing.Point(821, 90);
-            this.btnBuscarBus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuscarBus.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscarBus.Name = "btnBuscarBus";
             this.btnBuscarBus.Size = new System.Drawing.Size(199, 38);
             this.btnBuscarBus.TabIndex = 17;
@@ -399,7 +430,7 @@
             // lblSingle
             // 
             this.lblSingle.AutoSize = true;
-            this.lblSingle.Location = new System.Drawing.Point(394, 196);
+            this.lblSingle.Location = new System.Drawing.Point(416, 203);
             this.lblSingle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSingle.Name = "lblSingle";
             this.lblSingle.Size = new System.Drawing.Size(48, 16);
@@ -425,7 +456,7 @@
             // lblCuadruples
             // 
             this.lblCuadruples.AutoSize = true;
-            this.lblCuadruples.Location = new System.Drawing.Point(517, 231);
+            this.lblCuadruples.Location = new System.Drawing.Point(538, 237);
             this.lblCuadruples.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCuadruples.Name = "lblCuadruples";
             this.lblCuadruples.Size = new System.Drawing.Size(82, 16);
@@ -436,7 +467,7 @@
             // lblTriples
             // 
             this.lblTriples.AutoSize = true;
-            this.lblTriples.Location = new System.Drawing.Point(388, 231);
+            this.lblTriples.Location = new System.Drawing.Point(410, 238);
             this.lblTriples.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTriples.Name = "lblTriples";
             this.lblTriples.Size = new System.Drawing.Size(55, 16);
@@ -446,7 +477,7 @@
             // lblDoble
             // 
             this.lblDoble.AutoSize = true;
-            this.lblDoble.Location = new System.Drawing.Point(544, 196);
+            this.lblDoble.Location = new System.Drawing.Point(539, 203);
             this.lblDoble.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDoble.Name = "lblDoble";
             this.lblDoble.Size = new System.Drawing.Size(57, 16);
@@ -456,7 +487,7 @@
             // lblCantidadHabitaciones
             // 
             this.lblCantidadHabitaciones.AutoSize = true;
-            this.lblCantidadHabitaciones.Location = new System.Drawing.Point(373, 163);
+            this.lblCantidadHabitaciones.Location = new System.Drawing.Point(395, 170);
             this.lblCantidadHabitaciones.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCantidadHabitaciones.Name = "lblCantidadHabitaciones";
             this.lblCantidadHabitaciones.Size = new System.Drawing.Size(169, 32);
@@ -532,7 +563,7 @@
             // dtpFechaSalida
             // 
             this.dtpFechaSalida.Location = new System.Drawing.Point(149, 59);
-            this.dtpFechaSalida.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpFechaSalida.Margin = new System.Windows.Forms.Padding(4);
             this.dtpFechaSalida.Name = "dtpFechaSalida";
             this.dtpFechaSalida.Size = new System.Drawing.Size(197, 22);
             this.dtpFechaSalida.TabIndex = 1;
@@ -550,7 +581,7 @@
             // txtPrecioEfectivo
             // 
             this.txtPrecioEfectivo.Location = new System.Drawing.Point(1076, 268);
-            this.txtPrecioEfectivo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPrecioEfectivo.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrecioEfectivo.Name = "txtPrecioEfectivo";
             this.txtPrecioEfectivo.Size = new System.Drawing.Size(197, 22);
             this.txtPrecioEfectivo.TabIndex = 25;
@@ -568,7 +599,7 @@
             // txtPrecioLista
             // 
             this.txtPrecioLista.Location = new System.Drawing.Point(1076, 220);
-            this.txtPrecioLista.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPrecioLista.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrecioLista.Name = "txtPrecioLista";
             this.txtPrecioLista.Size = new System.Drawing.Size(197, 22);
             this.txtPrecioLista.TabIndex = 24;
@@ -646,7 +677,7 @@
             // dtpFechaRegreso
             // 
             this.dtpFechaRegreso.Location = new System.Drawing.Point(149, 89);
-            this.dtpFechaRegreso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpFechaRegreso.Margin = new System.Windows.Forms.Padding(4);
             this.dtpFechaRegreso.Name = "dtpFechaRegreso";
             this.dtpFechaRegreso.Size = new System.Drawing.Size(197, 22);
             this.dtpFechaRegreso.TabIndex = 2;
@@ -669,7 +700,7 @@
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
             this.btnGuardar.Location = new System.Drawing.Point(31, 26);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(199, 47);
             this.btnGuardar.TabIndex = 26;
@@ -685,7 +716,7 @@
             this.btnVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVer.ForeColor = System.Drawing.Color.White;
             this.btnVer.Location = new System.Drawing.Point(814, 26);
-            this.btnVer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVer.Margin = new System.Windows.Forms.Padding(4);
             this.btnVer.Name = "btnVer";
             this.btnVer.Size = new System.Drawing.Size(199, 47);
             this.btnVer.TabIndex = 29;
@@ -708,7 +739,7 @@
             this.tableLayoutPanelBotones.Controls.Add(this.btnEliminar, 2, 0);
             this.tableLayoutPanelBotones.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanelBotones.Location = new System.Drawing.Point(0, 714);
-            this.tableLayoutPanelBotones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanelBotones.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanelBotones.Name = "tableLayoutPanelBotones";
             this.tableLayoutPanelBotones.RowCount = 1;
             this.tableLayoutPanelBotones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -737,10 +768,23 @@
             this.columnafechadeRegreso,
             this.columnaDisponibilidad,
             this.columnaPrecio,
-            this.columnaPrecioenefectivo});
+            this.columnaPrecioenefectivo,
+            this.Gastosadministrativos,
+            this.Costoporpaquete,
+            this.Nombre_Hotel,
+            this.Regimen,
+            this.Cantidaddehabitaciones,
+            this.Single,
+            this.Doble,
+            this.Triple,
+            this.Cuadruple,
+            this.Nombre_bus,
+            this.Tipodebus,
+            this.Asientocama,
+            this.Asientosemicama});
             this.dgvPaquetes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPaquetes.Location = new System.Drawing.Point(0, 313);
-            this.dgvPaquetes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvPaquetes.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPaquetes.Name = "dgvPaquetes";
             this.dgvPaquetes.ReadOnly = true;
             this.dgvPaquetes.RowHeadersWidth = 51;
@@ -798,23 +842,109 @@
             this.columnaPrecioenefectivo.Name = "columnaPrecioenefectivo";
             this.columnaPrecioenefectivo.ReadOnly = true;
             // 
-            // cmbRegimen
+            // Gastosadministrativos
             // 
-            this.cmbRegimen.FormattingEnabled = true;
-            this.cmbRegimen.Location = new System.Drawing.Point(459, 134);
-            this.cmbRegimen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cmbRegimen.Name = "cmbRegimen";
-            this.cmbRegimen.Size = new System.Drawing.Size(197, 24);
-            this.cmbRegimen.TabIndex = 139;
+            this.Gastosadministrativos.HeaderText = "Gastos Administrativos";
+            this.Gastosadministrativos.MinimumWidth = 6;
+            this.Gastosadministrativos.Name = "Gastosadministrativos";
+            this.Gastosadministrativos.ReadOnly = true;
+            this.Gastosadministrativos.Visible = false;
             // 
-            // cmbTipodeBus
+            // Costoporpaquete
             // 
-            this.cmbTipodeBus.FormattingEnabled = true;
-            this.cmbTipodeBus.Location = new System.Drawing.Point(821, 134);
-            this.cmbTipodeBus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cmbTipodeBus.Name = "cmbTipodeBus";
-            this.cmbTipodeBus.Size = new System.Drawing.Size(197, 24);
-            this.cmbTipodeBus.TabIndex = 140;
+            this.Costoporpaquete.HeaderText = "Costo por Paquete";
+            this.Costoporpaquete.MinimumWidth = 6;
+            this.Costoporpaquete.Name = "Costoporpaquete";
+            this.Costoporpaquete.ReadOnly = true;
+            this.Costoporpaquete.Visible = false;
+            // 
+            // Nombre_Hotel
+            // 
+            this.Nombre_Hotel.HeaderText = "Nombre de Hotel";
+            this.Nombre_Hotel.MinimumWidth = 6;
+            this.Nombre_Hotel.Name = "Nombre_Hotel";
+            this.Nombre_Hotel.ReadOnly = true;
+            this.Nombre_Hotel.Visible = false;
+            // 
+            // Regimen
+            // 
+            this.Regimen.HeaderText = "Regimen";
+            this.Regimen.MinimumWidth = 6;
+            this.Regimen.Name = "Regimen";
+            this.Regimen.ReadOnly = true;
+            this.Regimen.Visible = false;
+            // 
+            // Cantidaddehabitaciones
+            // 
+            this.Cantidaddehabitaciones.HeaderText = "Cantidad de Habitaciones";
+            this.Cantidaddehabitaciones.MinimumWidth = 6;
+            this.Cantidaddehabitaciones.Name = "Cantidaddehabitaciones";
+            this.Cantidaddehabitaciones.ReadOnly = true;
+            this.Cantidaddehabitaciones.Visible = false;
+            // 
+            // Single
+            // 
+            this.Single.HeaderText = "Single";
+            this.Single.MinimumWidth = 6;
+            this.Single.Name = "Single";
+            this.Single.ReadOnly = true;
+            this.Single.Visible = false;
+            // 
+            // Doble
+            // 
+            this.Doble.HeaderText = "Doble";
+            this.Doble.MinimumWidth = 6;
+            this.Doble.Name = "Doble";
+            this.Doble.ReadOnly = true;
+            this.Doble.Visible = false;
+            // 
+            // Triple
+            // 
+            this.Triple.HeaderText = "Triple";
+            this.Triple.MinimumWidth = 6;
+            this.Triple.Name = "Triple";
+            this.Triple.ReadOnly = true;
+            this.Triple.Visible = false;
+            // 
+            // Cuadruple
+            // 
+            this.Cuadruple.HeaderText = "Cuadruple";
+            this.Cuadruple.MinimumWidth = 6;
+            this.Cuadruple.Name = "Cuadruple";
+            this.Cuadruple.ReadOnly = true;
+            this.Cuadruple.Visible = false;
+            // 
+            // Nombre_bus
+            // 
+            this.Nombre_bus.HeaderText = "Nombre de Bus";
+            this.Nombre_bus.MinimumWidth = 6;
+            this.Nombre_bus.Name = "Nombre_bus";
+            this.Nombre_bus.ReadOnly = true;
+            this.Nombre_bus.Visible = false;
+            // 
+            // Tipodebus
+            // 
+            this.Tipodebus.HeaderText = "Tipo de Bus";
+            this.Tipodebus.MinimumWidth = 6;
+            this.Tipodebus.Name = "Tipodebus";
+            this.Tipodebus.ReadOnly = true;
+            this.Tipodebus.Visible = false;
+            // 
+            // Asientocama
+            // 
+            this.Asientocama.HeaderText = "Asientos Cama";
+            this.Asientocama.MinimumWidth = 6;
+            this.Asientocama.Name = "Asientocama";
+            this.Asientocama.ReadOnly = true;
+            this.Asientocama.Visible = false;
+            // 
+            // Asientosemicama
+            // 
+            this.Asientosemicama.HeaderText = "Asientosemicama";
+            this.Asientosemicama.MinimumWidth = 6;
+            this.Asientosemicama.Name = "Asientosemicama";
+            this.Asientosemicama.ReadOnly = true;
+            this.Asientosemicama.Visible = false;
             // 
             // FrmIngresarEditarPaquetes
             // 
@@ -903,9 +1033,11 @@
         private System.Windows.Forms.Label lblCantidadDeHabitaciones;
         private System.Windows.Forms.Label lblHabitacionesCuadruples;
         private System.Windows.Forms.Label lblHabitacionesTriples;
-        private System.Windows.Forms.Label lblHabitacionesDobles;
+        private System.Windows.Forms.Label lblDobles;
         private System.Windows.Forms.Label lblHabitacionesSingles;
         private System.Windows.Forms.DataGridView dgvPaquetes;
+        private System.Windows.Forms.ComboBox cmbRegimen;
+        private System.Windows.Forms.ComboBox cmbTipodeBus;
         private System.Windows.Forms.DataGridViewTextBoxColumn PaqueteNro;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaDestino;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnafechadesalida;
@@ -913,7 +1045,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaDisponibilidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaPrecioenefectivo;
-        private System.Windows.Forms.ComboBox cmbRegimen;
-        private System.Windows.Forms.ComboBox cmbTipodeBus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gastosadministrativos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Costoporpaquete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_Hotel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Regimen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidaddehabitaciones;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Single;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Doble;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Triple;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cuadruple;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_bus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tipodebus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Asientocama;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Asientosemicama;
     }
 }
