@@ -27,9 +27,11 @@ namespace CapaDatos
                                 Bus bus = new Bus
                                 {
                                     Id_ProvedorBus = Convert.ToInt32(leer["Id_ProvedorBus"]),
+                                    NombreBus = leer["NombreBus"].ToString(),
+                                    TipoBus = leer["TipoBus"].ToString(),
                                     CantidadDeAsientos = Convert.ToInt32(leer["Cantidad_Asientos"]),
-                                    Cama = Convert.ToInt32(leer["AsientosCamas"]),
-                                    Semicama = Convert.ToInt32(leer["AsientosSemicamas"]),
+                                    Cama = leer["AsientosCamas"].ToString(),
+                                    Semicama = leer["AsientosSemicamas"].ToString(),
                                     Calle = leer["Calle"].ToString(),
                                     Numero = Convert.ToInt32(leer["Numero"]),
                                     Localidad = leer["Localidad"].ToString(),
@@ -41,7 +43,6 @@ namespace CapaDatos
                                     ApellidoTitularBus = leer["ApellidoTitularBus"].ToString(),
                                     Cuit = leer["Cuit"].ToString(),
                                     Celular = leer["Celular"].ToString(),
-                                    NombreBus = leer["NombreBus"].ToString(),
                                 };
                                 buses.Add(bus);
                             }

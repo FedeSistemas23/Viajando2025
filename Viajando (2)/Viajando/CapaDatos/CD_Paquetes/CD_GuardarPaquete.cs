@@ -30,7 +30,7 @@ namespace CapaDatos
                 cmd.Parameters.AddWithValue("@ProveedorBus", paquete.ProveedorBus);
                 cmd.Parameters.AddWithValue("@GastosAdministrativos", paquete.GastosAdministrativos);
                 cmd.Parameters.AddWithValue("@PrecioEfectivo", paquete.PrecioEfectivo);
-                cmd.Parameters.AddWithValue("@PrecioLista", paquete.PrecioLista);               
+                cmd.Parameters.AddWithValue("@PrecioLista", paquete.PrecioLista);
                 cmd.Parameters.AddWithValue("@Coste", paquete.Coste);
                 cmd.Parameters.AddWithValue("@FechaSalida", paquete.FechaSalida);
                 cmd.Parameters.Add("@IdnuevoPaquete", SqlDbType.Int).Direction = ParameterDirection.Output;
@@ -39,17 +39,17 @@ namespace CapaDatos
 
                 cmd.Connection = conexion.AbrirConexion();
                 cmd.ExecuteNonQuery();
-                
+
                 // Obtener los valores de salida
                 idNuevoPaquete = Convert.ToInt32(cmd.Parameters["@IdNuevoPaquete"].Value);
                 mensaje = cmd.Parameters["@Mensaje"].Value.ToString();
 
-                
+
             }
             catch (Exception ex)
             {
                 idNuevoPaquete = 0;
-                mensaje= ex.Message;
+                mensaje = ex.Message;
             }
             finally
             {
@@ -59,9 +59,9 @@ namespace CapaDatos
             return idNuevoPaquete;
         }
 
-        public Paquete VerificarNuevoPaqueteD(int id)
+        /*public Paquete VerificarNuevoPaqueteD(int id)
         {
-            Paquete nuevopaquete = new Paquete();
+            /*Paquete nuevopaquete = new Paquete();
             Conexion conexion = new Conexion();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conexion.AbrirConexion();
@@ -104,6 +104,7 @@ namespace CapaDatos
             }
             return nuevopaquete;
         }
+        }*/
     }
 }
 
