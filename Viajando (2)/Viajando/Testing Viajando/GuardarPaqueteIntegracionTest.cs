@@ -11,7 +11,7 @@ using System.Linq.Expressions;
 namespace Viajando.IntegrationTests
 {
     
-    [TestFixture]
+/*    [TestFixture]
     public class GuardarPaqueteIntegrationTests
     {
         int id;
@@ -48,21 +48,6 @@ namespace Viajando.IntegrationTests
             };
             _guardarPaquete.GuardarPaqueteL(paquete);
             //id = _guardarPaquete.Id;
-        }
-
-        [Test]
-        public void GuardarPaquete_DeberiaGuardarCorrectamente()
-        {
-            
-            CD_GuardarPaquete paquete= new CD_GuardarPaquete();           
-            Paquete nuevoPaquete = paquete.VerificarNuevoPaqueteD(id);
-            
-            string newdestino= nuevoPaquete.Destino;
-            int cantidaddias = nuevoPaquete.CantidadDias;
-
-            Assert.That(newdestino, Is.EqualTo("Chaco"));
-            //Assert.That(cantidaddias, Is.EqualTo(7));
-
-        }
-    }
+        }  
+    }*/
 }

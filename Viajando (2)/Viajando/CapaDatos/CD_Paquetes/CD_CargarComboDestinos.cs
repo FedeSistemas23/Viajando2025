@@ -27,10 +27,13 @@ namespace CapaDatos
                 {
                     while ( leer.Read())
                     {
-                            // Id_Destino = Convert.ToInt32(leer["Id_Destino"].ToString()),
-                          
-                       
-                        destinos.Add((Destino)leer["Nombre"]);
+                        destinos.Add(new Destino
+                        {
+                            Nombre = leer["Nombre"].ToString(),
+                            Id_Destino = Convert.ToInt32(leer["Id_Destino"])
+                        });
+                        
+
                     }
                 }
                

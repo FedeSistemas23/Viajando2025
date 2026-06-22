@@ -32,10 +32,10 @@ namespace CapaDatos
                 cmd.Parameters.AddWithValue("@Telefono", Hotel.Telefono);
                 cmd.Parameters.AddWithValue("@Celular", Hotel.Celular);
                 cmd.Parameters.AddWithValue("@Cantidad_Habitaciones", Hotel.CantidadDeHabitaciones);
-                cmd.Parameters.AddWithValue("@Single", Hotel.Single);
-                cmd.Parameters.AddWithValue("@Doble", Hotel.Doble);
-                cmd.Parameters.AddWithValue("@Triple", Hotel.Triple);
-                cmd.Parameters.AddWithValue("@Cuadruple", Hotel.Cuadruple);
+                cmd.Parameters.AddWithValue("@Single", Hotel.HabitacionesSingle);
+                cmd.Parameters.AddWithValue("@Doble", Hotel.HabitacionesDoble);
+                cmd.Parameters.AddWithValue("@Triple", Hotel.HabitacionesTriple);
+                cmd.Parameters.AddWithValue("@Cuadruple", Hotel.HabitacionesCuadruple);
                 cmd.Parameters.AddWithValue("@Desayuno", Hotel.Desayuno);
                 cmd.Parameters.AddWithValue("@MediaPension", Hotel.MediaPension);
                 cmd.Parameters.AddWithValue("@PensionCompleta", Hotel.PensionCompleta);

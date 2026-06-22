@@ -11,6 +11,7 @@ namespace CapaSesion
         public int CantidadDias { get; set; }
         public int CantidadNoches { get; set; }
         public int Disponibilidad { get; set; }
+
         public Hotel ProveedorHotel { get; set; }
         public Bus ProveedorBus { get; set; }
         public decimal GastosAdministrativos { get; set; }

@@ -1,9 +1,10 @@
-﻿using System;
+﻿using CapaDatos;
+using CapaSesion;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CapaDatos;
 
 namespace CapaNegocio
 {
@@ -11,16 +12,19 @@ namespace CapaNegocio
     {
         CD_CargaAsientosBus CargadorAsientos= new CD_CargaAsientosBus();
         List<int> asientos = new List<int>();
-        public List<int> CargaAsientosBusL(string nombrebus)
-        {            
-            asientos= CargadorAsientos.CargaAsientosBusD(nombrebus);
-            if(asientos.Count == 0)
+        public List<int> CargaAsientosBusL(string nombrebus, out string mensaje)
+        {
+            mensaje = string.Empty;
+
+            asientos = CargadorAsientos.CargaAsientosBusD(nombrebus);
+            if (mensaje != string.Empty)
             {
-                return null;
+                return 0;
             }
+
             else
             {
-                return asientos;
+                return GuardarNuevoPaqueteD.GuardarPaqueteD(paquete, out mensaje);
             }
         }
     }

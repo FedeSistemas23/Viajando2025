@@ -36,15 +36,6 @@ namespace CapaNegocio
             {
                 return GuardarNuevoPaqueteD.GuardarPaqueteD(paquete, out mensaje);
             }
-                
-          
-
-
-
-        }
-        public void VerificarNuevoPaquete (int id)
-        {
-            Paquete NewPaquete = GuardarNuevoPaqueteD.VerificarNuevoPaqueteD(id);
         }
     }
 }

@@ -27,33 +27,42 @@ namespace CapaDatos
                             {
                                 while (leer.Read())
                                 {
-
-
                                     Paquete paquete = new Paquete
                                     {
                                         Id_Paquete = Convert.ToInt32(leer["Id_Paquete"]),
+                                        Destino = new Destino()
+                                        {
+                                            Id_Destino = Convert.ToInt32(leer["Id_Destino"]),
+                                            Nombre = leer["NombreDestino"].ToString()
+                                        },
                                         FechaSalida = Convert.ToDateTime(leer["FechaSalida"]),
                                         FechaRegreso = Convert.ToDateTime(leer["FechaRegreso"]),
+                                        Disponibilidad = Convert.ToInt32(leer["Disponibilidad"]),
                                         CantidadDias = Convert.ToInt32(leer["CantidadDias"]),
                                         CantidadNoches = Convert.ToInt32(leer["CantidadNoches"]),
-                                        Regimen = leer["Regimen"].ToString(),
-                                        ProveedorHotel = leer["ProveedorHotel"].ToString(),
-                                        ProveedorBus = leer["ProveedorBus"].ToString(),
+                                        ProveedorHotel = new Hotel()
+                                        {
+                                            Id_ProvedorHotel = Convert.ToInt32(leer["Id_ProveedorHotel"]),
+                                            NombreDelHotel = leer["NombreDelHotel"].ToString(),
+                                            Regimen = leer["Regimen"].ToString(),
+                                            CantidadDeHabitaciones = Convert.ToInt32(leer["CantidadDeHab"]),
+                                            HabitacionesSingle = Convert.ToInt32(leer["Sigles"]),
+                                            HabitacionesDoble = Convert.ToInt32(leer["Doble"]),
+                                            HabitacionesTriple = Convert.ToInt32(leer["Triple"]),
+                                            HabitacionesCuadruple = Convert.ToInt32(leer["Triple"]),
+                                        },
+                                        ProveedorBus = new Bus()
+                                        {
+                                            Id_ProvedorBus = Convert.ToInt32(leer["Id_ProveedorBus"]),
+                                            TipoBus = leer["TipoBus"].ToString(),
+                                            CantidadDeAsientos = Convert.ToInt32(leer["CantidadAsientos"]),
+                                            AsientosCama = Convert.ToInt32(leer["CantidadCamas"]),
+                                            AsientosSemicama = Convert.ToInt32(leer["CantidadSemicamas"]),
+                                        },
                                         GastosAdministrativos = Convert.ToDecimal(leer["GastosAdministrativos"]),
                                         PrecioLista = Convert.ToDecimal(leer["PrecioLista"]),
                                         PrecioEfectivo = Convert.ToDecimal(leer["PrecioEfectivo"]),
                                         Coste = Convert.ToDecimal(leer["Coste"]),
-                                        Disponibilidad = Convert.ToInt32(leer["Disponibilidad"]),
-                                        CantidadDeHab = Convert.ToInt32(leer["CantidadDeHab"]),
-                                        Single = Convert.ToInt32(leer["Single"]),
-                                        Doble = Convert.ToInt32(leer["Doble"]),
-                                        Triple = Convert.ToInt32(leer["Triple"]),
-                                        Cuadruple = Convert.ToInt32(leer["Cuadruple"]),
-                                        TipoBus = leer["TipoBus"].ToString(),
-                                        CantidadAsientos = Convert.ToInt32(leer["CantidadAsientos"]),
-                                        AsientosCama = Convert.ToInt32(leer["CantidadCamas"]),
-                                        AsientosSemicama = Convert.ToInt32(leer["CantidadSemicamas"]),
-                                        Destino = leer["Destino"].ToString(),
                                     };
 
                                     // Añadir el objeto paquete a la lista de paquetes
