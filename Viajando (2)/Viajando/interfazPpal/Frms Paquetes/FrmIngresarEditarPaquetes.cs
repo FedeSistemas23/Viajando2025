@@ -15,7 +15,7 @@ namespace interfazPpal
         CS_LimpiarFormularios Limpiador;
         CN_Bitacora bitacora;
 
-        int Id_ProveedorHotel;
+        int IdProveedorHotel;
         string NombreHotel;
         int Id_Destino;
         string destino;
@@ -87,8 +87,17 @@ namespace interfazPpal
                         Disponibilidad = Convert.ToInt32(npdDisponibilidad.Value),
                         CantidadDias = Convert.ToInt32(npdCantidasDias.Value),
                         CantidadNoches = Convert.ToInt32(npdCantidadNoches.Value),
+<<<<<<< HEAD
                         ProveedorHotel = new Hotel() { Id_ProvedorHotel = Convert.ToInt32(txtid_hotel.Text)},
                         ProveedorBus = new Bus() { Id_ProvedorBus = Convert.ToInt32(txtid_bus.Text) },
+=======
+
+                        ProveedorHotel = new Hotel() { NombreDelHotel = cmbHotel.SelectedItem.ToString(), 
+                                                       Id_ProvedorHotel = Convert.ToInt32(txtid_hotel.Text)},
+                        ProveedorBus = new Bus() { NombreBus = cmbBus.Text.ToString(),
+                                                   Id_ProvedorBus = Convert.ToInt32(txtid_bus.Text) },
+
+>>>>>>> e9f9afc7f436ce97bb176c8e47daa92a9db53d49
                         GastosAdministrativos = Convert.ToDecimal(txtGastosAdministrativos.Text),
                         PrecioLista = Convert.ToDecimal(txtPrecioLista.Text),
                         PrecioEfectivo = Convert.ToDecimal(txtPrecioEfectivo.Text),
@@ -265,6 +274,7 @@ namespace interfazPpal
                     {
                         foreach (Hotel hotel in listaHoteles)
                         {
+
                             txtid_hotel.Text = Convert.ToString(hotel.Id_ProvedorHotel);
                             cmbRegimen.Items.Add(hotel.Desayuno ? "Desayuno" : "");
                             cmbRegimen.Items.Add(hotel.MediaPension ? "Media Pension" : "");
