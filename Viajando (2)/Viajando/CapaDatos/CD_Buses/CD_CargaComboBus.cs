@@ -12,37 +12,54 @@ namespace CapaDatos
 {
     public class CD_CargaComboBus : Conexion
     {
-        SqlCommand cmd = new SqlCommand();
-        Conexion conexion = new Conexion();
-        List<Bus> listaBuses = new List<Bus>();
-        public List<Bus> CargadorComboBusD(Destino nombre)
+        public List<Bus> CargarComboBusD(int id_destino, out string mensaje)
         {
-            SqlDataReader leer;
+            List<Bus> listaBuses = new List<Bus>();
+            mensaje = string.Empty;
+
             try
             {
-                cmd.Connection = conexion.AbrirConexion();
-                cmd.CommandText = "CargaComboBus";
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("Destino", nombre);
-                leer = cmd.ExecuteReader();
-                if (leer != null)
+                using (SqlConnection connection = AbrirConexion())
                 {
-                    while (leer.Read())
+                    using (SqlCommand cmd = new SqlCommand("CargaComboHoteles", connection))
                     {
-                        listaBuses.Add((Bus)leer["NombreBus"]);
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.Add("@Id_Destino", SqlDbType.Int).Value = id_destino;
+                        cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+
+                        using (SqlDataReader leer = cmd.ExecuteReader())
+                        {
+                            if (leer.HasRows)
+                            {
+                                while (leer.Read())
+                                {
+                                    listaBuses.Add(new Bus()
+                                    {
+                                        TipoBus=leer["TipoBus"].ToString(),
+                                        Cama=leer["Cama"].ToString(),
+                                        Semicama=leer["Semicama"].ToString(),
+                                        Suite=leer["Suite"].ToString(),
+                                        AsientosCama=Convert.ToInt32(leer["AsientosCama"]),
+                                        AsientosSemicama=Convert.ToInt32(leer["AsientosSemicama"]),
+                                    });
+                                }
+
+                                mensaje = cmd.Parameters["@Mensaje"].Value?.ToString() ?? string.Empty;
+                            }
+                            else
+                            {
+                                mensaje = cmd.Parameters["@Mensaje"].Value?.ToString() ?? string.Empty;
+                            }
+                        }
                     }
                 }
-                return listaBuses;
             }
             catch (Exception ex)
             {
-                throw new Exception("Error al ejecutar SP o Conexion a la BD. \n \n" + ex.Message);
+                mensaje = ex.Message;
             }
-            finally
-            {
-                cmd.Parameters.Clear();
-                conexion.CerrarConexion();
-            }
+            return listaBuses;
         }
     }
 }

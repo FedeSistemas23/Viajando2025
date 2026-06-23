@@ -87,17 +87,8 @@ namespace interfazPpal
                         Disponibilidad = Convert.ToInt32(npdDisponibilidad.Value),
                         CantidadDias = Convert.ToInt32(npdCantidasDias.Value),
                         CantidadNoches = Convert.ToInt32(npdCantidadNoches.Value),
-<<<<<<< HEAD
                         ProveedorHotel = new Hotel() { Id_ProvedorHotel = Convert.ToInt32(txtid_hotel.Text)},
                         ProveedorBus = new Bus() { Id_ProvedorBus = Convert.ToInt32(txtid_bus.Text) },
-=======
-
-                        ProveedorHotel = new Hotel() { NombreDelHotel = cmbHotel.SelectedItem.ToString(), 
-                                                       Id_ProvedorHotel = Convert.ToInt32(txtid_hotel.Text)},
-                        ProveedorBus = new Bus() { NombreBus = cmbBus.Text.ToString(),
-                                                   Id_ProvedorBus = Convert.ToInt32(txtid_bus.Text) },
-
->>>>>>> e9f9afc7f436ce97bb176c8e47daa92a9db53d49
                         GastosAdministrativos = Convert.ToDecimal(txtGastosAdministrativos.Text),
                         PrecioLista = Convert.ToDecimal(txtPrecioLista.Text),
                         PrecioEfectivo = Convert.ToDecimal(txtPrecioEfectivo.Text),
@@ -309,8 +300,8 @@ namespace interfazPpal
             {  
                 if (cmbBus.SelectedIndex > 0)
                 {
-                    string nombreBus = cmbBus.SelectedItem.ToString();
-                    List<Bus>listaBuses = new CN_CargaAsientosBuses().CargaAsientosBusL(nombreBus, out mensaje);
+                    int id_bus = Convert.ToInt32(txtid_bus.Text);
+                    List<Bus>listaBuses = new CN_CargaComboBus().CargaComboBusL(id_bus, out mensaje);
                     if (listaBuses != null)
                     {
                         foreach (Bus bus in listaBuses)
@@ -401,7 +392,7 @@ namespace interfazPpal
                          MessageBox.Show("Ese destino no tiene hoteles, debe cargarlos.");
                      }
 
-                    List<Bus> listaBuses = new List<Bus>(new CN_CargaComboBus().CargadorComboBusL(id_destino, out mensaje));
+                    List<Bus> listaBuses = new List<Bus>(new CN_CargaComboBus().CargaComboBusL(id_destino, out mensaje));
                     if (listaBuses.Count > 0)
                     {
                         Bus buspordefecto = new Bus();
@@ -442,6 +433,6 @@ namespace interfazPpal
             {
                 MessageBox.Show(ex.Message);
             }
-        }  
+        }   
     }
 }
