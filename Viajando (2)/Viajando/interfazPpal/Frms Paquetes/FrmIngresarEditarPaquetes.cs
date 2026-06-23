@@ -87,10 +87,8 @@ namespace interfazPpal
                         Disponibilidad = Convert.ToInt32(npdDisponibilidad.Value),
                         CantidadDias = Convert.ToInt32(npdCantidasDias.Value),
                         CantidadNoches = Convert.ToInt32(npdCantidadNoches.Value),
-                        ProveedorHotel = new Hotel() { NombreDelHotel = cmbHotel.SelectedItem.ToString(), 
-                                                       Id_ProvedorHotel = Convert.ToInt32(txtid_hotel.Text)},
-                        ProveedorBus = new Bus() { NombreBus = cmbBus.Text.ToString(),
-                                                   Id_ProvedorBus = Convert.ToInt32(txtid_bus.Text) },
+                        ProveedorHotel = new Hotel() { Id_ProvedorHotel = Convert.ToInt32(txtid_hotel.Text)},
+                        ProveedorBus = new Bus() { Id_ProvedorBus = Convert.ToInt32(txtid_bus.Text) },
                         GastosAdministrativos = Convert.ToDecimal(txtGastosAdministrativos.Text),
                         PrecioLista = Convert.ToDecimal(txtPrecioLista.Text),
                         PrecioEfectivo = Convert.ToDecimal(txtPrecioEfectivo.Text),
@@ -259,8 +257,10 @@ namespace interfazPpal
             {
                 if (cmbHotel.SelectedIndex > 0)
                 {
-                    string nombreHotel = cmbHotel.SelectedItem.ToString();
-                    List<Hotel> listaHoteles = new CN_CargaComboHotel.CargaComboHotelL(nombreHotel, out mensaje);
+                    int Id_Hotel = Convert.ToInt32(cmbHotel.ValueMember);
+                    
+                    List<Hotel> listaHoteles = new CN_CargaComboHotel().CargaComboHotelL(Id_Hotel, out mensaje);
+                    
                     if (listaHoteles != null)
                     {
                         foreach (Hotel hotel in listaHoteles)
@@ -278,7 +278,7 @@ namespace interfazPpal
                     }
                     else
                     {
-                        MessageBox.Show("");
+                        MessageBox.Show(mensaje);
                     }
                 }
                 else
@@ -359,9 +359,9 @@ namespace interfazPpal
                 if (cmbDestino.SelectedIndex > 0)
                 {
                     txtid_destino.Text = cmbDestino.SelectedValue.ToString();
-                    Destino destino = (Destino)cmbDestino.SelectedItem;
-                    List<Bus> listaBuses = new List<Bus>(new CN_CargaComboBus().CargadorComboBusL(destino));
-                    List<Hotel> listaHoteles = new List<Hotel>(new CN_CargaComboHotel().CargaComboHotel(destino, out mensaje));
+                    int id_destino = Convert.ToInt32(cmbDestino.ValueMember);
+                   
+                    List<Hotel> listaHoteles = new List<Hotel>(new CN_CargaComboHotel().CargaComboHotelL(id_destino, out mensaje));
                     
                     if (listaHoteles.Count > 0)
                     {
@@ -373,14 +373,14 @@ namespace interfazPpal
                         listaHoteles.Insert(0, hotelpordefecto);
 
                         // 4. Configurar las propiedades del ComboBox
-                        cmbHotel.ValueMember = "Id_ProvedorHotel"; // Nombre exacto de la propiedad ID en tu clase Destino
-                        cmbHotel.DisplayMember = "NombreDelHotel";    // Nombre exacto de la propiedad Nombre en tu clase Destino
+                        cmbHotel.ValueMember = "Id_ProvedorHotel"; // Nombre exacto de la propiedad ID en tu clase Hotel
+                        cmbHotel.DisplayMember = "NombreDelHotel";    // Nombre exacto de la propiedad Nombre en tu clase Hotelo
 
                         // 5. Asignar la lista como origen de datos (esto limpia automáticamente los ítems previos)
                         cmbHotel.DataSource = listaHoteles;
 
                         // 6. Seleccionar el primer elemento por defecto
-                        cmbDestino.SelectedIndex = 0;
+                        cmbHotel.SelectedIndex = 0;
                         /*foreach (Hotel hotel in listaHoteles)
                         {
                             cmbHotel.Items.Add(hotel.NombreDelHotel);
@@ -390,24 +390,26 @@ namespace interfazPpal
                      {
                          MessageBox.Show("Ese destino no tiene hoteles, debe cargarlos.");
                      }
-                    if(listaBuses.Count > 0)
+
+                    List<Bus> listaBuses = new List<Bus>(new CN_CargaComboBus().CargadorComboBusL(id_destino, out mensaje));
+                    if (listaBuses.Count > 0)
                     {
-                        Hotel buspordefecto = new Hotel();
-                        buspordefecto.Id_ProvedorHotel = 0;
-                        buspordefecto.NombreDelHotel = "Seleccione el Destino";
+                        Bus buspordefecto = new Bus();
+                        buspordefecto.Id_ProvedorBus = 0;
+                        buspordefecto.NombreBus = "Seleccione el Destino";
 
                         // 3. Insertar el elemento por defecto en la primera posición (índice 0)
-                        listaHoteles.Insert(0, buspordefecto);
+                        listaBuses.Insert(0, buspordefecto);
 
                         // 4. Configurar las propiedades del ComboBox
                         cmbBus.ValueMember = "Id_ProvedorBus"; // Nombre exacto de la propiedad ID en tu clase Destino
-                        cmbBus.DisplayMember = "NombreDelBus";    // Nombre exacto de la propiedad Nombre en tu clase Destino
+                        cmbBus.DisplayMember = "NombreBus";    // Nombre exacto de la propiedad Nombre en tu clase Destino
 
                         // 5. Asignar la lista como origen de datos (esto limpia automáticamente los ítems previos)
                         cmbBus.DataSource = listaBuses;
 
                         // 6. Seleccionar el primer elemento por defecto
-                        cmbDestino.SelectedIndex = 0;
+                        cmbBus.SelectedIndex = 0;
                        
                         
                         /*foreach (Bus bus in listaBuses)
@@ -417,8 +419,12 @@ namespace interfazPpal
                     }
                     else
                     {
-                        MessageBox.Show("Ese destino no tiene buses, debe cargarlos.");
+                        MessageBox.Show(mensaje);
                     }
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione un destino para mostrar su información.");
                 }
                    
             }

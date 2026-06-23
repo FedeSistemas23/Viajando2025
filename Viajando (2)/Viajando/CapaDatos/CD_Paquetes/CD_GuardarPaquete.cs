@@ -21,18 +21,19 @@ namespace CapaDatos
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 // Parámetros de entrada
-                cmd.Parameters.AddWithValue("@Destino", paquete.Destino.Nombre);
-                cmd.Parameters.AddWithValue("@Disponibilidad", paquete.Disponibilidad);
+                cmd.Parameters.AddWithValue("@Destino", paquete.Destino.Id_Destino);
+                cmd.Parameters.AddWithValue("@FechaSalida", paquete.FechaSalida);
                 cmd.Parameters.AddWithValue("@FechaRegreso", paquete.FechaRegreso);
+                cmd.Parameters.AddWithValue("@Disponibilidad", paquete.Disponibilidad);
                 cmd.Parameters.AddWithValue("@CantidadDias", paquete.CantidadDias);
                 cmd.Parameters.AddWithValue("@CantidadNoches", paquete.CantidadNoches);
-                cmd.Parameters.AddWithValue("@ProveedorHotel", paquete.ProveedorHotel);
-                cmd.Parameters.AddWithValue("@ProveedorBus", paquete.ProveedorBus);
+                cmd.Parameters.AddWithValue("@ProveedorHotel", paquete.ProveedorHotel.Id_ProvedorHotel);
+                cmd.Parameters.AddWithValue("@ProveedorBus", paquete.ProveedorBus.Id_ProvedorBus);
+                cmd.Parameters.AddWithValue("@Coste", paquete.Coste);
                 cmd.Parameters.AddWithValue("@GastosAdministrativos", paquete.GastosAdministrativos);
                 cmd.Parameters.AddWithValue("@PrecioEfectivo", paquete.PrecioEfectivo);
                 cmd.Parameters.AddWithValue("@PrecioLista", paquete.PrecioLista);
-                cmd.Parameters.AddWithValue("@Coste", paquete.Coste);
-                cmd.Parameters.AddWithValue("@FechaSalida", paquete.FechaSalida);
+                
                 cmd.Parameters.Add("@IdnuevoPaquete", SqlDbType.Int).Direction = ParameterDirection.Output;
                 cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
 
