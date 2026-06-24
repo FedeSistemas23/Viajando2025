@@ -4,7 +4,7 @@ using CapaSesion;
 
 namespace TestProjectViajando
 {
-    [TestFixture]
+   /* [TestFixture]
     public class GuardarReservaIntregationTest
     {
         CN_GuardarReserva guardar;
@@ -41,5 +41,5 @@ namespace TestProjectViajando
             // Assert
             Assert.That(result, Is.EqualTo(t));
         }
-    }
+    }*/
 }

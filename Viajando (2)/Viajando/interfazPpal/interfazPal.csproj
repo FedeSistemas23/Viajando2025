@@ -55,18 +55,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Frm Usuarios\frmAgregarUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm Usuarios\frmAgregarUsuario.Designer.cs">
-      <DependentUpon>frmAgregarUsuario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Frm Usuarios\FrmConfiguracionDeSeguridad.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm Usuarios\FrmConfiguracionDeSeguridad.Designer.cs">
-      <DependentUpon>FrmConfiguracionDeSeguridad.cs</DependentUpon>
-    </Compile>
     <Compile Include="Frm Usuarios\frm_AltaUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,12 +183,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Frm Usuarios\frmAgregarUsuario.resx">
-      <DependentUpon>frmAgregarUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm Usuarios\FrmConfiguracionDeSeguridad.resx">
-      <DependentUpon>FrmConfiguracionDeSeguridad.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Frm Usuarios\frm_AltaUsuario.resx">
       <DependentUpon>frm_AltaUsuario.cs</DependentUpon>
     </EmbeddedResource>

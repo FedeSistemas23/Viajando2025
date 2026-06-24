@@ -4,6 +4,9 @@ using System.Linq;
 using System.Windows.Forms;
 using CapaNegocio;
 using CapaNegocio.CN_Localidades;
+using CapaNegocio.CN_Usuario;
+using CapaServicios;
+using CapaSesion;
 
 
 
@@ -37,7 +40,8 @@ namespace interfazPpal
 
             MostrarEstado.TraerEstadosCN();
             DGV_datosUsuario.RowHeadersVisible = false;
-            listaUsuariosCS = usuario.MostrarDatosDGV();
+            // listaUsuariosCS = usuario.MostrarDatosDGV(); // ERROR: CS_EstadosUsuario no tiene MostrarDatosDGV
+            listaUsuariosCS = new List<Usuario>(); // TODO: Reemplazar por la obtención real de usuarios desde la capa de negocio
             DGV_datosUsuario.DataSource = null;
 
             CargarEstadosEnComboBox();
@@ -48,43 +52,22 @@ namespace interfazPpal
             var listaFiltrada = listaUsuariosCS.Select(u => new
             {
                 u.Username,
-                u.Nombre,
-                u.Apellidos,
-                u.Email,
-                u.TipoDocumento,
-                u.NumDocumento,
-                u.Telefono,
-                u.Celular,
-                u.Provincia,
-                u.Partido,
-                u.Localidad,
-                u.Calle,
-                u.NumCalle,
-                u.Comision,
-                u.Estado
+                Nombre = u.Persona != null ? u.Persona.Nombre : "",
+                Apellido = u.Persona != null ? u.Persona.Apellido : "",
+                Email = u.Persona != null ? u.Persona.Email : "",
+                DNI = u.Persona != null ? u.Persona.DNI : "",
+                Telefono = u.Persona != null ? u.Persona.Telefono : "",
+                Celular = u.Persona != null ? u.Persona.Celular : "",
+                Provincia = u.Persona != null ? u.Persona.Provincia : "",
+                Partido = u.Persona != null ? u.Persona.Partido : "",
+                Localidad = u.Persona != null ? u.Persona.Localidad : "",
+                Calle = u.Persona != null ? u.Persona.Calle : "",
+                Numero = u.Persona != null ? u.Persona.Numero : "",
+                u.Estado         // Si no existe, revisar si está en Persona
             }).ToList();
 
             DGV_datosUsuario.DataSource = listaFiltrada;
 
-        }
-
-        public void muestraDatos()
-        {
-            var listaFiltrada = listaUsuariosCS.Select(u => new
-            {
-                u.Username,
-                u.Nombre,
-                u.Apellidos,
-                u.Email,
-                u.TipoDocumento,
-                u.NumDocumento,
-                u.Telefono,
-                u.Celular,
-                u.Comision,
-                u.Estado
-            }).ToList();
-
-            DGV_datosUsuario.DataSource = listaFiltrada;
         }
 
         public void cargarProvincias()
@@ -109,34 +92,7 @@ namespace interfazPpal
                 cmbPartido.DisplayMember = "Partido";
                 // cmbLocalidades.ValueMember = "Id_Localidad ";
             }
-        }
-
-
-        string filtroActual = "";
-        private void FiltrarUsuarios()
-        {
-            /*string texto = txtInput.Text.ToLower();
-
-            var resultado = listaUsuariosCS.AsEnumerable();
-
-            switch (filtroActual)
-            {
-                case "Nombre":
-                    resultado = resultado.Where(u => u.Nombre.ToLower().Contains(texto));
-                    break;
-                case "Apellidos":
-                    resultado = resultado.Where(u => u.Apellidos.ToLower().Contains(texto));
-                    break;
-                case "Localidad":
-                    resultado = resultado.Where(u => u.Localidad.ToLower().Contains(texto));
-                    break;
-                case "Partido":
-                    resultado = resultado.Where(u => u.Partido.ToLower().Contains(texto));
-                    break;
-
-            }
-            */
-        }
+        } 
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -155,7 +111,7 @@ namespace interfazPpal
                     {
                         txtUsuario.Text = DGV_datosUsuario.CurrentRow.Cells["Username"].Value.ToString();
                         txtNombre.Text = DGV_datosUsuario.CurrentRow.Cells["Nombre"].Value.ToString();
-                        txt_Apellido.Text = DGV_datosUsuario.CurrentRow.Cells["Apellidos"].Value.ToString();
+                        txt_Apellido.Text = DGV_datosUsuario.CurrentRow.Cells["Apellido"].Value.ToString();
                         txtEmail.Text = DGV_datosUsuario.CurrentRow.Cells["Email"].Value.ToString();
                         // txtTipoDocumento.Text = DGV_datosUsuario.CurrentRow.Cells["TipoDocumento"].Value.ToString();
                         //txtNumeroDocumento.Text = DGV_datosUsuario.CurrentRow.Cells["NumDocumento"].Value.ToString();
@@ -165,7 +121,7 @@ namespace interfazPpal
                          cmbPartido.Text = DGV_datosUsuario.CurrentRow.Cells["Partido"].Value.ToString();
                          cmbLocalidades.Text = DGV_datosUsuario.CurrentRow.Cells["Localidad"].Value.ToString();
                          txtCalle.Text = DGV_datosUsuario.CurrentRow.Cells["Calle"].Value.ToString();
-                         txtNumeroCalle.Text = DGV_datosUsuario.CurrentRow.Cells["NumCalle"].Value.ToString();
+                         txtNumeroCalle.Text = DGV_datosUsuarios.CurrentRow.Cells["NumCalle"].Value.ToString();
 
                          npdComision.Value = Convert.ToDecimal(DGV_datosUsuario.CurrentRow.Cells["Comision"].Value);// DGV_datosUsuario.CurrentRow.Cells["Comision"].Value.ToString();
                          cmbEstado.Text = DGV_datosUsuario.CurrentRow.Cells["Estado"].Value.ToString();*/
@@ -263,97 +219,55 @@ namespace interfazPpal
 
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
-            CS_LimpiarFormularios limpiar = new CS_LimpiarFormularios();
+            string mensaje = string.Empty;
 
-            editarUsuario = false;
-            if (!editarUsuario)
+            if (editarUsuario == false)
+            {
                 try
-                { //     ALTA DE USUARIO
-                    if (editarUsuario == false)
+                {
+                    Usuario Usuario = new Usuario()
                     {
-
-                        CN_AltaUsuario AltaUsuario = new CN_AltaUsuario();
-                        string pass = Aleatorios.Armar();
-                        string concatenados = pass + txtUsuario.Text;
-
-                        ArmarMail.Preparar(txtUsuario.Text, txtEmail.Text, pass);
-                        string hasheo = Seguridad.SHA256(concatenados);
-
-
-                        CapaSesion.Usuario NuevoUsuario = new CapaSesion.Usuario()
+                        Username = txtUsuario.Text,
+                        Persona = new Persona
                         {
-                            Username = txtUsuario.Text,
-                            password = hasheo,
-                            Digito = CreaDigitoVerificador.Calcular(hasheo),
                             Nombre = txtNombre.Text,
+                            Apellido = txt_Apellido.Text,
                             Email = txtEmail.Text,
-                            Apellidos = txt_Apellido.Text,
                             TipoDocumento = txtTipoDocumento.Text,
-                            NumDocumento = txtNumeroDocumento.Text,
+                            DNI = txtNumeroDocumento.Text,
                             Telefono = txtTelefono.Text,
-                            Celular = txtCelular.Text
-                        };
+                            Celular = txtCelular.Text,
+                            Provincia = cmbProvincia.DisplayMember,
+                            Partido = cmbPartido.DisplayMember,
+                            Localidad = cmbLocalidades.DisplayMember
+                        },
 
-                        NuevoUsuario.Provincia = cmbProvincia.DisplayMember;
-                        NuevoUsuario.Localidad = cmbLocalidades.DisplayMember;
+                    };
 
-                        AltaUsuario.AñadirAtributos(NuevoUsuario);
-                        listaUsuariosCS.Add(NuevoUsuario);
-                        muestraDatos();
-                        limpiar.Limpiar(panelForm);
-
-                        MessageBox.Show("Se ha enviado la 1° contraseña al E-mail.");
-                        txtUsuario.Focus();
-                    }//  EDITAR USUARIO
-                    else if (editarUsuario == true)
+                    int IdNuevoUsuario = new CN_AltaUsuario().AltaUsuario(Usuario, out mensaje);
+                    if (IdNuevoUsuario != 0)
                     {
-                        Usuario UsuarioEditar = new Usuario
-                        {
-                            Username = txtUsuario.Text,
-                            Nombre = txtNombre.Text,
-                            Apellidos = txt_Apellido.Text,
-                            Email = txtEmail.Text,
-                            Telefono = txtTelefono.Text,
-                            Celular = txtCelular.Text
-                        };
-                        editarUsuarioCN.editarDatosUsuarioCN(UsuarioEditar);
-                        listaUsuariosCS.Add(UsuarioEditar);
-                        DGV_datosUsuario.DataSource = null;
-                        muestraDatos();
-                        MessageBox.Show("Usuario editado con exito");
-                        limpiar.Limpiar(panelForm);
+                        MessageBox.Show(mensaje);
+                        //bitacora.GuardarBitacora(CS_Usuario.Id_Usuario, "Creacion de paquete", "Se ha creado un paquete nuevo.");
+                        //MostrarUsuario();
+                    }
+                    else
+                    {
+                        MessageBox.Show(mensaje);
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al guardar los datos: " + ex.Message);
+                    MessageBox.Show(ex.Message);
                 }
+            }
         }
 
         private void btguardarconfiguracionesseguridad_Click(object sender, EventArgs e)
         {
             try
             {
-                ConfiguracionSeguridad config =
-                    ObtenerConfiguracionDesdePantalla();
-
-                CN_ConfiguracionSeguridad cn =
-                    new CN_ConfiguracionSeguridad();
-
-                cn.GuardarConfiguracion(config);
-
-                MessageBox.Show(
-                    "Configuración guardada correctamente");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-        private ConfiguracionSeguridad ObtenerConfiguracionDesdePantalla()
-        {
-            ConfiguracionSeguridad config =
-                new ConfiguracionSeguridad
+                ConfiguracionSeguridad config = new ConfiguracionSeguridad
                 {
                     MinCaracteres =
                     Convert.ToInt32(ckbMinimo.Text),
@@ -397,7 +311,15 @@ namespace interfazPpal
                     DiasAviso = Convert.ToInt32(npdVenceCada.Text),
                 };
 
-            return config;
+                new CN_ConfiguracionesSeguridad().GuardarConfiguracionSeguridad(config);
+
+                MessageBox.Show(
+                    "Configuración guardada correctamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

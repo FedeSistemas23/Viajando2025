@@ -30,7 +30,6 @@
         {
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
-            this.lblError2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panelCambioPass = new System.Windows.Forms.Panel();
@@ -38,7 +37,6 @@
             this.txtNewPass = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblError = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEnviar = new System.Windows.Forms.Button();
             this.txtRespuesta1 = new System.Windows.Forms.TextBox();
@@ -82,18 +80,6 @@
             this.btnMinimizar.TabIndex = 58;
             this.btnMinimizar.TabStop = false;
             // 
-            // lblError2
-            // 
-            this.lblError2.AutoSize = true;
-            this.lblError2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblError2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblError2.Location = new System.Drawing.Point(39, 432);
-            this.lblError2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblError2.Name = "lblError2";
-            this.lblError2.Size = new System.Drawing.Size(79, 23);
-            this.lblError2.TabIndex = 74;
-            this.lblError2.Text = "Error2 !!";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -110,7 +96,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(43, 169);
+            this.label5.Location = new System.Drawing.Point(151, 212);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(417, 23);
@@ -123,7 +109,7 @@
             this.panelCambioPass.Controls.Add(this.txtNewPass);
             this.panelCambioPass.Controls.Add(this.label3);
             this.panelCambioPass.Controls.Add(this.label2);
-            this.panelCambioPass.Location = new System.Drawing.Point(-8, 498);
+            this.panelCambioPass.Location = new System.Drawing.Point(92, 477);
             this.panelCambioPass.Margin = new System.Windows.Forms.Padding(4);
             this.panelCambioPass.Name = "panelCambioPass";
             this.panelCambioPass.Size = new System.Drawing.Size(599, 153);
@@ -137,7 +123,7 @@
             this.txtConfirmPass.Location = new System.Drawing.Point(52, 108);
             this.txtConfirmPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtConfirmPass.Name = "txtConfirmPass";
-            this.txtConfirmPass.Size = new System.Drawing.Size(499, 25);
+            this.txtConfirmPass.Size = new System.Drawing.Size(513, 25);
             this.txtConfirmPass.TabIndex = 23;
             // 
             // txtNewPass
@@ -147,7 +133,7 @@
             this.txtNewPass.Location = new System.Drawing.Point(53, 48);
             this.txtNewPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNewPass.Name = "txtNewPass";
-            this.txtNewPass.Size = new System.Drawing.Size(497, 25);
+            this.txtNewPass.Size = new System.Drawing.Size(511, 25);
             this.txtNewPass.TabIndex = 22;
             // 
             // label2
@@ -166,23 +152,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(41, 28);
+            this.label1.Location = new System.Drawing.Point(149, 71);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(195, 31);
             this.label1.TabIndex = 75;
             this.label1.Text = "Bienvenido ...!!";
-            // 
-            // lblError
-            // 
-            this.lblError.AutoSize = true;
-            this.lblError.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblError.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblError.Location = new System.Drawing.Point(40, 469);
-            this.lblError.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(72, 23);
-            this.lblError.TabIndex = 73;
-            this.lblError.Text = "Error..!!";
             // 
             // btnCancelar
             // 
@@ -218,7 +192,7 @@
             // 
             this.txtRespuesta1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtRespuesta1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRespuesta1.Location = new System.Drawing.Point(40, 254);
+            this.txtRespuesta1.Location = new System.Drawing.Point(148, 297);
             this.txtRespuesta1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtRespuesta1.Name = "txtRespuesta1";
             this.txtRespuesta1.Size = new System.Drawing.Size(509, 25);
@@ -229,7 +203,7 @@
             this.lblPregunta3.AutoSize = true;
             this.lblPregunta3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPregunta3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblPregunta3.Location = new System.Drawing.Point(39, 357);
+            this.lblPregunta3.Location = new System.Drawing.Point(147, 400);
             this.lblPregunta3.Name = "lblPregunta3";
             this.lblPregunta3.Size = new System.Drawing.Size(110, 23);
             this.lblPregunta3.TabIndex = 67;
@@ -240,7 +214,7 @@
             this.lblPregunta2.AutoSize = true;
             this.lblPregunta2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPregunta2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblPregunta2.Location = new System.Drawing.Point(40, 289);
+            this.lblPregunta2.Location = new System.Drawing.Point(148, 332);
             this.lblPregunta2.Name = "lblPregunta2";
             this.lblPregunta2.Size = new System.Drawing.Size(110, 23);
             this.lblPregunta2.TabIndex = 66;
@@ -251,7 +225,7 @@
             this.lblPregunta1.AutoSize = true;
             this.lblPregunta1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPregunta1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblPregunta1.Location = new System.Drawing.Point(41, 223);
+            this.lblPregunta1.Location = new System.Drawing.Point(149, 266);
             this.lblPregunta1.Name = "lblPregunta1";
             this.lblPregunta1.Size = new System.Drawing.Size(110, 23);
             this.lblPregunta1.TabIndex = 65;
@@ -262,7 +236,7 @@
             this.lblrecordarRespuestas.AutoSize = true;
             this.lblrecordarRespuestas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblrecordarRespuestas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblrecordarRespuestas.Location = new System.Drawing.Point(41, 138);
+            this.lblrecordarRespuestas.Location = new System.Drawing.Point(149, 181);
             this.lblrecordarRespuestas.Name = "lblrecordarRespuestas";
             this.lblrecordarRespuestas.Size = new System.Drawing.Size(227, 25);
             this.lblrecordarRespuestas.TabIndex = 64;
@@ -273,7 +247,7 @@
             this.lblcontestarPreguntas.AutoSize = true;
             this.lblcontestarPreguntas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblcontestarPreguntas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblcontestarPreguntas.Location = new System.Drawing.Point(33, 107);
+            this.lblcontestarPreguntas.Location = new System.Drawing.Point(141, 150);
             this.lblcontestarPreguntas.Name = "lblcontestarPreguntas";
             this.lblcontestarPreguntas.Size = new System.Drawing.Size(479, 25);
             this.lblcontestarPreguntas.TabIndex = 63;
@@ -283,7 +257,7 @@
             // 
             this.txtRespuesta2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtRespuesta2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRespuesta2.Location = new System.Drawing.Point(40, 321);
+            this.txtRespuesta2.Location = new System.Drawing.Point(148, 364);
             this.txtRespuesta2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtRespuesta2.Name = "txtRespuesta2";
             this.txtRespuesta2.Size = new System.Drawing.Size(509, 25);
@@ -293,7 +267,7 @@
             // 
             this.txtRespuesta3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtRespuesta3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRespuesta3.Location = new System.Drawing.Point(40, 384);
+            this.txtRespuesta3.Location = new System.Drawing.Point(148, 427);
             this.txtRespuesta3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtRespuesta3.Name = "txtRespuesta3";
             this.txtRespuesta3.Size = new System.Drawing.Size(508, 25);
@@ -305,7 +279,7 @@
             this.lblprimerIngreso.AutoSize = true;
             this.lblprimerIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblprimerIngreso.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblprimerIngreso.Location = new System.Drawing.Point(41, 76);
+            this.lblprimerIngreso.Location = new System.Drawing.Point(149, 119);
             this.lblprimerIngreso.Name = "lblprimerIngreso";
             this.lblprimerIngreso.Size = new System.Drawing.Size(446, 25);
             this.lblprimerIngreso.TabIndex = 62;
@@ -340,14 +314,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(640, 736);
+            this.ClientSize = new System.Drawing.Size(859, 736);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.lblError2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panelCambioPass);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEnviar);
             this.Controls.Add(this.txtRespuesta1);
@@ -381,7 +353,6 @@
         #endregion
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.PictureBox btnMinimizar;
-        private System.Windows.Forms.Label lblError2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panelCambioPass;
@@ -389,7 +360,6 @@
         private System.Windows.Forms.TextBox txtNewPass;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnEnviar;
         private System.Windows.Forms.TextBox txtRespuesta1;

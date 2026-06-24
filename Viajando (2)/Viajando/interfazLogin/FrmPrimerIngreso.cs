@@ -18,7 +18,6 @@ namespace interfazLogin
     public partial class FrmPrimerIngreso : Form
     {        
         CN_UsuarioEnSesion usuario = new CN_UsuarioEnSesion();
-        string[] preguntas;
         CN_GuardaRespuestas guardarrespuestas = new CN_GuardaRespuestas();
         CN_GuardarPrimerIngreso primerIngreso = new CN_GuardarPrimerIngreso();
         
@@ -31,13 +30,14 @@ namespace interfazLogin
         private void PrimerIngreso_Load(object sender, EventArgs e)
         {
             //btnEnviar.Enabled = false;          
-            FrmEditarPassword cambioContraseña = new FrmEditarPassword();  
-            preguntas = usuario.PreguntasAleatoriasL();
+            //FrmEditarPassword cambioContraseña = new FrmEditarPassword();
+            
+            PreguntasSeguridad[] preguntasAleatoriasPrimerIngreso = new CN_PreguntasSeguridadPrimerIngreso().PreguntasAleatorias();
             for (int i = 0; i < 1; i++)
             {
-                lblPregunta1.Text = preguntas[0];
-                lblPregunta2.Text = preguntas[1];
-                lblPregunta3.Text = preguntas[2];               
+                lblPregunta1.Text = preguntasAleatoriasPrimerIngreso[0].ToString();
+                lblPregunta2.Text = preguntasAleatoriasPrimerIngreso[1].ToString();
+                lblPregunta3.Text = preguntasAleatoriasPrimerIngreso[2].ToString();
             }            
         }
         public void Txtvacios(string txtRespuesta1, string txtRespuesta2, string txtRespuesta3)
@@ -55,6 +55,7 @@ namespace interfazLogin
         private void btnEnviar_Click_1(object sender, EventArgs e)
         {
             FrmEditarPassword cambioContraseña = new FrmEditarPassword();
+
             PreguntasSeguridad.respuesta1 = txtRespuesta1.Text;
             PreguntasSeguridad.respuesta2 = txtRespuesta2.Text;
             PreguntasSeguridad.respuesta3 = txtRespuesta3.Text;           

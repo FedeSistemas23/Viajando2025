@@ -6,7 +6,6 @@ using System.Data.SqlClient;
 
 namespace CapaDatos
 {
-
     public class CD_MostrarPaquete : Conexion
     {
         public List<Paquete> MostrarPaquetes()

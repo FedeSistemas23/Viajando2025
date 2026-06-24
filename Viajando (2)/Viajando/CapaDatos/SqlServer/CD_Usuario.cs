@@ -297,54 +297,7 @@ namespace CapaDatos
                 conexion.CerrarConexion();
             }
         }
-        public string[] PreguntasAleatorias()
-        {
-            cmd.Connection = conexion.AbrirConexion();
-            cmd.CommandText = "PreguntasAleatorias";
-            cmd.CommandType = CommandType.StoredProcedure;
-            SqlDataReader leer = cmd.ExecuteReader();
-            string[] preguntasAleatorias = new string[3];
-            //int[] id_preguntas = new int[3];
-           // List<Respuestas> listarespuesta = new List<Respuestas>();
-            try
-            {
-                if (leer.HasRows)
-                {
-                    int contador = 1;
-                    while (leer.Read() && contador <= 3)
-                    {
-                        if (contador == 1)
-                        {
-                            preguntasAleatorias[0] = leer["Pregunta"].ToString();
-                            PreguntasSeguridad.id_preg1= leer.GetInt32(leer.GetOrdinal("Id_Preg")) ;
-                            
-                        }
-                        else if (contador == 2)
-                        {
-                            preguntasAleatorias[1] = leer["Pregunta"].ToString();
-                            PreguntasSeguridad.id_preg2= leer.GetInt32(leer.GetOrdinal("Id_Preg"));
-                        }
-                        else if (contador == 3)
-                        {
-                            preguntasAleatorias[2] = leer["Pregunta"].ToString();
-                            PreguntasSeguridad.id_preg3= leer.GetInt32(leer.GetOrdinal("Id_Preg"));
-                        }
-                        contador++;
-                    }                                        
-                }
-                return preguntasAleatorias;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error al ejecutar SP o Conexion a la BD. \n \n" + ex.Message);
-            }
-            finally
-            {
-                leer.Close();
-                conexion.CerrarConexion();
-            }
-        }
-
+        
 
 
         

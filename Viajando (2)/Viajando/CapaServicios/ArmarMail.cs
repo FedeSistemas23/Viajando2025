@@ -11,7 +11,7 @@ using System.Globalization;
 
 namespace CapaServicios
 {
-    public class ArmarMail
+    public static class ArmarMail
     {
         public void Preparar(string username, string email, string aleatorio)
         {

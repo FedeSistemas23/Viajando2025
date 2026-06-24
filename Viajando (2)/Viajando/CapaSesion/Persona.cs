@@ -16,6 +16,8 @@ namespace CapaSesion
 
         public DateTime FechaNacimiento { get; set; }
 
+        public string TipoDocumento { get; set; }   
+
         public string DNI { get; set; }
 
         public string Email { get; set; }

@@ -257,10 +257,12 @@ namespace interfazPpal
             {
                 if (cmbHotel.SelectedIndex > 0)
                 {
+
                     int Id_Hotel = Convert.ToInt32(cmbHotel.ValueMember);
                     
                     List<Hotel> listaHoteles = new CN_CargaComboHotel().CargaComboHotelL(Id_Hotel, out mensaje);
                     
+
                     if (listaHoteles != null)
                     {
                         foreach (Hotel hotel in listaHoteles)
@@ -368,7 +370,7 @@ namespace interfazPpal
                     {
                         Hotel hotelpordefecto = new Hotel();
                         hotelpordefecto.Id_ProvedorHotel = 0;
-                        hotelpordefecto.NombreDelHotel = "Seleccione el Destino";
+                        hotelpordefecto.NombreDelHotel = "Seleccione el Hotel";
 
                         // 3. Insertar el elemento por defecto en la primera posición (índice 0)
                         listaHoteles.Insert(0, hotelpordefecto);
@@ -395,9 +397,11 @@ namespace interfazPpal
                     List<Bus> listaBuses = new List<Bus>(new CN_CargaComboBus().CargaComboBusL(id_destino, out mensaje));
                     if (listaBuses.Count > 0)
                     {
+
                         Bus buspordefecto = new Bus();
                         buspordefecto.Id_ProvedorBus = 0;
                         buspordefecto.NombreBus = "Seleccione el Destino";
+
 
                         // 3. Insertar el elemento por defecto en la primera posición (índice 0)
                         listaBuses.Insert(0, buspordefecto);
