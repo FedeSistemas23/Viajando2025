@@ -11,15 +11,18 @@ namespace CapaNegocio
 {
     public class CN_EditarReserva:Reserva
     {
-        readonly bool permitirEditar = true;
-        CD_EditarReserva editar = new CD_EditarReserva();
-
-        public bool EditarReservaCN(Reserva reserva )
+        public bool EditarReservaCN( Reserva reserva, out string mensaje)
         {
-            if( editar.EditarReserva_CD(reserva))
-                   return true;
-                    return false;
-            
+            mensaje = string.Empty;
+
+            if (mensaje != string.Empty)
+            {
+                return false;
+            }
+            else
+            {
+                return new CD_EditarReserva().EditarReserva_CD( reserva, out mensaje);
+            }    
         }
     }
 }

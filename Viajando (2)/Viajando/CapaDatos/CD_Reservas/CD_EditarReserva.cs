@@ -11,8 +11,9 @@ namespace CapaDatos
 {
     public class CD_EditarReserva : Conexion
     {
-        public bool EditarReserva_CD(Reserva reserva)
+        public bool EditarReserva_CD(Reserva reserva, out string mensaje)
         {
+            bool respuesta = false;
             mensaje = string.Empty;
 
             try
@@ -21,10 +22,9 @@ namespace CapaDatos
                 {
                     using (SqlCommand cmd = new SqlCommand("EditarReserva", connection))
                     {
-                        cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@NroReserva", reserva.NroReserva);
-                        cmd.Parameters.AddWithValue("@Id_pasajero", reserva.Id_pasajero);
-                        cmd.Parameters.AddWithValue("@Id_Paquete", reserva.Id_Paquete);
+                        cmd.Parameters.AddWithValue("@Id_pasajero", reserva.pasajero.Id_Pasajero);
+                        cmd.Parameters.AddWithValue("@Id_Paquete", reserva.Paquete.Id_Paquete);
                         cmd.Parameters.AddWithValue("@CantidadPasajeros", reserva.CantidadPasajeros);
                         cmd.Parameters.AddWithValue("@Id_Vendedor", reserva.Id_Vendedor);
                         cmd.Parameters.AddWithValue("@NombreVendedor", reserva.NombreVendedor);
@@ -32,15 +32,14 @@ namespace CapaDatos
                         cmd.Parameters.AddWithValue("@FechaSalida", reserva.FechaSalida);
                         cmd.Parameters.AddWithValue("@fecha", reserva.FechaReserva);
                         cmd.Parameters.AddWithValue("@fechaRegreso", reserva.FechaRegreso);
-
-
+                        cmd.Parameters.Add("Respuesta", SqlDbType.Bit).Direction = ParameterDirection.Output;
                         cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
 
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.ExecuteNonQuery();
 
-                        using (SqlDataReader leer = cmd.ExecuteNonQuery())
-
-
-                            return true;
+                        respuesta = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value);
+                        mensaje = cmd.Parameters["@Mensaje"].Value.ToString();
                     }
                 }
             }
@@ -48,8 +47,9 @@ namespace CapaDatos
             catch (Exception ex)
             {
                 mensaje = ex.Message;
-                return false;
+                respuesta = false;
             }
+            return respuesta;
         }
     }
 }

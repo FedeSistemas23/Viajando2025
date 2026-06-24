@@ -17,12 +17,12 @@ namespace Loggin
         {
             InitializeComponent();
         }
-        public CrearReserva(int id , string nombre , DateTime FechaSalida , DateTime fechaRegreso, int Disponibilidad )
+        public CrearReserva(int id, string nombre, DateTime FechaSalida, DateTime fechaRegreso, int Disponibilidad)
         {
             InitializeComponent();
             cbxDestino.Text = nombre;
             lbl_IdDestino.Text = Convert.ToString(id);
-            dtpFechaSalida.Value = FechaSalida ;
+            dtpFechaSalida.Value = FechaSalida;
             dtpFechaRegreso.Value = fechaRegreso;
         }
 
@@ -63,54 +63,9 @@ namespace Loggin
         private void CrearReserva_Load(object sender, EventArgs e)
         {
             MuestraNumReserva Nreserva = new MuestraNumReserva();
-            CN_MostrarReserva mostrar = new CN_MostrarReserva();
-
-            txtNumeroReserva.Text = Convert.ToString(Nreserva.MostrarNumReservaCN());
-            mostrar.MostrarReservaCN();
-
-            dgvReservas.DataSource = mostrar.MostrarReservaCN();
+            dgvReservas.DataSource = new CN_MostrarReserva().MostrarReservaCN();
+            txtNumeroReserva.Text = Convert.ToString(Nreserva.MostrarNumReservaCN());  
         }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            FrmCargaPasajeros frm = new FrmCargaPasajeros();
-            frm.ShowDialog();
-
-        }
-        public void muestraDatosEnTextbox(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow filaSeleccionada = dgvReservas.Rows[e.RowIndex];
-                txtNumeroReserva.Text = filaSeleccionada.Cells["NroReserva"].Value.ToString();
-                cbxDestino.Text = filaSeleccionada.Cells["Destino"].Value.ToString();
-                dtpFechaSalida.Text = filaSeleccionada.Cells["FechaSalida"].Value.ToString();
-                dtpFechaRegreso.Text = filaSeleccionada.Cells["FechaRegreso"].Value.ToString();
-                npdCantidadPax.Text = filaSeleccionada.Cells["CantidadPax"].Value.ToString();
-                npdCamaMatrimonial.Text = filaSeleccionada.Cells["CamaMatrimonialx"].Value.ToString();
-                npdDoble.Text = filaSeleccionada.Cells["CAntMenores"].Value.ToString();
-                npdAsientosSemiCama.Text = filaSeleccionada.Cells["SemiCama"].Value.ToString();
-                npdAsientosCama.Text = filaSeleccionada.Cells["AsientosCama"].Value.ToString();
-                npdCantHabitaciones.Text = filaSeleccionada.Cells["CantidadHabitaciones"].Value.ToString();
-                npdSingle.Text = filaSeleccionada.Cells["Single"].Value.ToString();
-                npdDoble.Text = filaSeleccionada.Cells["Doble"].Value.ToString(); cbxDestino.Text = filaSeleccionada.Cells["Destino"].Value.ToString();
-                npdTriple.Text = filaSeleccionada.Cells["Triple"].Value.ToString();
-                npdCuadruple.Text = filaSeleccionada.Cells["Cuadruple"].Value.ToString();
-                txtAscenso.Text = filaSeleccionada.Cells["AscensoMicro"].Value.ToString();
-                npdCamaSimple.Text = filaSeleccionada.Cells["CamaSimple"].Value.ToString();
-                npdCamaMatrimonial.Text = filaSeleccionada.Cells["CamaMatrimonial"].Value.ToString();
-                ckbCotizar.Text = filaSeleccionada.Cells["Cotizar"].Value.ToString();
-                txtSeña.Text = filaSeleccionada.Cells["Senia"].Value.ToString();
-                txtObservaciones.Text = filaSeleccionada.Cells["Observacion"].Value.ToString();
-                txtNombre.Text = filaSeleccionada.Cells["Nombre"].Value.ToString();
-                txtApellido.Text = filaSeleccionada.Cells["Apellido"].Value.ToString();
-                ckbAdicionalCama.Text = filaSeleccionada.Cells["AdicionalCama"].Value.ToString();
-                txtVendedor.Text = filaSeleccionada.Cells["Vendedor"].Value.ToString();
-                txtAscenso.Text = filaSeleccionada.Cells["AscensMicro"].Value.ToString();
-            }
-        }
-
-        
 
         private void btnVer_Click(object sender, EventArgs e)
         {
@@ -120,8 +75,8 @@ namespace Loggin
 
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
-            CN_MostrarReserva mostrar = new CN_MostrarReserva();
-            CN_GuardarReserva reservaNueva = new CN_GuardarReserva();
+            string mensaje = string.Empty;
+
             if (editar == false)
             {
                 if (this.ValidarControles())
@@ -132,7 +87,7 @@ namespace Loggin
 
                         {
                             NroReserva = Convert.ToInt32(txtNumeroReserva.Text),
-                            Id_Paquete = Convert.ToInt32(lbl_IdDestino.Text),
+                            Paquete = new Paquete() { Id_Paquete = Convert.ToInt32(cbxDestino.ValueMember) },
                             CantidadPasajeros = Convert.ToInt32(npdCantidadPax.Value),
                             CantMenorTres = Convert.ToInt32(npdDoble.Value),
                             AsientosCama = Convert.ToInt32(npdAsientosCama.Value),
@@ -150,17 +105,19 @@ namespace Loggin
                             FechaSalida = dtpFechaSalida.Value,
                             FechaRegreso = dtpFechaRegreso.Value,
                             FechaReserva = DateTime.Now,
-                            NombreTitular = txtNombre.Text,
-                            ApellidoTitular = txtApellido.Text,
+                            Pasajero = new Pasajero()
+                            {
+                                nombre = txtNombre.Text,
+                                apellido = txtApellido.Text,
+                            },
                             AdicionalCama = Convert.ToBoolean(ckbAdicionalCama.Checked),
                             Habitaciones = Convert.ToInt32(npdCantHabitaciones.Value),
                             NombreVendedor = txtVendedor.Text,
-                            Destino = cbxDestino.Text,
                         };
 
-                        bool guardada = reservaNueva.GuardarReservaCN(reserva);
-                        reserva.AgregarLista(reserva);
-                        if (guardada == true)
+                        int nuevaReserva = new CN_GuardarReserva().GuardarReservaCN(reserva, out mensaje);
+                        
+                        if (nuevaReserva != 0)
                         {
                             reserva.AgregarLista(reserva);
 
@@ -179,13 +136,13 @@ namespace Loggin
                         {
                             panelMsg.Visible = true;
                             lblMsgOk.Visible = true;
-                            lblMsgOk.Text = "Ha ocurrido un error al cargar la reserva";
+                            MessageBox.Show(mensaje);
                         }
                         dgvReservas.DataSource = mostrar.MostrarReservaCN();
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error al cargar la reserva, intente de nuevo: " + ex);
+                        MessageBox.Show(ex.Message);
                     }
                 }
                 else
@@ -200,7 +157,7 @@ namespace Loggin
 
                 {
                     NroReserva = Convert.ToInt32(txtNumeroReserva.Text),
-                    Id_Paquete = Convert.ToInt32(lbl_IdDestino.Text),
+                    Paquete = new Paquete() { Id_Paquete = Convert.ToInt32(cbxDestino.ValueMember) },
                     CantidadPasajeros = Convert.ToInt32(npdCantidadPax.Value),
                     CantMenorTres = Convert.ToInt32(npdDoble.Value),
                     AsientosCama = Convert.ToInt32(npdAsientosCama.Value),
@@ -218,12 +175,14 @@ namespace Loggin
                     FechaSalida = dtpFechaSalida.Value,
                     FechaRegreso = dtpFechaRegreso.Value,
                     FechaReserva = DateTime.Now,
-                    NombreTitular = txtNombre.Text,
-                    ApellidoTitular = txtApellido.Text,
+                    Pasajero = new Pasajero()
+                    {
+                        nombre = txtNombre.Text,
+                        apellido = txtApellido.Text,
+                    },
                     AdicionalCama = Convert.ToBoolean(ckbAdicionalCama.Checked),
                     Habitaciones = Convert.ToInt32(npdCantHabitaciones.Value),
-                    NombreVendedor = txtVendedor.Text,
-                    Destino = cbxDestino.Text,
+                    NombreVendedor = txtVendedor.Text, 
                 };
 
                 if (reservaEditar.EditarReservaCN(reserva))
@@ -265,7 +224,7 @@ namespace Loggin
                 }
                 else
                 {
-                    npdAsientosCama.Value = 0; 
+                    npdAsientosCama.Value = 0;
                 }
                 var CantHabitaciones = dgvReservas.CurrentRow.Cells["Habitaciones"].Value;
 
@@ -298,7 +257,7 @@ namespace Loggin
                 }
                 else
                 {
-                    npdDoble.Value = 0; 
+                    npdDoble.Value = 0;
                 }
 
                 var Triple = dgvReservas.CurrentRow.Cells["Triple"].Value;
@@ -308,7 +267,7 @@ namespace Loggin
                 }
                 else
                 {
-                    npdTriple.Value = 0; 
+                    npdTriple.Value = 0;
                 }
                 var Cuadruple = dgvReservas.CurrentRow.Cells["Cuadruple"].Value;
 
@@ -329,7 +288,7 @@ namespace Loggin
                 }
                 else
                 {
-                    npdCamaSimple.Value = 0; 
+                    npdCamaSimple.Value = 0;
                 }
                 var CamaMatrimonial = dgvReservas.CurrentRow.Cells["CamaMatrimonial"].Value;
                 if (CamaMatrimonial != DBNull.Value)
@@ -348,7 +307,7 @@ namespace Loggin
                 ckbAdicionalCama.Text = dgvReservas.CurrentRow.Cells["AdicionalCama"].Value.ToString();
                 txtVendedor.Text = dgvReservas.CurrentRow.Cells["NombreVendedor"].Value.ToString();
                 //txtAscenso.Text = dgvReservas.CurrentRow.Cells["AscensoM"].Value.ToString();
-               // dtpFechaReserva.Text = dgvReservas.CurrentRow.Cells["fecha"].Value.ToString();
+                // dtpFechaReserva.Text = dgvReservas.CurrentRow.Cells["fecha"].Value.ToString();
             }
         }
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -383,31 +342,11 @@ namespace Loggin
             }
         }
 
-        private void npdCantHabitaciones_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void npdCantidadPax_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void ckbDestino_CheckedChanged(object sender, EventArgs e)
         {
             this.Close();
             FrmBuscarPaquete frm = new FrmBuscarPaquete();
             frm.ShowDialog();
-        }
-
-        private void ckbNumRerva_CheckedChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void ckbFechaRegreso_CheckedChanged(object sender, EventArgs e)
@@ -416,36 +355,43 @@ namespace Loggin
             frm.ShowDialog();
         }
 
-        private void button6_Click_1(object sender, EventArgs e)
+        private void dgvReservas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow filaSeleccionada = dgvReservas.Rows[e.RowIndex];
+
+            if (e.RowIndex >= 0)
+            {
+                txtNumeroReserva.Text = filaSeleccionada.Cells["NroReserva"].Value.ToString();
+                cbxDestino.Text = filaSeleccionada.Cells["Destino"].Value.ToString();
+                dtpFechaSalida.Text = filaSeleccionada.Cells["FechaSalida"].Value.ToString();
+                dtpFechaRegreso.Text = filaSeleccionada.Cells["FechaRegreso"].Value.ToString();
+                npdCantidadPax.Text = filaSeleccionada.Cells["CantidadPax"].Value.ToString();
+                npdCamaMatrimonial.Text = filaSeleccionada.Cells["CamaMatrimonialx"].Value.ToString();
+                npdDoble.Text = filaSeleccionada.Cells["CAntMenores"].Value.ToString();
+                npdAsientosSemiCama.Text = filaSeleccionada.Cells["SemiCama"].Value.ToString();
+                npdAsientosCama.Text = filaSeleccionada.Cells["AsientosCama"].Value.ToString();
+                npdCantHabitaciones.Text = filaSeleccionada.Cells["CantidadHabitaciones"].Value.ToString();
+                npdSingle.Text = filaSeleccionada.Cells["Single"].Value.ToString();
+                npdDoble.Text = filaSeleccionada.Cells["Doble"].Value.ToString(); cbxDestino.Text = filaSeleccionada.Cells["Destino"].Value.ToString();
+                npdTriple.Text = filaSeleccionada.Cells["Triple"].Value.ToString();
+                npdCuadruple.Text = filaSeleccionada.Cells["Cuadruple"].Value.ToString();
+                txtAscenso.Text = filaSeleccionada.Cells["AscensoMicro"].Value.ToString();
+                npdCamaSimple.Text = filaSeleccionada.Cells["CamaSimple"].Value.ToString();
+                npdCamaMatrimonial.Text = filaSeleccionada.Cells["CamaMatrimonial"].Value.ToString();
+                ckbCotizar.Text = filaSeleccionada.Cells["Cotizar"].Value.ToString();
+                txtSeña.Text = filaSeleccionada.Cells["Senia"].Value.ToString();
+                txtObservaciones.Text = filaSeleccionada.Cells["Observacion"].Value.ToString();
+                txtNombre.Text = filaSeleccionada.Cells["Nombre"].Value.ToString();
+                txtApellido.Text = filaSeleccionada.Cells["Apellido"].Value.ToString();
+                ckbAdicionalCama.Text = filaSeleccionada.Cells["AdicionalCama"].Value.ToString();
+                txtVendedor.Text = filaSeleccionada.Cells["Vendedor"].Value.ToString();
+                txtAscenso.Text = filaSeleccionada.Cells["AscensMicro"].Value.ToString();
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
 
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

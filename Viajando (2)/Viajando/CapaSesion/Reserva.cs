@@ -13,7 +13,7 @@ namespace CapaSesion
     public class Reserva
     {
         public int NroReserva { get; set; }
-        public Pasajero pasajero { get; set; }
+        public Pasajero Pasajero { get; set; }
         public Paquete Paquete { get; set; }
         public int? NroPago { get; set; }
         public int CantidadPasajeros { get; set; }
@@ -50,12 +50,7 @@ namespace CapaSesion
             var reservaNueva = ListReserva.Where(p => p.NroReserva == reserva.NroReserva).ToList();
 
             return reservaNueva;
-
-
-        }
-
-
-
+        } 
     }
 }
 

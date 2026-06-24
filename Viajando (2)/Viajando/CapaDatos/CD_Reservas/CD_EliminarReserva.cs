@@ -9,39 +9,39 @@ using CapaSesion;
 
 namespace CapaDatos
 {
-    public class CD_EliminarReserva
+    public class CD_EliminarReserva : Conexion
     {
-
-        SqlCommand cmd = new SqlCommand();
-        Conexion conexion = new Conexion();
-        public bool EliminarReservaCD(int NroReserva)
+        public bool EliminarReserva_CD(int nroreserva, out string mensaje)
         {
+
+            bool respuesta = false;
+            mensaje = string.Empty;
+
             try
             {
-                cmd.Connection = conexion.AbrirConexion();
-                cmd.CommandText = "EliminarReserva";
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@NroReserva",NroReserva);
-                cmd.ExecuteNonQuery();
-                cmd.Parameters.Clear();
-                conexion.CerrarConexion();
-                return true;
+                using (SqlConnection connection = AbrirConexion())
+                {
+                    using (SqlCommand cmd = new SqlCommand("EliminarReserva", connection))
+                    {
+                        cmd.Parameters.AddWithValue("@NroReserva", nroreserva);
+
+                        cmd.Parameters.Add("Respuesta", SqlDbType.Bit).Direction = ParameterDirection.Output;
+                        cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.ExecuteNonQuery();
+
+                        respuesta = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value);
+                        mensaje = cmd.Parameters["@Mensaje"].Value.ToString();
+                    }
+                }
             }
             catch (Exception ex)
             {
-                return false;
-                throw new Exception("Error al ejecutar SP o Conexion a la BD. \n \n" + ex.Message);
-               
+                mensaje = ex.Message;
+                respuesta = false;
             }
-            finally
-            {
-                cmd.Parameters.Clear();
-                conexion.CerrarConexion();
-                
-            }
-
+            return respuesta;
         }
-
-
     }
 }
