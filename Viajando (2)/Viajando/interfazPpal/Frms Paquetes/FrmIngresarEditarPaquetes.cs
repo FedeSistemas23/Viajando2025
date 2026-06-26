@@ -3,6 +3,7 @@ using CapaServicios;
 using CapaSesion;
 using Loggin;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Windows.Forms;
@@ -212,42 +213,23 @@ namespace interfazPpal
         }
         public void CargarComboDestino()
         {
-            List<Destino> listaDestinos = new List<Destino>(new CN_CargarComboDestino().CargarComboDestinosL());
+            string mensaje = string.Empty;
+            List<Destino> listaDestinos = new CN_CargarComboDestino().CargarComboDestinosL(out mensaje);
             cmbDestino.Items.Clear();
 
-            // 2. Crear el elemento por defecto "Seleccione el Destino" con un ID neutro (ej. 0)
-            Destino destinoPorDefecto = new Destino();
-            destinoPorDefecto.Id_Destino = 0;
-            destinoPorDefecto.Nombre = "Seleccione el Destino";
+            listaDestinos.Insert(0, new Destino
+            {
+                Id_Destino = 0,
+                Nombre = "Seleccione un destino"
+            });
 
-            // 3. Insertar el elemento por defecto en la primera posición (índice 0)
-            listaDestinos.Insert(0, destinoPorDefecto);
 
-            // 4. Configurar las propiedades del ComboBox
-            cmbDestino.ValueMember = "Id_Destino"; // Nombre exacto de la propiedad ID en tu clase Destino
-            cmbDestino.DisplayMember = "Nombre";    // Nombre exacto de la propiedad Nombre en tu clase Destino
-
-            // 5. Asignar la lista como origen de datos (esto limpia automáticamente los ítems previos)
+            cmbDestino.DisplayMember = "Nombre";
+            cmbDestino.ValueMember = "Id_Destino";
             cmbDestino.DataSource = listaDestinos;
 
-            // 6. Seleccionar el primer elemento por defecto
-            cmbDestino.SelectedIndex = 0;
-
-
-
-            /*// Limpia el ComboBox
-            // Agrega la frase en la primera posición
-            cmbDestino.Items.Add("Seleccione el Destino");
-
-            // Luego, agrega los elementos de la lista
-            foreach (Destino destino in listaDestinos)
-            {
-                cmbDestino.Items.Add(destino.Nombre);
-                txtid_destino.Text = destino.Id_Destino.ToString();
-            }
-
-            // Opcional: Establece "Seleccione el Destino" como el elemento seleccionado predeterminado
-            cmbDestino.SelectedIndex = 0;*/
+            cmbBus.Enabled = false;
+            cmbHotel.Enabled = false;
         }
 
         private void cmbHotel_SelectedIndexChanged(object sender, EventArgs e)
@@ -362,7 +344,7 @@ namespace interfazPpal
                 if (cmbDestino.SelectedIndex > 0)
                 {
                     txtid_destino.Text = cmbDestino.SelectedValue.ToString();
-                    int id_destino = Convert.ToInt32(cmbDestino.ValueMember);
+                    int id_destino = Convert.ToInt32(cmbDestino.SelectedValue);
                    
                     List<Hotel> listaHoteles = new List<Hotel>(new CN_CargaComboHotel().CargaComboHotelL(id_destino, out mensaje));
                     

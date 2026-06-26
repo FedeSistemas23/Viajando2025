@@ -11,43 +11,39 @@ namespace CapaDatos
 {
     public class CD_CargarComboDestinos : Conexion
     {
-        SqlCommand cmd = new SqlCommand();
         Conexion conexion = new Conexion();
-        List<Destino> destinos = new List<Destino>();
-        public List<Destino> CargarComboDestinosD()
+        public List<Destino> CargarComboDestinosD(out string mensaje)
         {
-            SqlDataReader leer;
+            mensaje = string.Empty;
+            var destinos = new List<Destino>();
+
             try
             {
-                cmd.Connection = conexion.AbrirConexion();
-                cmd.CommandText = "CargarComboDestinos";
-                cmd.CommandType = CommandType.StoredProcedure;
-                leer = cmd.ExecuteReader();
-                if (leer != null )
+                using (SqlConnection conn = conexion.AbrirConexion())
+                using (SqlCommand cmd = new SqlCommand("CargarComboDestinos", conn))
                 {
-                    while ( leer.Read())
-                    {
-                        destinos.Add(new Destino
-                        {
-                            Nombre = leer["Nombre"].ToString(),
-                            Id_Destino = Convert.ToInt32(leer["Id_Destino"])
-                        });
-                        
+                    cmd.CommandType = CommandType.StoredProcedure;
 
+                    using (SqlDataReader leer = cmd.ExecuteReader())
+                    {
+                        while (leer.Read())
+                        {
+                            destinos.Add(new Destino
+                            {
+                                Nombre = leer["Nombre"].ToString(),
+                                Id_Destino = Convert.ToInt32(leer["Id_Destino"])
+                            });
+                        }
                     }
                 }
-               
+
                 return destinos;
             }
             catch (Exception ex)
             {
-                throw new Exception("Error al ejecutar SP o Conexion a la BD. \n \n" + ex.Message);
+                mensaje = ex.Message;
+                return new List<Destino>();
             }
-            finally
-            {
-                conexion.CerrarConexion();
-            }
-
         }
     }
 }

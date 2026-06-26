@@ -12,9 +12,10 @@ namespace CapaNegocio
     public class CN_CargarComboDestino
     {
         CD_CargarComboDestinos destino = new CD_CargarComboDestinos();
-        public List<Destino> CargarComboDestinosL()
+        public List<Destino> CargarComboDestinosL( out string mensaje)
         {
-            List<Destino> lista = new List<Destino>(destino.CargarComboDestinosD());
+            string mensaje = string.Empty;
+            List<Destino> lista = new List<Destino>(destino.CargarComboDestinosD(mensaje));
            
             
             if (destino != null)
