@@ -227,6 +227,10 @@ namespace interfazPpal
             cmbDestino.DisplayMember = "Nombre";
             cmbDestino.ValueMember = "Id_Destino";
             cmbDestino.DataSource = listaDestinos;
+            if (!string.IsNullOrEmpty(mensaje))
+            {
+                MessageBox.Show(mensaje, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
             cmbBus.Enabled = false;
             cmbHotel.Enabled = false;
