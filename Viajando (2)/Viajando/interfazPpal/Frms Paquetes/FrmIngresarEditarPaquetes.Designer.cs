@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -66,7 +66,6 @@
             this.lblTriples = new System.Windows.Forms.Label();
             this.lblDoble = new System.Windows.Forms.Label();
             this.lblCantidadHabitaciones = new System.Windows.Forms.Label();
-            this.npdDisponibilidad = new System.Windows.Forms.NumericUpDown();
             this.lblDisponibilidad = new System.Windows.Forms.Label();
             this.npdAsientosCama = new System.Windows.Forms.NumericUpDown();
             this.lbbAsientosSemicama = new System.Windows.Forms.Label();
@@ -111,10 +110,10 @@
             this.Tipodebus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Asientocama = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Asientosemicama = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtdisponibilidad = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.npdCantidadNoches)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.npdCantidasDias)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.npdDisponibilidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.npdAsientosCama)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.npdAsientosSemicama)).BeginInit();
             this.tableLayoutPanelBotones.SuspendLayout();
@@ -168,6 +167,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtdisponibilidad);
             this.groupBox1.Controls.Add(this.txtid_bus);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.txtid_hotel);
@@ -200,7 +200,6 @@
             this.groupBox1.Controls.Add(this.lblTriples);
             this.groupBox1.Controls.Add(this.lblDoble);
             this.groupBox1.Controls.Add(this.lblCantidadHabitaciones);
-            this.groupBox1.Controls.Add(this.npdDisponibilidad);
             this.groupBox1.Controls.Add(this.lblDisponibilidad);
             this.groupBox1.Controls.Add(this.npdAsientosCama);
             this.groupBox1.Controls.Add(this.lbbAsientosSemicama);
@@ -472,7 +471,7 @@
             // 
             // npdCantidadNoches
             // 
-            this.npdCantidadNoches.Location = new System.Drawing.Point(219, 195);
+            this.npdCantidadNoches.Location = new System.Drawing.Point(228, 202);
             this.npdCantidadNoches.Margin = new System.Windows.Forms.Padding(2);
             this.npdCantidadNoches.Name = "npdCantidadNoches";
             this.npdCantidadNoches.Size = new System.Drawing.Size(33, 20);
@@ -480,7 +479,7 @@
             // 
             // npdCantidasDias
             // 
-            this.npdCantidasDias.Location = new System.Drawing.Point(112, 195);
+            this.npdCantidasDias.Location = new System.Drawing.Point(121, 202);
             this.npdCantidasDias.Margin = new System.Windows.Forms.Padding(2);
             this.npdCantidasDias.Name = "npdCantidasDias";
             this.npdCantidasDias.Size = new System.Drawing.Size(33, 20);
@@ -523,18 +522,10 @@
             this.lblCantidadHabitaciones.TabIndex = 110;
             this.lblCantidadHabitaciones.Text = "Cantidad de Habitaciones :\r\n\r\n";
             // 
-            // npdDisponibilidad
-            // 
-            this.npdDisponibilidad.Location = new System.Drawing.Point(112, 168);
-            this.npdDisponibilidad.Margin = new System.Windows.Forms.Padding(2);
-            this.npdDisponibilidad.Name = "npdDisponibilidad";
-            this.npdDisponibilidad.Size = new System.Drawing.Size(149, 20);
-            this.npdDisponibilidad.TabIndex = 7;
-            // 
             // lblDisponibilidad
             // 
             this.lblDisponibilidad.AutoSize = true;
-            this.lblDisponibilidad.Location = new System.Drawing.Point(25, 170);
+            this.lblDisponibilidad.Location = new System.Drawing.Point(117, 173);
             this.lblDisponibilidad.Name = "lblDisponibilidad";
             this.lblDisponibilidad.Size = new System.Drawing.Size(78, 13);
             this.lblDisponibilidad.TabIndex = 106;
@@ -663,7 +654,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(160, 197);
+            this.label1.Location = new System.Drawing.Point(169, 204);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 73;
@@ -681,7 +672,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(67, 197);
+            this.label4.Location = new System.Drawing.Point(76, 204);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 69;
@@ -760,14 +751,14 @@
             this.dgvPaquetes.AllowUserToDeleteRows = false;
             this.dgvPaquetes.AllowUserToResizeRows = false;
             this.dgvPaquetes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPaquetes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPaquetes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPaquetes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPaquetes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PaqueteNro,
@@ -795,8 +786,8 @@
             this.dgvPaquetes.Name = "dgvPaquetes";
             this.dgvPaquetes.ReadOnly = true;
             this.dgvPaquetes.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvPaquetes.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvPaquetes.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPaquetes.Size = new System.Drawing.Size(981, 326);
             this.dgvPaquetes.TabIndex = 95;
             // 
@@ -953,6 +944,14 @@
             this.Asientosemicama.ReadOnly = true;
             this.Asientosemicama.Visible = false;
             // 
+            // txtdisponibilidad
+            // 
+            this.txtdisponibilidad.Location = new System.Drawing.Point(201, 168);
+            this.txtdisponibilidad.Name = "txtdisponibilidad";
+            this.txtdisponibilidad.Size = new System.Drawing.Size(33, 20);
+            this.txtdisponibilidad.TabIndex = 146;
+            this.txtdisponibilidad.Visible = false;
+            // 
             // FrmIngresarEditarPaquetes
             // 
             this.AllowDrop = true;
@@ -971,7 +970,6 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.npdCantidadNoches)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.npdCantidasDias)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.npdDisponibilidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.npdAsientosCama)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.npdAsientosSemicama)).EndInit();
             this.tableLayoutPanelBotones.ResumeLayout(false);
@@ -1019,7 +1017,6 @@
         private System.Windows.Forms.ComboBox cmbBus;
         private System.Windows.Forms.ComboBox cmbHotel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelBotones;
-        private System.Windows.Forms.NumericUpDown npdDisponibilidad;
         private System.Windows.Forms.Label lblDisponibilidad;
         private System.Windows.Forms.ComboBox cmbDestino;
         private System.Windows.Forms.Label lblnrodepaquete;
@@ -1070,5 +1067,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtid_bus;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtdisponibilidad;
     }
 }

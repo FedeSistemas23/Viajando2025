@@ -117,6 +117,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConfiguracionSeguridad.cs" />
+    <Compile Include="Disponibilidad.cs" />
     <Compile Include="Familia.cs" />
     <Compile Include="FamiliaPermiso.cs" />
     <Compile Include="LogIntentos.cs" />
