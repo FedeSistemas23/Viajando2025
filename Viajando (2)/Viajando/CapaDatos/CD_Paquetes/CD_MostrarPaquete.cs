@@ -36,7 +36,13 @@ namespace CapaDatos
                                         },
                                         FechaSalida = Convert.ToDateTime(leer["FechaSalida"]),
                                         FechaRegreso = Convert.ToDateTime(leer["FechaRegreso"]),
-                                        Disponibilidad = Convert.ToInt32(leer["Disponibilidad"]),
+                                        Disponibilidad = new Disponibilidad
+                                        {
+                                            Id_Disponibilidad = leer["Id_Disponibilidad"] != DBNull.Value ? Convert.ToInt32(leer["Id_Disponibilidad"]) : 0,
+                                            Id_Paquete = leer["Id_Paquete"] != DBNull.Value ? Convert.ToInt32(leer["Id_Paquete"]) : 0,
+                                            CuposTotales = leer["CuposTotales"] != DBNull.Value ? Convert.ToInt32(leer["CuposTotales"]) : 0,
+                                            CuposDisponibles = leer["Disponibilidad"] != DBNull.Value ? Convert.ToInt32(leer["Disponibilidad"]) : 0
+                                        },
                                         CantidadDias = Convert.ToInt32(leer["CantidadDias"]),
                                         CantidadNoches = Convert.ToInt32(leer["CantidadNoches"]),
                                         ProveedorHotel = new Hotel()

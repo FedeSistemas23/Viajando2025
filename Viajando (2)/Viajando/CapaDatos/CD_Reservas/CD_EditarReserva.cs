@@ -23,7 +23,7 @@ namespace CapaDatos
                     using (SqlCommand cmd = new SqlCommand("EditarReserva", connection))
                     {
                         cmd.Parameters.AddWithValue("@NroReserva", reserva.NroReserva);
-                        cmd.Parameters.AddWithValue("@Id_pasajero", reserva.pasajero.Id_Pasajero);
+                        cmd.Parameters.AddWithValue("@Id_pasajero", reserva.Pasajero.Id_Pasajero);
                         cmd.Parameters.AddWithValue("@Id_Paquete", reserva.Paquete.Id_Paquete);
                         cmd.Parameters.AddWithValue("@CantidadPasajeros", reserva.CantidadPasajeros);
                         cmd.Parameters.AddWithValue("@Id_Vendedor", reserva.Id_Vendedor);

@@ -37,7 +37,6 @@ namespace CapaSesion
 
         }
 
-<<<<<<< HEAD
         public int Hasheo(string username, string pass)
         {
             string userpass = username + pass;
@@ -45,19 +44,7 @@ namespace CapaSesion
             int digito = new CreaDigitoVerificador().Calcular(hasheo);
             return digito; 
         }   
-=======
-        /*public static int hasheo(string username, string pass)
 
-        {
-            string userpass = username + pass;
-            string hasheo = Seguridad.SHA256(userpass);
-            //int digito = CreaDigitoVerificador.Calcular(hasheo);
-            //return digito;
-            
-        }*/
-
-        
->>>>>>> d4bc152 (frm preguntas de seguridad)
     }
 }
 
