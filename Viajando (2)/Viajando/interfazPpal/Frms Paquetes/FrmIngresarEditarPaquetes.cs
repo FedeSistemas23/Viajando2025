@@ -35,6 +35,8 @@ namespace interfazPpal
             CargarComboDestino();
             List<Paquete> Paquetes = new List<Paquete>(new CN_MostrarPaquetes().MostrarPaquetes());
             dgvPaquetes.DataSource = Paquetes;
+
+
         }
 
         private void MostrarPaquetes()
@@ -134,7 +136,11 @@ namespace interfazPpal
                             FechaSalida = Convert.ToDateTime(dtpFechaSalida.Value),
                             FechaRegreso = Convert.ToDateTime(dtpFechaRegreso.Value),
                             Destino = new Destino() { Id_Destino = Convert.ToInt32(txtid_destino.Text) },
-                            Disponibilidad = new Disponibilidad() { CuposDisponibles = Convert.ToInt32(txtdisponibilidad.Text) },
+                            Disponibilidad = new Disponibilidad() 
+                            { 
+                                CuposDisponibles = Convert.ToInt32(txtdisponibilidad.Text), 
+                                CuposTotales = Convert.ToInt32(txtdisponibilidad.Text) 
+                            },
                             CantidadDias = Convert.ToInt32(npdCantidasDias.Value),
                             CantidadNoches = Convert.ToInt32(npdCantidadNoches.Value),
                             ProveedorHotel = new Hotel() { Id_ProvedorHotel = Convert.ToInt32(txtid_hotel.Text) },

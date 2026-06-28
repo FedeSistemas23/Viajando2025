@@ -17,7 +17,7 @@ namespace CapaNegocio
         {
             mensaje = string.Empty;
 
-            if (paquete.FechaRegreso == default(DateTime) && paquete.FechaSalida == default(DateTime))
+            if (paquete.FechaRegreso == default && paquete.FechaSalida == default)
             {
                 mensaje += "Tiene que selecionar las fechas validas";
 
