@@ -64,15 +64,10 @@
     <Compile Include="CD_Reservas\CD_Busqueda.cs" />
     <Compile Include="CD_Paquetes\CD_NuevaDisponiblidad.cs" />
     <Compile Include="CD_Paquetes\CD_BuscarPaquete.cs" />
-    <Compile Include="CD_Reservas\CD_MostrarReservaDataGrid.cs" />
-    <Compile Include="CD_Reservas\CD_BuscarReserva.cs" />
+    <Compile Include="CD_Reservas\CD_Reserva.cs" />
     <Compile Include="CD_Buses\CD_.EditarBus.cs" />
     <Compile Include="CD_Buses\CD_EliminarBus.cs" />
     <Compile Include="CD_Buses\CD_GuardaBusD.cs" />
-    <Compile Include="CD_Reservas\CD_EditarReserva.cs" />
-    <Compile Include="CD_Reservas\CD_EliminarReserva.cs" />
-    <Compile Include="CD_Reservas\CD_GuardarReserva.cs" />
-    <Compile Include="CD_Reservas\CD_MostrarReserva.cs" />
     <Compile Include="CD_Buses\CD_CargaAsientosBus.cs" />
     <Compile Include="CD_Buses\CD_CargaComboBus.cs" />
     <Compile Include="CD_Hoteles\CD_CargarHabitacionesHotel.cs" />
