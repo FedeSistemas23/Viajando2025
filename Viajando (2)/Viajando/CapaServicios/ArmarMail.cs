@@ -13,7 +13,7 @@ namespace CapaServicios
 {
     public static class ArmarMail
     {
-        public void Preparar(string username, string email, string aleatorio)
+        public static void Preparar(string username, string email, string aleatorio)
         {
             string Asunto = "Recuperación de contraseña";
             string DireccionCorreo = email;

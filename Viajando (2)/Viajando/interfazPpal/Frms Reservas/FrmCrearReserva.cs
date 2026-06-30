@@ -115,7 +115,7 @@ namespace Loggin
                             NombreVendedor = txtVendedor.Text,
                         };
 
-                        int nuevaReserva = new CN_GuardarReserva().GuardarReservaCN(reserva, out mensaje);
+                        int nuevaReserva = new CN_Reserva().GuardarReservaCN(reserva, out mensaje);
                         
                         if (nuevaReserva != 0)
                         {

@@ -11,7 +11,7 @@ namespace CapaDatos
     {
         SqlCommand cmd = new SqlCommand();
         Conexion conexion = new Conexion();
-
+        private DataTable tabla;
 
         public DataTable MostrarReservaDgv_CD()
         {
@@ -40,38 +40,106 @@ namespace CapaDatos
             }
 
         }
-        public int GuardarReserva(Reserva reserva, out string mensaje)
+        public bool GuardarReserva(Reserva reserva, out string mensaje)
         {
-            string mensaje = string.Empty;
+            mensaje = "";
+            int nroReserva = 0;
 
-            Reserva CD_reserva = new Reserva();
+            using (SqlConnection cn = AbrirConexion())
+            {
+                cn.Open();
+                SqlTransaction tr = cn.BeginTransaction();
 
-            cmd.Connection = AbrirConexion();
-            cmd.CommandText = "GuardarReservas";
-            cmd.CommandType = CommandType.StoredProcedure;
+                try
+                {
+                    // 1. CREAR RESERVA
+                    SqlCommand cmdReserva = new SqlCommand("SP_CrearReserva", cn, tr);
+                    cmdReserva.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@Id_Paquete", reserva.Id_Paquete);
+                    cmdReserva.Parameters.AddWithValue("@Fecha", reserva.FechaReserva);
+                    cmdReserva.Parameters.AddWithValue("@FechaSalida", reserva.FechaSalida);
+                    cmdReserva.Parameters.AddWithValue("@FechaRegreso", reserva.FechaRegreso);
+                    cmdReserva.Parameters.AddWithValue("@Id_Vendedor", reserva.Id_Vendedor);
+                    cmdReserva.Parameters.AddWithValue("@Id_Paquete", reserva.Id_Paquete);
+                    cmdReserva.Parameters.AddWithValue("@NombreTitular", reserva.NombreTitular);
+                    cmdReserva.Parameters.AddWithValue("@ApellidoTitular", reserva.ApellidoTitular);
+                    cmdReserva.Parameters.AddWithValue("@Cotizar", reserva.Cotizar);
+                    cmdReserva.Parameters.AddWithValue("@Observacion", reserva.Observacion);
 
-            cmd.Parameters.AddWithValue("@CantidadPasajeros", reserva.CantidadPasajeros);
-            cmd.Parameters.AddWithValue("@Id_Vendedor", reserva.Id_Vendedor);
+                    nroReserva = Convert.ToInt32(cmdReserva.ExecuteScalar());
 
+                    // 2. PASAJEROS
+                    foreach (var p in reserva.Pasajeros)
+                    {
+                        SqlCommand cmd = new SqlCommand("SP_AgregarPasajeroReserva", cn, tr);
+                        cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@NombreVendedor", reserva.NombreVendedor);
-            cmd.Parameters.AddWithValue("@Destino", reserva.Destino);
-            cmd.Parameters.AddWithValue("@FechaSalida", reserva.FechaSalida);
-            cmd.Parameters.AddWithValue("@fecha", reserva.FechaReserva);
-            cmd.Parameters.AddWithValue("@FechaRegreso", reserva.FechaRegreso);
+                        cmd.Parameters.AddWithValue("@NroReserva", nroReserva);
+                        cmd.Parameters.AddWithValue("@Id_Pasajero", p.IdPasajero);
+                        cmd.Parameters.AddWithValue("@EsTitular", p.EsTitular);
+                        cmd.Parameters.AddWithValue("@EsMenor", p.EsMenor);
 
+                        cmd.ExecuteNonQuery();
+                    }
 
+                    // 3. HABITACIONES
+                    foreach (var h in reserva.Habitaciones)
+                    {
+                        SqlCommand cmd = new SqlCommand("SP_AgregarHabitacionReserva", cn, tr);
+                        cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.ExecuteNonQuery();
-            cmd.Parameters.Clear();
-            conexion.CerrarConexion();
+                        cmd.Parameters.AddWithValue("@NroReserva", nroReserva);
+                        cmd.Parameters.AddWithValue("@Id_TipoHabitacion", h.IdTipoHabitacion);
+                        cmd.Parameters.AddWithValue("@Cantidad", h.Cantidad);
 
-            return true;
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    // 4. ASIENTOS
+                    foreach (var a in reserva.Asientos)
+                    {
+                        SqlCommand cmd = new SqlCommand("SP_AgregarAsientoReserva", cn, tr);
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@NroReserva", nroReserva);
+                        cmd.Parameters.AddWithValue("@Id_TipoAsiento", a.IdTipoAsiento);
+                        cmd.Parameters.AddWithValue("@Cantidad", a.Cantidad);
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    // 5. PAGOS (SEÑA + OTROS PAGOS)
+                    foreach (var pago in reserva.Pagos)
+                    {
+                        SqlCommand cmd = new SqlCommand("SP_AgregarPago", cn, tr);
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@NroReserva", nroReserva);
+                        cmd.Parameters.AddWithValue("@FechaPago", pago.FechaPago);
+                        cmd.Parameters.AddWithValue("@Importe", pago.Importe);
+                        cmd.Parameters.AddWithValue("@IdMedioPago", pago.IdMedioPago);
+                        cmd.Parameters.AddWithValue("@EsSena", pago.EsSena);
+                        cmd.Parameters.AddWithValue("@Observacion", pago.Observacion);
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    // 6. CONFIRMAR TODO
+                    tr.Commit();
+
+                    mensaje = "Reserva guardada correctamente";
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    tr.Rollback();
+                    mensaje = ex.Message;
+                    return false;
+                }
+            }
         }
-        
-        
+
+
         public bool EliminarReserva(int nroreserva, out string mensaje)
         {
 
