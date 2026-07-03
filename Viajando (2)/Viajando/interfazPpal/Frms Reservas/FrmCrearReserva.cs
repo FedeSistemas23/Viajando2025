@@ -3,6 +3,7 @@ using CapaServicios;
 using CapaSesion;
 using interfazPpal;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Loggin
@@ -349,11 +350,7 @@ namespace Loggin
             frm.ShowDialog();
         }
 
-        private void ckbFechaRegreso_CheckedChanged(object sender, EventArgs e)
-        {
-            FrmCargaPasajeros frm = new FrmCargaPasajeros();
-            frm.ShowDialog();
-        }
+        
 
         private void dgvReservas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -389,9 +386,39 @@ namespace Loggin
             }
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+       
+            private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
+            // Evitar el encabezado
+            if (e.RowIndex < 0) return;
 
+            // Aplicar solo a la primera columna (Índice 0)
+            if (e.ColumnIndex == 0)
+            {
+                // 1. Dibuja el botón base
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                // 2. Usar la fuente de iconos nativa de Windows
+                using (Font fuenteIconos = new Font("Segoe MDL2 Assets", 12, FontStyle.Regular))
+                {
+                    // Puedes cambiar "\uE73E" (Check) por "\uE76C" (Flecha) según tu gusto
+                    string iconoSeleccion = "\uE73E";
+
+                    // 3. Centrar el icono perfectamente en la celda
+                    TextFormatFlags flags = TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter;
+
+                    // 4. Dibujar el icono
+                    TextRenderer.DrawText(e.Graphics, iconoSeleccion, fuenteIconos, e.CellBounds, e.CellStyle.ForeColor, flags);
+                }
+
+                e.Handled = true;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmCargaPasajeros frm = new FrmCargaPasajeros();
+            frm.ShowDialog();
         }
     }
 }
