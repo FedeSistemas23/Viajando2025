@@ -91,3 +91,5 @@ l) En este formulario de configuración de seguridad, el administrador deberá
 poder ver las diversas familias de usuario (grupos) pudiendo agregar nuevas,
 asimismo, deberá poder agregar y/o quitar funcionalidades del sistema
 (permisos) a cada Familia.
+
+		rama pedro
