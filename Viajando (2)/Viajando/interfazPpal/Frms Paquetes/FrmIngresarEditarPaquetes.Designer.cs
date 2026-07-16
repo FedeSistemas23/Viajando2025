@@ -34,6 +34,7 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbestado = new System.Windows.Forms.ComboBox();
             this.lblestadopaquete = new System.Windows.Forms.Label();
             this.txtdisponibilidad = new System.Windows.Forms.TextBox();
             this.txtid_bus = new System.Windows.Forms.TextBox();
@@ -112,7 +113,7 @@
             this.Tipodebus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Asientocama = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Asientosemicama = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cmbestado = new System.Windows.Forms.ComboBox();
+            this.btnreservar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.npdCantidadNoches)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.npdCantidasDias)).BeginInit();
@@ -129,7 +130,7 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(553, 26);
+            this.btnEliminar.Location = new System.Drawing.Point(445, 26);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(199, 47);
@@ -145,7 +146,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(1076, 26);
+            this.btnCancelar.Location = new System.Drawing.Point(881, 26);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(199, 47);
@@ -161,7 +162,7 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(292, 26);
+            this.btnEditar.Location = new System.Drawing.Point(227, 26);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(199, 47);
@@ -236,6 +237,15 @@
             this.groupBox1.TabIndex = 94;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Crear Nuevo Paquete";
+            // 
+            // cmbestado
+            // 
+            this.cmbestado.FormattingEnabled = true;
+            this.cmbestado.Location = new System.Drawing.Point(148, 283);
+            this.cmbestado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbestado.Name = "cmbestado";
+            this.cmbestado.Size = new System.Drawing.Size(197, 24);
+            this.cmbestado.TabIndex = 148;
             // 
             // lblestadopaquete
             // 
@@ -772,7 +782,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(31, 26);
+            this.btnGuardar.Location = new System.Drawing.Point(9, 26);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(199, 47);
@@ -788,7 +798,7 @@
             this.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVer.ForeColor = System.Drawing.Color.White;
-            this.btnVer.Location = new System.Drawing.Point(814, 26);
+            this.btnVer.Location = new System.Drawing.Point(663, 26);
             this.btnVer.Margin = new System.Windows.Forms.Padding(4);
             this.btnVer.Name = "btnVer";
             this.btnVer.Size = new System.Drawing.Size(199, 47);
@@ -799,12 +809,14 @@
             // 
             // tableLayoutPanelBotones
             // 
-            this.tableLayoutPanelBotones.ColumnCount = 5;
-            this.tableLayoutPanelBotones.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanelBotones.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanelBotones.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanelBotones.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanelBotones.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanelBotones.ColumnCount = 6;
+            this.tableLayoutPanelBotones.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanelBotones.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanelBotones.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanelBotones.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanelBotones.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanelBotones.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanelBotones.Controls.Add(this.btnreservar, 5, 0);
             this.tableLayoutPanelBotones.Controls.Add(this.btnGuardar, 0, 0);
             this.tableLayoutPanelBotones.Controls.Add(this.btnCancelar, 4, 0);
             this.tableLayoutPanelBotones.Controls.Add(this.btnVer, 3, 0);
@@ -1019,14 +1031,20 @@
             this.Asientosemicama.ReadOnly = true;
             this.Asientosemicama.Visible = false;
             // 
-            // cmbestado
+            // btnreservar
             // 
-            this.cmbestado.FormattingEnabled = true;
-            this.cmbestado.Location = new System.Drawing.Point(148, 283);
-            this.cmbestado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cmbestado.Name = "cmbestado";
-            this.cmbestado.Size = new System.Drawing.Size(197, 24);
-            this.cmbestado.TabIndex = 148;
+            this.btnreservar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnreservar.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnreservar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnreservar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnreservar.ForeColor = System.Drawing.Color.White;
+            this.btnreservar.Location = new System.Drawing.Point(1099, 26);
+            this.btnreservar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnreservar.Name = "btnreservar";
+            this.btnreservar.Size = new System.Drawing.Size(199, 47);
+            this.btnreservar.TabIndex = 31;
+            this.btnreservar.Text = "Reservar";
+            this.btnreservar.UseVisualStyleBackColor = false;
             // 
             // FrmIngresarEditarPaquetes
             // 
@@ -1146,5 +1164,6 @@
         private System.Windows.Forms.TextBox txtdisponibilidad;
         private System.Windows.Forms.Label lblestadopaquete;
         private System.Windows.Forms.ComboBox cmbestado;
+        private System.Windows.Forms.Button btnreservar;
     }
 }
