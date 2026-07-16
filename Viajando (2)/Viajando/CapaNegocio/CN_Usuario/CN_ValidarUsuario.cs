@@ -1,9 +1,6 @@
 ﻿using CapaDatos;
-
-using CapaNegocio.CN_Usuario;
-
-
 using CapaServicios;
+using CapaSesion;
 
 namespace CapaNegocio
 {
@@ -14,24 +11,14 @@ namespace CapaNegocio
         private string Password;
 
         CD_ValidarUsuario validador;
-        CN_ComparaDigitoVerificador comparador;
-        CN_ComparaPassword comparaPass;
+       
 
-        public CN_ValidarUsuario()
+        public bool Login(Usuario usuario, out string mensaje)
         {
-            comparador = new CN_ComparaDigitoVerificador();
-            validador = new CD_ValidarUsuario();
-            comparaPass = new CN_ComparaPassword();
-        }
+            mensaje = string.Empty;
+            bool existe = validador.ValidarNombreUsuarioD(usuario, mensaje);
 
-        public bool ValidarUsuarioL(string usuario, string pass)
-        {
-            bool existe = validador.ValidarNombreUsuarioD(usuario);
-
-            if (existe && comparador.ComparaDigitoVerificador(pass, usuario)
-                && comparaPass.ComparaPassword(pass, usuario)) 
-                //&& verificadorBloqueo.VerificarUsuarioBloqueado()
-
+            if ()
             {
                 return true;
             }

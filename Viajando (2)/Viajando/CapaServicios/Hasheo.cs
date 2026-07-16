@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CapaSesion
 {
-    public class Seguridad
+    public static class Seguridad
     {
 
         // Encripta una cadena
@@ -37,7 +37,7 @@ namespace CapaSesion
 
         }
 
-        public int Hasheo(string username, string pass)
+        public static int Hasheo(string username, string pass)
         {
             string userpass = username + pass;
             string hasheo = Seguridad.SHA256(userpass);

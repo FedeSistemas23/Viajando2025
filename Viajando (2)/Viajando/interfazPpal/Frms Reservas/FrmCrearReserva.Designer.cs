@@ -127,7 +127,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(850, 383);
+            this.button3.Location = new System.Drawing.Point(713, 385);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(87, 32);
@@ -176,7 +176,7 @@
             this.btnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnviar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEnviar.ForeColor = System.Drawing.Color.White;
-            this.btnEnviar.Location = new System.Drawing.Point(660, 383);
+            this.btnEnviar.Location = new System.Drawing.Point(523, 385);
             this.btnEnviar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.Size = new System.Drawing.Size(87, 32);
@@ -190,7 +190,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(565, 383);
+            this.btnCancelar.Location = new System.Drawing.Point(428, 385);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(87, 32);
@@ -205,7 +205,7 @@
             this.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVer.ForeColor = System.Drawing.Color.White;
-            this.btnVer.Location = new System.Drawing.Point(378, 383);
+            this.btnVer.Location = new System.Drawing.Point(241, 385);
             this.btnVer.Margin = new System.Windows.Forms.Padding(4);
             this.btnVer.Name = "btnVer";
             this.btnVer.Size = new System.Drawing.Size(87, 32);
@@ -229,7 +229,7 @@
             this.dgvReservas.ReadOnly = true;
             this.dgvReservas.RowHeadersWidth = 51;
             this.dgvReservas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvReservas.Size = new System.Drawing.Size(1359, 297);
+            this.dgvReservas.Size = new System.Drawing.Size(1039, 297);
             this.dgvReservas.TabIndex = 6;
             this.dgvReservas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReservas_CellContentClick);
             // 
@@ -886,7 +886,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(188, 383);
+            this.btnGuardar.Location = new System.Drawing.Point(51, 385);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(87, 32);
@@ -901,7 +901,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(755, 383);
+            this.button2.Location = new System.Drawing.Point(618, 385);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(87, 32);
@@ -915,7 +915,7 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(470, 383);
+            this.button5.Location = new System.Drawing.Point(333, 385);
             this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(87, 32);
@@ -930,7 +930,7 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(283, 383);
+            this.btnEditar.Location = new System.Drawing.Point(146, 385);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(87, 32);
@@ -963,7 +963,7 @@
             this.panel2.Controls.Add(this.label12);
             this.panel2.Location = new System.Drawing.Point(12, 9);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1355, 49);
+            this.panel2.Size = new System.Drawing.Size(1035, 49);
             this.panel2.TabIndex = 266;
             // 
             // label31
@@ -1015,13 +1015,28 @@
             this.ckbPasajeros.TabIndex = 75;
             this.ckbPasajeros.Text = "Pasajeros";
             this.ckbPasajeros.UseVisualStyleBackColor = true;
-            this.ckbPasajeros.CheckedChanged += new System.EventHandler(this.ckbFechaRegreso_CheckedChanged);
+            // 
+            // btnagregarpasajero
+            // 
+            this.btnagregarpasajero.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnagregarpasajero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnagregarpasajero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnagregarpasajero.ForeColor = System.Drawing.Color.White;
+            this.btnagregarpasajero.Location = new System.Drawing.Point(808, 385);
+            this.btnagregarpasajero.Margin = new System.Windows.Forms.Padding(4);
+            this.btnagregarpasajero.Name = "btnagregarpasajero";
+            this.btnagregarpasajero.Size = new System.Drawing.Size(181, 32);
+            this.btnagregarpasajero.TabIndex = 267;
+            this.btnagregarpasajero.Text = "Agregar Pasajero";
+            this.btnagregarpasajero.UseVisualStyleBackColor = false;
+            this.btnagregarpasajero.Click += new System.EventHandler(this.button1_Click);
             // 
             // CrearReserva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1379, 774);
+            this.Controls.Add(this.btnagregarpasajero);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button5);

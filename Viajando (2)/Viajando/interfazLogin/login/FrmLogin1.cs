@@ -1,10 +1,11 @@
-﻿using CapaNegocio;
-using interfazLogin.Presentacion;
+﻿using interfazLogin.Presentacion;
 using Loggin;
 using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using CapaSesion;
+using CapaNegocio;
 
 namespace interfazLogin
 {
@@ -102,7 +103,47 @@ namespace interfazLogin
             menu1.Show();
             CN_ValidarUsuario Usuario = new CN_ValidarUsuario();
 
-           
+
+
+            if (txtUsuario.Text != "Ej.: ejemplo@gmail.com")
+            {
+                if (txtPass.Text != "Contraseña")
+                {
+                    Usuario usuario = new Usuario
+                    {
+                        Username = txtUsuario.Text.Trim(),
+                        Password = txtPass.Text
+                    };
+
+                    CN_Usuario cnUsuario = new CN_Usuario();
+
+                    string mensaje;
+
+                    if (cnUsuario.Login(usuario, out mensaje))
+                    {
+                        if (usuario.DebeCambiarPassword)
+                        {
+                            FrmCambiarPassword frm = new FrmCambiarPassword(usuario);
+                            frm.ShowDialog();
+                            return;
+                        }
+
+                        FrmPrincipal frm = new FrmPrincipal(usuario);
+                        frm.Show();
+
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show(mensaje,
+                                        "Login",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Warning);
+                    }
+                }
+
+
+
                 /*CN_BloquearUsuario BloqueadorUsuario = new CN_BloquearUsuario();
                 FrmPreguntasSeguridad FrmPreguntasSeguridad = new FrmPreguntasSeguridad();
                 FrmPrimerIngreso frmPrimerIngreso = new FrmPrimerIngreso();
@@ -215,7 +256,12 @@ namespace interfazLogin
 
 
 
-            
+
+            }
+            else
+            {
+
+            }
         }
         private void lnkOlvidar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -227,11 +273,6 @@ namespace interfazLogin
         private void txtPass_TextChanged(object sender, EventArgs e)
         {
             btnIngresar.Enabled = true;
-        }
-
-        private void FrmLogin1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

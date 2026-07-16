@@ -22,7 +22,7 @@ namespace CapaSesion {
         public string Username { get; set; }
 
         // SHA256(Username+Password)
-        public string PasswordHash { get; set; }
+        public string Password { get; set; }
 
         public int DigitoVerificador { get; set; }
 
