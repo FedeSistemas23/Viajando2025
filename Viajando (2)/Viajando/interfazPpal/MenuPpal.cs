@@ -23,6 +23,10 @@ namespace Loggin
             
         }
 
+        public MenuPpal(Usuario usuario)
+        {
+        }
+
         private void Form2_Load(object sender, EventArgs e)
         {
             this.Name = "Sistema de reservas Viajando";

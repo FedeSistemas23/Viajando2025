@@ -26,6 +26,8 @@ namespace CapaSesion {
 
         public int DigitoVerificador { get; set; }
 
+        public int Id_Familia { get; set; }
+
         public bool PrimeraPassword { get; set; }
 
         public bool DebeCambiarPassword { get; set; }

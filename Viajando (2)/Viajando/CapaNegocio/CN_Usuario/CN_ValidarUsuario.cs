@@ -10,22 +10,18 @@ namespace CapaNegocio
         string Username;
         private string Password;
 
-        CD_ValidarUsuario validador;
-       
+        CD_ValidarUsuario obj= new CD_ValidarUsuario();
+
 
         public bool Login(Usuario usuario, out string mensaje)
         {
             mensaje = string.Empty;
-            bool existe = validador.ValidarNombreUsuarioD(usuario, mensaje);
+            string passwordHash = usuario.Username + usuario.Password; 
+            
+            usuario.Password = Seguridad.SHA256(passwordHash);
+            usuario.DigitoVerificador = Seguridad.Hasheo(usuario.Username, usuario.Password);
 
-            if ()
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return obj.Login(usuario, out mensaje);
         }
 
         //el sigueinte metodo validar usuario se utiliza para verificar si el usuario existe, cuando ingresa el usuario desde 

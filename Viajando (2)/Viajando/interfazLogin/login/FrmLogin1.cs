@@ -1,11 +1,13 @@
 ﻿using interfazLogin.Presentacion;
+using interfazPpal;
 using Loggin;
 using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using CapaSesion;
+
 using CapaNegocio;
+using CapaSesion;
 
 namespace interfazLogin
 {
@@ -101,9 +103,10 @@ namespace interfazLogin
             bienvenida saludo = new bienvenida();
             saludo.ShowDialog();
             menu1.Show();
-            CN_ValidarUsuario Usuario = new CN_ValidarUsuario();
+          
+            CN_ValidarUsuario obj = new CN_ValidarUsuario();
 
-
+            string mensaje;
 
             if (txtUsuario.Text != "Ej.: ejemplo@gmail.com")
             {
@@ -115,20 +118,16 @@ namespace interfazLogin
                         Password = txtPass.Text
                     };
 
-                    CN_Usuario cnUsuario = new CN_Usuario();
-
-                    string mensaje;
-
-                    if (cnUsuario.Login(usuario, out mensaje))
+                    if (obj.Login(usuario, out mensaje))
                     {
                         if (usuario.DebeCambiarPassword)
                         {
-                            FrmCambiarPassword frm = new FrmCambiarPassword(usuario);
-                            frm.ShowDialog();
+                            FrmEditarPassword form = new FrmEditarPassword(usuario);
+                            form.ShowDialog();
                             return;
                         }
 
-                        FrmPrincipal frm = new FrmPrincipal(usuario);
+                        MenuPpal frm = new MenuPpal(usuario);
                         frm.Show();
 
                         this.Hide();

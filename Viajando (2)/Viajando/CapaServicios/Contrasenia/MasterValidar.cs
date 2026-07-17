@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace CapaServicios
 {
-    public class ValidarPass
+    public static class ValidarPass
     {
 
-        public bool MasterValidarPass(string contraseña)
+        public static bool MasterValidarPass(string contraseña)
         {
 
 

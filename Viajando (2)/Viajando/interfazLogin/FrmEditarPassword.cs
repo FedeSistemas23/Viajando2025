@@ -24,13 +24,17 @@ namespace interfazPpal
             btnCambiar.Enabled = false;
 
         }
-        public FrmEditarPassword(string aleatorio, string usuario)
+        public FrmEditarPassword(string aleatorio, Usuario usuario)
         {
             InitializeComponent();
             Aleatorio = aleatorio;
             Usuario = usuario;
             btnCambiar.Enabled = false;
 
+        }
+
+        public FrmEditarPassword(Usuario usuario)
+        {
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
