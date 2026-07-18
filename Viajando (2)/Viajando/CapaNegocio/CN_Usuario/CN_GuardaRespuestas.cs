@@ -1,4 +1,5 @@
 ﻿using CapaDatos;
+using CapaSesion;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,11 @@ namespace CapaNegocio
 {
     public class CN_GuardaRespuestas
     {
-        CD_GuardaRespuestas guardarespuestas = new CD_GuardaRespuestas();
-        public void GuardarRespuestas()
+       
+        public void GuardarRespuestas(Respuestas respuestas, out string mensaje)
         {
-            guardarespuestas.GuardarRespuestas();
+            mensaje = string.Empty;
+            bool guardadoExitoso = new CD_GuardaRespuestas().GuardarRespuestas(respuestas, out mensaje);
         }
     }
 }

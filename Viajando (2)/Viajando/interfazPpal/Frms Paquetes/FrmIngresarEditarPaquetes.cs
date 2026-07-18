@@ -33,8 +33,8 @@ namespace interfazPpal
         private void FrmIngresarEditarPaquetes_Load(object sender, EventArgs e)
         {
             CargarComboDestino();
-            List<Paquete> Paquetes = new List<Paquete>(new CN_MostrarPaquetes().MostrarPaquetes());
-            dgvPaquetes.DataSource = Paquetes;
+            List<Paquete> lista = new List<Paquete>(new CN_MostrarPaquetes().MostrarPaquetes());
+            dgvPaquetes.DataSource = lista;
 
 
         }

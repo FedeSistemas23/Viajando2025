@@ -17,8 +17,8 @@ namespace interfazLogin
 {
     public partial class FrmPrimerIngreso : Form
     {        
-        CN_UsuarioEnSesion usuario = new CN_UsuarioEnSesion();
-        CN_GuardaRespuestas guardarrespuestas = new CN_GuardaRespuestas();
+        Usuario usuario = new Usuario();
+        CN_GuardaRespuestas guardarrespuestas = 
         CN_GuardarPrimerIngreso primerIngreso = new CN_GuardarPrimerIngreso();
         
      
@@ -54,16 +54,40 @@ namespace interfazLogin
 
         private void btnEnviar_Click_1(object sender, EventArgs e)
         {
-            FrmEditarPassword cambioContraseña = new FrmEditarPassword();
+            string mensaje = string.Empty;
 
-            PreguntasSeguridad.respuesta1 = txtRespuesta1.Text;
-            PreguntasSeguridad.respuesta2 = txtRespuesta2.Text;
-            PreguntasSeguridad.respuesta3 = txtRespuesta3.Text;           
-            guardarrespuestas.GuardarRespuestas();            
+            // Obtener las preguntas aleatorias que se mostraron al usuario
+            PreguntasSeguridad[] preguntasAleatoriasPrimerIngreso = new CN_PreguntasSeguridadPrimerIngreso().PreguntasAleatorias();
+
+            List <Respuestas> respuestas = new List<Respuestas>()
+            {
+                new Respuestas
+                {
+                    IdUsuario = usuario.IdUsuario,
+                    IdPregunta = preguntasAleatoriasPrimerIngreso[0].IdPregunta,
+                    Respuesta = txtRespuesta1.Text,
+                },
+                new Respuestas
+                {
+                    IdUsuario = usuario.IdUsuario,
+                    IdPregunta = preguntasAleatoriasPrimerIngreso[1].IdPregunta,
+                    Respuesta = txtRespuesta2.Text, 
+                },
+                new Respuestas
+                {
+                    IdUsuario = usuario.IdUsuario,
+                    IdPregunta = preguntasAleatoriasPrimerIngreso[2].IdPregunta,
+                    Respuesta = txtRespuesta3.Text,
+                }
+            };
+
+            // Aquí deberías pasar el arreglo de respuestas a tu método de guardado si es necesario
+            bool guardadoExitoso = new CN_GuardaRespuestas().GuardarRespuestas(respuestas, out mensaje);
+
             DateTime PrimerIngreso = DateTime.Now;
             primerIngreso.GuardarPrimerIngreso(PrimerIngreso);
-            this.Close();           
-            cambioContraseña.Show();            
+            this.Close();
+            cambioContraseña.Show();
         }
         
         private void txtRespuesta3_TextChanged(object sender, EventArgs e)

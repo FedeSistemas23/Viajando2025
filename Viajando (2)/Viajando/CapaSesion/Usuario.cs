@@ -7,14 +7,7 @@ namespace CapaSesion {
     public class Usuario
     {
         
-        public Usuario()
-        {
-            HistorialPasswords = new List<HistorialPassword>();
-            PreguntasSeguridad = new List<UsuarioPregunta>();
-            Permisos = new List<UsuarioPermiso>();
-            Familias = new List<UsuarioFamilia>();
-            IntentosLogin = new List<LogIntentos>();
-        }
+        
         public int IdUsuario { get; set; }
 
         public int IdPersona { get; set; }
@@ -59,7 +52,7 @@ namespace CapaSesion {
 
         public List<HistorialPassword> HistorialPasswords { get; set; }
 
-        public List<UsuarioPregunta> PreguntasSeguridad { get; set; }
+        public List<Respuestas> Respuestas { get; set; }
 
         public List<UsuarioPermiso> Permisos { get; set; }
 
