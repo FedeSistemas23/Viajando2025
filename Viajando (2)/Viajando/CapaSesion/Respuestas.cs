@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 
 namespace CapaSesion
 {
-    public class UsuarioPregunta
+    public class Respuestas
     {
-        public int IdUsuarioPregunta { get; set; }
 
         public int IdUsuario { get; set; }
 
         public int IdPregunta { get; set; }
 
-        public string RespuestaHash { get; set; }
+        public string Respuesta{ get; set; }
 
 
         public PreguntasSeguridad Pregunta { get; set; }

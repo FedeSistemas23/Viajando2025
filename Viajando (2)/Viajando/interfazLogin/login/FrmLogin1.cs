@@ -99,10 +99,7 @@ namespace interfazLogin
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            bienvenida saludo = new bienvenida();
-            saludo.ShowDialog();
-            menu1.Show();
+            
           
             CN_ValidarUsuario obj = new CN_ValidarUsuario();
 
@@ -114,7 +111,7 @@ namespace interfazLogin
                 {
                     Usuario usuario = new Usuario
                     {
-                        Username = txtUsuario.Text.Trim(),
+                        Username = txtUsuario.Text,
                         Password = txtPass.Text
                     };
 
@@ -127,10 +124,10 @@ namespace interfazLogin
                             return;
                         }
 
-                        MenuPpal frm = new MenuPpal(usuario);
-                        frm.Show();
-
                         this.Hide();
+                        bienvenida saludo = new bienvenida();
+                        saludo.ShowDialog();
+                        menu1.Show();
                     }
                     else
                     {
@@ -140,126 +137,20 @@ namespace interfazLogin
                                         MessageBoxIcon.Warning);
                     }
                 }
-
-
-
-                /*CN_BloquearUsuario BloqueadorUsuario = new CN_BloquearUsuario();
-                FrmPreguntasSeguridad FrmPreguntasSeguridad = new FrmPreguntasSeguridad();
-                FrmPrimerIngreso frmPrimerIngreso = new FrmPrimerIngreso();
-                CN_registrarIntentosFallidos intentosFallidos = new CN_registrarIntentosFallidos();
-
-                string pass = txtPass.Text;
-                string Usuario = txtUsuario.Text;
-
-                if (Aleatorio != txtPass.Text)
-                {
-                    string concatenados = pass+Usuario;
-                    string hasheo = Seguridad.SHA256(concatenados);
-                    int digito = CreaDigitoVerificador.Calcular(hasheo);
-                    btnIngresar.Enabled = true; ;
-
-                    if (txtUsuario.Text != "Ej.: ejemplo@gmail.com")
-                    {
-                        if (txtPass.Text != "Contraseña")
-                        {
-                            bool userexist = validarusuario.ValidarUsuarioL(txtUsuario.Text);
-                            if (userexist)
-                            {
-                                bool bloqueado = CS_UsuarioEnSesion.Bloqueado;
-                                int dias = CS_VencimientoPassword.CalcularDiasRestantes((DateTime)CS_UsuarioEnSesion.fechaPrimerIngreso, CS_UsuarioEnSesion.venceCada);
-                                int intentos = CS_UsuarioEnSesion.intentos;
-                                if (bloqueado == false)
-                                {
-                                    if (intentos < 3)
-                                    {
-                                        if (hasheo == CS_UsuarioEnSesion.password && digito == CS_UsuarioEnSesion.digito)
-                                        {
-                                            if (CS_UsuarioEnSesion.fechaPrimerIngreso == null)
-                                            {
-                                                frmPrimerIngreso.ShowDialog();
-                                                this.Close();
-                                            }
-                                            else
-                                            {
-                                                DialogResult resultado = MessageBox.Show("Su contraseña esta por " +
-                                                "vencer en " + " " + dias + " " + "dias. " + " " + "Desea cambiarla ahora?",
-                                                "Contraseña por Vencer", MessageBoxButtons.OKCancel);
-
-                                                if (resultado == DialogResult.OK)
-                                                {
-                                                    FrmPreguntasSeguridad frm = new FrmPreguntasSeguridad();
-                                                    frm.ShowDialog();
-                                                    this.Close();
-                                                }
-                                                else
-                                                {
-                                                    this.Hide();
-                                                    bienvenida saludo = new bienvenida();
-                                                    saludo.ShowDialog();
-                                                    menu1.Show();
-                                                    CN_ResetearIntentosFallidos reseteador = new CN_ResetearIntentosFallidos();
-                                                    reseteador.ReseteaIntentosFallidosL(Usuario);
-                                                }
-                                            }
-                                        }
-                                        else
-                                        {
-                                            MessageBox.Show("La contraseña es incorrecta. Intente de nuevo:");
-                                            int nuevointento = intentos - 1;
-                                            //intentosFallidos.registraIntentofallidoL(txtUsuario.Text, nuevointento);
-                                            txtPass.Focus();
-                                        }
-                                    }
-                                    else
-                                    {
-                                        //BloqueadorUsuario.BloquearUsuarioL(txtUsuario.Text);
-                                        MessageBox.Show("El Usuario ha sido Bloqueado \n Comuniquese con el administrador");
-                                        btnIngresar.Enabled = false;
-                                        txtPass.Clear();
-                                        txtUsuario.Clear();
-                                    }
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Usuario Bloqueado \n Comuniquese con el administrador");
-                                    btnIngresar.Enabled = false;
-                                    txtPass.Clear();
-                                    txtUsuario.Clear();
-                                }
-                            }
-                            else
-                            {
-                                MessageBox.Show("EL usuario no existe");
-                                txtUsuario.Focus();
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Debe ingresae una contraseña");
-                            txtPass.Focus();
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("debe ingresar un Usuario");
-                        txtUsuario.Focus();
-                    }
-                }
                 else
                 {
-                    FrmEditarPassword editar = new FrmEditarPassword(Aleatorio, Usuario);
-                    this.Close();
-                    editar.ShowDialog();
+                    MessageBox.Show("Por favor, ingrese una contraseña válida.",
+                                    "Login",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
                 }
-            }*/
-
-
-
-
             }
             else
             {
-
+                MessageBox.Show("Por favor, ingrese un nombre de usuario válido.",
+                                "Login",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
             }
         }
         private void lnkOlvidar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
