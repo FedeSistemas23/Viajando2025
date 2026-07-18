@@ -27,15 +27,12 @@ namespace interfazLogin
             form.ShowDialog();
         }
 
-        private void btnMinimizar_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void btnEnviarUsuario_Click(object sender, EventArgs e)
         {
             string username = txtUsuario.Text;
-            int idUsuario = CS_UsuarioEnSesion.Id_Usuario;
+            
             CN_ValidarUsuario validarUsuario = new CN_ValidarUsuario();
             bool existe = validarUsuario.ValidarNombreUsuarioL(txtUsuario.Text);
             if (!existe)
