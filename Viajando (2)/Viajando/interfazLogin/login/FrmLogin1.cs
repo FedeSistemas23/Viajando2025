@@ -15,7 +15,6 @@ namespace interfazLogin
     {
         MenuPpal menu1 = new MenuPpal();
         CN_GuardaRespuestas guardaRespuestas;
-        //CN_ValidarUsuario validarusuario = new CN_ValidarUsuario();
         CN_UsuarioEnSesion usuario;
 
         string Aleatorio;
@@ -119,10 +118,17 @@ namespace interfazLogin
                     {
                         if (usuario.DebeCambiarPassword)
                         {
+                            FrmPrimerIngreso frmPrimerIngreso = new FrmPrimerIngreso(usuario);
+                            frmPrimerIngreso.ShowDialog();
+                            return;
+                        }
+                        else if(usuario.PrimeraPassword)
+                        {  
                             FrmEditarPassword form = new FrmEditarPassword(usuario);
                             form.ShowDialog();
                             return;
                         }
+
 
                         this.Hide();
                         bienvenida saludo = new bienvenida();

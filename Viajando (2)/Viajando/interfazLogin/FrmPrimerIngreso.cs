@@ -22,7 +22,7 @@ namespace interfazLogin
         CN_GuardarPrimerIngreso primerIngreso = new CN_GuardarPrimerIngreso();
         
      
-        public FrmPrimerIngreso()
+        public FrmPrimerIngreso(Usuario usuario)
         {
             InitializeComponent();
         }
