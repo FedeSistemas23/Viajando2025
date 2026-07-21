@@ -48,10 +48,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CN_ConfiguracionesSeguridad.cs" />
+<<<<<<< HEAD
     <Compile Include="CN_Login\CN_PreguntasSeguridadPrimerIngreso.cs" />
     <Compile Include="CN_Usuario\CN_AltaUsuario.cs" />
     <Compile Include="Bitacora\CN_Bitacora.cs" />
     <Compile Include="CN_Login\CN_TraePreguntasSeguridad.cs" />
+=======
+    <Compile Include="Login\CN_PreguntasSeguridadPrimerIngreso.cs" />
+    <Compile Include="CN_Usuario\CN_AltaUsuario.cs" />
+    <Compile Include="Bitacora\CN_Bitacora.cs" />
+    <Compile Include="Login\CN_TraePreguntasSeguridad.cs" />
+>>>>>>> 0b93b7a8ed6ab7b4bc23b39f79583426170220bd
     <Compile Include="CN_Localidades\CN_TraerLocalidades.cs" />
     <Compile Include="CN_TraerPartidos.cs" />
     <Compile Include="CN_TraerProvincias.cs" />
@@ -81,6 +88,7 @@
     <Compile Include="CN_Hoteles\CN_GuardarHotel.cs" />
     <Compile Include="CN_Paquetes\CN_GuardarPaquete.cs" />
     <Compile Include="CN_Usuario\CN_EditardatosUsuario.cs" />
+<<<<<<< HEAD
     <Compile Include="CN_Login\CN_Mail.cs" />
     <Compile Include="CN_Login\CN_GuardaRespuestas.cs" />
     <Compile Include="CN_Login\CN_GuardarPrimerIngreso.cs" />
@@ -94,6 +102,21 @@
     <Compile Include="CN_Reservas\MuestraNumReserva.cs" />
     <Compile Include="CN_Login\CN_VerificaUsuarioBloqueado.cs" />
     <Compile Include="CN_Login\ComparaDigitoVerificador.cs" />
+=======
+    <Compile Include="CN_Usuario\CN_Mail.cs" />
+    <Compile Include="Login\CN_GuardaRespuestas.cs" />
+    <Compile Include="Login\CN_GuardarPrimerIngreso.cs" />
+    <Compile Include="CN_Paquetes\CN_MostrarPaquetes.cs" />
+    <Compile Include="CN_Pasajeros\CN_MostrarPasajero.cs" />
+    <Compile Include="CN_Hoteles\CN_MostrarProveedor.cs" />
+    <Compile Include="CN_Usuario\CN_ObtenerEstadosUsuario.cs" />
+    <Compile Include="Login\CN_TraerPreguntasYRespuestas.cs" />
+    <Compile Include="Login\CN_UsuarioEnSesion.cs" />
+    <Compile Include="Login\CN_ValidarUsuario.cs" />
+    <Compile Include="CN_Reservas\MuestraNumReserva.cs" />
+    <Compile Include="Login\CN_VerificaUsuarioBloqueado.cs" />
+    <Compile Include="Login\ComparaDigitoVerificador.cs" />
+>>>>>>> 0b93b7a8ed6ab7b4bc23b39f79583426170220bd
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
