@@ -1,20 +1,15 @@
 ﻿using CapaNegocio;
-using CapaServicios;
 using CapaSesion;
 using interfazPpal;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace interfazLogin
 {
     public partial class FrmPreguntasSeguridad : Form
-    {
-        CN_UsuarioEnSesion usuario = new CN_UsuarioEnSesion();
-        
-        CN_TraerPreguntasYRespuestas pregYresp = new CN_TraerPreguntasYRespuestas();
-        CN_EditarPassword editarPass = new CN_EditarPassword();
+    {     
         FrmLogin1 form = new FrmLogin1();
-
        
         public FrmPreguntasSeguridad()
         {
@@ -27,31 +22,28 @@ namespace interfazLogin
             form.ShowDialog();
         }
 
-       
-
         private void btnEnviarUsuario_Click(object sender, EventArgs e)
         {
+            string mensaje = string.Empty;
             string username = txtUsuario.Text;
             
             CN_ValidarUsuario validarUsuario = new CN_ValidarUsuario();
-            bool existe = validarUsuario.ValidarNombreUsuarioL(txtUsuario.Text);
-            if (!existe)
+            List <PreguntasSeguridad> lista = new CN_TraePreguntasSeguridad().TraerPreguntas(username, out mensaje);
+            if (lista is null)
             {
-                lblNoexisteUsuario.Text = "El usuario no existe. Ingrese el usuario correcto";
+                MessageBox.Show(mensaje);
             }
             else
             {
-                panelPreguntas.Visible = true;
-                pregYresp.TraerPreguntas();
-                lblpregunta1.Text = CS_PregRespSeg.Pregunta1;
-                lblpregunta2.Text = CS_PregRespSeg.Pregunta2;
-                lblpregunta3.Text = CS_PregRespSeg.Pregunta3;
+                panelPreguntas.Visible = true;               
+                lblpregunta1.Text = lista[0].Pregunta;
+                lblpregunta2.Text = lista[1].Pregunta;
+                lblpregunta3.Text = lista[2].Pregunta;
                 lblContestePreguntas.Visible = true;
                 txtRespuesta1.Visible = true; txtRespuesta2.Visible = true; txtRespuesta3.Visible = true;
                 btnEnviarRtas.Visible = true;
                 btnEnviarRtas.Enabled = true;
-            }
-            
+            }    
         }
 
 

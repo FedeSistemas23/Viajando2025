@@ -140,7 +140,6 @@
             this.btnCancelar.TabIndex = 51;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // txtApellido
             // 
@@ -211,7 +210,6 @@
             this.label6.Size = new System.Drawing.Size(43, 13);
             this.label6.TabIndex = 58;
             this.label6.Text = "Destino";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // txtNumReserva
             // 
@@ -229,7 +227,6 @@
             this.label2.Size = new System.Drawing.Size(87, 13);
             this.label2.TabIndex = 56;
             this.label2.Text = "Numero Reserva";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // dtpFechaSalida
             // 
@@ -259,7 +256,6 @@
             this.btnEliminar.TabIndex = 68;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // dtpFechaReserva
             // 

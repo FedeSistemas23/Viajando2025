@@ -59,8 +59,7 @@ namespace CapaSesion {
         public List<UsuarioFamilia> Familias { get; set; }
 
         public List<LogIntentos> IntentosLogin { get; set; }
-
-
+        
     }
 }
 
