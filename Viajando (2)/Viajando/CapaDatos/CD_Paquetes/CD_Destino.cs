@@ -12,7 +12,7 @@ namespace CapaDatos
         Conexion conexion = new Conexion();
         DataTable tabla = new DataTable();
 
-        public void GuardarDestinoD(string nombre, string localidad, string partido, string provincia)
+        public void GuardarDestinoD(Destino destino)
         {
             
             try
@@ -20,10 +20,10 @@ namespace CapaDatos
                 cmd.Connection = conexion.AbrirConexion();
                 cmd.CommandText = "GuardarDestino";
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Nombre", nombre);
-                cmd.Parameters.AddWithValue("@Localidad", localidad);
-                cmd.Parameters.AddWithValue("@Partido", partido);
-                cmd.Parameters.AddWithValue("@Provincia", provincia);
+                cmd.Parameters.AddWithValue("@Nombre", destino.Nombre);
+                cmd.Parameters.AddWithValue("@Localidad", destino.Localidad);
+                cmd.Parameters.AddWithValue("@Partido", destino.Partido);
+                cmd.Parameters.AddWithValue("@Provincia", destino.Provincia);
                 cmd.ExecuteNonQuery();
                 
 
@@ -101,18 +101,18 @@ namespace CapaDatos
 
         }
 
-        public void EditarDestinoD(int id_destino, string nombre, string localidad, string partido, string provincia)
+        public void EditarDestinoD(Destino destino)
         {
             try
             {
                 cmd.Connection = conexion.AbrirConexion();
                 cmd.CommandText = "EditarDestino";
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("Id_Destino", id_destino);
-                cmd.Parameters.AddWithValue("@Nombre", nombre);
-                cmd.Parameters.AddWithValue("@Localidad", localidad);
-                cmd.Parameters.AddWithValue("@Partido", partido);
-                cmd.Parameters.AddWithValue("@Provincia", provincia);
+                cmd.Parameters.AddWithValue("Id_Destino", destino.Id_Destino);
+                cmd.Parameters.AddWithValue("@Nombre", destino.Nombre);
+                cmd.Parameters.AddWithValue("@Localidad", destino.Localidad);
+                cmd.Parameters.AddWithValue("@Partido", destino.Partido);
+                cmd.Parameters.AddWithValue("@Provincia", destino.Provincia);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)

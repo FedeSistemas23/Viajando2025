@@ -7,7 +7,7 @@ namespace CapaNegocio
 {
     public class CN_Destino
     {
-        CD_Destino Destino = 
+        CD_Destino Destino; 
         
 
         public void AgregarDestinoL(Destino nuevodestino)
@@ -35,9 +35,9 @@ namespace CapaNegocio
             Destino.EliminarDestinosD(Id_Destino);
         }
        
-        public void EditarDestinoL(int id_destino, string nombre, string localidad, string partido, string provincia)
+        public void EditarDestinoL(Destino destino)
         {
-            Destino.EditarDestinoD(id_destino, nombre, localidad,partido, provincia );
+            Destino.EditarDestinoD(destino);
         }
     }
 }

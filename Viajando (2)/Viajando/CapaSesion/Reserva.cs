@@ -22,6 +22,9 @@ namespace CapaSesion
         public Paquete Id_Paquete { get; set; }
         public string NombreTitular { get; set; }
         public string ApellidoTitular { get; set; }
+        public int CantidadPasajeros { get; set; }
+
+        public int CantMenorTres { get; set; }
         public string AscensoMicro { get; set; }
         public bool Cotizar { get; set; }
         public string Observacion { get; set; }

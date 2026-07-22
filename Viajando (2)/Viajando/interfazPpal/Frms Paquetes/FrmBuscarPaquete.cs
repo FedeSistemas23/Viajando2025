@@ -79,7 +79,8 @@ namespace interfazPpal
             var paquetesFiltrados = Paquetes
                 .Where(p => (estadoSeleccionado == "Todos" || p.Estado == estadoSeleccionado))
                 .Where(p => (p.FechaSalida >= fechaDesde && p.FechaSalida <= fechaHasta))
-                .Where(p => string.IsNullOrEmpty(destinoBuscado) || p.Destino.ToLower().Contains(destinoBuscado))
+                .Where(p => string.IsNullOrEmpty(destinoBuscado) || 
+                (!string.IsNullOrEmpty(p.Destino?.Nombre) && p.Destino.Nombre.ToLower().Contains(destinoBuscado)))
                 .ToList();
 
             dgvMostrarPaquetes.DataSource = paquetesFiltrados;

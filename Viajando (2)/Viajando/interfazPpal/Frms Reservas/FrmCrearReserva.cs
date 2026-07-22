@@ -3,6 +3,7 @@ using CapaServicios;
 using CapaSesion;
 using interfazPpal;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -91,12 +92,24 @@ namespace Loggin
                             Id_Paquete = new Paquete() { Id_Paquete = Convert.ToInt32(cbxDestino.ValueMember) },
                             CantidadPasajeros = Convert.ToInt32(npdCantidadPax.Value),
                             CantMenorTres = Convert.ToInt32(npdDoble.Value),
-                            AsientosCama = Convert.ToInt32(npdAsientosCama.Value),
-                            AsientosSemiCama = Convert.ToInt32(npdAsientosSemiCama.Value),
-                            Single = Convert.ToInt32(npdSingle.Value),
-                            Doble = Convert.ToInt32(npdDoble.Value),
-                            Triple = Convert.ToInt32(npdTriple.Value),
-                            Cuadruple = Convert.ToInt32(npdCuadruple.Value),
+                            Asientos = new List<ReservaAsiento>()
+                            {
+                                new ReservaAsiento() { Descripcion = "Cama", Cantidad = Convert.ToInt32(npdAsientosCama.Value) },
+                                new ReservaAsiento() { Descripcion = "Semicama", Cantidad = Convert.ToInt32(npdAsientosSemiCama.Value) },  
+                            },
+                            //AsientosCama = Convert.ToInt32(npdAsientosCama.Value),
+                            //AsientosSemiCama = Convert.ToInt32(npdAsientosSemiCama.Value),
+                            Habitaciones = new List<ReservaHabitacion>()
+                            {
+                                new ReservaHabitacion() { Descripcion = "Single", Cantidad = Convert.ToInt32(npdSingle.Value) },
+                                new ReservaHabitacion() { Descripcion = "Doble", Cantidad = Convert.ToInt32(npdDoble.Value) },
+                                new ReservaHabitacion() { Descripcion = "Triple", Cantidad = Convert.ToInt32(npdTriple.Value) },
+                                new ReservaHabitacion() { Descripcion = "Cuadruple", Cantidad = Convert.ToInt32(npdCuadruple.Value) },
+                            },
+                            //Single = Convert.ToInt32(npdSingle.Value),
+                            //Doble = Convert.ToInt32(npdDoble.Value),
+                            //Triple = Convert.ToInt32(npdTriple.Value),
+                            //Cuadruple = Convert.ToInt32(npdCuadruple.Value),
                             AscensoMicro = txtAscenso.Text,
                             CamaSimple = Convert.ToInt32(npdCamaSimple.Value),
                             CamaMatrimonial = Convert.ToInt32(npdCamaMatrimonial.Value),

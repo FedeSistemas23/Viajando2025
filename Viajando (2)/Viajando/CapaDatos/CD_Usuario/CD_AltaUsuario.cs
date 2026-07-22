@@ -54,7 +54,7 @@ namespace CapaDatos
                         cmd.Parameters.AddWithValue("@Bloqueado", usuario.Bloqueado);
                         cmd.Parameters.AddWithValue("@BloqueadoHasta", (object)usuario.BloqueadoHasta ?? DBNull.Value);
                         cmd.Parameters.AddWithValue("@Estado", usuario.Estado);
-                        cmd
+                        
 
                         SqlParameter pMensaje = new SqlParameter("@Mensaje", SqlDbType.VarChar, 300);
                         pMensaje.Direction = ParameterDirection.Output;

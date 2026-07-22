@@ -43,10 +43,7 @@ namespace interfazPpal
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            string nombre = txtDestino.Text;
-            string localidad = txtLocalidad.Text;
-            string partido = txtPartido.Text;
-            string provincia = txtProvincia.Text;
+            
             if (editar == false)
             {
                 try
@@ -57,7 +54,14 @@ namespace interfazPpal
                     }
                     else
                     {
-                        destino.AgregarDestinoL(nombre, localidad, partido, provincia);
+                        Destino obj = new Destino()
+                        {
+                            Nombre = txtDestino.Text,
+                            Localidad = txtLocalidad.Text,
+                            Partido = txtPartido.Text,
+                            Provincia = txtProvincia.Text,
+                        };
+                        destino.AgregarDestinoL(obj);
                         CargarDgvDestinos();
                     }
                 }
@@ -73,7 +77,15 @@ namespace interfazPpal
             if (editar == true)
             {
                 Id_Destino = Convert.ToInt32(dgvDestinos.CurrentRow.Cells["Id_Destino"].Value);
-                destino.EditarDestinoL(Id_Destino, nombre, localidad, partido, provincia);
+                Destino obj = new Destino()
+                {
+                    Id_Destino = Id_Destino,
+                    Nombre = txtDestino.Text,
+                    Localidad = txtLocalidad.Text,
+                    Partido = txtPartido.Text,
+                    Provincia = txtProvincia.Text,
+                };
+                destino.EditarDestinoL(obj);
                 editar = false;
                 CargarDgvDestinos();
                 limpiar.Limpiar(this);
@@ -113,7 +125,7 @@ namespace interfazPpal
         {
             Id_Destino= Convert.ToInt32(dgvDestinos.CurrentRow.Cells["Id_Destino"].Value.ToString());
             Nombre = dgvDestinos.CurrentRow.Cells["Nombre"].Value.ToString();
-            nuevoDestino.AgregarDestinoAlTextBox(Id_Destino, Nombre);
+            nuevoDestino.AgregarDestinoAlCombo(Id_Destino, Nombre);
             this.Close();   
         }
     }

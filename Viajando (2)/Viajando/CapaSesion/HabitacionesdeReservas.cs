@@ -12,7 +12,7 @@ namespace CapaSesion
 
         public int NroReserva { get; set; }
 
-        public int IdTipoHabitacion { get; set; }
+        public string Descripcion { get; set; }
 
         public int Cantidad { get; set; }
     }

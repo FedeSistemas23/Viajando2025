@@ -15,7 +15,7 @@ namespace interfazLogin
     {
         MenuPpal menu1 = new MenuPpal();
         CN_GuardaRespuestas guardaRespuestas;
-        CN_UsuarioEnSesion usuario;
+        
 
         string Aleatorio;
         public FrmLogin1()
@@ -27,7 +27,7 @@ namespace interfazLogin
             InitializeComponent();
             Aleatorio = aleatorio;
 
-            usuario = new CN_UsuarioEnSesion();
+            
             guardaRespuestas = new CN_GuardaRespuestas();
         }
 
@@ -122,9 +122,6 @@ namespace interfazLogin
                             frmPrimerIngreso.ShowDialog();
                             return;
                         }
-                        
-
-
                         this.Hide();
                         bienvenida saludo = new bienvenida();
                         saludo.ShowDialog();
