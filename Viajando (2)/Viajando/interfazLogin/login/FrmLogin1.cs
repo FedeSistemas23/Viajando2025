@@ -122,12 +122,7 @@ namespace interfazLogin
                             frmPrimerIngreso.ShowDialog();
                             return;
                         }
-                        else if(usuario.PrimeraPassword)
-                        {  
-                            FrmEditarPassword form = new FrmEditarPassword(usuario);
-                            form.ShowDialog();
-                            return;
-                        }
+                        
 
 
                         this.Hide();

@@ -12,6 +12,8 @@ namespace CapaSesion
 {
     public class Reserva
     {
+        
+
         public int NroReserva { get; set; }
         public DateTime FechaReserva { get; set; }
         public DateTime FechaSalida { get; set; }

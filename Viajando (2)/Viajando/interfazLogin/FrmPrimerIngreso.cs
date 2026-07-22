@@ -18,7 +18,7 @@ namespace interfazLogin
     public partial class FrmPrimerIngreso : Form
     {        
         Usuario usuario = new Usuario();
-        CN_GuardaRespuestas guardarrespuestas = 
+        CN_GuardaRespuestas guardarrespuestas;
         CN_GuardarPrimerIngreso primerIngreso = new CN_GuardarPrimerIngreso();
         
      
@@ -83,11 +83,18 @@ namespace interfazLogin
 
             // Aquí deberías pasar el arreglo de respuestas a tu método de guardado si es necesario
             bool guardadoExitoso = new CN_GuardaRespuestas().GuardarRespuestas(respuestas, out mensaje);
-
+            if (!guardadoExitoso)
+            {
+                MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }else
+            {
+                MessageBox.Show("Respuestas guardadas correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             DateTime PrimerIngreso = DateTime.Now;
             primerIngreso.GuardarPrimerIngreso(PrimerIngreso);
             this.Close();
-            cambioContraseña.Show();
+            //cambioContraseña.Show();
         }
         
         private void txtRespuesta3_TextChanged(object sender, EventArgs e)

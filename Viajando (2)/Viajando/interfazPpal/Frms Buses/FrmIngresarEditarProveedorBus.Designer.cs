@@ -35,9 +35,7 @@
             this.txtTipoBus = new System.Windows.Forms.TextBox();
             this.npdCantidadAsientos = new System.Windows.Forms.NumericUpDown();
             this.lblCantidadAsientos = new System.Windows.Forms.Label();
-            this.npdAsientosSemicama = new System.Windows.Forms.NumericUpDown();
             this.lbbAsientosSemicama = new System.Windows.Forms.Label();
-            this.npdAsientosCama = new System.Windows.Forms.NumericUpDown();
             this.lblAsientosCama = new System.Windows.Forms.Label();
             this.lblTransporte = new System.Windows.Forms.Label();
             this.txtNombreProveedor = new System.Windows.Forms.TextBox();
@@ -70,11 +68,11 @@
             this.lblCuit = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
+            this.txtCantidadAsientosCama = new System.Windows.Forms.TextBox();
+            this.txtCantidadAsientosSemicama = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBus)).BeginInit();
             this.pnlBus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.npdCantidadAsientos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.npdAsientosSemicama)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.npdAsientosCama)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbProveedores
@@ -107,12 +105,12 @@
             // 
             // pnlBus
             // 
+            this.pnlBus.Controls.Add(this.txtCantidadAsientosSemicama);
+            this.pnlBus.Controls.Add(this.txtCantidadAsientosCama);
             this.pnlBus.Controls.Add(this.txtTipoBus);
             this.pnlBus.Controls.Add(this.npdCantidadAsientos);
             this.pnlBus.Controls.Add(this.lblCantidadAsientos);
-            this.pnlBus.Controls.Add(this.npdAsientosSemicama);
             this.pnlBus.Controls.Add(this.lbbAsientosSemicama);
-            this.pnlBus.Controls.Add(this.npdAsientosCama);
             this.pnlBus.Controls.Add(this.lblAsientosCama);
             this.pnlBus.Controls.Add(this.lblTransporte);
             this.pnlBus.Location = new System.Drawing.Point(57, 442);
@@ -146,14 +144,6 @@
             this.lblCantidadAsientos.TabIndex = 138;
             this.lblCantidadAsientos.Text = "Cantidad de\r\n      Asientos:";
             // 
-            // npdAsientosSemicama
-            // 
-            this.npdAsientosSemicama.Location = new System.Drawing.Point(476, 57);
-            this.npdAsientosSemicama.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.npdAsientosSemicama.Name = "npdAsientosSemicama";
-            this.npdAsientosSemicama.Size = new System.Drawing.Size(47, 22);
-            this.npdAsientosSemicama.TabIndex = 24;
-            // 
             // lbbAsientosSemicama
             // 
             this.lbbAsientosSemicama.AutoSize = true;
@@ -163,14 +153,6 @@
             this.lbbAsientosSemicama.Size = new System.Drawing.Size(132, 16);
             this.lbbAsientosSemicama.TabIndex = 137;
             this.lbbAsientosSemicama.Text = "Asientos SemiCama:";
-            // 
-            // npdAsientosCama
-            // 
-            this.npdAsientosCama.Location = new System.Drawing.Point(277, 55);
-            this.npdAsientosCama.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.npdAsientosCama.Name = "npdAsientosCama";
-            this.npdAsientosCama.Size = new System.Drawing.Size(47, 22);
-            this.npdAsientosCama.TabIndex = 25;
             // 
             // lblAsientosCama
             // 
@@ -456,6 +438,22 @@
             this.lblNombre.TabIndex = 106;
             this.lblNombre.Text = "Nombre Del Titular:";
             // 
+            // txtCantidadAsientosCama
+            // 
+            this.txtCantidadAsientosCama.Location = new System.Drawing.Point(280, 52);
+            this.txtCantidadAsientosCama.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCantidadAsientosCama.Name = "txtCantidadAsientosCama";
+            this.txtCantidadAsientosCama.Size = new System.Drawing.Size(44, 22);
+            this.txtCantidadAsientosCama.TabIndex = 139;
+            // 
+            // txtCantidadAsientosSemicama
+            // 
+            this.txtCantidadAsientosSemicama.Location = new System.Drawing.Point(476, 55);
+            this.txtCantidadAsientosSemicama.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCantidadAsientosSemicama.Name = "txtCantidadAsientosSemicama";
+            this.txtCantidadAsientosSemicama.Size = new System.Drawing.Size(44, 22);
+            this.txtCantidadAsientosSemicama.TabIndex = 140;
+            // 
             // FrmIngresarEditarProveedorBus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -502,8 +500,6 @@
             this.pnlBus.ResumeLayout(false);
             this.pnlBus.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.npdCantidadAsientos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.npdAsientosSemicama)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.npdAsientosCama)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -518,9 +514,7 @@
         private System.Windows.Forms.TextBox txtTipoBus;
         private System.Windows.Forms.NumericUpDown npdCantidadAsientos;
         private System.Windows.Forms.Label lblCantidadAsientos;
-        private System.Windows.Forms.NumericUpDown npdAsientosSemicama;
         private System.Windows.Forms.Label lbbAsientosSemicama;
-        private System.Windows.Forms.NumericUpDown npdAsientosCama;
         private System.Windows.Forms.Label lblAsientosCama;
         private System.Windows.Forms.Label lblTransporte;
         private System.Windows.Forms.TextBox txtNombreProveedor;
@@ -553,5 +547,7 @@
         private System.Windows.Forms.Label lblCuit;
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.TextBox txtCantidadAsientosSemicama;
+        private System.Windows.Forms.TextBox txtCantidadAsientosCama;
     }
 }

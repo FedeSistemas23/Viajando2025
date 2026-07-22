@@ -56,10 +56,7 @@ namespace interfazPpal
                             Telefono = Convert.ToString(txtTelefono.Text),
                             Celular = Convert.ToString(txtCelular.Text),
                             CantidadDeHabitaciones = Convert.ToInt32(npdCantidadHabitaciones.Value),
-                            Single = Convert.ToInt32(npdSingle.Value),
-                            Doble = Convert.ToInt32(npdDoble.Value),
-                            Triple = Convert.ToInt32(npdTriple.Value),
-                            Cuadruple = Convert.ToInt32(npdCuadruple.Value),
+                            
                             Desayuno = Convert.ToBoolean(chbDesayuno.Checked),
                             MediaPension = Convert.ToBoolean(chbMediaPension.Checked),
                             PensionCompleta = Convert.ToBoolean(chbPensionCompleta.Checked),
@@ -96,10 +93,7 @@ namespace interfazPpal
                     Telefono = Convert.ToString(txtTelefono.Text),
                     Celular = Convert.ToString(txtCelular.Text),
                     CantidadDeHabitaciones = Convert.ToInt32(npdCantidadHabitaciones.Value),
-                    Single = Convert.ToInt32(npdSingle.Value),
-                    Doble = Convert.ToInt32(npdDoble.Value),
-                    Triple = Convert.ToInt32(npdTriple.Value),
-                    Cuadruple = Convert.ToInt32(npdCuadruple.Value),
+                    
                     Desayuno = Convert.ToBoolean(chbDesayuno.Checked),
                     MediaPension = Convert.ToBoolean(chbMediaPension.Checked),
                     PensionCompleta = Convert.ToBoolean(chbPensionCompleta.Checked),

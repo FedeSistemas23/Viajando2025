@@ -78,7 +78,7 @@
             this.btn_Guardar = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbFamilias = new System.Windows.Forms.ComboBox();
             this.eliminar = new System.Windows.Forms.Button();
             this.editar = new System.Windows.Forms.Button();
             this.dgvRoles = new System.Windows.Forms.DataGridView();
@@ -749,7 +749,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.cmbFamilias);
             this.panel2.Controls.Add(this.eliminar);
             this.panel2.Controls.Add(this.editar);
             this.panel2.Controls.Add(this.dgvRoles);
@@ -769,14 +769,14 @@
             this.panel2.Size = new System.Drawing.Size(1355, 703);
             this.panel2.TabIndex = 0;
             // 
-            // comboBox1
+            // cmbFamilias
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(289, 38);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(276, 29);
-            this.comboBox1.TabIndex = 145;
+            this.cmbFamilias.FormattingEnabled = true;
+            this.cmbFamilias.Location = new System.Drawing.Point(289, 38);
+            this.cmbFamilias.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbFamilias.Name = "cmbFamilias";
+            this.cmbFamilias.Size = new System.Drawing.Size(276, 29);
+            this.cmbFamilias.TabIndex = 145;
             // 
             // eliminar
             // 
@@ -1489,7 +1489,7 @@
         private System.Windows.Forms.CheckBox ckbBloqueado;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbFamilias;
         private System.Windows.Forms.Panel pnlpreguntaseguridad;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnVer;

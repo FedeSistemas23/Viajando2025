@@ -20,7 +20,7 @@ namespace CapaDatos
             {
                 using (SqlConnection connection = AbrirConexion())
                 {
-                    using (SqlCommand cmd = new SqlCommand("PreguntasSeguridadUsuario ", connection))
+                    using (SqlCommand cmd = new SqlCommand("PregRespSeg", connection))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
 
@@ -39,6 +39,7 @@ namespace CapaDatos
                                 {
                                     IdPregunta = leer.GetInt32(leer.GetOrdinal("Id_Preg")),
                                     Pregunta = leer["Pregunta"].ToString(),
+                                    Respuesta = leer["Respuesta"].ToString(),   
                                     Activa = true, // O asigna el valor correcto según tu lógica
                                     IdUsuario = leer.GetInt32(leer.GetOrdinal("Id_Usuario"))
                                 };

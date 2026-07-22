@@ -38,7 +38,7 @@ namespace interfazPpal
         private void frm_AltaUsuario_Load(object sender, EventArgs e)
         {
 
-            MostrarEstado.TraerEstadosCN();
+            //MostrarEstado.TraerEstadosCN();
             DGV_datosUsuario.RowHeadersVisible = false;
             // listaUsuariosCS = usuario.MostrarDatosDGV(); // ERROR: CS_EstadosUsuario no tiene MostrarDatosDGV
             listaUsuariosCS = new List<Usuario>(); // TODO: Reemplazar por la obtención real de usuarios desde la capa de negocio
@@ -239,13 +239,28 @@ namespace interfazPpal
                             Celular = txtCelular.Text,
                             Provincia = cmbProvincia.DisplayMember,
                             Partido = cmbPartido.DisplayMember,
-                            Localidad = cmbLocalidades.DisplayMember
+                            Localidad = cmbLocalidades.DisplayMember,
+                            Calle = txtCalle.Text,
+                            Numero = txtNumeroCalle.Text, 
                         },
-
+                        
+                        Id_Familia = Convert.ToInt32(cmbFamilias.SelectedValue),
+                        PrimeraPassword = true,
+                        DebeCambiarPassword = true,
+                        PasswordVence = true,
+                        DiasVencimiento = 90,
+                        FechaUltimoCambio = DateTime.Now,
+                        UsuarioTemporal = false,
+                        FechaCaducidad = DateTime.Now.AddDays(90),
+                        IntentosFallidos = 3,
+                        FechaIntento = DateTime.Now,
+                        Bloqueado = false,
+                        BloqueadoHasta = DateTime.Now.AddDays(1),
+                        //Estado = cmbEstado.DisplayMember,
                     };
 
-                    int IdNuevoUsuario = new CN_AltaUsuario().AltaUsuario(Usuario, out mensaje);
-                    if (IdNuevoUsuario != 0)
+                    bool IdNuevoUsuario = new CN_AltaUsuario().AltaUsuario(Usuario, out mensaje);
+                    if (IdNuevoUsuario == false)
                     {
                         MessageBox.Show(mensaje);
                         //bitacora.GuardarBitacora(CS_Usuario.Id_Usuario, "Creacion de paquete", "Se ha creado un paquete nuevo.");

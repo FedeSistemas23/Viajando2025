@@ -88,7 +88,7 @@ namespace Loggin
 
                         {
                             NroReserva = Convert.ToInt32(txtNumeroReserva.Text),
-                            Paquete = new Paquete() { Id_Paquete = Convert.ToInt32(cbxDestino.ValueMember) },
+                            Id_Paquete = new Paquete() { Id_Paquete = Convert.ToInt32(cbxDestino.ValueMember) },
                             CantidadPasajeros = Convert.ToInt32(npdCantidadPax.Value),
                             CantMenorTres = Convert.ToInt32(npdDoble.Value),
                             AsientosCama = Convert.ToInt32(npdAsientosCama.Value),

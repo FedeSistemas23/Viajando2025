@@ -56,8 +56,8 @@ namespace interfazPpal
                 editar = true;
                 int Id_Provedor = Convert.ToInt32(dgvBus.CurrentRow.Cells["Id_ProvedorBus"].Value);
                 npdCantidadAsientos.Value = Convert.ToInt32(dgvBus.CurrentRow.Cells["CantidadDeAsientos"].Value);
-                npdAsientosCama.Value = Convert.ToInt32(dgvBus.CurrentRow.Cells["Cama"].Value);
-                npdAsientosSemicama.Value = Convert.ToInt32(dgvBus.CurrentRow.Cells["Semicama"].Value);
+                txtCantidadAsientosCama.Text = dgvBus.CurrentRow.Cells["Cama"].Value.ToString();
+                txtCantidadAsientosSemicama.Text = dgvBus.CurrentRow.Cells["Semicama"].Value.ToString();
                 txtCalle.Text = dgvBus.CurrentRow.Cells["Calle"].Value.ToString();
                 txtNumero.Text = dgvBus.CurrentRow.Cells["Numero"].Value.ToString();
                 txtLocalidad.Text = dgvBus.CurrentRow.Cells["Localidad"].Value.ToString();
@@ -97,58 +97,17 @@ namespace interfazPpal
 
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
-                Bus Bus;
-                CN_GuardarBus NuevoBus = new CN_GuardarBus();
-                try
+            Bus Bus;
+            CN_GuardarBus NuevoBus = new CN_GuardarBus();
+            try
+            {
+                if (editar == false)
                 {
-                    if (string.IsNullOrEmpty(txtNombreProveedor.Text) || string.IsNullOrEmpty(txtDestino.Text) || string.IsNullOrEmpty(txtNombre.Text)
-                        || string.IsNullOrEmpty(txtApellido.Text) || string.IsNullOrEmpty(txtTelefono.Text) || string.IsNullOrEmpty(txtCelular.Text))
-                    {
-                        MessageBox.Show("Debe con asterisco son obligattorios.");
-                    }
-                    else
-                    {
-                        if (editar == false)
-                        {
-                            Bus = new Bus()
-                            {
-                                CantidadDeAsientos = Convert.ToInt32(npdCantidadAsientos.Value),
-                                Cama = Convert.ToInt32(npdAsientosCama.Value),
-                                Semicama = Convert.ToInt32(npdAsientosSemicama.Value),
-                                Calle = txtCalle.Text,
-                                Numero = Convert.ToInt32(txtNumero.Text),
-                                Localidad = txtLocalidad.Text,
-                                Provincia = txtProvincia.Text,
-                                Telefono = Convert.ToString(txtTelefono.Text),
-                                Email = txtEmail.Text,
-                                Destino = txtDestino.Text,
-                                NombreTitularBus = txtNombre.Text,
-                                ApellidoTitularBus = txtApellido.Text,
-                                Cuit = Convert.ToString(txtCuit.Text),
-                                Celular = Convert.ToString(txtCelular.Text),
-                                NombreBus = txtNombreProveedor.Text,
-                            };
-                            NuevoBus.GuardarBusL(Bus);
-                            MessageBox.Show("El producto se ha creado con exito");
-                            MostrarBuses();
-                            limpiar.Limpiar(this);
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Error al ejecutar SP o Conexion a la BD. \n \n" + ex.Message);
-                }
-
-                if (editar == true)
-                {
-                    CN_EditarBus editarBus = new CN_EditarBus();
                     Bus = new Bus()
                     {
-                        Id_ProvedorBus = Convert.ToInt32(dgvBus.CurrentRow.Cells["Id_ProvedorBus"].Value),
                         CantidadDeAsientos = Convert.ToInt32(npdCantidadAsientos.Value),
-                        Cama = Convert.ToInt32(npdAsientosCama.Value),
-                        Semicama = Convert.ToInt32(npdAsientosSemicama.Value),
+                        Cama = txtCantidadAsientosCama.ToString(),
+                        Semicama = txtCantidadAsientosSemicama.ToString(),
                         Calle = txtCalle.Text,
                         Numero = Convert.ToInt32(txtNumero.Text),
                         Localidad = txtLocalidad.Text,
@@ -161,15 +120,49 @@ namespace interfazPpal
                         Cuit = Convert.ToString(txtCuit.Text),
                         Celular = Convert.ToString(txtCelular.Text),
                         NombreBus = txtNombreProveedor.Text,
-
                     };
-                    editarBus.EditarBusL(Bus);
-                    MessageBox.Show("Los datos se han modificado con exito");
+                    NuevoBus.GuardarBusL(Bus);
+                    MessageBox.Show("El producto se ha creado con exito");
                     MostrarBuses();
                     limpiar.Limpiar(this);
                 }
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al ejecutar SP o Conexion a la BD. \n \n" + ex.Message);
+            }
+
+            if (editar == true)
+            {
+                CN_EditarBus editarBus = new CN_EditarBus();
+                Bus = new Bus()
+                {
+                    Id_ProvedorBus = Convert.ToInt32(dgvBus.CurrentRow.Cells["Id_ProvedorBus"].Value),
+                    CantidadDeAsientos = Convert.ToInt32(npdCantidadAsientos.Value),
+                    Cama = txtCantidadAsientosCama.ToString(),
+                    Semicama = txtCantidadAsientosSemicama.ToString(),
+                    Calle = txtCalle.Text,
+                    Numero = Convert.ToInt32(txtNumero.Text),
+                    Localidad = txtLocalidad.Text,
+                    Provincia = txtProvincia.Text,
+                    Telefono = Convert.ToString(txtTelefono.Text),
+                    Email = txtEmail.Text,
+                    Destino = txtDestino.Text,
+                    NombreTitularBus = txtNombre.Text,
+                    ApellidoTitularBus = txtApellido.Text,
+                    Cuit = Convert.ToString(txtCuit.Text),
+                    Celular = Convert.ToString(txtCelular.Text),
+                    NombreBus = txtNombreProveedor.Text,
+
+                };
+                editarBus.EditarBusL(Bus);
+                MessageBox.Show("Los datos se han modificado con exito");
+                MostrarBuses();
+                limpiar.Limpiar(this);
             }
         }
+    }
 
         /*private void BtnCancelar_Click_1(object sender, EventArgs e)
         {

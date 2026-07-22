@@ -19,6 +19,7 @@ namespace CapaSesion
         */
         public int IdUsuario { get; set; }
         public int IdPregunta { get; set; }
+        public string Respuesta { get; set; }
 
         public string Pregunta { get; set; }
 
