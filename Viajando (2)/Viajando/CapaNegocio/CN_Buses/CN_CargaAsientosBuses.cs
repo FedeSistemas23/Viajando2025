@@ -10,9 +10,9 @@ namespace CapaNegocio
 {
     public class CN_CargaAsientosBuses
     {
-        CD_CargaAsientosBus CargadorAsientos= new CD_CargaAsientosBus();
+        CD_CargaAsientosBus CargadorAsientos = new CD_CargaAsientosBus();
         List<int> asientos = new List<int>();
-        public List<int> CargaAsientosBusL(string nombrebus, out string mensaje)
+        /*public List<int> CargaAsientosBusL(string nombrebus, out string mensaje)
         {
             mensaje = string.Empty;
 
@@ -24,8 +24,8 @@ namespace CapaNegocio
 
             else
             {
-                return GuardarNuevoPaqueteD.GuardarPaqueteD(paquete, out mensaje);
+                //return GuardarNuevoPaqueteD.GuardarPaqueteD(paquete, out mensaje);
             }
-        }
+        }*/
     }
 }

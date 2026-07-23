@@ -30,7 +30,7 @@ namespace CapaSesion
         public string Observacion { get; set; }
         public EstadoReserva IdEstado { get; set; }
 
-        public List<ReservaPasajero> Pasajeros { get; set; } 
+        public List<Pasajero> Pasajeros { get; set; } 
         public List<ReservaHabitacion> Habitaciones { get; set; }
 
         public List<ReservaAsiento> Asientos { get; set; } 

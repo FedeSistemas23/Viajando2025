@@ -62,8 +62,8 @@ namespace interfazPpal
                     CV_Pasajero = new Pasajero()
                     {
                         NroReserva = Convert.ToInt32(txtNroReserva.Text),
-                        nombre = txtNombrePax.Text,
-                        apellido = txtApellidos.Text,
+                        Nombre = txtNombrePax.Text,
+                        Apellido = txtApellidos.Text,
                         TipoDocumento = Convert.ToString(cmbTipoDoc.SelectedItem),
                         NroDocumento = txtNumDoc.Text,
                         FechaNacimiento = FechaNacimiento.Value,
@@ -100,8 +100,8 @@ namespace interfazPpal
                 {
                     CV_Pasajero.Id_Pasajero = Convert.ToInt32(dgvPasajeros.CurrentRow.Cells["Id_Pasajero"].Value.ToString());
                     CV_Pasajero.NroReserva = Convert.ToInt32(txtNroReserva.Text);
-                    CV_Pasajero.nombre = txtNombrePax.Text;
-                    CV_Pasajero.apellido = txtApellidos.Text;
+                    CV_Pasajero.Nombre = txtNombrePax.Text;
+                    CV_Pasajero.Apellido = txtApellidos.Text;
                     CV_Pasajero.TipoDocumento = cmbTipoDoc.SelectedItem.ToString();
                     CV_Pasajero.NroDocumento = txtNumDoc.Text;
                     CV_Pasajero.FechaNacimiento = FechaNacimiento.Value;

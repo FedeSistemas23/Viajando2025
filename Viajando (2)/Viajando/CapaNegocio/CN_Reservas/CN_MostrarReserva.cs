@@ -11,7 +11,7 @@ namespace CapaNegocio
 {
     public class CN_MostrarReserva
     {
-        CD_MostrarReservaDataGrid reservaCD = new CD_MostrarReservaDataGrid();
+        CD_Reserva reservaCD = new CD_Reserva();
         Reserva reservaCN = new Reserva();
         public DataTable MostrarReservaCN(/*int NroReserva**/)
         {
@@ -22,5 +22,6 @@ namespace CapaNegocio
         }
     }
 }
+
 
         

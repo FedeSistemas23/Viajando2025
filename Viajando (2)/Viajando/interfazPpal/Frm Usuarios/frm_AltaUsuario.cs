@@ -18,7 +18,7 @@ namespace interfazPpal
 
         List<Usuario> listaUsuariosCS = new List<Usuario>();
         CS_EstadosUsuario usuario = new CS_EstadosUsuario();
-        CN_ObtenerEstadosUsuario MostrarEstado = new CN_ObtenerEstadosUsuario();
+        //CN_ObtenerEstadosUsuario MostrarEstado = new CN_ObtenerEstadosUsuario();
         CN_EditarDatosUsuario editarUsuarioCN = new CN_EditarDatosUsuario();
 
         CN_TraerProvincias traerProvincias = new CN_TraerProvincias();

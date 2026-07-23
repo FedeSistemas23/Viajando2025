@@ -17,7 +17,7 @@ namespace TestProjectViajando
         
 
         CN_MostrarReserva MostrarReservaN= new CN_MostrarReserva();
-        CD_MostrarReserva mostrarReservaD= new CD_MostrarReserva();
+        CD_Reserva mostrarReservaD= new CD_Reserva();
        
 
         [SetUp]

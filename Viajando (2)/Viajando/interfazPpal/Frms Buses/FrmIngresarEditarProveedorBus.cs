@@ -17,8 +17,7 @@ namespace interfazPpal
     {
         CS_LimpiarFormularios limpiar = new CS_LimpiarFormularios();
         CS_ValidarFormulario Validar = new CS_ValidarFormulario();
-        List<Bus> listaBuses;
-
+       
 
         bool editar = false;
         public FrmIngresarEditarProveedorBus()

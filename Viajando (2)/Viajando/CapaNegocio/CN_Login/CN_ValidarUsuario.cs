@@ -6,9 +6,7 @@ namespace CapaNegocio
 {
     public class CN_ValidarUsuario
     {
-        private string nombreusuario;
-        string Username;
-        private string Password;
+        
 
         CD_ValidarUsuario obj= new CD_ValidarUsuario();
 

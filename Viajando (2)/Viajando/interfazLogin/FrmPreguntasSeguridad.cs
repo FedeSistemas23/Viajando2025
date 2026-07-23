@@ -4,6 +4,7 @@ using interfazPpal;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using CapaServicios;
 
 namespace interfazLogin
 {
@@ -66,7 +67,7 @@ namespace interfazLogin
                 CS_UsuarioEnSesion.password = aleatorio;
                 string concatenados = aleatorio+CS_UsuarioEnSesion.Username;
                 string hasheo2 = Seguridad.SHA256(concatenados);
-                editarPass.EditarPassword(hasheo2, CS_UsuarioEnSesion.Username);
+                //editarPass.EditarPassword(hasheo2, CS_UsuarioEnSesion.Username);
                 ArmarMail.Preparar(CS_UsuarioEnSesion.Username, CS_UsuarioEnSesion.email, aleatorio);
                 MessageBox.Show("Se ha enviado una contraseña ha su correo electronico. " +
                     "Debe Volver a iniciar sesion, e ingresar esa contraseña que fue enviada.");

@@ -95,7 +95,7 @@ namespace Loggin
                             Asientos = new List<ReservaAsiento>()
                             {
                                 new ReservaAsiento() { Descripcion = "Cama", Cantidad = Convert.ToInt32(npdAsientosCama.Value) },
-                                new ReservaAsiento() { Descripcion = "Semicama", Cantidad = Convert.ToInt32(npdAsientosSemiCama.Value) },  
+                                new ReservaAsiento() { Descripcion = "Semicama", Cantidad = Convert.ToInt32(npdAsientosSemiCama.Value) },
                             },
                             //AsientosCama = Convert.ToInt32(npdAsientosCama.Value),
                             //AsientosSemiCama = Convert.ToInt32(npdAsientosSemiCama.Value),
@@ -111,29 +111,28 @@ namespace Loggin
                             //Triple = Convert.ToInt32(npdTriple.Value),
                             //Cuadruple = Convert.ToInt32(npdCuadruple.Value),
                             AscensoMicro = txtAscenso.Text,
-                            CamaSimple = Convert.ToInt32(npdCamaSimple.Value),
-                            CamaMatrimonial = Convert.ToInt32(npdCamaMatrimonial.Value),
+                            //CamaSimple = Convert.ToInt32(npdCamaSimple.Value),
+                            //CamaMatrimonial = Convert.ToInt32(npdCamaMatrimonial.Value),
                             Cotizar = Convert.ToBoolean(ckbCotizar.Checked),
-                            Senia = convertir.ConvertirTextoADouble(txtSeña.Text),
+                            //Senia = convertir.ConvertirTextoADouble(txtSeña.Text),
                             Observacion = txtObservaciones.Text,
                             FechaSalida = dtpFechaSalida.Value,
                             FechaRegreso = dtpFechaRegreso.Value,
                             FechaReserva = DateTime.Now,
-                            Pasajero = new Pasajero()
+                            Pasajeros = new List<Pasajero>()
                             {
-                                nombre = txtNombre.Text,
-                                apellido = txtApellido.Text,
-                            },
-                            AdicionalCama = Convert.ToBoolean(ckbAdicionalCama.Checked),
-                            Habitaciones = Convert.ToInt32(npdCantHabitaciones.Value),
-                            NombreVendedor = txtVendedor.Text,
+                                new Pasajero () { Nombre = txtNombre.Text},
+                                new Pasajero () { Apellido = txtApellido.Text},                            },
+                            //AdicionalCama = Convert.ToBoolean(ckbAdicionalCama.Checked),
+                           // Habitaciones = Convert.ToInt32(npdCantHabitaciones.Value),
+                            //NombreVendedor = txtVendedor.Text,
                         };
 
-                        int nuevaReserva = new CN_Reserva().GuardarReservaCN(reserva, out mensaje);
+                        bool nuevaReserva = new CN_Reserva().GuardarReservaCN(reserva, out mensaje);
                         
-                        if (nuevaReserva != 0)
+                        if (nuevaReserva)
                         {
-                            reserva.AgregarLista(reserva);
+                            //reserva.AgregarLista(reserva);
 
                             panelMsg.Visible = true;
                             lblMsgOk.Visible = true;
@@ -166,40 +165,52 @@ namespace Loggin
             }
             if (editar == true)
             {
-                CN_EditarReserva reservaEditar = new CN_EditarReserva();
+                mensaje = string.Empty;
+                CN_Reserva obj = new CN_Reserva();
                 Reserva reserva = new Reserva()
 
                 {
                     NroReserva = Convert.ToInt32(txtNumeroReserva.Text),
-                    Paquete = new Paquete() { Id_Paquete = Convert.ToInt32(cbxDestino.ValueMember) },
+                    Id_Paquete = new Paquete() { Id_Paquete = Convert.ToInt32(cbxDestino.ValueMember) },
                     CantidadPasajeros = Convert.ToInt32(npdCantidadPax.Value),
                     CantMenorTres = Convert.ToInt32(npdDoble.Value),
-                    AsientosCama = Convert.ToInt32(npdAsientosCama.Value),
-                    AsientosSemiCama = Convert.ToInt32(npdAsientosSemiCama.Value),
-                    Single = Convert.ToInt32(npdSingle.Value),
-                    Doble = Convert.ToInt32(npdDoble.Value),
-                    Triple = Convert.ToInt32(npdTriple.Value),
-                    Cuadruple = Convert.ToInt32(npdCuadruple.Value),
+                    Asientos = new List<ReservaAsiento>()
+                            {
+                                new ReservaAsiento() { Descripcion = "Cama", Cantidad = Convert.ToInt32(npdAsientosCama.Value) },
+                                new ReservaAsiento() { Descripcion = "Semicama", Cantidad = Convert.ToInt32(npdAsientosSemiCama.Value) },
+                            },
+                    //AsientosCama = Convert.ToInt32(npdAsientosCama.Value),
+                    //AsientosSemiCama = Convert.ToInt32(npdAsientosSemiCama.Value),
+                    Habitaciones = new List<ReservaHabitacion>()
+                            {
+                                new ReservaHabitacion() { Descripcion = "Single", Cantidad = Convert.ToInt32(npdSingle.Value) },
+                                new ReservaHabitacion() { Descripcion = "Doble", Cantidad = Convert.ToInt32(npdDoble.Value) },
+                                new ReservaHabitacion() { Descripcion = "Triple", Cantidad = Convert.ToInt32(npdTriple.Value) },
+                                new ReservaHabitacion() { Descripcion = "Cuadruple", Cantidad = Convert.ToInt32(npdCuadruple.Value) },
+                            },
+                    //Single = Convert.ToInt32(npdSingle.Value),
+                    //Doble = Convert.ToInt32(npdDoble.Value),
+                    //Triple = Convert.ToInt32(npdTriple.Value),
+                    //Cuadruple = Convert.ToInt32(npdCuadruple.Value),
                     AscensoMicro = txtAscenso.Text,
-                    CamaSimple = Convert.ToInt32(npdCamaSimple.Value),
-                    CamaMatrimonial = Convert.ToInt32(npdCamaMatrimonial.Value),
+                    //CamaSimple = Convert.ToInt32(npdCamaSimple.Value),
+                    //CamaMatrimonial = Convert.ToInt32(npdCamaMatrimonial.Value),
                     Cotizar = Convert.ToBoolean(ckbCotizar.Checked),
-                    Senia = convertir.ConvertirTextoADouble(txtSeña.Text),
+                    //Senia = convertir.ConvertirTextoADouble(txtSeña.Text),
                     Observacion = txtObservaciones.Text,
                     FechaSalida = dtpFechaSalida.Value,
                     FechaRegreso = dtpFechaRegreso.Value,
                     FechaReserva = DateTime.Now,
-                    Pasajero = new Pasajero()
-                    {
-                        nombre = txtNombre.Text,
-                        apellido = txtApellido.Text,
-                    },
-                    AdicionalCama = Convert.ToBoolean(ckbAdicionalCama.Checked),
-                    Habitaciones = Convert.ToInt32(npdCantHabitaciones.Value),
-                    NombreVendedor = txtVendedor.Text, 
+                    Pasajeros = new List<Pasajero>()
+                            {
+                                new Pasajero () { Nombre = txtNombre.Text},
+                                new Pasajero () { Apellido = txtApellido.Text},                            },
+                    //AdicionalCama = Convert.ToBoolean(ckbAdicionalCama.Checked),
+                    // Habitaciones = Convert.ToInt32(npdCantHabitaciones.Value),
+                    //NombreVendedor = txtVendedor.Text,
                 };
 
-                if (reservaEditar.EditarReservaCN(reserva))
+                if (obj.EditarReservaCN(reserva, out mensaje))
                 {
                     panelMsg.Visible = true;
                     lblMsgOk.Visible = true;
@@ -335,13 +346,14 @@ namespace Loggin
         }
         private void button5_Click(object sender, EventArgs e)
         {
-            CN_ElimnarReserva eliminar = new CN_ElimnarReserva();
+            string mensaje = string.Empty;
+            CN_Reserva obj = new CN_Reserva();
             Reserva reserva = new Reserva();
             CN_MostrarReserva mostrar = new CN_MostrarReserva();
             if (dgvReservas.SelectedRows.Count > 0)
             {
                 reserva.NroReserva = Convert.ToInt32(dgvReservas.CurrentRow.Cells["NroReserva"].Value.ToString());
-                if (eliminar.EliminarReservaCN(reserva.NroReserva))
+                if (obj.EliminarReservaCN(reserva.NroReserva, out mensaje))
                 {
                     panelMsg.Visible = true;
                     lblMsgOk.Visible = true;

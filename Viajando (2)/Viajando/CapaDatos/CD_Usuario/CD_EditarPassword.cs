@@ -8,8 +8,9 @@ namespace CapaDatos
     {
         SqlCommand cmd = new SqlCommand();
         Conexion conexion = new Conexion();
-        public void EditarPassword(string pass, string username)
+        public bool EditarPassword(string pass, int username, out string mensaje)
         {
+            mensaje = string.Empty;
             try
             {
                 cmd.Connection = conexion.AbrirConexion();
@@ -21,13 +22,16 @@ namespace CapaDatos
             }
             catch  (Exception ex)          
             {
+                return false;
                 throw new Exception("Error al ejecutar SP o Conexion a la BD. \n \n" + ex.Message);
+                
             }
             finally
             {
                 cmd.Parameters.Clear();
                 conexion.CerrarConexion();
             }
+            return true;
         }
         
     }

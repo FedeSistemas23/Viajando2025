@@ -32,9 +32,23 @@ namespace interfazPpal
         }
         private void FrmIngresarEditarPaquetes_Load(object sender, EventArgs e)
         {
+            string mensaje = string.Empty;  
             CargarComboDestino();
-            List<Paquete> lista = new List<Paquete>(new CN_MostrarPaquetes().MostrarPaquetes());
-            dgvPaquetes.DataSource = lista;
+            List<Paquete> lista = new List<Paquete>(new CN_MostrarPaquetes().MostrarPaquetes(out mensaje));
+            foreach (Paquete paquete in lista)
+            {
+                dgvPaquetes.Rows.Add(new object[]
+                {
+                    paquete.Id_Paquete,
+                    paquete.Destino.Nombre,
+                    paquete.FechaSalida.ToString("dd/MM/yyyy"),
+                    paquete.FechaRegreso.ToString("dd/MM/yyyy"),
+                    paquete.Disponibilidad.CuposDisponibles,
+                    paquete.PrecioLista,
+                    paquete.PrecioEfectivo
+                });
+            }
+            MessageBox.Show(mensaje);
 
 
         }

@@ -31,11 +31,12 @@ namespace interfazPpal
         
         private void MostrarPaquetes()
         {
+            string mensaje= string.Empty;
             CN_MostrarPaquetes paquetes = new CN_MostrarPaquetes();
             try
             {
                 CN_MostrarPaquetes CargadorDgv = new CN_MostrarPaquetes();
-                Paquetes = CargadorDgv.MostrarPaquetes();
+                Paquetes = CargadorDgv.MostrarPaquetes(out mensaje);
                 dgvMostrarPaquetes.DataSource = Paquetes;
                 //FormatearGrid();
             }

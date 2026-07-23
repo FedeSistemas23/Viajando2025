@@ -1,4 +1,5 @@
 ﻿using CapaNegocio;
+using CapaNegocio.CN_Password;
 using CapaServicios;
 using CapaSesion;
 using interfazLogin;
@@ -11,10 +12,9 @@ namespace interfazPpal
     {
 
         FrmPreguntasSeguridad SegPass = new FrmPreguntasSeguridad();
-        CN_EditarPassword cn_usuario = new CN_EditarPassword();
         FrmLogin1 log = new FrmLogin1();
 
-        string Usuario;
+        Usuario obj;
         string Aleatorio;
         public string contraseña;
 
@@ -28,7 +28,7 @@ namespace interfazPpal
         {
             InitializeComponent();
             Aleatorio = aleatorio;
-            Usuario = usuario;
+            obj = usuario;
             btnCambiar.Enabled = false;
 
         }
@@ -73,13 +73,15 @@ namespace interfazPpal
 
         private void btnCambiar_Click(object sender, EventArgs e)
         {
-            string usuario = Usuario;
+            string mensaje = string.Empty;
+            int usuario = obj.IdUsuario;
             //pass es la contraseña vieja generada
             string aleatorio = txtPasswordAnterior.Text + usuario;
             string hasheoaleatorio = Seguridad.SHA256(aleatorio);
            // bool yaexiste = BuscadorDeCotraseñas.BuscarContraseñaAnteriorL(txtPasswordAnterior.Text);
             if (txtPasswordAnterior.Text == Aleatorio /*|| yaexiste*/)
             {
+                CN_Password objPassword = new CN_Password();
                 //string pass = CS_Usuario.password;
                 string newpass = txtPass.Text;
                 string concatenados = newpass + usuario;
@@ -92,7 +94,7 @@ namespace interfazPpal
                         {
                             if (newpass == txtRepetir.Text)
                             {
-                                cn_usuario.EditarPassword(jasheo, usuario);
+                                bool resultado=objPassword.Editar(jasheo, usuario, out mensaje);
                                 lblError.Text = "La contraseña se ha cambiado con exito.";
                                 log.ShowDialog();
                                 this.Dispose();

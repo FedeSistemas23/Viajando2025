@@ -10,8 +10,8 @@ namespace CapaSesion
     {
         public int? Id_Pasajero {  get; set; }
         public int NroReserva { get; set; }
-        public string nombre { get; set; }
-        public string apellido { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
         public string TipoDocumento { get; set; }
         public string NroDocumento { get; set; }
         public DateTime FechaNacimiento { get; set; }
