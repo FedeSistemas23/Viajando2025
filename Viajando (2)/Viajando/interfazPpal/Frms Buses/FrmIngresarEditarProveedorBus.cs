@@ -15,15 +15,16 @@ namespace interfazPpal
 {
     public partial class FrmIngresarEditarProveedorBus : Form
     {
-        CS_LimpiarFormularios limpiar = new CS_LimpiarFormularios();
-        CS_ValidarFormulario Validar = new CS_ValidarFormulario();
-        CN_Buses obj;
+        private readonly CS_LimpiarFormularios limpiar; 
+        private readonly CN_Buses obj;
 
         bool editar = false;
         public FrmIngresarEditarProveedorBus()
         {
             InitializeComponent();
             obj = new CN_Buses();
+            limpiar = new CS_LimpiarFormularios();
+
         }
 
         private void FrmIngresarEditarProveedorBus_Load(object sender, EventArgs e)
@@ -33,7 +34,7 @@ namespace interfazPpal
 
         public void MostrarBuses()
         {
-            List<Bus> lista= obj.MostrarBusesL();
+            List<Bus> lista = obj.MostrarBusesL();
 
             foreach (Bus item in lista)
             {
@@ -43,7 +44,7 @@ namespace interfazPpal
             dgvDatos.DataSource = lista;
         }
 
-        
+
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
@@ -67,11 +68,11 @@ namespace interfazPpal
                 txtTipoBus.Text = dgvDatos.CurrentRow.Cells["TipoDeBus"].Value.ToString();
                 npdCantidadAsientos.Value = Convert.ToInt32(dgvDatos.CurrentRow.Cells["TotalDeAsientos"].Value);
                 txtCantidadAsientosCama.Text = dgvDatos.CurrentRow.Cells["AsientosCama"].Value.ToString();
-                txtCantidadAsientosSemicama.Text = dgvDatos.CurrentRow.Cells["AsientosSemincama"].Value.ToString();    
+                txtCantidadAsientosSemicama.Text = dgvDatos.CurrentRow.Cells["AsientosSemincama"].Value.ToString();
             }
         }
 
-        
+
 
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
@@ -163,7 +164,7 @@ namespace interfazPpal
 
             if (dgvDatos.SelectedRows.Count > 0)
             {
-                int Id_ProvedorBus = Convert.ToInt32(dgvDatos.CurrentRow.Cells["Id Bus"].Value.ToString());
+                int Id_ProvedorBus = Convert.ToInt32(dgvDatos.CurrentRow.Cells["IdBus"].Value.ToString());
                 bool resultado = obj.Eliminar(Id_ProvedorBus, out string mensaje);
                 if (resultado)
                 {
@@ -181,35 +182,4 @@ namespace interfazPpal
             }
         }
     }
-
-    /*private void BtnCancelar_Click_1(object sender, EventArgs e)
-    {
-        limpiar.Limpiar(this);
-    }
-
-    private void txtBuscar_TextChanged(object sender, EventArgs e)
-    {
-        string filtro = txtBuscar.Text.ToLower();
-
-        // Filtra la lista de objetos
-        var listaFiltrada = listaBuses
-            .Where(bus =>
-                          bus.Destino.ToLower().Contains(filtro)
-                         )
-            .ToList();
-        if (listaFiltrada.Count > 0)
-        {
-            // Actualiza el DataGridView con los resultados filtrados
-            dgvBus =null;
-            dgvBus.DataSource = new BindingList<CS_AtributosBus>(listaFiltrada);
-        }
-        else
-        {
-            MessageBox.Show("No hay provedores ingresesado. Debe ingresar provedores");
-        }
-    }*/
-
 }
-
-    
-
