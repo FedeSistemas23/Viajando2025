@@ -65,9 +65,6 @@
     <Compile Include="CD_Paquetes\CD_NuevaDisponiblidad.cs" />
     <Compile Include="CD_Paquetes\CD_BuscarPaquete.cs" />
     <Compile Include="CD_Reservas\CD_Reserva.cs" />
-    <Compile Include="CD_Buses\CD_.EditarBus.cs" />
-    <Compile Include="CD_Buses\CD_EliminarBus.cs" />
-    <Compile Include="CD_Buses\CD_GuardaBusD.cs" />
     <Compile Include="CD_Buses\CD_CargaAsientosBus.cs" />
     <Compile Include="CD_Buses\CD_CargaComboBus.cs" />
     <Compile Include="CD_Hoteles\CD_CargarHabitacionesHotel.cs" />
@@ -99,7 +96,7 @@
     <Compile Include="CD_Usuario\CD_TraerDatosUsuario.cs" />
     <Compile Include="Login\CD_ValidarPassword.cs" />
     <Compile Include="Login\CD_ValidarUsuario.cs" />
-    <Compile Include="CD_Buses\CD_MostrarBuses.cs" />
+    <Compile Include="CD_Buses\CD_Buses.cs" />
     <Compile Include="ServiciosMail\ServidorCorreo.cs" />
     <Compile Include="ServiciosMail\SystemSupportMail.cs" />
     <Compile Include="SqlServer\CD_Usuario.cs" />
