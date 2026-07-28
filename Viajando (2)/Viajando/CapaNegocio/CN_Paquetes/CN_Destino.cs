@@ -7,12 +7,12 @@ namespace CapaNegocio
 {
     public class CN_Destino
     {
-        CD_Destino Destino = 
+        CD_Destino Destino = new CD_Destino(); 
         
 
         public void AgregarDestinoL(Destino nuevodestino)
         {
-            new CD_Destino().GuardarDestinoD(nuevodestino);
+            Destino.GuardarDestinoD(nuevodestino);
         }
 
         public List<Destino> MostrarD()

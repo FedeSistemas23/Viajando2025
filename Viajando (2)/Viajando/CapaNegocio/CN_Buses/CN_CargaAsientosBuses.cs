@@ -19,12 +19,12 @@ namespace CapaNegocio
             asientos = CargadorAsientos.CargaAsientosBusD(nombrebus);
             if (mensaje != string.Empty)
             {
-                return 0;
+                return null;
             }
 
             else
             {
-                return GuardarNuevoPaqueteD.GuardarPaqueteD(paquete, out mensaje);
+               // return GuardarNuevoPaqueteD.GuardarPaqueteD(paquete, out mensaje);
             }
         }
     }

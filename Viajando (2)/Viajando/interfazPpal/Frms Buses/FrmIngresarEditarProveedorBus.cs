@@ -113,8 +113,8 @@ namespace interfazPpal
                             Bus = new Bus()
                             {
                                 CantidadDeAsientos = Convert.ToInt32(npdCantidadAsientos.Value),
-                                Cama = Convert.ToInt32(npdAsientosCama.Value),
-                                Semicama = Convert.ToInt32(npdAsientosSemicama.Value),
+                                Cama = npdAsientosCama.Value.ToString(),
+                                Semicama = npdAsientosSemicama.Value.ToString(),
                                 Calle = txtCalle.Text,
                                 Numero = Convert.ToInt32(txtNumero.Text),
                                 Localidad = txtLocalidad.Text,
@@ -147,8 +147,8 @@ namespace interfazPpal
                     {
                         Id_ProvedorBus = Convert.ToInt32(dgvBus.CurrentRow.Cells["Id_ProvedorBus"].Value),
                         CantidadDeAsientos = Convert.ToInt32(npdCantidadAsientos.Value),
-                        Cama = Convert.ToInt32(npdAsientosCama.Value),
-                        Semicama = Convert.ToInt32(npdAsientosSemicama.Value),
+                        Cama = npdAsientosCama.Value.ToString(),
+                        Semicama = npdAsientosSemicama.Value.ToString(),
                         Calle = txtCalle.Text,
                         Numero = Convert.ToInt32(txtNumero.Text),
                         Localidad = txtLocalidad.Text,

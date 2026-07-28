@@ -22,13 +22,13 @@ namespace CapaDatos.CD_Usuario
                    
                     try
                     {
-                        cmd.Parameters.AddWithValue("@Id_Usuario", usuario.Id_Usuario);
+                        cmd.Parameters.AddWithValue("@Id_Usuario", usuario.IdUsuario);
                         cmd.Parameters.AddWithValue("@Username", usuario.Username);
-                        cmd.Parameters.AddWithValue("@Nombre", usuario.Nombre);
-                        cmd.Parameters.AddWithValue("@Apellidos", usuario.Apellidos);
-                        cmd.Parameters.AddWithValue("@Email", usuario.Email);
-                        cmd.Parameters.AddWithValue("@Telefono", usuario.Telefono);
-                        cmd.Parameters.AddWithValue("@Celular", usuario.Celular);
+                        cmd.Parameters.AddWithValue("@Nombre", usuario.Persona.Nombre);
+                        cmd.Parameters.AddWithValue("@Apellidos", usuario.Persona.Apellido);
+                        cmd.Parameters.AddWithValue("@Email", usuario.Persona.Email);
+                        cmd.Parameters.AddWithValue("@Telefono", usuario.Persona.Telefono);
+                        cmd.Parameters.AddWithValue("@Celular", usuario.Persona.Celular);
                         return true;
                         
                     }

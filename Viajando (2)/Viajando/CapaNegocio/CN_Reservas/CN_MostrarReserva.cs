@@ -11,13 +11,13 @@ namespace CapaNegocio
 {
     public class CN_MostrarReserva
     {
-        CD_MostrarReservaDataGrid reservaCD = new CD_MostrarReservaDataGrid();
+        //CD_MostrarReservaDataGrid reservaCD = new CD_MostrarReservaDataGrid();
         Reserva reservaCN = new Reserva();
         public DataTable MostrarReservaCN(/*int NroReserva**/)
         {
             //int Nreserva = reserva.NroReserva;
             DataTable dt = new DataTable();
-            dt=reservaCD.MostrarReservaDgv_CD(/*NroReserva*/);
+            //dt=reservaCD.MostrarReservaDgv_CD(/*NroReserva*/);
             return dt;
         }
     }

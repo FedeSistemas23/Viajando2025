@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="CN_ConfiguracionesSeguridad.cs" />
     <Compile Include="CN_Login\CN_PreguntasSeguridadPrimerIngreso.cs" />
+    <Compile Include="CN_Reservas\CD_MostrarReserva.cs" />
     <Compile Include="CN_Usuario\CN_AltaUsuario.cs" />
     <Compile Include="Bitacora\CN_Bitacora.cs" />
     <Compile Include="CN_Login\CN_TraePreguntasSeguridad.cs" />

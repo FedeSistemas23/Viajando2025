@@ -45,6 +45,7 @@ namespace CapaSesion {
 
         public bool Estado { get; set; }
 
+        public string Nombre { get; set; }
 
         // Relaciones
 
@@ -59,8 +60,11 @@ namespace CapaSesion {
         public List<UsuarioFamilia> Familias { get; set; }
 
         public List<LogIntentos> IntentosLogin { get; set; }
-
-
+        public string Email { get; set; }
+        public string Apellidos { get; set; }
+        public string NumDocumento { get; set; }
+        public string Telefono { get; set; }
+        public string Celular { get; set; }
     }
 }
 

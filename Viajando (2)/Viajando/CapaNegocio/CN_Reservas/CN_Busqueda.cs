@@ -7,7 +7,7 @@ namespace CapaNegocio
     {
 
 
-        CD_MostrarReserva mostrarCN = new CD_MostrarReserva();
+        /*CD_MostrarReserva mostrarCN = new CD_MostrarReserva();
         CD_Busqueda objBusqueda = new CD_Busqueda();
 
 
@@ -53,6 +53,6 @@ namespace CapaNegocio
         public DataTable MostrarReservasPorFechaRegresoCN()
         {
             return BuscarReservaPorFechaRegreso_CD();
-        }
+        }*/
     }
 }
