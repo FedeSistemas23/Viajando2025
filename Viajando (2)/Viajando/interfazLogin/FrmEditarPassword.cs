@@ -1,5 +1,4 @@
 ﻿using CapaNegocio;
-using CapaNegocio.CN_Password;
 using CapaServicios;
 using CapaSesion;
 using interfazLogin;
@@ -94,7 +93,7 @@ namespace interfazPpal
                         {
                             if (newpass == txtRepetir.Text)
                             {
-                                bool resultado=objPassword.Editar(jasheo, usuario, out mensaje);
+                                //bool resultado=objPassword.Editar(jasheo, usuario, out mensaje);
                                 lblError.Text = "La contraseña se ha cambiado con exito.";
                                 log.ShowDialog();
                                 this.Dispose();

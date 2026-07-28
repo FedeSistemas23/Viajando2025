@@ -49,7 +49,7 @@
   <ItemGroup>
     <Compile Include="CN_ConfiguracionesSeguridad.cs" />
     <Compile Include="CN_Login\CN_PreguntasSeguridadPrimerIngreso.cs" />
-    <Compile Include="CN_Password\CN_Password.cs" />
+    <Compile Include="CN_Password.cs" />
     <Compile Include="CN_Usuario\CN_AltaUsuario.cs" />
     <Compile Include="Bitacora\CN_Bitacora.cs" />
     <Compile Include="CN_Login\CN_TraePreguntasSeguridad.cs" />
@@ -63,7 +63,6 @@
     <Compile Include="CN_Reservas\CN_Reserva.cs" />
     <Compile Include="CN_Reservas\CN_MostrarReserva.cs" />
     <Compile Include="CN_Buses\CN_CargaAsientosBuses.cs" />
-    <Compile Include="CN_Buses\CN_Buses.cs" />
     <Compile Include="CN_Buses\CN_CargaComboBus.cs" />
     <Compile Include="CN_Hoteles\CN_CargarHabitacionesHotel.cs" />
     <Compile Include="CN_Hoteles\CN_CargaComboHotel.cs" />
