@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaNegocio;
 
 namespace interfazPpal
 {
@@ -39,7 +40,7 @@ namespace interfazPpal
             foreach (Bus item in lista)
             {
                 dgvDatos.Rows.Add(new object[] { item.Id_ProvedorBus, item.NombreBus,item.Destino,
-                item.Celular,item.Telefono, item.Email, item.CantidadDeAsientos, item.Cama,item.Semicama });
+                item.Celular,item.Telefono, item.Email, item.TotalAsientos, item.Cama,item.Semicama });
             }
             dgvDatos.DataSource = lista;
         }
@@ -65,7 +66,9 @@ namespace interfazPpal
                 txtEmail.Text = dgvDatos.CurrentRow.Cells["CorreoElectronico"].Value.ToString();
                 txtTelefono.Text = dgvDatos.CurrentRow.Cells["Telefono"].Value.ToString();
                 txtCelular.Text = dgvDatos.CurrentRow.Cells["Celular"].Value.ToString();
-                txtTipoBus.Text = dgvDatos.CurrentRow.Cells["TipoDeBus"].Value.ToString();
+                chbSuite.Checked = dgvDatos.CurrentRow.Cells["Suite"].Value.ToString() == "Si";
+                chbCama.Checked = dgvDatos.CurrentRow.Cells["Cama"].Value.ToString() == "Si";
+                chbSemicama.Checked = dgvDatos.CurrentRow.Cells["Semicama"].Value.ToString() == "Si";
                 npdCantidadAsientos.Value = Convert.ToInt32(dgvDatos.CurrentRow.Cells["TotalDeAsientos"].Value);
                 txtCantidadAsientosCama.Text = dgvDatos.CurrentRow.Cells["AsientosCama"].Value.ToString();
                 txtCantidadAsientosSemicama.Text = dgvDatos.CurrentRow.Cells["AsientosSemincama"].Value.ToString();

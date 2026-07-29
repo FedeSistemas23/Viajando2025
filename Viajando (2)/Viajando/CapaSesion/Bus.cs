@@ -17,7 +17,7 @@
         public string Telefono { get; set; }
         public string Celular { get; set; }
         public string TipoBus { get; set; }
-        public int CantidadDeAsientos { get; set; }
+        public int TotalAsientos { get; set; }
         public string Cama { get; set; }
         public string Semicama { get; set; }
         public string Suite { get; set; }

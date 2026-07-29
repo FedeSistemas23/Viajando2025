@@ -121,6 +121,7 @@
   <ItemGroup>
     <Compile Include="Aleatorios.cs" />
     <Compile Include="ArmarMail.cs" />
+    <Compile Include="CargaCombosBox.cs" />
     <Compile Include="Contrasenia\MasterValidar.cs" />
     <Compile Include="Contrasenia\Validar8.cs" />
     <Compile Include="Contrasenia\ValidarDatosPersonalesEnPassword.cs" />

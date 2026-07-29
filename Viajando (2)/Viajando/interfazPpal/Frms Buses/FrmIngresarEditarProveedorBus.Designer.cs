@@ -34,12 +34,11 @@
             this.pnlBus = new System.Windows.Forms.Panel();
             this.txtCantidadAsientosSemicama = new System.Windows.Forms.TextBox();
             this.txtCantidadAsientosCama = new System.Windows.Forms.TextBox();
-            this.txtTipoBus = new System.Windows.Forms.TextBox();
             this.npdCantidadAsientos = new System.Windows.Forms.NumericUpDown();
             this.lblCantidadAsientos = new System.Windows.Forms.Label();
             this.lbbAsientosSemicama = new System.Windows.Forms.Label();
             this.lblAsientosCama = new System.Windows.Forms.Label();
-            this.lblTransporte = new System.Windows.Forms.Label();
+            this.lblSuite = new System.Windows.Forms.Label();
             this.txtNombreProveedor = new System.Windows.Forms.TextBox();
             this.lblNombreProveedor = new System.Windows.Forms.Label();
             this.txtCelular = new System.Windows.Forms.TextBox();
@@ -70,6 +69,11 @@
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblProvincia = new System.Windows.Forms.Label();
+            this.chbSuite = new System.Windows.Forms.CheckBox();
+            this.lblCama = new System.Windows.Forms.Label();
+            this.lblSemicama = new System.Windows.Forms.Label();
+            this.chbCama = new System.Windows.Forms.CheckBox();
+            this.chbSemicama = new System.Windows.Forms.CheckBox();
             this.IdBus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Destino = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,7 +90,9 @@
             this.Localidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Partido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoDeBus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Suite = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cama = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Semicama = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.pnlBus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.npdCantidadAsientos)).BeginInit();
@@ -96,7 +102,7 @@
             // 
             this.cmbProveedores.FormattingEnabled = true;
             this.cmbProveedores.ItemHeight = 13;
-            this.cmbProveedores.Location = new System.Drawing.Point(755, 138);
+            this.cmbProveedores.Location = new System.Drawing.Point(747, 102);
             this.cmbProveedores.Margin = new System.Windows.Forms.Padding(2);
             this.cmbProveedores.Name = "cmbProveedores";
             this.cmbProveedores.Size = new System.Drawing.Size(92, 21);
@@ -105,7 +111,7 @@
             // lblBuscar
             // 
             this.lblBuscar.AutoSize = true;
-            this.lblBuscar.Location = new System.Drawing.Point(755, 117);
+            this.lblBuscar.Location = new System.Drawing.Point(747, 81);
             this.lblBuscar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBuscar.Name = "lblBuscar";
             this.lblBuscar.Size = new System.Drawing.Size(92, 13);
@@ -133,35 +139,41 @@
             this.Localidad,
             this.Provincia,
             this.Partido,
-            this.TipoDeBus});
-            this.dgvDatos.Location = new System.Drawing.Point(11, 331);
+            this.Suite,
+            this.Cama,
+            this.Semicama});
+            this.dgvDatos.Location = new System.Drawing.Point(11, 336);
             this.dgvDatos.Margin = new System.Windows.Forms.Padding(2);
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgvDatos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvDatos.RowTemplate.Height = 24;
-            this.dgvDatos.Size = new System.Drawing.Size(918, 290);
+            this.dgvDatos.Size = new System.Drawing.Size(918, 285);
             this.dgvDatos.TabIndex = 105;
             // 
             // pnlBus
             // 
+            this.pnlBus.Controls.Add(this.chbSemicama);
+            this.pnlBus.Controls.Add(this.chbCama);
+            this.pnlBus.Controls.Add(this.lblSemicama);
+            this.pnlBus.Controls.Add(this.lblCama);
+            this.pnlBus.Controls.Add(this.chbSuite);
             this.pnlBus.Controls.Add(this.txtCantidadAsientosSemicama);
             this.pnlBus.Controls.Add(this.txtCantidadAsientosCama);
-            this.pnlBus.Controls.Add(this.txtTipoBus);
             this.pnlBus.Controls.Add(this.npdCantidadAsientos);
             this.pnlBus.Controls.Add(this.lblCantidadAsientos);
             this.pnlBus.Controls.Add(this.lbbAsientosSemicama);
             this.pnlBus.Controls.Add(this.lblAsientosCama);
-            this.pnlBus.Controls.Add(this.lblTransporte);
-            this.pnlBus.Location = new System.Drawing.Point(103, 224);
+            this.pnlBus.Controls.Add(this.lblSuite);
+            this.pnlBus.Location = new System.Drawing.Point(219, 190);
             this.pnlBus.Margin = new System.Windows.Forms.Padding(2);
             this.pnlBus.Name = "pnlBus";
-            this.pnlBus.Size = new System.Drawing.Size(659, 43);
+            this.pnlBus.Size = new System.Drawing.Size(456, 72);
             this.pnlBus.TabIndex = 120;
             // 
             // txtCantidadAsientosSemicama
             // 
-            this.txtCantidadAsientosSemicama.Location = new System.Drawing.Point(596, 11);
+            this.txtCantidadAsientosSemicama.Location = new System.Drawing.Point(383, 15);
             this.txtCantidadAsientosSemicama.Margin = new System.Windows.Forms.Padding(2);
             this.txtCantidadAsientosSemicama.Name = "txtCantidadAsientosSemicama";
             this.txtCantidadAsientosSemicama.Size = new System.Drawing.Size(34, 20);
@@ -169,22 +181,15 @@
             // 
             // txtCantidadAsientosCama
             // 
-            this.txtCantidadAsientosCama.Location = new System.Drawing.Point(449, 11);
+            this.txtCantidadAsientosCama.Location = new System.Drawing.Point(236, 15);
             this.txtCantidadAsientosCama.Margin = new System.Windows.Forms.Padding(2);
             this.txtCantidadAsientosCama.Name = "txtCantidadAsientosCama";
             this.txtCantidadAsientosCama.Size = new System.Drawing.Size(34, 20);
             this.txtCantidadAsientosCama.TabIndex = 139;
             // 
-            // txtTipoBus
-            // 
-            this.txtTipoBus.Location = new System.Drawing.Point(85, 11);
-            this.txtTipoBus.Name = "txtTipoBus";
-            this.txtTipoBus.Size = new System.Drawing.Size(126, 20);
-            this.txtTipoBus.TabIndex = 22;
-            // 
             // npdCantidadAsientos
             // 
-            this.npdCantidadAsientos.Location = new System.Drawing.Point(323, 12);
+            this.npdCantidadAsientos.Location = new System.Drawing.Point(110, 16);
             this.npdCantidadAsientos.Margin = new System.Windows.Forms.Padding(2);
             this.npdCantidadAsientos.Name = "npdCantidadAsientos";
             this.npdCantidadAsientos.Size = new System.Drawing.Size(33, 20);
@@ -193,7 +198,7 @@
             // lblCantidadAsientos
             // 
             this.lblCantidadAsientos.AutoSize = true;
-            this.lblCantidadAsientos.Location = new System.Drawing.Point(233, 14);
+            this.lblCantidadAsientos.Location = new System.Drawing.Point(20, 18);
             this.lblCantidadAsientos.Name = "lblCantidadAsientos";
             this.lblCantidadAsientos.Size = new System.Drawing.Size(80, 13);
             this.lblCantidadAsientos.TabIndex = 138;
@@ -202,7 +207,7 @@
             // lbbAsientosSemicama
             // 
             this.lbbAsientosSemicama.AutoSize = true;
-            this.lbbAsientosSemicama.Location = new System.Drawing.Point(488, 14);
+            this.lbbAsientosSemicama.Location = new System.Drawing.Point(275, 18);
             this.lbbAsientosSemicama.Name = "lbbAsientosSemicama";
             this.lbbAsientosSemicama.Size = new System.Drawing.Size(103, 13);
             this.lbbAsientosSemicama.TabIndex = 137;
@@ -211,24 +216,24 @@
             // lblAsientosCama
             // 
             this.lblAsientosCama.AutoSize = true;
-            this.lblAsientosCama.Location = new System.Drawing.Point(361, 14);
+            this.lblAsientosCama.Location = new System.Drawing.Point(148, 18);
             this.lblAsientosCama.Name = "lblAsientosCama";
             this.lblAsientosCama.Size = new System.Drawing.Size(83, 13);
             this.lblAsientosCama.TabIndex = 135;
             this.lblAsientosCama.Text = "Asientos Cama :";
             // 
-            // lblTransporte
+            // lblSuite
             // 
-            this.lblTransporte.AutoSize = true;
-            this.lblTransporte.Location = new System.Drawing.Point(10, 14);
-            this.lblTransporte.Name = "lblTransporte";
-            this.lblTransporte.Size = new System.Drawing.Size(70, 13);
-            this.lblTransporte.TabIndex = 133;
-            this.lblTransporte.Text = "Tipo de Bus :";
+            this.lblSuite.AutoSize = true;
+            this.lblSuite.Location = new System.Drawing.Point(60, 52);
+            this.lblSuite.Name = "lblSuite";
+            this.lblSuite.Size = new System.Drawing.Size(40, 13);
+            this.lblSuite.TabIndex = 133;
+            this.lblSuite.Text = "Suite : ";
             // 
             // txtNombreProveedor
             // 
-            this.txtNombreProveedor.Location = new System.Drawing.Point(148, 47);
+            this.txtNombreProveedor.Location = new System.Drawing.Point(140, 11);
             this.txtNombreProveedor.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombreProveedor.Name = "txtNombreProveedor";
             this.txtNombreProveedor.Size = new System.Drawing.Size(205, 20);
@@ -237,7 +242,7 @@
             // lblNombreProveedor
             // 
             this.lblNombreProveedor.AutoSize = true;
-            this.lblNombreProveedor.Location = new System.Drawing.Point(56, 50);
+            this.lblNombreProveedor.Location = new System.Drawing.Point(48, 14);
             this.lblNombreProveedor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombreProveedor.Name = "lblNombreProveedor";
             this.lblNombreProveedor.Size = new System.Drawing.Size(87, 13);
@@ -246,7 +251,7 @@
             // 
             // txtCelular
             // 
-            this.txtCelular.Location = new System.Drawing.Point(456, 191);
+            this.txtCelular.Location = new System.Drawing.Point(448, 155);
             this.txtCelular.Margin = new System.Windows.Forms.Padding(2);
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(205, 20);
@@ -255,7 +260,7 @@
             // lblCelular
             // 
             this.lblCelular.AutoSize = true;
-            this.lblCelular.Location = new System.Drawing.Point(413, 196);
+            this.lblCelular.Location = new System.Drawing.Point(405, 160);
             this.lblCelular.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCelular.Name = "lblCelular";
             this.lblCelular.Size = new System.Drawing.Size(42, 13);
@@ -264,7 +269,7 @@
             // 
             // txtProvincia
             // 
-            this.txtProvincia.Location = new System.Drawing.Point(456, 119);
+            this.txtProvincia.Location = new System.Drawing.Point(448, 83);
             this.txtProvincia.Margin = new System.Windows.Forms.Padding(2);
             this.txtProvincia.Name = "txtProvincia";
             this.txtProvincia.Size = new System.Drawing.Size(205, 20);
@@ -272,7 +277,7 @@
             // 
             // txtPartido
             // 
-            this.txtPartido.Location = new System.Drawing.Point(456, 95);
+            this.txtPartido.Location = new System.Drawing.Point(448, 59);
             this.txtPartido.Margin = new System.Windows.Forms.Padding(2);
             this.txtPartido.Name = "txtPartido";
             this.txtPartido.Size = new System.Drawing.Size(205, 20);
@@ -281,7 +286,7 @@
             // lblPartido
             // 
             this.lblPartido.AutoSize = true;
-            this.lblPartido.Location = new System.Drawing.Point(405, 98);
+            this.lblPartido.Location = new System.Drawing.Point(397, 62);
             this.lblPartido.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPartido.Name = "lblPartido";
             this.lblPartido.Size = new System.Drawing.Size(46, 13);
@@ -290,7 +295,7 @@
             // 
             // txtLocalidad
             // 
-            this.txtLocalidad.Location = new System.Drawing.Point(456, 71);
+            this.txtLocalidad.Location = new System.Drawing.Point(448, 35);
             this.txtLocalidad.Margin = new System.Windows.Forms.Padding(2);
             this.txtLocalidad.Name = "txtLocalidad";
             this.txtLocalidad.Size = new System.Drawing.Size(205, 20);
@@ -299,7 +304,7 @@
             // lblLocalidad
             // 
             this.lblLocalidad.AutoSize = true;
-            this.lblLocalidad.Location = new System.Drawing.Point(400, 76);
+            this.lblLocalidad.Location = new System.Drawing.Point(392, 40);
             this.lblLocalidad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLocalidad.Name = "lblLocalidad";
             this.lblLocalidad.Size = new System.Drawing.Size(56, 13);
@@ -308,7 +313,7 @@
             // 
             // txtNumero
             // 
-            this.txtNumero.Location = new System.Drawing.Point(620, 47);
+            this.txtNumero.Location = new System.Drawing.Point(612, 11);
             this.txtNumero.Margin = new System.Windows.Forms.Padding(2);
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(42, 20);
@@ -317,7 +322,7 @@
             // lblNumero
             // 
             this.lblNumero.AutoSize = true;
-            this.lblNumero.Location = new System.Drawing.Point(595, 47);
+            this.lblNumero.Location = new System.Drawing.Point(587, 11);
             this.lblNumero.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(25, 13);
@@ -326,7 +331,7 @@
             // 
             // txtDestino
             // 
-            this.txtDestino.Location = new System.Drawing.Point(148, 71);
+            this.txtDestino.Location = new System.Drawing.Point(140, 35);
             this.txtDestino.Margin = new System.Windows.Forms.Padding(2);
             this.txtDestino.Name = "txtDestino";
             this.txtDestino.Size = new System.Drawing.Size(205, 20);
@@ -335,7 +340,7 @@
             // lblDestino
             // 
             this.lblDestino.AutoSize = true;
-            this.lblDestino.Location = new System.Drawing.Point(100, 74);
+            this.lblDestino.Location = new System.Drawing.Point(92, 38);
             this.lblDestino.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDestino.Name = "lblDestino";
             this.lblDestino.Size = new System.Drawing.Size(49, 13);
@@ -387,7 +392,7 @@
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(148, 119);
+            this.txtApellido.Location = new System.Drawing.Point(140, 83);
             this.txtApellido.Margin = new System.Windows.Forms.Padding(2);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(205, 20);
@@ -395,7 +400,7 @@
             // 
             // txtCuit
             // 
-            this.txtCuit.Location = new System.Drawing.Point(148, 143);
+            this.txtCuit.Location = new System.Drawing.Point(140, 107);
             this.txtCuit.Margin = new System.Windows.Forms.Padding(2);
             this.txtCuit.Name = "txtCuit";
             this.txtCuit.Size = new System.Drawing.Size(205, 20);
@@ -403,7 +408,7 @@
             // 
             // txtCalle
             // 
-            this.txtCalle.Location = new System.Drawing.Point(456, 47);
+            this.txtCalle.Location = new System.Drawing.Point(448, 11);
             this.txtCalle.Margin = new System.Windows.Forms.Padding(2);
             this.txtCalle.Name = "txtCalle";
             this.txtCalle.Size = new System.Drawing.Size(138, 20);
@@ -411,7 +416,7 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(456, 167);
+            this.txtTelefono.Location = new System.Drawing.Point(448, 131);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(205, 20);
@@ -419,7 +424,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(456, 143);
+            this.txtEmail.Location = new System.Drawing.Point(448, 107);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(205, 20);
@@ -427,7 +432,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(148, 95);
+            this.txtNombre.Location = new System.Drawing.Point(140, 59);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(205, 20);
@@ -436,7 +441,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(412, 146);
+            this.lblEmail.Location = new System.Drawing.Point(404, 110);
             this.lblEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(44, 13);
@@ -446,7 +451,7 @@
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(404, 171);
+            this.lblTelefono.Location = new System.Drawing.Point(396, 135);
             this.lblTelefono.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(52, 13);
@@ -456,7 +461,7 @@
             // lblCalle
             // 
             this.lblCalle.AutoSize = true;
-            this.lblCalle.Location = new System.Drawing.Point(421, 50);
+            this.lblCalle.Location = new System.Drawing.Point(413, 14);
             this.lblCalle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCalle.Name = "lblCalle";
             this.lblCalle.Size = new System.Drawing.Size(33, 13);
@@ -466,7 +471,7 @@
             // lblCuit
             // 
             this.lblCuit.AutoSize = true;
-            this.lblCuit.Location = new System.Drawing.Point(118, 148);
+            this.lblCuit.Location = new System.Drawing.Point(110, 112);
             this.lblCuit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCuit.Name = "lblCuit";
             this.lblCuit.Size = new System.Drawing.Size(31, 13);
@@ -476,7 +481,7 @@
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(46, 121);
+            this.lblApellido.Location = new System.Drawing.Point(38, 85);
             this.lblApellido.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(104, 13);
@@ -486,7 +491,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(52, 97);
+            this.lblNombre.Location = new System.Drawing.Point(44, 61);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(98, 13);
@@ -496,12 +501,57 @@
             // lblProvincia
             // 
             this.lblProvincia.AutoSize = true;
-            this.lblProvincia.Location = new System.Drawing.Point(402, 124);
+            this.lblProvincia.Location = new System.Drawing.Point(394, 88);
             this.lblProvincia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblProvincia.Name = "lblProvincia";
             this.lblProvincia.Size = new System.Drawing.Size(54, 13);
             this.lblProvincia.TabIndex = 116;
             this.lblProvincia.Text = "Provincia:";
+            // 
+            // chbSuite
+            // 
+            this.chbSuite.AutoSize = true;
+            this.chbSuite.Location = new System.Drawing.Point(110, 51);
+            this.chbSuite.Name = "chbSuite";
+            this.chbSuite.Size = new System.Drawing.Size(15, 14);
+            this.chbSuite.TabIndex = 141;
+            this.chbSuite.UseVisualStyleBackColor = true;
+            // 
+            // lblCama
+            // 
+            this.lblCama.AutoSize = true;
+            this.lblCama.Location = new System.Drawing.Point(187, 50);
+            this.lblCama.Name = "lblCama";
+            this.lblCama.Size = new System.Drawing.Size(43, 13);
+            this.lblCama.TabIndex = 142;
+            this.lblCama.Text = "Cama : ";
+            // 
+            // lblSemicama
+            // 
+            this.lblSemicama.AutoSize = true;
+            this.lblSemicama.Location = new System.Drawing.Point(313, 50);
+            this.lblSemicama.Name = "lblSemicama";
+            this.lblSemicama.Size = new System.Drawing.Size(65, 13);
+            this.lblSemicama.TabIndex = 143;
+            this.lblSemicama.Text = "Semicama : ";
+            // 
+            // chbCama
+            // 
+            this.chbCama.AutoSize = true;
+            this.chbCama.Location = new System.Drawing.Point(236, 51);
+            this.chbCama.Name = "chbCama";
+            this.chbCama.Size = new System.Drawing.Size(15, 14);
+            this.chbCama.TabIndex = 144;
+            this.chbCama.UseVisualStyleBackColor = true;
+            // 
+            // chbSemicama
+            // 
+            this.chbSemicama.AutoSize = true;
+            this.chbSemicama.Location = new System.Drawing.Point(383, 50);
+            this.chbSemicama.Name = "chbSemicama";
+            this.chbSemicama.Size = new System.Drawing.Size(15, 14);
+            this.chbSemicama.TabIndex = 145;
+            this.chbSemicama.UseVisualStyleBackColor = true;
             // 
             // IdBus
             // 
@@ -590,11 +640,23 @@
             this.Partido.Name = "Partido";
             this.Partido.Visible = false;
             // 
-            // TipoDeBus
+            // Suite
             // 
-            this.TipoDeBus.HeaderText = "Tipo de Bus";
-            this.TipoDeBus.Name = "TipoDeBus";
-            this.TipoDeBus.Visible = false;
+            this.Suite.HeaderText = "Suite";
+            this.Suite.Name = "Suite";
+            this.Suite.Visible = false;
+            // 
+            // Cama
+            // 
+            this.Cama.HeaderText = "Cama";
+            this.Cama.Name = "Cama";
+            this.Cama.Visible = false;
+            // 
+            // Semicama
+            // 
+            this.Semicama.HeaderText = "Semicama";
+            this.Semicama.Name = "Semicama";
+            this.Semicama.Visible = false;
             // 
             // FrmIngresarEditarProveedorBus
             // 
@@ -654,12 +716,11 @@
         private System.Windows.Forms.Label lblBuscar;
         private System.Windows.Forms.DataGridView dgvDatos;
         private System.Windows.Forms.Panel pnlBus;
-        private System.Windows.Forms.TextBox txtTipoBus;
         private System.Windows.Forms.NumericUpDown npdCantidadAsientos;
         private System.Windows.Forms.Label lblCantidadAsientos;
         private System.Windows.Forms.Label lbbAsientosSemicama;
         private System.Windows.Forms.Label lblAsientosCama;
-        private System.Windows.Forms.Label lblTransporte;
+        private System.Windows.Forms.Label lblSuite;
         private System.Windows.Forms.TextBox txtNombreProveedor;
         private System.Windows.Forms.Label lblNombreProveedor;
         private System.Windows.Forms.TextBox txtCelular;
@@ -692,6 +753,11 @@
         private System.Windows.Forms.TextBox txtCantidadAsientosSemicama;
         private System.Windows.Forms.TextBox txtCantidadAsientosCama;
         private System.Windows.Forms.Label lblProvincia;
+        private System.Windows.Forms.CheckBox chbSuite;
+        private System.Windows.Forms.Label lblSemicama;
+        private System.Windows.Forms.Label lblCama;
+        private System.Windows.Forms.CheckBox chbSemicama;
+        private System.Windows.Forms.CheckBox chbCama;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdBus;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Destino;
@@ -708,6 +774,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Localidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Provincia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Partido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoDeBus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Suite;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cama;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Semicama;
     }
 }

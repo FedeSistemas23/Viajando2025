@@ -285,25 +285,72 @@ namespace interfazPpal
         {
             string mensaje = string.Empty;
             List<Destino> listaDestinos = new CN_CargarComboDestino().CargarComboDestinosL(out mensaje);
-            cmbDestino.Items.Clear();
-
-            listaDestinos.Insert(0, new Destino
+            foreach (Destino destino in listaDestinos)
             {
-                Id_Destino = 0,
-                Nombre = "Seleccione un destino"
-            });
+                cmbDestino.Items.Add(new CargaCombosBox { Descripcion = destino.Nombre, Valor = destino.Id_Destino });
+            }
 
+            cmbDestino.DisplayMember = "Descripcion";
+            cmbDestino.ValueMember = "Valor";
+            cmbDestino.SelectedIndex = 0;
 
-            cmbDestino.DisplayMember = "Nombre";
-            cmbDestino.ValueMember = "Id_Destino";
-            cmbDestino.DataSource = listaDestinos;
             if (!string.IsNullOrEmpty(mensaje))
             {
                 MessageBox.Show(mensaje, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+        private void cmbDestino_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string mensaje = string.Empty;
+            try
+            {
+                if (cmbDestino.SelectedIndex > 0)
+                {
+                    int id_destino = Convert.ToInt32(cmbDestino.SelectedValue);
+                    List<Hotel> listaHoteles = new List<Hotel>(new CN_CargaComboHotel().CargaComboHotelL(id_destino, out mensaje));
 
-            cmbBus.Enabled = false;
-            cmbHotel.Enabled = false;
+                    if (listaHoteles.Count > 0)
+                    {
+                        foreach (Hotel hotel in listaHoteles)
+                        {
+                            cmbHotel.Items.Add(new CargaCombosBox { Descripcion = hotel.NombreDelHotel, Valor = hotel.Id_ProvedorHotel });
+                        }
+                        cmbDestino.DisplayMember = "Descripcion";
+                        cmbDestino.ValueMember = "Valor";
+                        cmbDestino.SelectedIndex = 0;
+                    }
+                    else
+                    {
+                        MessageBox.Show(mensaje);
+                    }
+
+                    List<Bus> listaBuses = new List<Bus>(new CN_CargaComboBus().CargaComboBusL(id_destino, out mensaje));
+                    if (listaBuses.Count > 0)
+                    {
+                        foreach (Bus bus in listaBuses)
+                        {
+                            cmbBus.Items.Add(new CargaCombosBox { Descripcion = bus.NombreBus, Valor = bus.Id_ProvedorBus });
+                        }
+                        cmbDestino.DisplayMember = "Descripcion";
+                        cmbDestino.ValueMember = "Valor";
+                        cmbDestino.SelectedIndex = 0;
+                    }
+                    else
+                    {
+                        MessageBox.Show(mensaje);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione un destino para mostrar su información.");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void cmbHotel_SelectedIndexChanged(object sender, EventArgs e)
@@ -324,10 +371,10 @@ namespace interfazPpal
                         foreach (Hotel hotel in listaHoteles)
                         {
 
-                            txtid_hotel.Text = Convert.ToString(hotel.Id_ProvedorHotel);
-                            cmbRegimen.Items.Add(hotel.Desayuno ? "Desayuno" : "");
-                            cmbRegimen.Items.Add(hotel.MediaPension ? "Media Pension" : "");
-                            cmbRegimen.Items.Add(hotel.PensionCompleta ? "Pension Completa" : "");
+                            //cmbHotel.Items.Add(new CargaCombosBox { Valor = hotel.Id_ProvedorHotel });
+                            cmbRegimen.Items.Add(new CargaCombosBox { Descripcion = hotel.Desayuno ? "Desayuno" : "", Valor = hotel.Id_ProvedorHotel });
+                            cmbRegimen.Items.Add(new CargaCombosBox { Descripcion = hotel.MediaPension ? "Media Pension" : "", Valor = hotel.Id_ProvedorHotel });
+                            cmbRegimen.Items.Add(new CargaCombosBox { Descripcion = hotel.PensionCompleta ? "Pension Completa" : "", Valor = hotel.Id_ProvedorHotel });
                             lblCantidadDeHabitaciones.Text = hotel.CantidadDeHabitaciones.ToString();
                             lblHabitacionesSingles.Text = Convert.ToString(hotel.HabitacionesSingle);
                             lblDobles.Text = Convert.ToString(hotel.HabitacionesDoble);
@@ -359,18 +406,14 @@ namespace interfazPpal
                 if (cmbBus.SelectedIndex > 0)
                 {
                     int id_bus = Convert.ToInt32(txtid_bus.Text);
-                    List<Bus> listaBuses = new CN_CargaComboBus().CargaComboBusL(id_bus, out mensaje);
-                    if (listaBuses != null)
+                    Bus resultado = new CN_CargaComboBus().CargaDatosBus(id_bus, out mensaje);
+                    if (resultado != null)
                     {
-                        foreach (Bus bus in listaBuses)
-                        {
-                            txtid_bus.Text = Convert.ToString(bus.Id_ProvedorBus);
-                            cmbBus.Items.Add(bus.Semicama);
-                            cmbBus.Items.Add(bus.Cama);
-                            cmbBus.Items.Add(bus.Suite);
-                            npdAsientosCama.Value = bus.AsientosCama;
-                            npdAsientosSemicama.Value = bus.AsientosSemicama;
-                        }
+                        cmbTipodeBus.Items.Add(new CargaCombosBox { Descripcion = resultado.TipoBus ? "Suite" :  "", 
+                            Valor = resultado.Id_ProvedorBus });
+                        txtTotalAsientos.Text = resultado.TotalAsientos.ToString();
+                        txtAsientosCama.Text = resultado.AsientosCama.ToString();
+                        txtAsientosCama.Text = resultado.AsientosSemicama.ToString();
                     }
                     else
                     {
@@ -411,89 +454,6 @@ namespace interfazPpal
             }
         }
 
-        private void cmbDestino_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            string mensaje = string.Empty;
-            try
-            {
-                if (cmbDestino.SelectedIndex > 0)
-                {
-                    txtid_destino.Text = cmbDestino.SelectedValue.ToString();
-                    int id_destino = Convert.ToInt32(cmbDestino.SelectedValue);
-
-                    List<Hotel> listaHoteles = new List<Hotel>(new CN_CargaComboHotel().CargaComboHotelL(id_destino, out mensaje));
-
-                    if (listaHoteles.Count > 0)
-                    {
-                        Hotel hotelpordefecto = new Hotel();
-                        hotelpordefecto.Id_ProvedorHotel = 0;
-                        hotelpordefecto.NombreDelHotel = "Seleccione el Hotel";
-
-                        // 3. Insertar el elemento por defecto en la primera posición (índice 0)
-                        listaHoteles.Insert(0, hotelpordefecto);
-
-                        // 4. Configurar las propiedades del ComboBox
-                        cmbHotel.ValueMember = "Id_ProvedorHotel"; // Nombre exacto de la propiedad ID en tu clase Hotel
-                        cmbHotel.DisplayMember = "NombreDelHotel";    // Nombre exacto de la propiedad Nombre en tu clase Hotelo
-
-                        // 5. Asignar la lista como origen de datos (esto limpia automáticamente los ítems previos)
-                        cmbHotel.DataSource = listaHoteles;
-
-                        // 6. Seleccionar el primer elemento por defecto
-                        cmbHotel.SelectedIndex = 0;
-                        /*foreach (Hotel hotel in listaHoteles)
-                        {
-                            cmbHotel.Items.Add(hotel.NombreDelHotel);
-                        }*/
-                    }
-                    else
-                    {
-                        MessageBox.Show("Ese destino no tiene hoteles, debe cargarlos.");
-                    }
-
-                    List<Bus> listaBuses = new List<Bus>(new CN_CargaComboBus().CargaComboBusL(id_destino, out mensaje));
-                    if (listaBuses.Count > 0)
-                    {
-
-                        Bus buspordefecto = new Bus();
-                        buspordefecto.Id_ProvedorBus = 0;
-                        buspordefecto.NombreBus = "Seleccione el Destino";
-
-
-                        // 3. Insertar el elemento por defecto en la primera posición (índice 0)
-                        listaBuses.Insert(0, buspordefecto);
-
-                        // 4. Configurar las propiedades del ComboBox
-                        cmbBus.ValueMember = "Id_ProvedorBus"; // Nombre exacto de la propiedad ID en tu clase Destino
-                        cmbBus.DisplayMember = "NombreBus";    // Nombre exacto de la propiedad Nombre en tu clase Destino
-
-                        // 5. Asignar la lista como origen de datos (esto limpia automáticamente los ítems previos)
-                        cmbBus.DataSource = listaBuses;
-
-                        // 6. Seleccionar el primer elemento por defecto
-                        cmbBus.SelectedIndex = 0;
-
-
-                        /*foreach (Bus bus in listaBuses)
-                        {
-                            cmbBus.Items.Add(bus.NombreBus);
-                        }*/
-                    }
-                    else
-                    {
-                        MessageBox.Show(mensaje);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Seleccione un destino para mostrar su información.");
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        
     }
 }
