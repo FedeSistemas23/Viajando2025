@@ -37,8 +37,8 @@ namespace CapaDatos
                                     listaBuses.Add(new Bus()
                                     {
                                         TipoBus=leer["TipoBus"].ToString(),
-                                        Cama=leer["Cama"].ToString(),
-                                        Semicama=leer["Semicama"].ToString(),
+                                        Cama = leer["Cama"].ToString(),
+                                        Semicama =leer["Semicama"].ToString(),
                                         Suite=leer["Suite"].ToString(),
                                         AsientosCama=Convert.ToInt32(leer["AsientosCama"]),
                                         AsientosSemicama=Convert.ToInt32(leer["AsientosSemicama"]),

@@ -409,8 +409,7 @@ namespace interfazPpal
                     Bus resultado = new CN_CargaComboBus().CargaDatosBus(id_bus, out mensaje);
                     if (resultado != null)
                     {
-                        cmbTipodeBus.Items.Add(new CargaCombosBox { Descripcion = resultado.TipoBus ? "Suite" :  "", 
-                            Valor = resultado.Id_ProvedorBus });
+                        
                         txtTotalAsientos.Text = resultado.TotalAsientos.ToString();
                         txtAsientosCama.Text = resultado.AsientosCama.ToString();
                         txtAsientosCama.Text = resultado.AsientosSemicama.ToString();

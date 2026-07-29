@@ -10,7 +10,7 @@ namespace CapaNegocio
         {
             mensaje = string.Empty;
 
-            Bus busSelecionado = new CD_CargaComboBus().CargarComboBusD(id_bus, out mensaje);
+            Bus busSelecionado = new CD_CargaComboBus().CargarDatosBusD(id_bus, out mensaje);
 
             if (busSelecionado != null)
             {

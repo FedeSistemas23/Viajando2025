@@ -98,10 +98,12 @@ namespace interfazPpal
                     Email = txtEmail.Text,
                     Telefono = Convert.ToString(txtTelefono.Text),
                     Celular = Convert.ToString(txtCelular.Text),
-                    TipoBus = txtTipoBus.Text,
-                    CantidadDeAsientos = Convert.ToInt32(npdCantidadAsientos.Value),
-                    Cama = txtCantidadAsientosCama.ToString(),
-                    Semicama = txtCantidadAsientosSemicama.ToString(),
+                    Suite = chbSuite.Checked,
+                    Cama = chbCama.Checked,
+                    Semicama = chbSemicama.Checked,
+                    TotalAsientos = Convert.ToInt32(npdCantidadAsientos.Value),
+                    AsientosCama = Convert.ToInt32(txtCantidadAsientosCama.Text),
+                    AsientosSemicama = Convert.ToInt32(txtCantidadAsientosSemicama.Text),
                 };
 
                 int IdBus = obj.Guardar(nuevoBus, out mensaje);
@@ -138,11 +140,12 @@ namespace interfazPpal
                     Email = txtEmail.Text,
                     Telefono = Convert.ToString(txtTelefono.Text),
                     Celular = Convert.ToString(txtCelular.Text),
-                    TipoBus = txtTipoBus.Text,
-                    CantidadDeAsientos = Convert.ToInt32(npdCantidadAsientos.Value),
-                    Cama = txtCantidadAsientosCama.ToString(),
-                    Semicama = txtCantidadAsientosSemicama.ToString(),
-
+                    TotalAsientos = Convert.ToInt32(npdCantidadAsientos.Value),
+                    AsientosCama = Convert.ToInt32(txtCantidadAsientosCama.Text),
+                    AsientosSemicama = Convert.ToInt32(txtCantidadAsientosSemicama.Text),
+                    Suite = chbSuite.Checked,
+                    Cama = chbCama.Checked,
+                    Semicama = chbSemicama.Checked
                 };
 
                 bool resultado = obj.Editar(nuevoBus, out mensaje);
