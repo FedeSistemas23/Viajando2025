@@ -30,9 +30,9 @@ namespace CapaDatos
                                     Id_ProvedorBus = Convert.ToInt32(leer["Id_ProvedorBus"]),
                                     NombreBus = leer["NombreBus"].ToString(),
                                     TipoBus = leer["TipoBus"].ToString(),
-                                    CantidadDeAsientos = Convert.ToInt32(leer["Cantidad_Asientos"]),
-                                    Cama = leer["AsientosCamas"].ToString(),
-                                    Semicama = leer["AsientosSemicamas"].ToString(),
+                                    TotalAsientos = Convert.ToInt32(leer["Cantidad_Asientos"]),
+                                    AsientosCama = Convert.ToInt32(leer["AsientosCama"]),
+                                    AsientosSemicama = Convert.ToInt32(leer["AsientosSemicama"]),
                                     Calle = leer["Calle"].ToString(),
                                     Numero = Convert.ToInt32(leer["Numero"]),
                                     Localidad = leer["Localidad"].ToString(),
@@ -80,7 +80,7 @@ namespace CapaDatos
                         cmd.Parameters.AddWithValue("@Telefono", bus.Telefono);
                         cmd.Parameters.AddWithValue("@Celular", bus.Celular);
                         cmd.Parameters.AddWithValue("@TipoBus", bus.TipoBus);
-                        cmd.Parameters.AddWithValue("@Cantidad_Asientos", bus.CantidadDeAsientos);
+                        cmd.Parameters.AddWithValue("@Cantidad_Asientos", bus.TotalAsientos);
                         cmd.Parameters.AddWithValue("@AsientosCamas", bus.Cama);
                         cmd.Parameters.AddWithValue("@AsientosSemicamas", bus.Semicama);
 
@@ -127,9 +127,9 @@ namespace CapaDatos
                         cmd.Parameters.AddWithValue("@Telefono", bus.Telefono);
                         cmd.Parameters.AddWithValue("@Celular", bus.Celular);
                         cmd.Parameters.AddWithValue("@TipoBus", bus.TipoBus);
-                        cmd.Parameters.AddWithValue("@Cantidad_Asientos", bus.CantidadDeAsientos);
-                        cmd.Parameters.AddWithValue("@AsientosCamas", bus.Cama);
-                        cmd.Parameters.AddWithValue("@AsientosSemicamas", bus.Semicama);
+                        cmd.Parameters.AddWithValue("@Cantidad_Asientos", bus.TotalAsientos);
+                        cmd.Parameters.AddWithValue("@AsientosCamas", bus.AsientosCama);
+                        cmd.Parameters.AddWithValue("@AsientosSemicamas", bus.AsientosSemicama);
 
                         cmd.Parameters.Add("@resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                         cmd.Parameters.Add("@mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;

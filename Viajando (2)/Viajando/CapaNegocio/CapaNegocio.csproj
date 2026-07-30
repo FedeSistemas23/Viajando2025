@@ -62,7 +62,6 @@
     <Compile Include="CN_Paquetes\CN_NuevaDisponibilidad.cs" />
     <Compile Include="CN_Reservas\CN_Reserva.cs" />
     <Compile Include="CN_Reservas\CN_MostrarReserva.cs" />
-    <Compile Include="CN_Buses\CN_CargaAsientosBuses.cs" />
     <Compile Include="CN_Buses\CN_CargaComboBus.cs" />
     <Compile Include="CN_Hoteles\CN_CargarHabitacionesHotel.cs" />
     <Compile Include="CN_Hoteles\CN_CargaComboHotel.cs" />

@@ -21,11 +21,10 @@ namespace CapaDatos
             {
                 using (SqlConnection connection = AbrirConexion())
                 {
-                    using (SqlCommand cmd = new SqlCommand("CargaComboHoteles", connection))
+                    using (SqlCommand cmd = new SqlCommand("CargaComboBuses", connection))
                     {
-                        cmd.CommandType = CommandType.StoredProcedure;
-
                         cmd.Parameters.Add("@Id_Destino", SqlDbType.Int).Value = id_destino;
+                        cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add("@Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
 
                         using (SqlDataReader leer = cmd.ExecuteReader())
@@ -37,9 +36,9 @@ namespace CapaDatos
                                     listaBuses.Add(new Bus()
                                     {
                                         TipoBus=leer["TipoBus"].ToString(),
-                                        Cama = leer["Cama"].ToString(),
-                                        Semicama =leer["Semicama"].ToString(),
-                                        Suite=leer["Suite"].ToString(),
+                                        Cama = Convert.ToBoolean(leer["Cama"]),
+                                        Semicama = Convert.ToBoolean(leer["Semicama"]),
+                                        Suite = Convert.ToBoolean(leer["Suite"]),
                                         AsientosCama=Convert.ToInt32(leer["AsientosCama"]),
                                         AsientosSemicama=Convert.ToInt32(leer["AsientosSemicama"]),
                                     });

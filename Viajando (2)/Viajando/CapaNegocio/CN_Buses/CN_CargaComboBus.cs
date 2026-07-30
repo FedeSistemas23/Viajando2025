@@ -1,6 +1,7 @@
 ﻿using CapaDatos;
 using CapaSesion;
 using System.Collections.Generic;
+using System;
 
 namespace CapaNegocio
 {
@@ -10,7 +11,7 @@ namespace CapaNegocio
         {
             mensaje = string.Empty;
 
-            Bus busSelecionado = new CD_CargaComboBus().CargarDatosBusD(id_bus, out mensaje);
+            List<Bus> busSelecionado = new CD_CargaComboBus().CargarComboBusD(id_bus, out mensaje);
 
             if (busSelecionado != null)
             {

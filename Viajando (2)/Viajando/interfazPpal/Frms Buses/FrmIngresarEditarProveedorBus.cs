@@ -1,16 +1,9 @@
-﻿using CapaNegocio;
-using CapaServicios;
+﻿using CapaServicios;
+using CapaNegocio;
 using CapaSesion;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using CapaNegocio;
 
 namespace interfazPpal
 {
@@ -23,7 +16,7 @@ namespace interfazPpal
         public FrmIngresarEditarProveedorBus()
         {
             InitializeComponent();
-            obj = new CN_Buses();
+           
             limpiar = new CS_LimpiarFormularios();
 
         }
