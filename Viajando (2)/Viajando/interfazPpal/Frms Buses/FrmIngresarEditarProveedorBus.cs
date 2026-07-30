@@ -4,19 +4,19 @@ using CapaSesion;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using CapaNegocio.CN_Buses;
 
 namespace interfazPpal
 {
     public partial class FrmIngresarEditarProveedorBus : Form
     {
-        private readonly CS_LimpiarFormularios limpiar; 
-        private readonly CN_Buses obj;
-
+        private readonly CS_LimpiarFormularios limpiar;
+        Buses obj;
         bool editar = false;
         public FrmIngresarEditarProveedorBus()
         {
             InitializeComponent();
-           
+            obj = new Buses();
             limpiar = new CS_LimpiarFormularios();
 
         }
@@ -33,12 +33,10 @@ namespace interfazPpal
             foreach (Bus item in lista)
             {
                 dgvDatos.Rows.Add(new object[] { item.Id_ProvedorBus, item.NombreBus,item.Destino,
-                item.Celular,item.Telefono, item.Email, item.TotalAsientos, item.Cama,item.Semicama });
-            }
-            dgvDatos.DataSource = lista;
+                item.Celular,item.Telefono, item.Email, item.TotalAsientos, item.AsientosCama,
+                item.AsientosSemicama });
+            } 
         }
-
-
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
@@ -109,7 +107,7 @@ namespace interfazPpal
                 }
                 else
                 {
-                    MessageBox.Show("Error al guardar: " + mensaje);
+                    MessageBox.Show(mensaje);
                 }
             }
             limpiar.Limpiar(this);
@@ -149,7 +147,7 @@ namespace interfazPpal
                 }
                 else
                 {
-                    MessageBox.Show("Los datos se han modificado con exito");
+                    MessageBox.Show(mensaje);
                     dgvDatos.Rows.Add(new object[] { txtNombreProveedor.Text, txtDestino.Text,
                     txtCantidadAsientosCama.Text, txtCantidadAsientosSemicama.Text, txtTelefono.Text,
                     txtDestino.Text,txtCelular.Text});
@@ -167,12 +165,11 @@ namespace interfazPpal
                 bool resultado = obj.Eliminar(Id_ProvedorBus, out string mensaje);
                 if (resultado)
                 {
-                    MessageBox.Show("Eliminado correctamente");
-                    MostrarBuses();
+                    MessageBox.Show(mensaje); 
                 }
                 else
                 {
-                    MessageBox.Show("Error al eliminar: " + mensaje);
+                    MessageBox.Show(mensaje);
                 }
             }
             else

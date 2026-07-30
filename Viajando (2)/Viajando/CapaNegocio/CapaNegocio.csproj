@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CN_Buses\Buses.cs" />
     <Compile Include="CN_ConfiguracionesSeguridad.cs" />
     <Compile Include="CN_Login\CN_PreguntasSeguridadPrimerIngreso.cs" />
     <Compile Include="CN_Password.cs" />

@@ -120,8 +120,6 @@
     <Compile Include="ConfiguracionSeguridad.cs" />
     <Compile Include="Disponibilidad.cs" />
     <Compile Include="EstadoReserva.cs" />
-    <Compile Include="Familia.cs" />
-    <Compile Include="FamiliaPermiso.cs" />
     <Compile Include="HabitacionesdeReservas.cs" />
     <Compile Include="LogIntentos.cs" />
     <Compile Include="MediodePago.cs" />
@@ -134,8 +132,6 @@
     <Compile Include="Bus.cs" />
     <Compile Include="Hotel.cs" />
     <Compile Include="RecuperacionPassword.cs" />
-    <Compile Include="TipodeAsiento.cs" />
-    <Compile Include="TipodeHabitacion.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Pasajero.cs" />
     <Compile Include="Paquete.cs" />
