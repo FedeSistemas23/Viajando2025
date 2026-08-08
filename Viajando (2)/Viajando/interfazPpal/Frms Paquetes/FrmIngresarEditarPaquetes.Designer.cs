@@ -34,6 +34,10 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtTotalAsientos = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtAsientosSemicama = new System.Windows.Forms.TextBox();
+            this.txtAsientosCama = new System.Windows.Forms.TextBox();
             this.cmbestado = new System.Windows.Forms.ComboBox();
             this.lblestadopaquete = new System.Windows.Forms.Label();
             this.txtdisponibilidad = new System.Windows.Forms.TextBox();
@@ -93,14 +97,13 @@
             this.btnreservar = new System.Windows.Forms.Button();
             this.dgvPaquetes = new System.Windows.Forms.DataGridView();
             this.PaqueteNro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnaDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnafechadesalida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnafechadeRegreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnaDisponibilidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnaPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnaPrecioenefectivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gastosadministrativos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Costoporpaquete = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dias = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Noches = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre_Hotel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Regimen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidaddehabitaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -110,12 +113,13 @@
             this.Cuadruple = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre_bus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipodebus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalAsientos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Asientocama = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Asientosemicama = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtAsientosCama = new System.Windows.Forms.TextBox();
-            this.txtAsientosSemicama = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtTotalAsientos = new System.Windows.Forms.TextBox();
+            this.Gastosadministrativos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Costoporpaquete = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaPrecioenefectivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.npdCantidadNoches)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.npdCantidasDias)).BeginInit();
@@ -235,11 +239,44 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Crear Nuevo Paquete";
             // 
+            // txtTotalAsientos
+            // 
+            this.txtTotalAsientos.Location = new System.Drawing.Point(617, 139);
+            this.txtTotalAsientos.Name = "txtTotalAsientos";
+            this.txtTotalAsientos.Size = new System.Drawing.Size(33, 20);
+            this.txtTotalAsientos.TabIndex = 152;
+            this.txtTotalAsientos.Visible = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(528, 142);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(80, 13);
+            this.label11.TabIndex = 151;
+            this.label11.Text = "Total Asientos :";
+            // 
+            // txtAsientosSemicama
+            // 
+            this.txtAsientosSemicama.Location = new System.Drawing.Point(617, 193);
+            this.txtAsientosSemicama.Name = "txtAsientosSemicama";
+            this.txtAsientosSemicama.Size = new System.Drawing.Size(33, 20);
+            this.txtAsientosSemicama.TabIndex = 150;
+            this.txtAsientosSemicama.Visible = false;
+            // 
+            // txtAsientosCama
+            // 
+            this.txtAsientosCama.Location = new System.Drawing.Point(617, 166);
+            this.txtAsientosCama.Name = "txtAsientosCama";
+            this.txtAsientosCama.Size = new System.Drawing.Size(33, 20);
+            this.txtAsientosCama.TabIndex = 149;
+            this.txtAsientosCama.Visible = false;
+            // 
             // cmbestado
             // 
             this.cmbestado.FormattingEnabled = true;
             this.cmbestado.Location = new System.Drawing.Point(111, 230);
-            this.cmbestado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbestado.Margin = new System.Windows.Forms.Padding(2);
             this.cmbestado.Name = "cmbestado";
             this.cmbestado.Size = new System.Drawing.Size(149, 21);
             this.cmbestado.TabIndex = 148;
@@ -309,7 +346,7 @@
             // 
             this.cmbTipodeBus.FormattingEnabled = true;
             this.cmbTipodeBus.Location = new System.Drawing.Point(616, 111);
-            this.cmbTipodeBus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbTipodeBus.Margin = new System.Windows.Forms.Padding(2);
             this.cmbTipodeBus.Name = "cmbTipodeBus";
             this.cmbTipodeBus.Size = new System.Drawing.Size(149, 21);
             this.cmbTipodeBus.TabIndex = 140;
@@ -318,7 +355,7 @@
             // 
             this.cmbRegimen.FormattingEnabled = true;
             this.cmbRegimen.Location = new System.Drawing.Point(344, 111);
-            this.cmbRegimen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbRegimen.Margin = new System.Windows.Forms.Padding(2);
             this.cmbRegimen.Name = "cmbRegimen";
             this.cmbRegimen.Size = new System.Drawing.Size(149, 21);
             this.cmbRegimen.TabIndex = 139;
@@ -424,7 +461,7 @@
             // 
             this.cmbDestino.FormattingEnabled = true;
             this.cmbDestino.Location = new System.Drawing.Point(111, 98);
-            this.cmbDestino.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbDestino.Margin = new System.Windows.Forms.Padding(2);
             this.cmbDestino.Name = "cmbDestino";
             this.cmbDestino.Size = new System.Drawing.Size(149, 21);
             this.cmbDestino.TabIndex = 125;
@@ -434,7 +471,7 @@
             // 
             this.cmbBus.FormattingEnabled = true;
             this.cmbBus.Location = new System.Drawing.Point(616, 49);
-            this.cmbBus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbBus.Margin = new System.Windows.Forms.Padding(2);
             this.cmbBus.Name = "cmbBus";
             this.cmbBus.Size = new System.Drawing.Size(149, 21);
             this.cmbBus.TabIndex = 16;
@@ -444,7 +481,7 @@
             // 
             this.cmbHotel.FormattingEnabled = true;
             this.cmbHotel.Location = new System.Drawing.Point(344, 48);
-            this.cmbHotel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbHotel.Margin = new System.Windows.Forms.Padding(2);
             this.cmbHotel.Name = "cmbHotel";
             this.cmbHotel.Size = new System.Drawing.Size(149, 21);
             this.cmbHotel.TabIndex = 8;
@@ -506,7 +543,7 @@
             // npdCantidadNoches
             // 
             this.npdCantidadNoches.Location = new System.Drawing.Point(228, 202);
-            this.npdCantidadNoches.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.npdCantidadNoches.Margin = new System.Windows.Forms.Padding(2);
             this.npdCantidadNoches.Name = "npdCantidadNoches";
             this.npdCantidadNoches.Size = new System.Drawing.Size(33, 20);
             this.npdCantidadNoches.TabIndex = 6;
@@ -514,7 +551,7 @@
             // npdCantidasDias
             // 
             this.npdCantidasDias.Location = new System.Drawing.Point(121, 202);
-            this.npdCantidasDias.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.npdCantidasDias.Margin = new System.Windows.Forms.Padding(2);
             this.npdCantidasDias.Name = "npdCantidasDias";
             this.npdCantidasDias.Size = new System.Drawing.Size(33, 20);
             this.npdCantidasDias.TabIndex = 5;
@@ -794,14 +831,13 @@
             this.dgvPaquetes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPaquetes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PaqueteNro,
-            this.columnaDestino,
             this.columnafechadesalida,
             this.columnafechadeRegreso,
+            this.columnaDestino,
             this.columnaDisponibilidad,
-            this.columnaPrecio,
-            this.columnaPrecioenefectivo,
-            this.Gastosadministrativos,
-            this.Costoporpaquete,
+            this.Dias,
+            this.Noches,
+            this.Estado,
             this.Nombre_Hotel,
             this.Regimen,
             this.Cantidaddehabitaciones,
@@ -811,8 +847,13 @@
             this.Cuadruple,
             this.Nombre_bus,
             this.Tipodebus,
+            this.TotalAsientos,
             this.Asientocama,
-            this.Asientosemicama});
+            this.Asientosemicama,
+            this.Gastosadministrativos,
+            this.Costoporpaquete,
+            this.columnaPrecio,
+            this.columnaPrecioenefectivo});
             this.dgvPaquetes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPaquetes.Location = new System.Drawing.Point(0, 254);
             this.dgvPaquetes.Name = "dgvPaquetes";
@@ -830,13 +871,6 @@
             this.PaqueteNro.Name = "PaqueteNro";
             this.PaqueteNro.ReadOnly = true;
             // 
-            // columnaDestino
-            // 
-            this.columnaDestino.HeaderText = "Destino";
-            this.columnaDestino.MinimumWidth = 6;
-            this.columnaDestino.Name = "columnaDestino";
-            this.columnaDestino.ReadOnly = true;
-            // 
             // columnafechadesalida
             // 
             this.columnafechadesalida.HeaderText = "Fecha de Salida";
@@ -851,6 +885,13 @@
             this.columnafechadeRegreso.Name = "columnafechadeRegreso";
             this.columnafechadeRegreso.ReadOnly = true;
             // 
+            // columnaDestino
+            // 
+            this.columnaDestino.HeaderText = "Destino";
+            this.columnaDestino.MinimumWidth = 6;
+            this.columnaDestino.Name = "columnaDestino";
+            this.columnaDestino.ReadOnly = true;
+            // 
             // columnaDisponibilidad
             // 
             this.columnaDisponibilidad.HeaderText = "Disponibilidad";
@@ -858,35 +899,26 @@
             this.columnaDisponibilidad.Name = "columnaDisponibilidad";
             this.columnaDisponibilidad.ReadOnly = true;
             // 
-            // columnaPrecio
+            // Dias
             // 
-            this.columnaPrecio.HeaderText = "Precio";
-            this.columnaPrecio.MinimumWidth = 6;
-            this.columnaPrecio.Name = "columnaPrecio";
-            this.columnaPrecio.ReadOnly = true;
+            this.Dias.HeaderText = "Dias";
+            this.Dias.Name = "Dias";
+            this.Dias.ReadOnly = true;
+            this.Dias.Visible = false;
             // 
-            // columnaPrecioenefectivo
+            // Noches
             // 
-            this.columnaPrecioenefectivo.HeaderText = "Precio en Efectivo";
-            this.columnaPrecioenefectivo.MinimumWidth = 6;
-            this.columnaPrecioenefectivo.Name = "columnaPrecioenefectivo";
-            this.columnaPrecioenefectivo.ReadOnly = true;
+            this.Noches.HeaderText = "Noches";
+            this.Noches.Name = "Noches";
+            this.Noches.ReadOnly = true;
+            this.Noches.Visible = false;
             // 
-            // Gastosadministrativos
+            // Estado
             // 
-            this.Gastosadministrativos.HeaderText = "Gastos Administrativos";
-            this.Gastosadministrativos.MinimumWidth = 6;
-            this.Gastosadministrativos.Name = "Gastosadministrativos";
-            this.Gastosadministrativos.ReadOnly = true;
-            this.Gastosadministrativos.Visible = false;
-            // 
-            // Costoporpaquete
-            // 
-            this.Costoporpaquete.HeaderText = "Costo por Paquete";
-            this.Costoporpaquete.MinimumWidth = 6;
-            this.Costoporpaquete.Name = "Costoporpaquete";
-            this.Costoporpaquete.ReadOnly = true;
-            this.Costoporpaquete.Visible = false;
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            this.Estado.Visible = false;
             // 
             // Nombre_Hotel
             // 
@@ -960,6 +992,13 @@
             this.Tipodebus.ReadOnly = true;
             this.Tipodebus.Visible = false;
             // 
+            // TotalAsientos
+            // 
+            this.TotalAsientos.HeaderText = "TotalAsientos";
+            this.TotalAsientos.Name = "TotalAsientos";
+            this.TotalAsientos.ReadOnly = true;
+            this.TotalAsientos.Visible = false;
+            // 
             // Asientocama
             // 
             this.Asientocama.HeaderText = "Asientos Cama";
@@ -976,38 +1015,35 @@
             this.Asientosemicama.ReadOnly = true;
             this.Asientosemicama.Visible = false;
             // 
-            // txtAsientosCama
+            // Gastosadministrativos
             // 
-            this.txtAsientosCama.Location = new System.Drawing.Point(617, 166);
-            this.txtAsientosCama.Name = "txtAsientosCama";
-            this.txtAsientosCama.Size = new System.Drawing.Size(33, 20);
-            this.txtAsientosCama.TabIndex = 149;
-            this.txtAsientosCama.Visible = false;
+            this.Gastosadministrativos.HeaderText = "Gastos Administrativos";
+            this.Gastosadministrativos.MinimumWidth = 6;
+            this.Gastosadministrativos.Name = "Gastosadministrativos";
+            this.Gastosadministrativos.ReadOnly = true;
+            this.Gastosadministrativos.Visible = false;
             // 
-            // txtAsientosSemicama
+            // Costoporpaquete
             // 
-            this.txtAsientosSemicama.Location = new System.Drawing.Point(617, 193);
-            this.txtAsientosSemicama.Name = "txtAsientosSemicama";
-            this.txtAsientosSemicama.Size = new System.Drawing.Size(33, 20);
-            this.txtAsientosSemicama.TabIndex = 150;
-            this.txtAsientosSemicama.Visible = false;
+            this.Costoporpaquete.HeaderText = "Costo por Paquete";
+            this.Costoporpaquete.MinimumWidth = 6;
+            this.Costoporpaquete.Name = "Costoporpaquete";
+            this.Costoporpaquete.ReadOnly = true;
+            this.Costoporpaquete.Visible = false;
             // 
-            // label11
+            // columnaPrecio
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(528, 142);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(80, 13);
-            this.label11.TabIndex = 151;
-            this.label11.Text = "Total Asientos :";
+            this.columnaPrecio.HeaderText = "Precio";
+            this.columnaPrecio.MinimumWidth = 6;
+            this.columnaPrecio.Name = "columnaPrecio";
+            this.columnaPrecio.ReadOnly = true;
             // 
-            // txtTotalAsientos
+            // columnaPrecioenefectivo
             // 
-            this.txtTotalAsientos.Location = new System.Drawing.Point(617, 139);
-            this.txtTotalAsientos.Name = "txtTotalAsientos";
-            this.txtTotalAsientos.Size = new System.Drawing.Size(33, 20);
-            this.txtTotalAsientos.TabIndex = 152;
-            this.txtTotalAsientos.Visible = false;
+            this.columnaPrecioenefectivo.HeaderText = "Precio en Efectivo";
+            this.columnaPrecioenefectivo.MinimumWidth = 6;
+            this.columnaPrecioenefectivo.Name = "columnaPrecioenefectivo";
+            this.columnaPrecioenefectivo.ReadOnly = true;
             // 
             // FrmIngresarEditarPaquetes
             // 
@@ -1018,7 +1054,7 @@
             this.Controls.Add(this.dgvPaquetes);
             this.Controls.Add(this.tableLayoutPanelBotones);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmIngresarEditarPaquetes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmIngresarEditarPaquetes";
@@ -1095,26 +1131,6 @@
         private System.Windows.Forms.DataGridView dgvPaquetes;
         private System.Windows.Forms.ComboBox cmbRegimen;
         private System.Windows.Forms.ComboBox cmbTipodeBus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PaqueteNro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnaDestino;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnafechadesalida;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnafechadeRegreso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnaDisponibilidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnaPrecio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnaPrecioenefectivo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Gastosadministrativos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Costoporpaquete;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_Hotel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Regimen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidaddehabitaciones;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Single;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Doble;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Triple;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cuadruple;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_bus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tipodebus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Asientocama;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Asientosemicama;
         private System.Windows.Forms.TextBox txtid_destino;
         private System.Windows.Forms.TextBox txtid_hotel;
         private System.Windows.Forms.Label label7;
@@ -1128,5 +1144,29 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtAsientosSemicama;
         private System.Windows.Forms.TextBox txtAsientosCama;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PaqueteNro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnafechadesalida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnafechadeRegreso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnaDestino;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnaDisponibilidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Dias;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Noches;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_Hotel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Regimen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidaddehabitaciones;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Single;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Doble;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Triple;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cuadruple;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_bus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tipodebus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalAsientos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Asientocama;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Asientosemicama;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gastosadministrativos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Costoporpaquete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnaPrecio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnaPrecioenefectivo;
     }
 }
