@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace CapaSesion
 {
-    public class UsuarioFamilia
+    public class Familia
     {
-        public int IdUsuario { get; set; }
-
         public int IdFamilia { get; set; }
 
-        public Familia Familia { get; set; }
+        public string Nombre { get; set; }
+
+        public List<Permiso> Permisos { get; set; }
 
     }
 }
