@@ -7,7 +7,7 @@ namespace CapaNegocio
 {
     public class CN_CargaComboBus
     {
-        public Bus CargaDatosBus(int id_bus, out string mensaje)
+        public List<Bus> CargaDatosBus(int id_bus, out string mensaje)
         {
             mensaje = string.Empty;
 

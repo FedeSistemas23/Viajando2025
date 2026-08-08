@@ -75,7 +75,7 @@ namespace CapaDatos
                                     {
                                         Id_ProvedorBus = Convert.ToInt32(leer["Id_ProveedorBus"]),
                                         TipoBus = leer["TipoBus"].ToString(),
-                                        CantidadDeAsientos = Convert.ToInt32(leer["CantidadAsientos"]),
+                                        TotalAsientos = Convert.ToInt32(leer["CantidadAsientos"]),
                                         AsientosCama = Convert.ToInt32(leer["CantidadCamas"]),
                                         AsientosSemicama = Convert.ToInt32(leer["CantidadSemicamas"])
                                     },

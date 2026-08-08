@@ -55,7 +55,7 @@ namespace CapaDatos
             }
             catch (Exception ex)
             {
-                lista = new List<Bus>();
+                ex.Message.ToString();
             } 
             return lista;
         }

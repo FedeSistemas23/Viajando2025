@@ -6,6 +6,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace interfazPpal
@@ -285,20 +286,30 @@ namespace interfazPpal
         {
             string mensaje = string.Empty;
             List<Destino> listaDestinos = new CN_CargarComboDestino().CargarComboDestinosL(out mensaje);
+            List<CargaCombosBox> listaCombo = new List<CargaCombosBox>();
             foreach (Destino destino in listaDestinos)
             {
-                cmbDestino.Items.Add(new CargaCombosBox { Descripcion = destino.Nombre, Valor = destino.Id_Destino });
+                listaCombo.Add(new CargaCombosBox { Descripcion = destino.Nombre, Valor = destino.Id_Destino });
             }
+
+            cmbDestino.DataSource = null;
 
             cmbDestino.DisplayMember = "Descripcion";
             cmbDestino.ValueMember = "Valor";
-            cmbDestino.SelectedIndex = 0;
+            
+            cmbDestino.DataSource = listaCombo;
+
+            if (cmbDestino.Items.Count > 0)
+            {
+                cmbDestino.SelectedIndex = 0;
+            }
 
             if (!string.IsNullOrEmpty(mensaje))
             {
                 MessageBox.Show(mensaje, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+            
         private void cmbDestino_SelectedIndexChanged(object sender, EventArgs e)
         {
             string mensaje = string.Empty;
@@ -306,7 +317,10 @@ namespace interfazPpal
             {
                 if (cmbDestino.SelectedIndex > 0)
                 {
-                    int id_destino = Convert.ToInt32(cmbDestino.SelectedValue);
+                    int id_destino = (int)cmbDestino.SelectedValue;
+                    CargaComboBus(id_destino);
+                    
+                    
                     List<Hotel> listaHoteles = new List<Hotel>(new CN_CargaComboHotel().CargaComboHotelL(id_destino, out mensaje));
 
                     if (listaHoteles.Count > 0)
@@ -324,21 +338,7 @@ namespace interfazPpal
                         MessageBox.Show(mensaje);
                     }
 
-                    List<Bus> listaBuses = new List<Bus>(new CN_CargaComboBus().CargaComboBusL(id_destino, out mensaje));
-                    if (listaBuses.Count > 0)
-                    {
-                        foreach (Bus bus in listaBuses)
-                        {
-                            cmbBus.Items.Add(new CargaCombosBox { Descripcion = bus.NombreBus, Valor = bus.Id_ProvedorBus });
-                        }
-                        cmbDestino.DisplayMember = "Descripcion";
-                        cmbDestino.ValueMember = "Valor";
-                        cmbDestino.SelectedIndex = 0;
-                    }
-                    else
-                    {
-                        MessageBox.Show(mensaje);
-                    }
+                    
                 }
                 else
                 {
@@ -353,6 +353,38 @@ namespace interfazPpal
 
         }
 
+        private void CargaComboBus(int id_Destino)
+        {
+            string mensaje = string.Empty;
+
+            // Pasamos el idDestino a tu capa de negocio para traer solo los buses que van allí
+            List<Bus> listaBuses = new CN_CargaComboBus().CargaDatosBus(id_Destino, out mensaje);
+
+            // Limpiamos el origen de datos anterior
+            cmbBus.DataSource = null;
+            cmbBus.Items.Clear();
+
+            // Creamos una lista de CargaCombosBox para el ComboBox
+            List<CargaCombosBox> busesCombo = new List<CargaCombosBox>();
+            foreach (Bus bus in listaBuses)
+            {
+                busesCombo.Add(new CargaCombosBox { Descripcion = bus.NombreBus, Valor = bus.Id_ProvedorBus });
+            }
+
+            cmbBus.DisplayMember = "Descripcion";
+            cmbBus.ValueMember = "Valor";
+            cmbBus.DataSource = busesCombo;
+
+            if (cmbBus.Items.Count > 0)
+            {
+                cmbBus.SelectedIndex = 0;
+            }
+
+            if (!string.IsNullOrEmpty(mensaje))
+            {
+                MessageBox.Show(mensaje, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
         private void cmbHotel_SelectedIndexChanged(object sender, EventArgs e)
         {
             string mensaje = string.Empty;
@@ -375,6 +407,10 @@ namespace interfazPpal
                             cmbRegimen.Items.Add(new CargaCombosBox { Descripcion = hotel.Desayuno ? "Desayuno" : "", Valor = hotel.Id_ProvedorHotel });
                             cmbRegimen.Items.Add(new CargaCombosBox { Descripcion = hotel.MediaPension ? "Media Pension" : "", Valor = hotel.Id_ProvedorHotel });
                             cmbRegimen.Items.Add(new CargaCombosBox { Descripcion = hotel.PensionCompleta ? "Pension Completa" : "", Valor = hotel.Id_ProvedorHotel });
+                            cmbDestino.DisplayMember = "Descripcion";
+                            cmbDestino.ValueMember = "Valor";
+                            cmbDestino.SelectedIndex = 0;
+
                             lblCantidadDeHabitaciones.Text = hotel.CantidadDeHabitaciones.ToString();
                             lblHabitacionesSingles.Text = Convert.ToString(hotel.HabitacionesSingle);
                             lblDobles.Text = Convert.ToString(hotel.HabitacionesDoble);
@@ -405,14 +441,22 @@ namespace interfazPpal
             {
                 if (cmbBus.SelectedIndex > 0)
                 {
-                    int id_bus = Convert.ToInt32(txtid_bus.Text);
-                    Bus resultado = new CN_CargaComboBus().CargaDatosBus(id_bus, out mensaje);
+                    int id_bus = Convert.ToInt32(cmbBus.SelectedValue);
+                    List<Bus> resultado = new CN_CargaComboBus().CargaDatosBus(id_bus, out mensaje);
                     if (resultado != null)
                     {
+                        Bus busSeleccionado = resultado.First();
+                        cmbTipodeBus.Items.Add(new CargaCombosBox { Descripcion = busSeleccionado.Suite ? "Suite" : "", Valor = busSeleccionado.Suite});
+                        cmbTipodeBus.Items.Add(new CargaCombosBox { Descripcion = busSeleccionado.Cama ? "Cama" : "", Valor = busSeleccionado.Cama });
+                        cmbTipodeBus.Items.Add(new CargaCombosBox { Descripcion = busSeleccionado.Semicama ? "Semicama" : "", Valor = busSeleccionado.Semicama });
+                        cmbDestino.DisplayMember = "Descripcion";
+                        cmbDestino.ValueMember = "Valor";
+                        cmbDestino.SelectedIndex = 0;
+
+                        txtTotalAsientos.Text = busSeleccionado.TotalAsientos.ToString();
+                        txtAsientosCama.Text = busSeleccionado.AsientosCama.ToString();
+                        txtAsientosSemicama.Text = busSeleccionado.AsientosSemicama.ToString();
                         
-                        txtTotalAsientos.Text = resultado.TotalAsientos.ToString();
-                        txtAsientosCama.Text = resultado.AsientosCama.ToString();
-                        txtAsientosCama.Text = resultado.AsientosSemicama.ToString();
                     }
                     else
                     {
