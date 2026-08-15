@@ -72,81 +72,7 @@ namespace interfazPpal.Frm_Usuarios
 
         }
 
-        private void chbDesbloqueoAuto_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label22_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ckbNumRerva_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void clbPermisos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNombre_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtApellido_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label17_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtLocalidad_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -162,26 +88,7 @@ namespace interfazPpal.Frm_Usuarios
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button6_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
+       
 
         public void muestraDatos()
         {
@@ -273,41 +180,6 @@ namespace interfazPpal.Frm_Usuarios
         }
 
 
-        private void button12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ckbFechaRegreso_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ckbApellido_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ckbFechaReserva_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ckbDestino_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ckbFechaSalida_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ckbNombre_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         public void cargarProvincias()
         {
             listaProvincias = traerProvincias.traerProvinciasCN().ToList();
@@ -331,11 +203,7 @@ namespace interfazPpal.Frm_Usuarios
                 // cmbLocalidades.ValueMember = "Id_Localidad ";
             }
         }
-
-        private void lblDias_Click(object sender, EventArgs e)
-        {
-
-        }
+ 
 
         string filtroActual = "";
         private void FiltrarUsuarios()
@@ -363,98 +231,7 @@ namespace interfazPpal.Frm_Usuarios
 
         }
 
-        private void button13_Click_1(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCalle_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkedListBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void button21_MouseDown(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        private void button21_MouseHover(object sender, EventArgs e)
-        {
-        }
-
-        private void txtguardar_MouseHover(object sender, EventArgs e)
-        {
-            this.BackColor = Color.Green;
-        }
-
-        private void btnGuardar(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_Calle_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void chbDesbloqueoAuto_CheckedChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtLocalidad_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DGV_datosUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-
-
-        }
-
+        
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             DGV_datosUsuario.DataSource = null;
@@ -521,10 +298,6 @@ namespace interfazPpal.Frm_Usuarios
 
         }
 
-        private void btnActivos_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnLocalidad_Click(object sender, EventArgs e)
         {
@@ -539,24 +312,7 @@ namespace interfazPpal.Frm_Usuarios
             FiltrarUsuarios();
         }
 
-        private void txtInput_TextChanged(object sender, EventArgs e)
-        {
-            FiltrarUsuarios();
-        }
-
-        private void btnbuscar_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void btnBuscar_Click_1(object sender, EventArgs e)
-        {
-            DGV_datosUsuario.DataSource = usuario.MostrarDatosDGV();
-        }
-
-
-
+       
         // METODOS PARA CARGAR LOS COMBO BOX DEL FORMULARIO
         private void cmbEstado_TextChanged(object sender, EventArgs e)
         {
@@ -594,12 +350,7 @@ namespace interfazPpal.Frm_Usuarios
             }
         }
 
-        private void cmbEstado_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-
-        }
-
+       
         //Carga las localidades en el combo box
         public void CargarLocalidades()
         {
@@ -639,53 +390,6 @@ namespace interfazPpal.Frm_Usuarios
                 //  cmbLocalidades.ValueMember = "Id_Localidad ";
             }
         }
-
-        private void lblPartido_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbLocalidades_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtInput_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_Apellido_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblComision_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
         private void DGV_datosUsuario_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             //   public void CN_CargarControles()
@@ -746,15 +450,6 @@ namespace interfazPpal.Frm_Usuarios
             CN_CargarControles(editarUsuario);
         }
 
-        private void txtUsuario_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DGV_datosUsuario_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void btn_Guardar_Click(object sender, EventArgs e)
         {

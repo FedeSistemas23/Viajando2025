@@ -50,7 +50,6 @@
     <Compile Include="CN_Alta usuario\AtributosUsuario.cs" />
     <Compile Include="CN_Alta usuario\CN_Alta_Usuario.cs" />
     <Compile Include="Bitacora\CN_Bitacora.cs" />
-    <Compile Include="Backup\CN_BackUp.cs" />
     <Compile Include="CN_GuardarContraseña.cs" />
     <Compile Include="CN_Localidades\CN_TraerLocalidades.cs" />
     <Compile Include="CN_MostrarDatosUsuario.cs" />
@@ -133,6 +132,7 @@
     <Content Include="bin\Debug\Microsoft.VisualStudio.CodeCoverage.Shim.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Backup\" />
     <Folder Include="bin\Release\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
