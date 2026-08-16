@@ -936,37 +936,35 @@
             // 
             // pnlcontraseñayseguridad
             // 
-            this.pnlcontraseñayseguridad.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pnlcontraseñayseguridad.Controls.Add(this.btnedit);
-            this.pnlcontraseñayseguridad.Controls.Add(this.CancelarBtn);
-            this.pnlcontraseñayseguridad.Controls.Add(this.btguardarconfiguracionesseguridad);
-            this.pnlcontraseñayseguridad.Controls.Add(this.label10);
-            this.pnlcontraseñayseguridad.Controls.Add(this.lblDias);
-            this.pnlcontraseñayseguridad.Controls.Add(this.npdBloqueadoPorDias);
-            this.pnlcontraseñayseguridad.Controls.Add(this.lblBloqueadoPor);
-            this.pnlcontraseñayseguridad.Controls.Add(this.npdVenceCada);
-            this.pnlcontraseñayseguridad.Controls.Add(this.ckbRealizarPreguntasSeguridad);
-            this.pnlcontraseñayseguridad.Controls.Add(this.label20);
-            this.pnlcontraseñayseguridad.Controls.Add(this.npdIntentos);
-            this.pnlcontraseñayseguridad.Controls.Add(this.ckbAvisarVencimiento);
-            this.pnlcontraseñayseguridad.Controls.Add(this.ckbMinimo);
-            this.pnlcontraseñayseguridad.Controls.Add(this.ckbEspecial);
-            this.pnlcontraseñayseguridad.Controls.Add(this.ckbNumero);
-            this.pnlcontraseñayseguridad.Controls.Add(this.ckbMayuscula);
-            this.pnlcontraseñayseguridad.Controls.Add(this.ckbMinuscula);
-            this.pnlcontraseñayseguridad.Controls.Add(this.label16);
-            this.pnlcontraseñayseguridad.Controls.Add(this.npdHorasDeBloqueo);
-            this.pnlcontraseñayseguridad.Controls.Add(this.ckbAutenticacion2FA);
-            this.pnlcontraseñayseguridad.Controls.Add(this.ckbDesbloqueoAuto);
-            this.pnlcontraseñayseguridad.Controls.Add(this.chbContraseñasAnteriores);
-            this.pnlcontraseñayseguridad.Controls.Add(this.ckbBloqueado);
-            this.pnlcontraseñayseguridad.Controls.Add(this.label19);
-            this.pnlcontraseñayseguridad.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlcontraseñayseguridad.Location = new System.Drawing.Point(7, 6);
-            this.pnlcontraseñayseguridad.Margin = new System.Windows.Forms.Padding(4);
-            this.pnlcontraseñayseguridad.Name = "pnlcontraseñayseguridad";
-            this.pnlcontraseñayseguridad.Size = new System.Drawing.Size(1349, 390);
-            this.pnlcontraseñayseguridad.TabIndex = 0;
+            this.panel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel3.Controls.Add(this.btnedit);
+            this.panel3.Controls.Add(this.CancelarBtn);
+            this.panel3.Controls.Add(this.guardarBtn);
+            this.panel3.Controls.Add(this.label10);
+            this.panel3.Controls.Add(this.lblDias);
+            this.panel3.Controls.Add(this.npdBloqueadoPorDias);
+            this.panel3.Controls.Add(this.lblBloqueadoPor);
+            this.panel3.Controls.Add(this.npdVenceCada);
+            this.panel3.Controls.Add(this.ckbRealizarPreguntasSeguridad);
+            this.panel3.Controls.Add(this.label20);
+            this.panel3.Controls.Add(this.npdIntentos);
+            this.panel3.Controls.Add(this.ckbAvisarVencimiento);
+            this.panel3.Controls.Add(this.ckbMinimo);
+            this.panel3.Controls.Add(this.ckbEspecial);
+            this.panel3.Controls.Add(this.ckbNumero);
+            this.panel3.Controls.Add(this.ckbMayuscula);
+            this.panel3.Controls.Add(this.ckbMinuscula);
+            this.panel3.Controls.Add(this.label16);
+            this.panel3.Controls.Add(this.npdHorasDeBloqueo);
+            this.panel3.Controls.Add(this.ckbAutenticacion2FA);
+            this.panel3.Controls.Add(this.chbDesbloqueoAuto);
+            this.panel3.Controls.Add(this.chbContraseñasAnteriores);
+            this.panel3.Controls.Add(this.chbBloqueado);
+            this.panel3.Controls.Add(this.label19);
+            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1003, 317);
+            this.panel3.TabIndex = 0;
             // 
             // btnedit
             // 
@@ -1184,14 +1182,14 @@
             // 
             // ckbDesbloqueoAuto
             // 
-            this.ckbDesbloqueoAuto.AutoSize = true;
-            this.ckbDesbloqueoAuto.Location = new System.Drawing.Point(56, 46);
-            this.ckbDesbloqueoAuto.Margin = new System.Windows.Forms.Padding(4);
-            this.ckbDesbloqueoAuto.Name = "ckbDesbloqueoAuto";
-            this.ckbDesbloqueoAuto.Size = new System.Drawing.Size(217, 26);
-            this.ckbDesbloqueoAuto.TabIndex = 90;
-            this.ckbDesbloqueoAuto.Text = "Desbloqueo Automático";
-            this.ckbDesbloqueoAuto.UseVisualStyleBackColor = true;
+            this.chbDesbloqueoAuto.AutoSize = true;
+            this.chbDesbloqueoAuto.Location = new System.Drawing.Point(42, 37);
+            this.chbDesbloqueoAuto.Name = "chbDesbloqueoAuto";
+            this.chbDesbloqueoAuto.Size = new System.Drawing.Size(167, 20);
+            this.chbDesbloqueoAuto.TabIndex = 90;
+            this.chbDesbloqueoAuto.Text = "Desbloqueo Automático";
+            this.chbDesbloqueoAuto.UseVisualStyleBackColor = true;
+            this.chbDesbloqueoAuto.CheckedChanged += new System.EventHandler(this.chbDesbloqueoAuto_CheckedChanged_1);
             // 
             // chbContraseñasAnteriores
             // 
@@ -1368,6 +1366,16 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Admin";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // DGV_datosUsuario
+            // 
+            this.DGV_datosUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_datosUsuario.Location = new System.Drawing.Point(5, 397);
+            this.DGV_datosUsuario.Name = "DGV_datosUsuario";
+            this.DGV_datosUsuario.Size = new System.Drawing.Size(1016, 196);
+            this.DGV_datosUsuario.TabIndex = 1;
+            this.DGV_datosUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_datosUsuario_CellContentClick_1);
+            this.DGV_datosUsuario.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_datosUsuario_CellContentDoubleClick_1);
             // 
             // frm_AltaUsuario
             // 
