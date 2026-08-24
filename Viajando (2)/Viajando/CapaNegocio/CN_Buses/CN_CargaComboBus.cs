@@ -1,26 +1,28 @@
 ﻿using CapaDatos;
 using CapaSesion;
 using System.Collections.Generic;
+using System;
 
 namespace CapaNegocio
 {
     public class CN_CargaComboBus
     {
-        public List<Bus> CargaComboBusL(int id_bus, out string mensaje)
+        public List<Bus> CargaDatosBus(int id_bus, out string mensaje)
         {
             mensaje = string.Empty;
 
-            List<Bus> Buses = new CD_CargaComboBus().CargarComboBusD(id_bus, out mensaje);
+            List<Bus> busSelecionado = new CD_CargaComboBus().CargarComboBusD(id_bus, out mensaje);
 
-            if (Buses != null)
+            if (busSelecionado != null)
             {
-                mensaje += "Buses cargados correctamente.";
+                return busSelecionado;
             }
             else
             {
                 mensaje += "No exiten buses en ese Destino. Debe cargarlos primero";
+                return null;    
             }
-            return Buses;
+            
         }
     }
 }

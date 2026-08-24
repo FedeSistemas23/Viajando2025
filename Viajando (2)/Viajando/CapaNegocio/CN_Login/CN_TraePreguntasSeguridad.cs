@@ -1,33 +1,33 @@
 ﻿using CapaDatos;
+using CapaSesion;
 using System.Collections.Generic;
 
 namespace CapaNegocio
 {
     public class CN_TraePreguntasSeguridad
     {
-        CD_TraePreguntasSeguridad traedorPreguntas;
-        List<string> preguntas;
+        CD_TraePreguntasSeguridad obj;
+        
 
         public CN_TraePreguntasSeguridad() 
         {
-            traedorPreguntas = new CD_TraePreguntasSeguridad();
-            preguntas = new List<string>();
+            obj = new CD_TraePreguntasSeguridad();    
         }
 
-        public List<string> TraerPreguntas(string username)
+        public List<PreguntasSeguridad> TraerPreguntas(string username, out string mensaje)
         {
-            preguntas = null;
-            preguntas = traedorPreguntas.TraePreguntasSeguridad(username);
-            if(preguntas != null)
+            mensaje = string.Empty;
+            
+            List<PreguntasSeguridad> lista= obj.PreguntasSeguridad(username, out mensaje);
+            
+            if (lista != null)
             {
-                return preguntas;
+                return lista;
             }
             else
             {
-                return null;
-            }
-
-            
+                return lista;
+            }       
         }
     }
 }

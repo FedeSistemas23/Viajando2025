@@ -24,7 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <IntermediateOutputPath>C:\Users\MOSTRADOR\AppData\Local\Temp\vsE6AB.tmp\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\MOSTRADOR\AppData\Local\Temp\vsCF58.tmp\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -33,7 +33,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <IntermediateOutputPath>C:\Users\MOSTRADOR\AppData\Local\Temp\vsE6AB.tmp\Release\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\MOSTRADOR\AppData\Local\Temp\vsCF58.tmp\Release\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualStudio.CodeCoverage.Shim, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -51,10 +51,10 @@
   <ItemGroup>
     <Compile Include="Bitacora\CD_Bitacora.cs" />
     <Compile Include="CD_BackUp.cs" />
-    <Compile Include="CD_ComparaDigitoVerificador.cs" />
+    <Compile Include="Login\CD_ComparaDigitoVerificador.cs" />
     <Compile Include="CD_ConfiguracionesSeguridad.cs" />
-    <Compile Include="CD_PreguntasAleatoriasPrimerIngreso.cs" />
-    <Compile Include="CD_TraePreguntasSeguridad.cs" />
+    <Compile Include="Login\CD_PreguntasAleatoriasPrimerIngreso.cs" />
+    <Compile Include="Login\CD_TraePreguntasSeguridad.cs" />
     <Compile Include="CD_EstadosUsuario\CD_AgegarEstado.cs" />
     <Compile Include="CD_EstadosUsuario\CD_ObtenerEstadoUsuario.cs" />
     <Compile Include="CD_TraerLocalidades.cs" />
@@ -65,9 +65,6 @@
     <Compile Include="CD_Paquetes\CD_NuevaDisponiblidad.cs" />
     <Compile Include="CD_Paquetes\CD_BuscarPaquete.cs" />
     <Compile Include="CD_Reservas\CD_Reserva.cs" />
-    <Compile Include="CD_Buses\CD_.EditarBus.cs" />
-    <Compile Include="CD_Buses\CD_EliminarBus.cs" />
-    <Compile Include="CD_Buses\CD_GuardaBusD.cs" />
     <Compile Include="CD_Buses\CD_CargaAsientosBus.cs" />
     <Compile Include="CD_Buses\CD_CargaComboBus.cs" />
     <Compile Include="CD_Hoteles\CD_CargarHabitacionesHotel.cs" />
@@ -86,20 +83,20 @@
     <Compile Include="CD_Paquetes\CD_EliminarPaquete.cs" />
     <Compile Include="CD_Pasajeros\CD_EliminarPasajero.cs" />
     <Compile Include="CD_Hoteles\CD_EliminarProveedorHotel.cs" />
-    <Compile Include="CD_Usuario\CD_GuardaDigito.cs" />
-    <Compile Include="CD_Usuario\CD_GuardaRespuestas.cs" />
+    <Compile Include="Login\CD_GuardaDigito.cs" />
+    <Compile Include="Login\CD_GuardaRespuestas.cs" />
     <Compile Include="CD_Hoteles\CD_GuardarHotel.cs" />
     <Compile Include="CD_Paquetes\CD_GuardarPaquete.cs" />
-    <Compile Include="CD_Usuario\CD_GuardarPrimerIngreso.cs" />
-    <Compile Include="CD_Usuario\CD_IntentosFallidos.cs" />
+    <Compile Include="Login\CD_GuardarPrimerIngreso.cs" />
+    <Compile Include="Login\CD_IntentosFallidos.cs" />
     <Compile Include="CD_Paquetes\CD_MostrarPaquete.cs" />
     <Compile Include="CD_Pasajeros\CD_MostrarPasajeros.cs" />
     <Compile Include="CD_Hoteles\CD_MostrarProveedor.cs" />
-    <Compile Include="CD_Usuario\CD_TraePreguntasYRespuestas.cs" />
+    <Compile Include="Login\CD_TraePreguntasYRespuestas.cs" />
     <Compile Include="CD_Usuario\CD_TraerDatosUsuario.cs" />
-    <Compile Include="CD_Usuario\CD_ValidarPassword.cs" />
-    <Compile Include="CD_Usuario\CD_ValidarUsuario.cs" />
-    <Compile Include="CD_Buses\CD_MostrarBuses.cs" />
+    <Compile Include="Login\CD_ValidarPassword.cs" />
+    <Compile Include="Login\CD_ValidarUsuario.cs" />
+    <Compile Include="CD_Buses\CD_Buses.cs" />
     <Compile Include="ServiciosMail\ServidorCorreo.cs" />
     <Compile Include="ServiciosMail\SystemSupportMail.cs" />
     <Compile Include="SqlServer\CD_Usuario.cs" />

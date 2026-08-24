@@ -14,47 +14,51 @@ namespace CapaDatos
 {
    public class CD_TraerDatosUsuario : Conexion
     {
-        List<Usuario> lista = new List<Usuario>();
-
         public List<Usuario> ObtenerUsuarios()
-        {
+        { 
+            List<Usuario> lista = new List<Usuario>();
+
             try
             {
                 using (SqlConnection conexion = AbrirConexion())
                 {
                     using (SqlCommand cmd = new SqlCommand("SP_MostrarDatosUsuario", conexion))
                     {
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        SqlDataReader dr = cmd.ExecuteReader();
+                        cmd.CommandType = CommandType.StoredProcedure; 
+                        if (conexion.State == ConnectionState.Closed) conexion.Open();
 
-                        while (dr.Read())
+                        using (SqlDataReader dr = cmd.ExecuteReader())
                         {
-                            Usuario usuario = new Usuario
-                            {
-                                //IdUsuario = Convert.ToInt32(dr["IdUsuario"]),
-                                Username = dr["Username"].ToString(),
-                               // password = dr["Password"].ToString(),
-                                //Digito = Convert.ToInt32(dr["Digito"].ToString()),
-                                Nombre = dr["Nombre"].ToString(),
-                                Email = dr["Email"].ToString(),
-                                Apellidos = dr["Apellidos"].ToString(),
-                                NumDocumento = dr["NumDocumento"].ToString(),
-                                Telefono = dr["Telefono"].ToString(),
-                                Celular = dr["Celular"].ToString()
-                            };
+                            while (dr.Read())
+                            {   
+                                Persona obj = new Persona
+                                {
+                                    Nombre = dr["Nombre"] != DBNull.Value ? dr["Nombre"].ToString() : string.Empty,
+                                    Email = dr["Email"] != DBNull.Value ? dr["Email"].ToString() : string.Empty,
+                                    Apellido = dr["Apellidos"] != DBNull.Value ? dr["Apellidos"].ToString() : string.Empty,
+                                    DNI = dr["DNI"] != DBNull.Value ? dr["DNI"].ToString() : string.Empty,
+                                    Telefono = dr["Telefono"] != DBNull.Value ? dr["Telefono"].ToString() : string.Empty,
+                                    Celular = dr["Celular"] != DBNull.Value ? dr["Celular"].ToString() : string.Empty,   
+                                };
 
-                            lista.Add(usuario);
+                                Usuario usuario = new Usuario
+                                {
+                                    IdUsuario = Convert.ToInt32(dr["IdUsuario"]),
+                                    Username = dr["Username"].ToString(),
+                                    Password = dr["Password"].ToString(),
+                                    Persona = obj,                                     
+                                };
 
-                        }
-
-                        return lista;
+                                lista.Add(usuario);
+                            }
+                        } 
                     }
-
-                }
+                } 
+                return lista;
             }
             catch (Exception ex)
             {
-                   throw new Exception("Error al ejecutar SP o Conexion a la BD. \n\n" + ex.Message);
+                throw new Exception("Error al ejecutar SP o Conexion a la BD. \n\n" + ex.Message);
             }
         }
     }

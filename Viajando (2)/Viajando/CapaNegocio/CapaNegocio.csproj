@@ -52,11 +52,11 @@
     <Compile Include="CN_Reservas\CD_MostrarReserva.cs" />
     <Compile Include="CN_Usuario\CN_AltaUsuario.cs" />
     <Compile Include="Bitacora\CN_Bitacora.cs" />
-<<<<<<< HEAD
+
     <Compile Include="CN_Login\CN_TraePreguntasSeguridad.cs" />
-=======
+
     <Compile Include="CN_GuardarContraseña.cs" />
->>>>>>> castel
+
     <Compile Include="CN_Localidades\CN_TraerLocalidades.cs" />
     <Compile Include="CN_TraerPartidos.cs" />
     <Compile Include="CN_TraerProvincias.cs" />

@@ -18,8 +18,8 @@ namespace CapaDatos
                 cmd.CommandText = "GuardarPasajero";
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("NroReserva", pasajero.NroReserva);
-                cmd.Parameters.AddWithValue("Nombre", pasajero.nombre);
-                cmd.Parameters.AddWithValue("Apellido", pasajero.apellido);
+                cmd.Parameters.AddWithValue("Nombre", pasajero.Nombre);
+                cmd.Parameters.AddWithValue("Apellido", pasajero.Apellido);
                 cmd.Parameters.AddWithValue("TipoDoc", pasajero.TipoDocumento);
                 cmd.Parameters.AddWithValue("NroDoc", pasajero.NroDocumento);
                 cmd.Parameters.AddWithValue("FecNac", pasajero.FechaNacimiento);

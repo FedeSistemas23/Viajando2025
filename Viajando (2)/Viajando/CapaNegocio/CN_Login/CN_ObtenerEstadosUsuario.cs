@@ -10,7 +10,7 @@ using CapaSesion;
 
 namespace CapaNegocio.CN_Usuario
 {
-    public class CN_ObtenerEstadosUsuario: CS_EstadosUsuario
+    /*public class CN_ObtenerEstadosUsuario : CN_EstadosUsuario
     {
         List<CS_EstadosUsuario> listaEstadosUsuario = new List<CS_EstadosUsuario> ();
         //CD_ObtenerEstadoUsuario traerEstados = new CD_ObtenerEstadoUsuario ();
@@ -21,5 +21,5 @@ namespace CapaNegocio.CN_Usuario
             return listaEstadosUsuario;
         }
 
-    }
+    }*/
 }

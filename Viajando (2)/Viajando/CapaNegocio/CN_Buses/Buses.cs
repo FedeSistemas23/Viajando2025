@@ -14,6 +14,7 @@ namespace CapaNegocio.CN_Buses
 
         public List<Bus> MostrarBusesL()
         {
+            
             List<Bus> Buses = obj.MostrarBusesD();
             if (Buses == null)
             {

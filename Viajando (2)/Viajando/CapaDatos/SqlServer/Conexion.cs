@@ -13,6 +13,7 @@ namespace CapaDatos
     {
 
         private SqlConnection ConexionBd = new SqlConnection("Server = localhost\\SQLEXPRESS ;DataBase = Viajando; integrated security = true");
+
         public SqlConnection AbrirConexion()
         {
             if (ConexionBd.State == ConnectionState.Closed)

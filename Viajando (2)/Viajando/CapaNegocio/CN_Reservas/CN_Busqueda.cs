@@ -3,15 +3,15 @@ using System.Data;
 
 namespace CapaNegocio
 {
-    public class CN_Busqueda : CD_MostrarReserva
+    public class CN_Busqueda : CD_Reserva
     {
 
 
-        /*CD_MostrarReserva mostrarCN = new CD_MostrarReserva();
+        CD_Reserva mostrarCN = new CD_Reserva();
         CD_Busqueda objBusqueda = new CD_Busqueda();
 
 
-        public DataTable ObtenerCoincidencias(string filtro)
+        /*public DataTable ObtenerCoincidencias(string filtro)
         {
             return objBusqueda.BuscarPorCoincidencia(filtro);
         }
