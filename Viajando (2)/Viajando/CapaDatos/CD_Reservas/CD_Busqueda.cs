@@ -10,35 +10,35 @@ namespace CapaDatos
 {
     public class CD_Busqueda
     {
-      
-            Conexion conn = new Conexion(); 
-            SqlCommand cmd = new SqlCommand();
 
-            public DataTable BuscarPorCoincidencia(string filtro)
+        Conexion conn = new Conexion();
+        SqlCommand cmd = new SqlCommand();
+
+        public DataTable BuscarPorCoincidencia(string filtro)
+        {
+            DataTable tabla = new DataTable();
+            try
             {
-                DataTable tabla = new DataTable();
-                try
-                {
-                    cmd.Connection = conn.AbrirConexion();
-                    cmd.CommandText = "SP_BuscarCoincidencias"; 
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Filtro", filtro); 
-
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    da.Fill(tabla); 
-
-                    cmd.Parameters.Clear();
-                    conn.CerrarConexion();
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Error al buscar coincidencias: " + ex.Message);
-                }
-
+                cmd.Connection = conn.AbrirConexion();
+                cmd.CommandText = "SP_BuscarCoincidencias";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Filtro", filtro);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
                 return tabla;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al buscar coincidencias: " + ex.Message);
+            }
+            finally
+            {
+                cmd.Parameters.Clear();
+                conn.CerrarConexion();
             }
         }
     }
+}
 
 /*private void btnEditar_Click_1(object sender, EventArgs e)
 {

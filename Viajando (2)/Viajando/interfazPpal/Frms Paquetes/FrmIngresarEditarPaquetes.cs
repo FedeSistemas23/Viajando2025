@@ -35,6 +35,7 @@ namespace interfazPpal
         {
             string mensaje = string.Empty;  
             CargarComboDestino();
+            MostrarPaquetes();
             List<Paquete> lista = new List<Paquete>(new CN_MostrarPaquetes().MostrarPaquetes(out mensaje));
             foreach (Paquete paquete in lista)
             {
@@ -44,7 +45,7 @@ namespace interfazPpal
                     paquete.Destino.Nombre,
                     paquete.FechaSalida.ToString("dd/MM/yyyy"),
                     paquete.FechaRegreso.ToString("dd/MM/yyyy"),
-                    paquete.Disponibilidad.CuposDisponibles,
+                    paquete.Disponibilidad,
                     paquete.PrecioLista,
                     paquete.PrecioEfectivo
                 });
@@ -151,11 +152,7 @@ namespace interfazPpal
                             FechaSalida = Convert.ToDateTime(dtpFechaSalida.Value),
                             FechaRegreso = Convert.ToDateTime(dtpFechaRegreso.Value),
                             Destino = new Destino() { Id_Destino = Convert.ToInt32(txtid_destino.Text) },
-                            Disponibilidad = new Disponibilidad() 
-                            { 
-                                CuposDisponibles = Convert.ToInt32(txtdisponibilidad.Text), 
-                                CuposTotales = Convert.ToInt32(txtdisponibilidad.Text) 
-                            },
+                            Disponibilidad = Convert.ToInt32(txtdisponibilidad.Text),
                             CantidadDias = Convert.ToInt32(npdCantidasDias.Value),
                             CantidadNoches = Convert.ToInt32(npdCantidadNoches.Value),
                             ProveedorHotel = new Hotel() { Id_ProvedorHotel = Convert.ToInt32(txtid_hotel.Text) },

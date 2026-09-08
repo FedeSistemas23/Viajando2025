@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -275,7 +275,7 @@
             // cmbestado
             // 
             this.cmbestado.FormattingEnabled = true;
-            this.cmbestado.Location = new System.Drawing.Point(111, 230);
+            this.cmbestado.Location = new System.Drawing.Point(742, 214);
             this.cmbestado.Margin = new System.Windows.Forms.Padding(2);
             this.cmbestado.Name = "cmbestado";
             this.cmbestado.Size = new System.Drawing.Size(149, 21);
@@ -284,7 +284,7 @@
             // lblestadopaquete
             // 
             this.lblestadopaquete.AutoSize = true;
-            this.lblestadopaquete.Location = new System.Drawing.Point(53, 231);
+            this.lblestadopaquete.Location = new System.Drawing.Point(684, 215);
             this.lblestadopaquete.Name = "lblestadopaquete";
             this.lblestadopaquete.Size = new System.Drawing.Size(46, 13);
             this.lblestadopaquete.TabIndex = 147;
@@ -292,7 +292,7 @@
             // 
             // txtdisponibilidad
             // 
-            this.txtdisponibilidad.Location = new System.Drawing.Point(201, 168);
+            this.txtdisponibilidad.Location = new System.Drawing.Point(201, 169);
             this.txtdisponibilidad.Name = "txtdisponibilidad";
             this.txtdisponibilidad.Size = new System.Drawing.Size(33, 20);
             this.txtdisponibilidad.TabIndex = 146;
@@ -336,7 +336,7 @@
             // 
             // txtid_destino
             // 
-            this.txtid_destino.Location = new System.Drawing.Point(23, 125);
+            this.txtid_destino.Location = new System.Drawing.Point(112, 23);
             this.txtid_destino.Name = "txtid_destino";
             this.txtid_destino.Size = new System.Drawing.Size(79, 20);
             this.txtid_destino.TabIndex = 141;
@@ -354,7 +354,7 @@
             // cmbRegimen
             // 
             this.cmbRegimen.FormattingEnabled = true;
-            this.cmbRegimen.Location = new System.Drawing.Point(344, 111);
+            this.cmbRegimen.Location = new System.Drawing.Point(344, 116);
             this.cmbRegimen.Margin = new System.Windows.Forms.Padding(2);
             this.cmbRegimen.Name = "cmbRegimen";
             this.cmbRegimen.Size = new System.Drawing.Size(149, 21);
@@ -363,7 +363,7 @@
             // lblHabitacionesCuadruples
             // 
             this.lblHabitacionesCuadruples.AutoSize = true;
-            this.lblHabitacionesCuadruples.Location = new System.Drawing.Point(471, 202);
+            this.lblHabitacionesCuadruples.Location = new System.Drawing.Point(471, 207);
             this.lblHabitacionesCuadruples.Name = "lblHabitacionesCuadruples";
             this.lblHabitacionesCuadruples.Size = new System.Drawing.Size(0, 13);
             this.lblHabitacionesCuadruples.TabIndex = 138;
@@ -371,7 +371,7 @@
             // lblHabitacionesTriples
             // 
             this.lblHabitacionesTriples.AutoSize = true;
-            this.lblHabitacionesTriples.Location = new System.Drawing.Point(368, 195);
+            this.lblHabitacionesTriples.Location = new System.Drawing.Point(368, 200);
             this.lblHabitacionesTriples.Name = "lblHabitacionesTriples";
             this.lblHabitacionesTriples.Size = new System.Drawing.Size(0, 13);
             this.lblHabitacionesTriples.TabIndex = 137;
@@ -379,7 +379,7 @@
             // lblDobles
             // 
             this.lblDobles.AutoSize = true;
-            this.lblDobles.Location = new System.Drawing.Point(453, 168);
+            this.lblDobles.Location = new System.Drawing.Point(453, 173);
             this.lblDobles.Name = "lblDobles";
             this.lblDobles.Size = new System.Drawing.Size(0, 13);
             this.lblDobles.TabIndex = 136;
@@ -387,7 +387,7 @@
             // lblHabitacionesSingles
             // 
             this.lblHabitacionesSingles.AutoSize = true;
-            this.lblHabitacionesSingles.Location = new System.Drawing.Point(386, 168);
+            this.lblHabitacionesSingles.Location = new System.Drawing.Point(386, 173);
             this.lblHabitacionesSingles.Name = "lblHabitacionesSingles";
             this.lblHabitacionesSingles.Size = new System.Drawing.Size(0, 13);
             this.lblHabitacionesSingles.TabIndex = 135;
@@ -395,7 +395,7 @@
             // lblCantidadDeHabitaciones
             // 
             this.lblCantidadDeHabitaciones.AutoSize = true;
-            this.lblCantidadDeHabitaciones.Location = new System.Drawing.Point(453, 142);
+            this.lblCantidadDeHabitaciones.Location = new System.Drawing.Point(453, 147);
             this.lblCantidadDeHabitaciones.Name = "lblCantidadDeHabitaciones";
             this.lblCantidadDeHabitaciones.Size = new System.Drawing.Size(0, 13);
             this.lblCantidadDeHabitaciones.TabIndex = 134;
@@ -403,7 +403,7 @@
             // lblRegimen
             // 
             this.lblRegimen.AutoSize = true;
-            this.lblRegimen.Location = new System.Drawing.Point(342, 108);
+            this.lblRegimen.Location = new System.Drawing.Point(342, 113);
             this.lblRegimen.Name = "lblRegimen";
             this.lblRegimen.Size = new System.Drawing.Size(0, 13);
             this.lblRegimen.TabIndex = 132;
@@ -460,7 +460,7 @@
             // cmbDestino
             // 
             this.cmbDestino.FormattingEnabled = true;
-            this.cmbDestino.Location = new System.Drawing.Point(111, 98);
+            this.cmbDestino.Location = new System.Drawing.Point(111, 99);
             this.cmbDestino.Margin = new System.Windows.Forms.Padding(2);
             this.cmbDestino.Name = "cmbDestino";
             this.cmbDestino.Size = new System.Drawing.Size(149, 21);
@@ -494,9 +494,9 @@
             this.btnAgregarDestino.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarDestino.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarDestino.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarDestino.Location = new System.Drawing.Point(112, 125);
+            this.btnAgregarDestino.Location = new System.Drawing.Point(111, 126);
             this.btnAgregarDestino.Name = "btnAgregarDestino";
-            this.btnAgregarDestino.Size = new System.Drawing.Size(149, 37);
+            this.btnAgregarDestino.Size = new System.Drawing.Size(150, 37);
             this.btnAgregarDestino.TabIndex = 4;
             this.btnAgregarDestino.Text = "Destino";
             this.btnAgregarDestino.UseVisualStyleBackColor = false;
@@ -534,7 +534,7 @@
             // lblSingle
             // 
             this.lblSingle.AutoSize = true;
-            this.lblSingle.Location = new System.Drawing.Point(312, 167);
+            this.lblSingle.Location = new System.Drawing.Point(312, 172);
             this.lblSingle.Name = "lblSingle";
             this.lblSingle.Size = new System.Drawing.Size(39, 13);
             this.lblSingle.TabIndex = 124;
@@ -542,7 +542,7 @@
             // 
             // npdCantidadNoches
             // 
-            this.npdCantidadNoches.Location = new System.Drawing.Point(228, 202);
+            this.npdCantidadNoches.Location = new System.Drawing.Point(228, 203);
             this.npdCantidadNoches.Margin = new System.Windows.Forms.Padding(2);
             this.npdCantidadNoches.Name = "npdCantidadNoches";
             this.npdCantidadNoches.Size = new System.Drawing.Size(33, 20);
@@ -550,7 +550,7 @@
             // 
             // npdCantidasDias
             // 
-            this.npdCantidasDias.Location = new System.Drawing.Point(121, 202);
+            this.npdCantidasDias.Location = new System.Drawing.Point(121, 203);
             this.npdCantidasDias.Margin = new System.Windows.Forms.Padding(2);
             this.npdCantidasDias.Name = "npdCantidasDias";
             this.npdCantidasDias.Size = new System.Drawing.Size(33, 20);
@@ -559,7 +559,7 @@
             // lblCuadruples
             // 
             this.lblCuadruples.AutoSize = true;
-            this.lblCuadruples.Location = new System.Drawing.Point(404, 195);
+            this.lblCuadruples.Location = new System.Drawing.Point(404, 200);
             this.lblCuadruples.Name = "lblCuadruples";
             this.lblCuadruples.Size = new System.Drawing.Size(66, 13);
             this.lblCuadruples.TabIndex = 116;
@@ -569,7 +569,7 @@
             // lblTriples
             // 
             this.lblTriples.AutoSize = true;
-            this.lblTriples.Location = new System.Drawing.Point(308, 195);
+            this.lblTriples.Location = new System.Drawing.Point(308, 200);
             this.lblTriples.Name = "lblTriples";
             this.lblTriples.Size = new System.Drawing.Size(44, 13);
             this.lblTriples.TabIndex = 114;
@@ -578,7 +578,7 @@
             // lblDoble
             // 
             this.lblDoble.AutoSize = true;
-            this.lblDoble.Location = new System.Drawing.Point(404, 167);
+            this.lblDoble.Location = new System.Drawing.Point(404, 172);
             this.lblDoble.Name = "lblDoble";
             this.lblDoble.Size = new System.Drawing.Size(46, 13);
             this.lblDoble.TabIndex = 112;
@@ -587,7 +587,7 @@
             // lblCantidadHabitaciones
             // 
             this.lblCantidadHabitaciones.AutoSize = true;
-            this.lblCantidadHabitaciones.Location = new System.Drawing.Point(296, 140);
+            this.lblCantidadHabitaciones.Location = new System.Drawing.Point(296, 145);
             this.lblCantidadHabitaciones.Name = "lblCantidadHabitaciones";
             this.lblCantidadHabitaciones.Size = new System.Drawing.Size(135, 26);
             this.lblCantidadHabitaciones.TabIndex = 110;
@@ -596,7 +596,7 @@
             // lblDisponibilidad
             // 
             this.lblDisponibilidad.AutoSize = true;
-            this.lblDisponibilidad.Location = new System.Drawing.Point(117, 173);
+            this.lblDisponibilidad.Location = new System.Drawing.Point(117, 174);
             this.lblDisponibilidad.Name = "lblDisponibilidad";
             this.lblDisponibilidad.Size = new System.Drawing.Size(78, 13);
             this.lblDisponibilidad.TabIndex = 106;
@@ -631,7 +631,7 @@
             // 
             // dtpFechaSalida
             // 
-            this.dtpFechaSalida.Location = new System.Drawing.Point(112, 48);
+            this.dtpFechaSalida.Location = new System.Drawing.Point(112, 49);
             this.dtpFechaSalida.Name = "dtpFechaSalida";
             this.dtpFechaSalida.Size = new System.Drawing.Size(149, 20);
             this.dtpFechaSalida.TabIndex = 1;
@@ -639,7 +639,7 @@
             // lblFechaSalida
             // 
             this.lblFechaSalida.AutoSize = true;
-            this.lblFechaSalida.Location = new System.Drawing.Point(13, 54);
+            this.lblFechaSalida.Location = new System.Drawing.Point(13, 55);
             this.lblFechaSalida.Name = "lblFechaSalida";
             this.lblFechaSalida.Size = new System.Drawing.Size(90, 13);
             this.lblFechaSalida.TabIndex = 97;
@@ -689,7 +689,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(280, 113);
+            this.label3.Location = new System.Drawing.Point(280, 118);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 77;
@@ -707,7 +707,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(169, 204);
+            this.label1.Location = new System.Drawing.Point(169, 205);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 73;
@@ -716,7 +716,7 @@
             // lblDestino
             // 
             this.lblDestino.AutoSize = true;
-            this.lblDestino.Location = new System.Drawing.Point(54, 100);
+            this.lblDestino.Location = new System.Drawing.Point(54, 101);
             this.lblDestino.Name = "lblDestino";
             this.lblDestino.Size = new System.Drawing.Size(49, 13);
             this.lblDestino.TabIndex = 71;
@@ -725,7 +725,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(76, 204);
+            this.label4.Location = new System.Drawing.Point(76, 205);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 69;
@@ -733,7 +733,7 @@
             // 
             // dtpFechaRegreso
             // 
-            this.dtpFechaRegreso.Location = new System.Drawing.Point(112, 72);
+            this.dtpFechaRegreso.Location = new System.Drawing.Point(112, 73);
             this.dtpFechaRegreso.Name = "dtpFechaRegreso";
             this.dtpFechaRegreso.Size = new System.Drawing.Size(149, 20);
             this.dtpFechaRegreso.TabIndex = 2;
@@ -741,7 +741,7 @@
             // lblFechaRegreso
             // 
             this.lblFechaRegreso.AutoSize = true;
-            this.lblFechaRegreso.Location = new System.Drawing.Point(5, 79);
+            this.lblFechaRegreso.Location = new System.Drawing.Point(5, 80);
             this.lblFechaRegreso.Name = "lblFechaRegreso";
             this.lblFechaRegreso.Size = new System.Drawing.Size(98, 13);
             this.lblFechaRegreso.TabIndex = 67;
@@ -820,14 +820,14 @@
             this.dgvPaquetes.AllowUserToDeleteRows = false;
             this.dgvPaquetes.AllowUserToResizeRows = false;
             this.dgvPaquetes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPaquetes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPaquetes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPaquetes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPaquetes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PaqueteNro,
@@ -859,8 +859,8 @@
             this.dgvPaquetes.Name = "dgvPaquetes";
             this.dgvPaquetes.ReadOnly = true;
             this.dgvPaquetes.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvPaquetes.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvPaquetes.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPaquetes.Size = new System.Drawing.Size(981, 326);
             this.dgvPaquetes.TabIndex = 95;
             // 

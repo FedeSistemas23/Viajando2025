@@ -29,7 +29,7 @@ namespace CapaDatos
                 {
                     return null; // Si no hay filas, devolver null o manejar el caso según sea necesario
                 }
-                
+                return tabla;
             }
             catch (Exception ex)
             {
@@ -38,8 +38,7 @@ namespace CapaDatos
             finally
             {
                 conexion.CerrarConexion();
-            }
-            return tabla;
+            }   
         }
     }
 }
