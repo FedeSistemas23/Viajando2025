@@ -3,6 +3,7 @@ using CapaServicios;
 using CapaSesion;
 using interfazPpal;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Loggin
@@ -11,6 +12,22 @@ namespace Loggin
     {
         ConversionesDeTipo convertir = new ConversionesDeTipo();
         CN_MostrarReserva mostrar = new CN_MostrarReserva();
+
+        //actualiza el combobox con los destinos disponibles
+        CN_TraerDestinos CV_TraerDestinos = new CN_TraerDestinos();
+
+        // actualiza el label con el id del destino seleccionado
+        CN_TraerIdDestino CV_TraerIdDestino = new CN_TraerIdDestino();
+
+        //actualiza la disponibilidad
+        CN_CheckDisponibilidad CV_CheckDisponibilidad = new CN_CheckDisponibilidad();
+
+        // para poder hacer las conversiones de booleano a bit en la carga y edicion de pasajeros
+        int bitCotizar;
+        int bitCamaAdicional;
+
+
+
         bool editar = false;
 
         public CrearReserva()
@@ -20,8 +37,10 @@ namespace Loggin
         public CrearReserva(int id , string nombre , DateTime FechaSalida , DateTime fechaRegreso, int Disponibilidad )
         {
             InitializeComponent();
-            cbxDestino.Text = nombre;
-            lbl_IdDestino.Text = Convert.ToString(id);
+                  cbxDestino.Items.Clear();
+                  cbxDestino.Items.Add( nombre);
+           
+            lbl_IdPaquete.Text = Convert.ToString(id);
             dtpFechaSalida.Value = FechaSalida ;
             dtpFechaRegreso.Value = fechaRegreso;
         }
@@ -35,10 +54,10 @@ namespace Loggin
                 cbxDestino.Focus();
                 return false;
             }
-            if (string.IsNullOrWhiteSpace(txtNumeroReserva.Text))
+            if (string.IsNullOrWhiteSpace(txtIDVendedor.Text))
             {
                 MessageBox.Show("El campo 'Número de Reserva' no puede estar vacío.");
-                txtNumeroReserva.Focus();
+                txtIDVendedor.Focus();
                 return false;
             }
 
@@ -57,6 +76,20 @@ namespace Loggin
                 return false;
             }
 
+            if (string.IsNullOrWhiteSpace(txtApellido.Text))
+            {
+                MessageBox.Show("El campo 'Apellido' no puede estar vacío.");
+                cbxDestino.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtNombre.Text))
+            {
+                MessageBox.Show("El campo 'Nombre' no puede estar vacío.");
+                cbxDestino.Focus();
+                return false;
+            }
+
             // Si todos los controles están correctos, se retorna true
             return true;
         }
@@ -65,10 +98,21 @@ namespace Loggin
             MuestraNumReserva Nreserva = new MuestraNumReserva();
             CN_MostrarReserva mostrar = new CN_MostrarReserva();
 
-            txtNumeroReserva.Text = Convert.ToString(Nreserva.MostrarNumReservaCN());
+            txtIDVendedor.Text = Convert.ToString(Nreserva.MostrarNumReservaCN());
             mostrar.MostrarReservaCN();
 
             dgvReservas.DataSource = mostrar.MostrarReservaCN();
+
+            //establece los valores de la lista con los destinos disponibles.
+            // ahora se utiliza la funcion del formulario paquete para traer el destino
+            
+           // cbxDestino.Items.Clear();
+          //  cbxDestino.DataSource= CV_TraerDestinos.TraeDestinos();
+
+            //establece la fecha de la reserva del dia actual
+            lblFechaReserva.Text = Convert.ToString(DateTime.Now);
+
+
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -82,7 +126,7 @@ namespace Loggin
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow filaSeleccionada = dgvReservas.Rows[e.RowIndex];
-                txtNumeroReserva.Text = filaSeleccionada.Cells["NroReserva"].Value.ToString();
+                txtIDVendedor.Text = filaSeleccionada.Cells["NroReserva"].Value.ToString();
                 cbxDestino.Text = filaSeleccionada.Cells["Destino"].Value.ToString();
                 dtpFechaSalida.Text = filaSeleccionada.Cells["FechaSalida"].Value.ToString();
                 dtpFechaRegreso.Text = filaSeleccionada.Cells["FechaRegreso"].Value.ToString();
@@ -122,18 +166,23 @@ namespace Loggin
         {
             CN_MostrarReserva mostrar = new CN_MostrarReserva();
             CN_GuardarReserva reservaNueva = new CN_GuardarReserva();
+            
             if (editar == false)
             {
                 if (this.ValidarControles())
                 {
                     try
-                    {
+                    {   if (ckbCotizar.Checked) { bitCotizar = 1; } else{bitCotizar = 0;}
+                        if (ckbAdicionalCama.Checked) { bitCamaAdicional = 1; } else {bitCamaAdicional=0;}
+
                         CS_Reserva reserva = new CS_Reserva()
 
                         {
-                            NroReserva = Convert.ToInt32(txtNumeroReserva.Text),
-                            Id_Paquete = Convert.ToInt32(lbl_IdDestino.Text),
+                            
+                           
+                             Id_Paquete = Convert.ToInt32(lbl_IdPaquete.Text),
                             CantidadPasajeros = Convert.ToInt32(npdCantidadPax.Value),
+                            Id_Vendedor= Convert.ToInt32(txtIDVendedor.Text),
                             CantMenorTres = Convert.ToInt32(npdDoble.Value),
                             AsientosCama = Convert.ToInt32(npdAsientosCama.Value),
                             AsientosSemiCama = Convert.ToInt32(npdAsientosSemiCama.Value),
@@ -144,7 +193,8 @@ namespace Loggin
                             AscensoMicro = txtAscenso.Text,
                             CamaSimple = Convert.ToInt32(npdCamaSimple.Value),
                             CamaMatrimonial = Convert.ToInt32(npdCamaMatrimonial.Value),
-                            Cotizar = Convert.ToBoolean(ckbCotizar.Checked),
+                            
+                            Cotizar = bitCotizar,
                             Senia = convertir.ConvertirTextoADouble(txtSeña.Text),
                             Observacion = txtObservaciones.Text,
                             FechaSalida = dtpFechaSalida.Value,
@@ -152,13 +202,57 @@ namespace Loggin
                             FechaReserva = DateTime.Now,
                             NombreTitular = txtNombre.Text,
                             ApellidoTitular = txtApellido.Text,
-                            AdicionalCama = Convert.ToBoolean(ckbAdicionalCama.Checked),
+                            
+                            AdicionalCama = bitCamaAdicional,
                             Habitaciones = Convert.ToInt32(npdCantHabitaciones.Value),
                             NombreVendedor = txtVendedor.Text,
                             Destino = cbxDestino.Text,
                         };
+                        //estos son las variables que permiten que se chequee la disponibilidad y se sepa
+                        // si la reserva se guardo en la bd.
+                        int idpaquete = Convert.ToInt32(lbl_IdPaquete.Text);
+                        int nropasajeros = Convert.ToInt32(npdCantidadPax.Value);
+                        int single = Convert.ToInt32(npdSingle.Value);
+                        int doble= Convert.ToInt32(npdDoble.Value); 
+                        int triple= Convert.ToInt32(npdTriple.Value);   
+                        int cuadruple= Convert.ToInt32(npdCuadruple.Value);
+                        int asientocama = Convert.ToInt32(npdAsientosCama.Value);
+                        int semicama = Convert.ToInt32(npdAsientosSemiCama.Value);
+                        int habitaciones = Convert.ToInt32(npdCantHabitaciones.Value);
+                        int CamaSimple = Convert.ToInt32(npdCamaSimple.Value);
+                        int CamaMatrimonial=Convert.ToInt32(npdCamaMatrimonial.Value);
 
-                        bool guardada = reservaNueva.GuardarReservaCN(reserva);
+                        List<int> ListaDisponibilidad = new List<int>();
+                        ListaDisponibilidad.Add(idpaquete);
+                        ListaDisponibilidad.Add(nropasajeros);
+                        ListaDisponibilidad.Add(single);
+                        ListaDisponibilidad.Add(doble);
+                        ListaDisponibilidad.Add(triple);
+                        ListaDisponibilidad.Add(cuadruple);
+                        ListaDisponibilidad.Add(asientocama);
+                        ListaDisponibilidad.Add(semicama);
+                        ListaDisponibilidad.Add(habitaciones);
+                        ListaDisponibilidad.Add(CamaSimple);
+                        ListaDisponibilidad.Add(CamaMatrimonial);
+
+
+                        //considero cambiar guarddada por un numero para poder integrar un switch que permita saber cual es el problema exacto
+                        bool guardada;
+                        // crear un condicional que evalue si hay esapcio para la reserva. trae 
+                        // el espacio disponible y hace el calculo en la capa logica
+                        //stored procedure que modifique la disponibilidad del paquete en base a lo
+                        //que puso la reserva
+                        // si hay disponibilidad se cambia la disponibilidad actual y se confirma que esta
+                        //guardada
+                        //si esta guardada se agrega a la lista y se hace visible
+                        //se manda un mensaje de confirmacion al usuario y se limpia el formulario
+                        if (CV_CheckDisponibilidad.chkDisponibilidad(ListaDisponibilidad))
+                        { guardada = reservaNueva.GuardarReservaCN(reserva); }
+
+                        else { guardada = false; }
+                        //stored procedure que modifique la disponibilidad del paquete en base a lo
+                        //que puso la reserva
+                        //CV_Reservas.ModificarDisponibilidad()
                         reserva.AgregarLista(reserva);
                         if (guardada == true)
                         {
@@ -169,11 +263,12 @@ namespace Loggin
                             lblMsgOk.Text = "Reserva guardada con exito";
                             CS_LimpiarFormularios limpiar = new CS_LimpiarFormularios();
                             dgvReservas.DataSource = null;
-                            lbl_IdDestino.Text = "";
+                            lblDestino.Text = "";
                             dgvReservas.DataSource = null;
                             dgvReservas.DataSource = mostrar.MostrarReservaCN();
                             limpiar.Limpiar(this);
                             int reservacionN = reserva.NroReserva;
+
                         }
                         else
                         {
@@ -182,6 +277,7 @@ namespace Loggin
                             lblMsgOk.Text = "Ha ocurrido un error al cargar la reserva";
                         }
                         dgvReservas.DataSource = mostrar.MostrarReservaCN();
+                        
                     }
                     catch (Exception ex)
                     {
@@ -199,8 +295,8 @@ namespace Loggin
                 CS_Reserva reserva = new CS_Reserva()
 
                 {
-                    NroReserva = Convert.ToInt32(txtNumeroReserva.Text),
-                    Id_Paquete = Convert.ToInt32(lbl_IdDestino.Text),
+                    NroReserva = Convert.ToInt32(txtIDVendedor.Text),
+                    Id_Paquete = Convert.ToInt32(lblDestino.Text),
                     CantidadPasajeros = Convert.ToInt32(npdCantidadPax.Value),
                     CantMenorTres = Convert.ToInt32(npdDoble.Value),
                     AsientosCama = Convert.ToInt32(npdAsientosCama.Value),
@@ -212,7 +308,7 @@ namespace Loggin
                     AscensoMicro = txtAscenso.Text,
                     CamaSimple = Convert.ToInt32(npdCamaSimple.Value),
                     CamaMatrimonial = Convert.ToInt32(npdCamaMatrimonial.Value),
-                    Cotizar = Convert.ToBoolean(ckbCotizar.Checked),
+                    Cotizar = bitCotizar,
                     Senia = convertir.ConvertirTextoADouble(txtSeña.Text),
                     Observacion = txtObservaciones.Text,
                     FechaSalida = dtpFechaSalida.Value,
@@ -220,7 +316,7 @@ namespace Loggin
                     FechaReserva = DateTime.Now,
                     NombreTitular = txtNombre.Text,
                     ApellidoTitular = txtApellido.Text,
-                    AdicionalCama = Convert.ToBoolean(ckbAdicionalCama.Checked),
+                    AdicionalCama = bitCamaAdicional,
                     Habitaciones = Convert.ToInt32(npdCantHabitaciones.Value),
                     NombreVendedor = txtVendedor.Text,
                     Destino = cbxDestino.Text,
@@ -233,11 +329,12 @@ namespace Loggin
                     lblMsgOk.Text = "Reserva editada con exito";
                     CS_LimpiarFormularios limpiar = new CS_LimpiarFormularios();
                     dgvReservas.DataSource = null;
-                    lbl_IdDestino.Text = "";
+                    lblDestino.Text = "";
                     dgvReservas.DataSource = null;
                     dgvReservas.DataSource = mostrar.MostrarReservaCN();
                     limpiar.Limpiar(this);
                 }
+                editar=false;
             }
         }
         private void button1_Click_2(object sender, EventArgs e)
@@ -247,6 +344,7 @@ namespace Loggin
         }
 
         private void button4_Click(object sender, EventArgs e)
+                     // btnEditar 
         {
             editar = true;
 
@@ -254,8 +352,10 @@ namespace Loggin
             {
 
                 // DataGridViewRow filaSeleccionada = dgvReservas.Rows[e.RowIndex];
-                lbl_IdDestino.Text = dgvReservas.CurrentRow.Cells["Id_Paquete"].Value.ToString();
-                txtNumeroReserva.Text = dgvReservas.CurrentRow.Cells["NroReserva"].Value.ToString();
+
+                
+                lbl_IdPaquete.Text = dgvReservas.CurrentRow.Cells["Id_Paquete"].Value.ToString();
+                txtIDVendedor.Text = dgvReservas.CurrentRow.Cells["NroReserva"].Value.ToString();
                 cbxDestino.Text = dgvReservas.CurrentRow.Cells["Destino"].Value.ToString();
                 dtpFechaSalida.Text = dgvReservas.CurrentRow.Cells["FechaSalida"].Value.ToString();
                 dtpFechaRegreso.Text = dgvReservas.CurrentRow.Cells["FechaRegreso"].Value.ToString();
@@ -270,7 +370,8 @@ namespace Loggin
                 }
                 else
                 {
-                    npdAsientosCama.Value = 0; 
+                    // Establece un valor por defecto o maneja el caso en que el valor es nulo
+                    npdAsientosCama.Value = 0; // O cualquier valor que tenga sentido en tu contexto
                 }
                 var CantHabitaciones = dgvReservas.CurrentRow.Cells["Habitaciones"].Value;
 
@@ -303,7 +404,8 @@ namespace Loggin
                 }
                 else
                 {
-                    npdDoble.Value = 0; 
+                    // Establece un valor por defecto o maneja el caso en que el valor es nulo
+                    npdDoble.Value = 0; // O cualquier valor que tenga sentido en tu contexto
                 }
 
                 var Triple = dgvReservas.CurrentRow.Cells["Triple"].Value;
@@ -313,7 +415,8 @@ namespace Loggin
                 }
                 else
                 {
-                    npdTriple.Value = 0; 
+                    // Establece un valor por defecto o maneja el caso en que el valor es nulo
+                    npdTriple.Value = 0; // O cualquier valor que tenga sentido en tu contexto
                 }
                 var Cuadruple = dgvReservas.CurrentRow.Cells["Cuadruple"].Value;
 
@@ -323,7 +426,8 @@ namespace Loggin
                 }
                 else
                 {
-                    npdCuadruple.Value = 0;
+                    // Establece un valor por defecto o maneja el caso en que el valor es nulo
+                    npdCuadruple.Value = 0; // O cualquier valor que tenga sentido en tu contexto
                 }
                 txtAscenso.Text = dgvReservas.CurrentRow.Cells["Ascenso"].Value.ToString();
                 var CamaSimple = dgvReservas.CurrentRow.Cells["CamaSimple"].Value;
@@ -334,7 +438,8 @@ namespace Loggin
                 }
                 else
                 {
-                    npdCamaSimple.Value = 0; 
+                    // Establece un valor por defecto o maneja el caso en que el valor es nulo
+                    npdCamaSimple.Value = 0; // O cualquier valor que tenga sentido en tu contexto
                 }
                 var CamaMatrimonial = dgvReservas.CurrentRow.Cells["CamaMatrimonial"].Value;
                 if (CamaMatrimonial != DBNull.Value)
@@ -343,17 +448,26 @@ namespace Loggin
                 }
                 else
                 {
-                    npdCamaMatrimonial.Value = 0;
+                    // Establece un valor por defecto o maneja el caso en que el valor es nulo
+                    npdCamaMatrimonial.Value = 0; // O cualquier valor que tenga sentido en tu contexto
                 }
-                ckbCotizar.Text = dgvReservas.CurrentRow.Cells["Cotizar"].Value.ToString();
+                
+                /*ckbCotizar.Text*/ 
+                bitCotizar = Convert.ToInt32( dgvReservas.CurrentRow.Cells["Cotizar"].Value);
+                if (bitCotizar==1) { ckbCotizar.Checked = true; } else { ckbCotizar.Checked= false; }
+                
                 txtSeña.Text = dgvReservas.CurrentRow.Cells["Seña"].Value.ToString();
                 txtObservaciones.Text = dgvReservas.CurrentRow.Cells["Observacion"].Value.ToString();
                 txtNombre.Text = dgvReservas.CurrentRow.Cells["NombreTitular"].Value.ToString();
                 txtApellido.Text = dgvReservas.CurrentRow.Cells["ApellidoTitular"].Value.ToString();
-                ckbAdicionalCama.Text = dgvReservas.CurrentRow.Cells["AdicionalCama"].Value.ToString();
+
+                //ckbAdicionalCama
+                bitCamaAdicional = Convert.ToInt32(dgvReservas.CurrentRow.Cells["AdicionalCama"].Value);
+                if (bitCamaAdicional==1) { ckbAdicionalCama.Checked = true; }else { ckbAdicionalCama.Checked= false; }
                 txtVendedor.Text = dgvReservas.CurrentRow.Cells["NombreVendedor"].Value.ToString();
-                //txtAscenso.Text = dgvReservas.CurrentRow.Cells["AscensoM"].Value.ToString();
-               // dtpFechaReserva.Text = dgvReservas.CurrentRow.Cells["fecha"].Value.ToString();
+                
+                txtAscenso.Text = dgvReservas.CurrentRow.Cells["Ascenso"].Value.ToString();
+                lblFechaReserva.Text = dgvReservas.CurrentRow.Cells["fecha"].Value.ToString();
             }
         }
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -362,17 +476,17 @@ namespace Loggin
             CS_LimpiarFormularios limpiar = new CS_LimpiarFormularios();
             dgvReservas.DataSource = null;
             dgvReservas.DataSource = mostrar.MostrarReservaCN();
-            lbl_IdDestino.Text = "";
+            lblDestino.Text = "";
             limpiar.Limpiar(this);
         }
         private void button5_Click(object sender, EventArgs e)
-        {
+        {         // btnEliminar
             CN_ElimnarReserva eliminar = new CN_ElimnarReserva();
             CS_Reserva reserva = new CS_Reserva();
             CN_MostrarReserva mostrar = new CN_MostrarReserva();
             if (dgvReservas.SelectedRows.Count > 0)
             {
-                reserva.NroReserva = Convert.ToInt32(dgvReservas.CurrentRow.Cells["NroReserva"].Value.ToString());
+                reserva.NroReserva = Convert.ToInt32(dgvReservas.CurrentRow.Cells["NroReserva"].Value);
                 if (eliminar.EliminarReservaCN(reserva.NroReserva))
                 {
                     panelMsg.Visible = true;
@@ -434,6 +548,19 @@ namespace Loggin
         private void button6_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void cbxDestino_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            
+           
+        }
+
+        private void cbxDestino_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //trae el id del destino usando el nombre del destino
+            // deberia traer el id del paquete, no del destino. 
+           // lbl_IdDestino.Text = CV_TraerIdDestino.TraerIdDestino(cbxDestino.Text).ToString();
         }
     }
 }
