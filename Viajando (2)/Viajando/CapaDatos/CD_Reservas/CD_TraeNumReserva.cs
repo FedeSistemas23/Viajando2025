@@ -29,6 +29,11 @@ namespace CapaDatos
                 Console.WriteLine("Error : " + ex.ToString());
                 return 0;    
             }
+            finally 
+            {
+                cmd.Parameters.Clear();
+                conn.CerrarConexion();
+            }
         }
     }
 }
